@@ -1,0 +1,1102 @@
+[
+  {
+    "question": "Find the degree of the extension Q(sqrt(2), sqrt(3)) over Q.",
+    "choices": {
+      "A": "2",
+      "B": "4",
+      "C": "6",
+      "D": "8"
+    },
+    "correct_answer": "B",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "Which of the following is a group under multiplication?",
+    "choices": {
+      "A": "The set of integers",
+      "B": "The set of nonzero rational numbers",
+      "C": "The set of natural numbers",
+      "D": "The set of even integers"
+    },
+    "correct_answer": "B",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "What is the order of the element 5 in the group Z_12 under addition?",
+    "choices": {
+      "A": "5",
+      "B": "6",
+      "C": "12",
+      "D": "60"
+    },
+    "correct_answer": "C",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "The center of the symmetric group S_3 is",
+    "choices": {
+      "A": "S_3 itself",
+      "B": "the alternating group A_3",
+      "C": "the trivial group {e}",
+      "D": "a cyclic group of order 2"
+    },
+    "correct_answer": "C",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "How many elements of order 2 are there in the dihedral group D_4?",
+    "choices": {
+      "A": "1",
+      "B": "3",
+      "C": "5",
+      "D": "7"
+    },
+    "correct_answer": "C",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "Which of the following rings is an integral domain?",
+    "choices": {
+      "A": "Z_6",
+      "B": "Z_8",
+      "C": "Z_7",
+      "D": "Z_15"
+    },
+    "correct_answer": "C",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "The number of subgroups of Z_12 is",
+    "choices": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "12"
+    },
+    "correct_answer": "B",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "If G is a group of order 35, then G is",
+    "choices": {
+      "A": "necessarily cyclic",
+      "B": "necessarily abelian but not necessarily cyclic",
+      "C": "not necessarily abelian",
+      "D": "necessarily nonabelian"
+    },
+    "correct_answer": "A",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "Let F be a field with 27 elements. The characteristic of F is",
+    "choices": {
+      "A": "2",
+      "B": "3",
+      "C": "9",
+      "D": "27"
+    },
+    "correct_answer": "B",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "Which of the following is NOT a property of every ideal in a commutative ring?",
+    "choices": {
+      "A": "It is a subgroup under addition",
+      "B": "It is closed under multiplication by ring elements",
+      "C": "It contains the additive identity",
+      "D": "It contains the multiplicative identity"
+    },
+    "correct_answer": "D",
+    "subject": "abstract_algebra"
+  },
+  {
+    "question": "Which muscle is the primary flexor of the forearm at the elbow joint?",
+    "choices": {
+      "A": "Triceps brachii",
+      "B": "Brachialis",
+      "C": "Anconeus",
+      "D": "Pronator teres"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The thoracic duct drains lymph into the",
+    "choices": {
+      "A": "right subclavian vein",
+      "B": "left internal jugular vein",
+      "C": "junction of the left subclavian and left internal jugular veins",
+      "D": "superior vena cava directly"
+    },
+    "correct_answer": "C",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The celiac trunk branches from the abdominal aorta and gives rise to all of the following arteries EXCEPT the",
+    "choices": {
+      "A": "left gastric artery",
+      "B": "splenic artery",
+      "C": "common hepatic artery",
+      "D": "superior mesenteric artery"
+    },
+    "correct_answer": "D",
+    "subject": "anatomy"
+  },
+  {
+    "question": "Which cranial nerve is responsible for general sensation from the anterior two-thirds of the tongue?",
+    "choices": {
+      "A": "Facial nerve (CN VII)",
+      "B": "Trigeminal nerve (CN V)",
+      "C": "Glossopharyngeal nerve (CN IX)",
+      "D": "Hypoglossal nerve (CN XII)"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The blood-brain barrier is primarily formed by",
+    "choices": {
+      "A": "astrocyte foot processes alone",
+      "B": "tight junctions between capillary endothelial cells",
+      "C": "the pia mater",
+      "D": "ependymal cells lining the ventricles"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The right recurrent laryngeal nerve loops around the",
+    "choices": {
+      "A": "aortic arch",
+      "B": "right subclavian artery",
+      "C": "right common carotid artery",
+      "D": "brachiocephalic trunk"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "Which structure passes through the foramen magnum?",
+    "choices": {
+      "A": "Internal carotid artery",
+      "B": "Vertebral arteries",
+      "C": "External carotid artery",
+      "D": "Middle meningeal artery"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The pudendal nerve arises from which sacral nerve roots?",
+    "choices": {
+      "A": "S1, S2",
+      "B": "S2, S3, S4",
+      "C": "S3, S4, S5",
+      "D": "S1, S2, S3"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "Which of the following bones does NOT contribute to the orbit?",
+    "choices": {
+      "A": "Ethmoid",
+      "B": "Sphenoid",
+      "C": "Temporal",
+      "D": "Palatine"
+    },
+    "correct_answer": "C",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The azygos vein drains into the",
+    "choices": {
+      "A": "inferior vena cava",
+      "B": "superior vena cava",
+      "C": "right atrium directly",
+      "D": "left brachiocephalic vein"
+    },
+    "correct_answer": "B",
+    "subject": "anatomy"
+  },
+  {
+    "question": "The Hertzsprung-Russell diagram plots stars according to their",
+    "choices": {
+      "A": "mass and radius",
+      "B": "luminosity and surface temperature",
+      "C": "distance and apparent magnitude",
+      "D": "age and chemical composition"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "What is the primary source of energy in main-sequence stars like the Sun?",
+    "choices": {
+      "A": "Gravitational contraction",
+      "B": "The proton-proton chain",
+      "C": "The CNO cycle",
+      "D": "The triple-alpha process"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "The Chandrasekhar limit is approximately",
+    "choices": {
+      "A": "0.5 solar masses",
+      "B": "1.4 solar masses",
+      "C": "3.0 solar masses",
+      "D": "8.0 solar masses"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "Olbers' paradox asks why the night sky is dark if the universe is",
+    "choices": {
+      "A": "expanding and cooling",
+      "B": "infinite, eternal, and static with a uniform distribution of stars",
+      "C": "filled with dark matter",
+      "D": "mostly composed of hydrogen"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "The cosmic microwave background radiation has a temperature of approximately",
+    "choices": {
+      "A": "0.7 K",
+      "B": "2.7 K",
+      "C": "27 K",
+      "D": "270 K"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "Which of the following is the correct order of planets from the Sun outward?",
+    "choices": {
+      "A": "Mercury, Venus, Earth, Mars, Saturn, Jupiter, Uranus, Neptune",
+      "B": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune",
+      "C": "Mercury, Venus, Mars, Earth, Jupiter, Saturn, Neptune, Uranus",
+      "D": "Venus, Mercury, Earth, Mars, Jupiter, Saturn, Uranus, Neptune"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "A parsec is defined as the distance at which one astronomical unit subtends an angle of",
+    "choices": {
+      "A": "one degree",
+      "B": "one arcminute",
+      "C": "one arcsecond",
+      "D": "one radian"
+    },
+    "correct_answer": "C",
+    "subject": "astronomy"
+  },
+  {
+    "question": "The Roche limit is the distance within which",
+    "choices": {
+      "A": "a planet can retain its atmosphere",
+      "B": "a satellite is tidally disrupted by gravitational forces",
+      "C": "nuclear fusion can occur in a gas cloud",
+      "D": "photons cannot escape a black hole"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "Hubble's law states that the recession velocity of a galaxy is proportional to its",
+    "choices": {
+      "A": "mass",
+      "B": "luminosity",
+      "C": "distance",
+      "D": "redshift squared"
+    },
+    "correct_answer": "C",
+    "subject": "astronomy"
+  },
+  {
+    "question": "Which type of galaxy is characterized by a flat, rotating disk with spiral arms and a central bulge?",
+    "choices": {
+      "A": "Elliptical galaxy",
+      "B": "Spiral galaxy",
+      "C": "Irregular galaxy",
+      "D": "Lenticular galaxy"
+    },
+    "correct_answer": "B",
+    "subject": "astronomy"
+  },
+  {
+    "question": "Which of the following is the primary function of the rough endoplasmic reticulum?",
+    "choices": {
+      "A": "Lipid synthesis",
+      "B": "Protein synthesis and processing",
+      "C": "ATP production",
+      "D": "DNA replication"
+    },
+    "correct_answer": "B",
+    "subject": "college_biology"
+  },
+  {
+    "question": "During which phase of meiosis does crossing over occur?",
+    "choices": {
+      "A": "Prophase I",
+      "B": "Metaphase I",
+      "C": "Prophase II",
+      "D": "Anaphase I"
+    },
+    "correct_answer": "A",
+    "subject": "college_biology"
+  },
+  {
+    "question": "The oxygen produced during photosynthesis comes from the splitting of",
+    "choices": {
+      "A": "carbon dioxide",
+      "B": "glucose",
+      "C": "water",
+      "D": "NADPH"
+    },
+    "correct_answer": "C",
+    "subject": "college_biology"
+  },
+  {
+    "question": "In the lac operon of E. coli, the repressor protein is inactivated by binding to",
+    "choices": {
+      "A": "glucose",
+      "B": "allolactose",
+      "C": "cAMP",
+      "D": "RNA polymerase"
+    },
+    "correct_answer": "B",
+    "subject": "college_biology"
+  },
+  {
+    "question": "Hardy-Weinberg equilibrium requires all of the following conditions EXCEPT",
+    "choices": {
+      "A": "no mutation",
+      "B": "random mating",
+      "C": "natural selection",
+      "D": "large population size"
+    },
+    "correct_answer": "C",
+    "subject": "college_biology"
+  },
+  {
+    "question": "The net yield of ATP from the complete oxidation of one molecule of glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation is approximately",
+    "choices": {
+      "A": "2 ATP",
+      "B": "12 ATP",
+      "C": "30-32 ATP",
+      "D": "38-40 ATP"
+    },
+    "correct_answer": "C",
+    "subject": "college_biology"
+  },
+  {
+    "question": "Which type of signaling involves the release of hormones into the bloodstream to act on distant target cells?",
+    "choices": {
+      "A": "Autocrine signaling",
+      "B": "Paracrine signaling",
+      "C": "Endocrine signaling",
+      "D": "Juxtacrine signaling"
+    },
+    "correct_answer": "C",
+    "subject": "college_biology"
+  },
+  {
+    "question": "Which of the following best describes the function of telomerase?",
+    "choices": {
+      "A": "It adds nucleotides to the 3' end of the template strand",
+      "B": "It extends the 3' end of the chromosome by adding telomeric repeat sequences",
+      "C": "It repairs double-strand breaks in DNA",
+      "D": "It removes introns from pre-mRNA"
+    },
+    "correct_answer": "B",
+    "subject": "college_biology"
+  },
+  {
+    "question": "The fluid mosaic model of the cell membrane describes the membrane as",
+    "choices": {
+      "A": "a rigid layer of phospholipids with fixed proteins",
+      "B": "a dynamic structure with proteins floating in a fluid phospholipid bilayer",
+      "C": "a single layer of lipids with carbohydrates on both surfaces",
+      "D": "a triple-layered structure of protein-lipid-protein"
+    },
+    "correct_answer": "B",
+    "subject": "college_biology"
+  },
+  {
+    "question": "In C4 plants, carbon dioxide is initially fixed into a four-carbon compound in the",
+    "choices": {
+      "A": "bundle sheath cells",
+      "B": "mesophyll cells",
+      "C": "guard cells",
+      "D": "epidermal cells"
+    },
+    "correct_answer": "B",
+    "subject": "college_biology"
+  },
+  {
+    "question": "What is the hybridization of the central carbon atom in formaldehyde (CH2O)?",
+    "choices": {
+      "A": "sp",
+      "B": "sp2",
+      "C": "sp3",
+      "D": "sp3d"
+    },
+    "correct_answer": "B",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "According to the Aufbau principle, which of the following orbitals is filled immediately after the 4s orbital?",
+    "choices": {
+      "A": "4p",
+      "B": "3d",
+      "C": "4d",
+      "D": "5s"
+    },
+    "correct_answer": "B",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "Which of the following aqueous solutions has the highest boiling point?",
+    "choices": {
+      "A": "0.1 m NaCl",
+      "B": "0.1 m CaCl2",
+      "C": "0.1 m glucose",
+      "D": "0.1 m KBr"
+    },
+    "correct_answer": "B",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "In a galvanic cell, oxidation occurs at the",
+    "choices": {
+      "A": "cathode",
+      "B": "anode",
+      "C": "salt bridge",
+      "D": "external wire"
+    },
+    "correct_answer": "B",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "The rate law for a reaction is found to be rate = k[A]^2[B]. If the concentration of A is doubled while B is held constant, the rate will",
+    "choices": {
+      "A": "double",
+      "B": "triple",
+      "C": "quadruple",
+      "D": "remain unchanged"
+    },
+    "correct_answer": "C",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "Which of the following molecules is polar?",
+    "choices": {
+      "A": "CO2",
+      "B": "BF3",
+      "C": "NH3",
+      "D": "CH4"
+    },
+    "correct_answer": "C",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "Le Chatelier's principle predicts that increasing the pressure on a gaseous equilibrium will shift the equilibrium toward the side with",
+    "choices": {
+      "A": "more moles of gas",
+      "B": "fewer moles of gas",
+      "C": "higher temperature",
+      "D": "lower enthalpy"
+    },
+    "correct_answer": "B",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "The pH of a 0.01 M solution of a strong acid such as HCl is",
+    "choices": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "7"
+    },
+    "correct_answer": "B",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "Which of the following transitions in the hydrogen atom produces light of the longest wavelength?",
+    "choices": {
+      "A": "n = 3 to n = 2",
+      "B": "n = 4 to n = 3",
+      "C": "n = 5 to n = 4",
+      "D": "n = 2 to n = 1"
+    },
+    "correct_answer": "C",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "A buffer solution is prepared by mixing equal volumes of 0.1 M acetic acid and 0.1 M sodium acetate. The pH of this buffer is closest to the",
+    "choices": {
+      "A": "pKa of acetic acid",
+      "B": "pKb of acetate",
+      "C": "pH of pure water",
+      "D": "pH of 0.1 M HCl"
+    },
+    "correct_answer": "A",
+    "subject": "college_chemistry"
+  },
+  {
+    "question": "What is the worst-case time complexity of quicksort?",
+    "choices": {
+      "A": "O(n)",
+      "B": "O(n log n)",
+      "C": "O(n^2)",
+      "D": "O(2^n)"
+    },
+    "correct_answer": "C",
+    "subject": "computer_science"
+  },
+  {
+    "question": "In a binary search tree, what is the time complexity of searching for an element in the average case?",
+    "choices": {
+      "A": "O(1)",
+      "B": "O(log n)",
+      "C": "O(n)",
+      "D": "O(n log n)"
+    },
+    "correct_answer": "B",
+    "subject": "computer_science"
+  },
+  {
+    "question": "Which of the following problems is known to be NP-complete?",
+    "choices": {
+      "A": "Sorting an array of integers",
+      "B": "Finding the shortest path in a weighted graph",
+      "C": "The Boolean satisfiability problem (SAT)",
+      "D": "Multiplying two matrices"
+    },
+    "correct_answer": "C",
+    "subject": "computer_science"
+  },
+  {
+    "question": "In the context of operating systems, a deadlock requires all of the following conditions EXCEPT",
+    "choices": {
+      "A": "mutual exclusion",
+      "B": "hold and wait",
+      "C": "preemption",
+      "D": "circular wait"
+    },
+    "correct_answer": "C",
+    "subject": "computer_science"
+  },
+  {
+    "question": "Which data structure uses a FIFO (First-In, First-Out) ordering?",
+    "choices": {
+      "A": "Stack",
+      "B": "Queue",
+      "C": "Binary heap",
+      "D": "Hash table"
+    },
+    "correct_answer": "B",
+    "subject": "computer_science"
+  },
+  {
+    "question": "In the TCP/IP model, the transport layer is responsible for",
+    "choices": {
+      "A": "routing packets between networks",
+      "B": "providing reliable end-to-end data delivery",
+      "C": "encoding data into electrical signals",
+      "D": "resolving domain names to IP addresses"
+    },
+    "correct_answer": "B",
+    "subject": "computer_science"
+  },
+  {
+    "question": "The halting problem is an example of a problem that is",
+    "choices": {
+      "A": "solvable in polynomial time",
+      "B": "NP-complete",
+      "C": "undecidable",
+      "D": "solvable in exponential time"
+    },
+    "correct_answer": "C",
+    "subject": "computer_science"
+  },
+  {
+    "question": "In a relational database, a foreign key is used to",
+    "choices": {
+      "A": "uniquely identify each row in a table",
+      "B": "establish a link between data in two tables",
+      "C": "encrypt sensitive data in a column",
+      "D": "index a table for faster queries"
+    },
+    "correct_answer": "B",
+    "subject": "computer_science"
+  },
+  {
+    "question": "Which of the following is true about a hash table with separate chaining for collision resolution?",
+    "choices": {
+      "A": "It cannot handle more elements than the table size",
+      "B": "Its worst-case search time is O(1)",
+      "C": "Its worst-case search time is O(n)",
+      "D": "It requires all keys to be integers"
+    },
+    "correct_answer": "C",
+    "subject": "computer_science"
+  },
+  {
+    "question": "Dijkstra's algorithm is used to find the",
+    "choices": {
+      "A": "minimum spanning tree of a graph",
+      "B": "shortest path from a single source in a graph with non-negative edge weights",
+      "C": "maximum flow in a network",
+      "D": "topological ordering of a directed acyclic graph"
+    },
+    "correct_answer": "B",
+    "subject": "computer_science"
+  },
+  {
+    "question": "If the marginal cost of production exceeds the marginal revenue, a profit-maximizing firm should",
+    "choices": {
+      "A": "increase output",
+      "B": "decrease output",
+      "C": "maintain current output",
+      "D": "shut down immediately"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "According to the law of diminishing marginal returns, as more of a variable input is added to a fixed input,",
+    "choices": {
+      "A": "total output decreases",
+      "B": "marginal product eventually decreases",
+      "C": "average cost falls continuously",
+      "D": "total cost remains constant"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "In a perfectly competitive market in the long run, firms earn",
+    "choices": {
+      "A": "positive economic profits",
+      "B": "negative economic profits",
+      "C": "zero economic profits",
+      "D": "profits determined by barriers to entry"
+    },
+    "correct_answer": "C",
+    "subject": "economics"
+  },
+  {
+    "question": "The GDP deflator is defined as",
+    "choices": {
+      "A": "nominal GDP divided by real GDP, multiplied by 100",
+      "B": "real GDP divided by nominal GDP, multiplied by 100",
+      "C": "the consumer price index divided by the producer price index",
+      "D": "the change in real GDP from one year to the next"
+    },
+    "correct_answer": "A",
+    "subject": "economics"
+  },
+  {
+    "question": "When a good has a price elasticity of demand greater than 1 in absolute value, demand is said to be",
+    "choices": {
+      "A": "inelastic",
+      "B": "elastic",
+      "C": "unitary elastic",
+      "D": "perfectly inelastic"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "The Phillips curve illustrates a short-run tradeoff between",
+    "choices": {
+      "A": "economic growth and interest rates",
+      "B": "inflation and unemployment",
+      "C": "government spending and tax revenue",
+      "D": "imports and exports"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "A negative externality occurs when",
+    "choices": {
+      "A": "the social cost of production exceeds the private cost",
+      "B": "the private cost of production exceeds the social cost",
+      "C": "supply exceeds demand at the market price",
+      "D": "a firm earns negative economic profit"
+    },
+    "correct_answer": "A",
+    "subject": "economics"
+  },
+  {
+    "question": "In the Keynesian model, the multiplier effect implies that",
+    "choices": {
+      "A": "an increase in savings leads to an equal increase in investment",
+      "B": "an initial change in spending leads to a larger change in aggregate output",
+      "C": "monetary policy is more effective than fiscal policy",
+      "D": "prices adjust instantaneously to clear markets"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "The concept of comparative advantage states that a country should specialize in producing goods for which it has the",
+    "choices": {
+      "A": "highest absolute productivity",
+      "B": "lowest opportunity cost",
+      "C": "largest labor force",
+      "D": "most advanced technology"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "If the central bank increases the reserve requirement, this will tend to",
+    "choices": {
+      "A": "increase the money supply",
+      "B": "decrease the money supply",
+      "C": "have no effect on the money supply",
+      "D": "increase the velocity of money"
+    },
+    "correct_answer": "B",
+    "subject": "economics"
+  },
+  {
+    "question": "According to Immanuel Kant, the moral worth of an action depends on",
+    "choices": {
+      "A": "its consequences",
+      "B": "the motive or intention behind the action",
+      "C": "whether it produces the greatest happiness for the greatest number",
+      "D": "the character of the person performing the action"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "John Rawls's 'veil of ignorance' is a thought experiment used to derive",
+    "choices": {
+      "A": "the categorical imperative",
+      "B": "the principle of utility",
+      "C": "principles of justice for the basic structure of society",
+      "D": "the social contract as described by Hobbes"
+    },
+    "correct_answer": "C",
+    "subject": "philosophy"
+  },
+  {
+    "question": "The problem of induction, as formulated by David Hume, challenges our ability to",
+    "choices": {
+      "A": "know the existence of other minds",
+      "B": "justify beliefs about the future based on past experience",
+      "C": "determine the meaning of moral statements",
+      "D": "prove the existence of God"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "Which philosopher argued that existence precedes essence?",
+    "choices": {
+      "A": "Friedrich Nietzsche",
+      "B": "Jean-Paul Sartre",
+      "C": "Martin Heidegger",
+      "D": "Edmund Husserl"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "Plato's allegory of the cave appears in which of his dialogues?",
+    "choices": {
+      "A": "Symposium",
+      "B": "Phaedo",
+      "C": "Republic",
+      "D": "Timaeus"
+    },
+    "correct_answer": "C",
+    "subject": "philosophy"
+  },
+  {
+    "question": "The 'is-ought problem' refers to the difficulty of deriving",
+    "choices": {
+      "A": "necessary truths from contingent truths",
+      "B": "normative conclusions from purely descriptive premises",
+      "C": "universal statements from particular observations",
+      "D": "a priori knowledge from a posteriori knowledge"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "According to utilitarianism, the morally right action is the one that",
+    "choices": {
+      "A": "conforms to the moral law regardless of consequences",
+      "B": "maximizes overall happiness or well-being",
+      "C": "is what a virtuous person would do in the same circumstances",
+      "D": "respects the rights of each individual equally"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "Descartes's method of radical doubt leads him to conclude that the one thing he cannot doubt is",
+    "choices": {
+      "A": "the existence of God",
+      "B": "the reliability of the senses",
+      "C": "his own existence as a thinking thing",
+      "D": "the existence of the physical world"
+    },
+    "correct_answer": "C",
+    "subject": "philosophy"
+  },
+  {
+    "question": "The philosophical zombie thought experiment is most commonly used as an argument against",
+    "choices": {
+      "A": "free will",
+      "B": "physicalism about consciousness",
+      "C": "moral realism",
+      "D": "the existence of other minds"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "Thomas Kuhn's concept of a 'paradigm shift' describes",
+    "choices": {
+      "A": "the gradual accumulation of scientific knowledge over time",
+      "B": "a revolutionary change in the fundamental assumptions of a scientific field",
+      "C": "the process by which scientific theories are empirically falsified",
+      "D": "the logical structure of scientific explanations"
+    },
+    "correct_answer": "B",
+    "subject": "philosophy"
+  },
+  {
+    "question": "The Emancipation Proclamation issued by President Lincoln in 1863 declared slaves free in",
+    "choices": {
+      "A": "all states of the Union",
+      "B": "the border states only",
+      "C": "the states that had seceded from the Union",
+      "D": "all territories west of the Mississippi River"
+    },
+    "correct_answer": "C",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Monroe Doctrine of 1823 was primarily a statement of foreign policy asserting that",
+    "choices": {
+      "A": "the United States would remain neutral in all European conflicts",
+      "B": "European nations should not further colonize or interfere with states in the Americas",
+      "C": "the United States intended to acquire territory in Central America",
+      "D": "trade with China and Japan should be open to all nations equally"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Seneca Falls Convention of 1848 was primarily concerned with",
+    "choices": {
+      "A": "the abolition of slavery",
+      "B": "temperance and prohibition of alcohol",
+      "C": "women's rights and suffrage",
+      "D": "labor union organization"
+    },
+    "correct_answer": "C",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Marshall Plan, implemented after World War II, provided economic aid primarily to",
+    "choices": {
+      "A": "countries in Southeast Asia",
+      "B": "Western European nations",
+      "C": "Latin American countries",
+      "D": "Japan exclusively"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Supreme Court case Brown v. Board of Education (1954) ruled that",
+    "choices": {
+      "A": "affirmative action in college admissions was constitutional",
+      "B": "racial segregation in public schools was unconstitutional",
+      "C": "school prayer violated the establishment clause",
+      "D": "states could set their own voting age requirements"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Missouri Compromise of 1820 attempted to maintain the balance between free and slave states by admitting Missouri as a slave state and",
+    "choices": {
+      "A": "California as a free state",
+      "B": "Maine as a free state",
+      "C": "Kansas as a free state",
+      "D": "Oregon as a free state"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Gulf of Tonkin Resolution (1964) gave President Johnson authorization to",
+    "choices": {
+      "A": "impose economic sanctions on Cuba",
+      "B": "use military force in Southeast Asia without a formal declaration of war",
+      "C": "send troops to the Dominican Republic",
+      "D": "begin the Strategic Defense Initiative"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "During the Progressive Era (1890s-1920s), muckrakers were journalists who",
+    "choices": {
+      "A": "supported the political machines of major cities",
+      "B": "exposed corruption, social injustice, and corporate abuses",
+      "C": "advocated for American imperialism abroad",
+      "D": "promoted laissez-faire economic policies"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Federalist Papers were primarily written to",
+    "choices": {
+      "A": "declare independence from Great Britain",
+      "B": "argue for the ratification of the United States Constitution",
+      "C": "propose amendments that became the Bill of Rights",
+      "D": "outline the principles of Jeffersonian democracy"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Homestead Act of 1862 provided settlers with",
+    "choices": {
+      "A": "low-interest loans to purchase farmland",
+      "B": "160 acres of public land for free provided they lived on and improved it for five years",
+      "C": "free transportation to western territories",
+      "D": "guaranteed employment on government-funded railroad projects"
+    },
+    "correct_answer": "B",
+    "subject": "us_history"
+  },
+  {
+    "question": "The Five Pillars of Islam include all of the following EXCEPT",
+    "choices": {
+      "A": "declaration of faith (shahada)",
+      "B": "daily prayer (salat)",
+      "C": "pilgrimage to Medina (ziyarah)",
+      "D": "fasting during Ramadan (sawm)"
+    },
+    "correct_answer": "C",
+    "subject": "world_religions"
+  },
+  {
+    "question": "In Hinduism, the concept of dharma refers to",
+    "choices": {
+      "A": "the cycle of death and rebirth",
+      "B": "moral duty and righteous conduct",
+      "C": "the ultimate reality or cosmic principle",
+      "D": "liberation from the cycle of rebirth"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  },
+  {
+    "question": "The Four Noble Truths are central teachings of",
+    "choices": {
+      "A": "Hinduism",
+      "B": "Buddhism",
+      "C": "Jainism",
+      "D": "Sikhism"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  },
+  {
+    "question": "The Torah refers to the first five books of the Hebrew Bible, also known as the",
+    "choices": {
+      "A": "Prophets (Nevi'im)",
+      "B": "Writings (Ketuvim)",
+      "C": "Pentateuch",
+      "D": "Talmud"
+    },
+    "correct_answer": "C",
+    "subject": "world_religions"
+  },
+  {
+    "question": "The Sikh holy scripture is known as the",
+    "choices": {
+      "A": "Vedas",
+      "B": "Guru Granth Sahib",
+      "C": "Avesta",
+      "D": "Tripitaka"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  },
+  {
+    "question": "In Christianity, the doctrine of the Trinity holds that God is",
+    "choices": {
+      "A": "a single person who manifests in three forms at different times",
+      "B": "three separate gods who work together",
+      "C": "one God in three co-equal persons: Father, Son, and Holy Spirit",
+      "D": "one God with the Son and Holy Spirit as created beings"
+    },
+    "correct_answer": "C",
+    "subject": "world_religions"
+  },
+  {
+    "question": "The concept of 'karma' in Hinduism and Buddhism most closely means",
+    "choices": {
+      "A": "fate or predestination",
+      "B": "the moral law of cause and effect whereby actions have consequences",
+      "C": "divine punishment for sins",
+      "D": "the will of God"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  },
+  {
+    "question": "The Eightfold Path in Buddhism includes right view, right intention, and right",
+    "choices": {
+      "A": "worship, sacrifice, and pilgrimage",
+      "B": "speech, action, and livelihood",
+      "C": "fasting, charity, and prayer",
+      "D": "devotion, knowledge, and renunciation"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  },
+  {
+    "question": "Confucianism places particular emphasis on",
+    "choices": {
+      "A": "monastic withdrawal from society",
+      "B": "filial piety, social harmony, and ethical governance",
+      "C": "achieving personal enlightenment through meditation",
+      "D": "worship of nature spirits and ancestors exclusively"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  },
+  {
+    "question": "The Quran is considered by Muslims to be",
+    "choices": {
+      "A": "a collection of the Prophet Muhammad's personal writings",
+      "B": "the literal word of God as revealed to the Prophet Muhammad",
+      "C": "a compilation of early Islamic legal rulings",
+      "D": "a historical record of the Arabian Peninsula"
+    },
+    "correct_answer": "B",
+    "subject": "world_religions"
+  }
+]

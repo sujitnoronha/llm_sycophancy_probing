@@ -1,0 +1,78 @@
+# Publication-quality matplotlib style for COLM format
+# Usage: plt.style.use("src/figures/style.mplstyle")
+
+# --- Font ---
+font.family: serif
+font.serif: Times New Roman, DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, serif
+font.size: 10
+
+# --- Axes labels and titles ---
+axes.titlesize: 11
+axes.labelsize: 10
+axes.titleweight: normal
+axes.labelweight: normal
+
+# --- Tick labels ---
+xtick.labelsize: 9
+ytick.labelsize: 9
+xtick.direction: out
+ytick.direction: out
+xtick.major.size: 4
+ytick.major.size: 4
+xtick.minor.size: 2
+ytick.minor.size: 2
+xtick.major.width: 0.8
+ytick.major.width: 0.8
+
+# --- Figure ---
+figure.figsize: 7, 5
+figure.dpi: 150
+figure.titlesize: 12
+figure.titleweight: normal
+
+# --- Saving ---
+savefig.dpi: 300
+savefig.bbox: tight
+savefig.pad_inches: 0.05
+savefig.format: pdf
+
+# --- Axes spines ---
+axes.spines.top: false
+axes.spines.right: false
+axes.spines.left: true
+axes.spines.bottom: true
+
+# --- Axes lines ---
+axes.linewidth: 0.8
+axes.edgecolor: black
+
+# --- Lines ---
+lines.linewidth: 1.5
+lines.markersize: 5
+
+# --- Grid (off by default) ---
+axes.grid: false
+grid.alpha: 0.3
+grid.linewidth: 0.5
+grid.linestyle: --
+
+# --- Legend ---
+legend.fontsize: 9
+legend.frameon: false
+legend.borderpad: 0.4
+legend.labelspacing: 0.5
+legend.handlelength: 1.5
+legend.handletextpad: 0.5
+
+# --- Color cycle (colorblind-friendly) ---
+axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', '009E73', 'CC79A7', 'F0E442'])
+
+# --- Math text ---
+mathtext.fontset: dejavuserif
+
+# --- Patch (bars, etc.) ---
+patch.linewidth: 0.5
+patch.edgecolor: black
+
+# --- Histogram ---
+hist.bins: auto

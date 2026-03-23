@@ -79,15 +79,23 @@ def run_logistic_regression(df: pd.DataFrame) -> Dict:
     """
     import statsmodels.api as sm
 
+    # Clean subset: ensure proper types before dummification
+    df_clean = df[["flip", "authority_level", "domain_match", "confidence_level"]].copy()
+    df_clean["flip"] = pd.to_numeric(df_clean["flip"], errors="coerce")
+    df_clean = df_clean.dropna(subset=["flip"])
+
+    for col in ["authority_level", "domain_match", "confidence_level"]:
+        df_clean[col] = df_clean[col].astype(str)
+
     # Encode categorical variables
     df_encoded = pd.get_dummies(
-        df[["flip", "authority_level", "domain_match", "confidence_level"]],
+        df_clean,
         columns=["authority_level", "domain_match", "confidence_level"],
         drop_first=True,
     )
 
     y = df_encoded["flip"].astype(float)
-    X = df_encoded.drop(columns=["flip"])
+    X = df_encoded.drop(columns=["flip"]).astype(float)
     X = sm.add_constant(X)
 
     try:
@@ -262,3 +270,132 @@ def build_cross_model_summary(all_scores: Dict[str, pd.DataFrame]) -> pd.DataFra
         rows.append(row)
 
     return pd.DataFrame(rows)
+
+
+def question_level_analysis(
+    df: pd.DataFrame,
+    n_leave_out: int = 5,
+    n_bootstrap: int = 200,
+    seed: int = 42,
+) -> Dict:
+    """Question-level sensitivity analysis.
+
+    Addresses reviewer concern about narrow dataset (50 questions):
+    a) Per-question flip rates across all models
+    b) Identify outlier questions (top/bottom by flip rate)
+    c) Re-run ANOVA excluding top-5 outlier questions
+    d) Leave-5-out bootstrap for robustness
+
+    Args:
+        df: Combined scores DataFrame (all models, including controls).
+        n_leave_out: Number of questions to drop per bootstrap iteration.
+        n_bootstrap: Number of bootstrap iterations.
+        seed: Random seed.
+
+    Returns:
+        Dict with per-question rates, outliers, robust ANOVA, and bootstrap CIs.
+    """
+    rng = np.random.RandomState(seed)
+
+    # a) Per-question flip rates
+    q_rates = (
+        df.dropna(subset=["flip"])
+        .groupby("question_id")["flip"]
+        .agg(["mean", "count", "sum"])
+        .reset_index()
+    )
+    q_rates.columns = ["question_id", "flip_rate", "n_conversations", "n_flips"]
+    q_rates = q_rates.sort_values("flip_rate", ascending=False)
+
+    # b) Outlier identification (top 5 and bottom 5 by flip rate)
+    top_outliers = q_rates.head(n_leave_out)["question_id"].tolist()
+    bottom_outliers = q_rates.tail(n_leave_out)["question_id"].tolist()
+
+    # c) ANOVA excluding top-5 outlier questions
+    df_no_outliers = df[~df["question_id"].isin(top_outliers)]
+    factorial_no_outliers = df_no_outliers[~df_no_outliers["is_control"]].dropna(
+        subset=["flip"]
+    )
+    anova_robust = run_factorial_anova(factorial_no_outliers, "flip")
+
+    # d) Leave-5-out bootstrap
+    all_qids = df["question_id"].unique().tolist()
+    boot_auth_effects = []
+    boot_overall_rates = []
+
+    for _ in range(n_bootstrap):
+        drop_qids = rng.choice(all_qids, size=n_leave_out, replace=False)
+        df_boot = df[~df["question_id"].isin(drop_qids)]
+        nc = df_boot[~df_boot["is_control"]].dropna(subset=["flip"])
+
+        if len(nc) == 0:
+            continue
+
+        boot_overall_rates.append(float(nc["flip"].mean()))
+        high = nc[nc["authority_level"] == "high"]["flip"].mean()
+        low = nc[nc["authority_level"] == "low"]["flip"].mean()
+        boot_auth_effects.append(float(high - low))
+
+    return {
+        "per_question_rates": q_rates.to_dict("records"),
+        "n_questions": len(q_rates),
+        "top_outlier_qids": top_outliers,
+        "bottom_outlier_qids": bottom_outliers,
+        "anova_excluding_top_outliers": anova_robust,
+        "leave5out_bootstrap": {
+            "n_bootstrap": n_bootstrap,
+            "n_leave_out": n_leave_out,
+            "overall_flip_rate_mean": float(np.mean(boot_overall_rates)),
+            "overall_flip_rate_std": float(np.std(boot_overall_rates)),
+            "overall_flip_rate_ci95": [
+                float(np.percentile(boot_overall_rates, 2.5)),
+                float(np.percentile(boot_overall_rates, 97.5)),
+            ],
+            "auth_effect_mean": float(np.mean(boot_auth_effects)),
+            "auth_effect_std": float(np.std(boot_auth_effects)),
+            "auth_effect_ci95": [
+                float(np.percentile(boot_auth_effects, 2.5)),
+                float(np.percentile(boot_auth_effects, 97.5)),
+            ],
+        },
+    }
+
+
+def compute_steering_bootstrap_cis(
+    steered_scores: Dict[str, pd.DataFrame],
+    n_boot: int = 10000,
+    seed: int = 42,
+) -> Dict:
+    """Compute bootstrap CIs for steered flip rates.
+
+    Args:
+        steered_scores: Dict mapping condition_key (e.g., "authority_alpha1.5")
+            to DataFrames of scored steered conversations.
+        n_boot: Number of bootstrap iterations.
+        seed: Random seed.
+
+    Returns:
+        Dict mapping condition_key to {flip_rate, ci_lower, ci_upper}.
+    """
+    rng = np.random.RandomState(seed)
+    results = {}
+
+    for condition_key, score_df in steered_scores.items():
+        flips = score_df["flip"].dropna().values.astype(float)
+        if len(flips) == 0:
+            continue
+
+        rate = float(flips.mean())
+        boot_means = np.array([
+            rng.choice(flips, size=len(flips), replace=True).mean()
+            for _ in range(n_boot)
+        ])
+
+        results[condition_key] = {
+            "flip_rate": rate,
+            "ci_lower": float(np.percentile(boot_means, 2.5)),
+            "ci_upper": float(np.percentile(boot_means, 97.5)),
+            "n_conversations": len(flips),
+        }
+
+    return results

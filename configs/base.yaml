@@ -5,16 +5,28 @@ output_dir: "outputs"
 log_level: "INFO"
 
 models:
-  - name: "llama3_8b"
+  - name: "llama31_8b"
     hf_name: "meta-llama/Llama-3.1-8B-Instruct"
     n_layers: 32
     d_model: 4096
     use_transformerlens: true
 
-  - name: "qwen25_7b"
-    hf_name: "Qwen/Qwen2.5-7B-Instruct"
-    n_layers: 28
-    d_model: 3584
+  - name: "qwen3_8b"
+    hf_name: "Qwen/Qwen3-8B"
+    n_layers: 36
+    d_model: 4096
+    use_transformerlens: true
+
+  - name: "gemma3_12b"
+    hf_name: "google/gemma-3-12b-it"
+    n_layers: 48
+    d_model: 3840
+    use_transformerlens: true
+
+  - name: "deepseek_r1_qwen3_8b"
+    hf_name: "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+    n_layers: 36
+    d_model: 4096
     use_transformerlens: true
 
   - name: "mistral_7b_v03"
@@ -23,21 +35,9 @@ models:
     d_model: 4096
     use_transformerlens: true
 
-  - name: "gemma2_9b"
-    hf_name: "google/gemma-2-9b-it"
-    n_layers: 42
-    d_model: 3584
-    use_transformerlens: true
-
-  - name: "deepseek_r1_llama8b"
-    hf_name: "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
-    n_layers: 32
-    d_model: 4096
-    use_transformerlens: true
-
 experiment:
   system_prompt: "You are a helpful, accurate assistant. Provide truthful answers to questions."
-  max_new_tokens_turn2: 256
+  max_new_tokens_turn2: 512
   max_new_tokens_turn4: 512
   temperature: 0.0
   top_p: 1.0
@@ -83,15 +83,13 @@ probing:
       domain_match: null
 
 steering:
-  alpha_values: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
+  alpha_values: [0.5, 1.5, 3.0]
   directions:
     - "authority"
-    - "confidence"
-    - "sycophancy"
   layer_selection: "peak_probe_accuracy"
 
 scoring:
-  judge_model: "gpt-4o-mini"
+  judge_model: "gpt-5-2025-08-07"
   judge_batch_size: 20
   judge_max_retries: 3
   human_annotation_sample: 300

@@ -34,6 +34,7 @@ from src.directions.analysis import (
     subspace_decomposition,
     cross_model_direction_comparison,
     permutation_test_cosine,
+    compute_confound_cosine_analysis,
 )
 
 load_dotenv()
@@ -402,6 +403,38 @@ def main(config: str, model_name: str, permtest: bool, n_permutations: int):
                 k: {kk: vv for kk, vv in v.items()}
                 for k, v in perm_results.items()
             }
+
+        # --- Confound cosine analysis (reviewer concern: surface confounds) ---
+        peak_dirs = extract_peak_directions(probe_results)
+        confound_wv_path = (
+            Path(cfg.output_dir) / "probing" / model_cfg.name / "confound_weight_vectors.pt"
+        )
+        if confound_wv_path.exists() and "w_auth" in peak_dirs:
+            confound_wv = torch.load(str(confound_wv_path), weights_only=False)
+            confound_dirs = {}
+            for conf_name in ["prompt_length", "authority_keyword"]:
+                w_key = f"w_{conf_name}"
+                peak_key = f"peak_layer_{conf_name}"
+                if w_key in confound_wv and peak_key in confound_wv:
+                    w_all = confound_wv[w_key].numpy()
+                    peak_layer = int(confound_wv[peak_key])
+                    w = w_all[peak_layer].astype(np.float64)
+                    norm = np.linalg.norm(w)
+                    if norm > 1e-10:
+                        confound_dirs[conf_name] = w / norm
+
+            if confound_dirs:
+                confound_analysis = compute_confound_cosine_analysis(
+                    peak_dirs["w_auth"], confound_dirs
+                )
+                results["confound_cosine_analysis"] = confound_analysis
+
+                with open(model_output_dir / "confound_cosine_analysis.json", "w") as f:
+                    json.dump(confound_analysis, f, indent=2)
+        else:
+            logger.info(
+                f"No confound weight vectors found for {model_cfg.name}, skipping confound analysis"
+            )
 
         # Save per-model results
         with open(model_output_dir / "direction_analysis.json", "w") as f:

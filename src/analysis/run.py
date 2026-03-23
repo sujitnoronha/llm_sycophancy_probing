@@ -18,6 +18,7 @@ from src.analysis.behavioral_stats import (
     compute_all_effect_sizes,
     matched_vs_mismatched_analysis,
     build_cross_model_summary,
+    question_level_analysis,
 )
 
 load_dotenv()
@@ -91,6 +92,15 @@ def main(config: str):
     # 5. Cross-model summary
     summary_df = build_cross_model_summary(all_scores)
     summary_df.to_csv(output_dir / "cross_model_summary.csv", index=False)
+
+    # 6. Question-level sensitivity analysis (reviewer concern: narrow dataset)
+    q_analysis = question_level_analysis(combined)
+    with open(output_dir / "question_level_analysis.json", "w") as f:
+        json.dump(q_analysis, f, indent=2, default=str)
+    logger.info(
+        f"Question-level analysis: {q_analysis['n_questions']} questions, "
+        f"authority effect CI={q_analysis['leave5out_bootstrap']['auth_effect_ci95']}"
+    )
 
     logger.info(f"All analysis results saved to {output_dir}")
     click.echo("Statistical analysis complete.")

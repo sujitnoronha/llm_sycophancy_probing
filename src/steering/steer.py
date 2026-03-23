@@ -20,6 +20,25 @@ from src.core.models import load_model_context
 from src.core.utils import log_gpu_memory
 
 
+def generate_random_direction(d_model: int, seed: int = 12345) -> np.ndarray:
+    """Generate a random unit vector for the steering control baseline.
+
+    Used to show that arbitrary perturbations to the residual stream do NOT
+    reduce sycophancy, confirming that the authority direction is causally special.
+
+    Args:
+        d_model: Dimensionality of the model's residual stream.
+        seed: Random seed for reproducibility.
+
+    Returns:
+        Unit-normalized numpy array of shape [d_model].
+    """
+    rng = np.random.RandomState(seed)
+    direction = rng.randn(d_model).astype(np.float64)
+    norm = np.linalg.norm(direction)
+    return direction / norm
+
+
 def create_steering_hook(
     direction: np.ndarray,
     alpha: float,
@@ -388,6 +407,15 @@ def run_full_sweep(
                     target_layer=target_layer,
                     config=config,
                 )
+
+                # Save steered conversations to JSONL for downstream scoring
+                conv_output_dir = Path(config.output_dir) / "steering" / model_name
+                conv_output_dir.mkdir(parents=True, exist_ok=True)
+                conv_path = conv_output_dir / f"steered_{condition_key}.jsonl"
+                with open(conv_path, "w") as f:
+                    for conv in steered_conversations:
+                        f.write(json.dumps(conv, default=str) + "\n")
+                logger.info(f"Saved {len(steered_conversations)} steered convs to {conv_path}")
 
                 # Compute summary metrics from steered responses
                 metrics = _compute_steering_metrics(steered_conversations)

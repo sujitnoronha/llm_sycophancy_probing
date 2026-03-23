@@ -25,7 +25,7 @@ from src.core.utils import (
     check_checkpoint,
     save_checkpoint,
 )
-from src.steering.steer import run_full_sweep
+from src.steering.steer import run_full_sweep, run_steered_eval, generate_random_direction, _load_probe_directions, _load_conversations
 
 load_dotenv()
 
@@ -48,7 +48,8 @@ def save_steered_conversations(conversations: list, output_path: Path) -> None:
 @click.command()
 @click.option("--config", default="configs/base.yaml", help="Path to config YAML")
 @click.option("--model", "model_name", default=None, help="Run for a single model")
-def main(config: str, model_name: str):
+@click.option("--random-baseline", is_flag=True, help="Run random direction baseline (control experiment)")
+def main(config: str, model_name: str, random_baseline: bool):
     """Run activation steering experiments across models.
 
     For each model, loads the TransformerLens model once, then sweeps
@@ -127,6 +128,73 @@ def main(config: str, model_name: str):
             logger.error(f"Steering failed for {model_cfg.name}: {e}", exc_info=True)
             # Do NOT save checkpoint on failure so the model can be retried
             continue
+
+    # --- Random direction baseline (reviewer concern: causal specificity) ---
+    if random_baseline:
+        from src.core.models import load_model_context
+
+        logger.info("Running random direction baseline")
+        random_seed = 12345
+
+        for model_cfg in models_to_run:
+            model_output_dir = ensure_output_dir(
+                cfg.output_dir, f"{MODULE_NAME}/{model_cfg.name}"
+            )
+            random_conv_path = model_output_dir / "steered_random_alpha1.5.jsonl"
+
+            if random_conv_path.exists():
+                logger.info(f"Random baseline exists for {model_cfg.name}, skipping")
+                continue
+
+            try:
+                # Generate random direction
+                random_dir = generate_random_direction(
+                    model_cfg.d_model, seed=random_seed
+                )
+
+                # Load conversations
+                conversations = _load_conversations(cfg.output_dir, model_cfg.name)
+
+                # Get peak layer from authority probe (same layer for fair comparison)
+                probe_directions = _load_probe_directions(
+                    cfg.output_dir, model_cfg.name
+                )
+                target_layer = probe_directions["authority"]["peak_layer"]
+
+                logger.info(
+                    f"Random baseline for {model_cfg.name}: "
+                    f"alpha=1.5, layer={target_layer}, d_model={model_cfg.d_model}"
+                )
+
+                # Load model and run steered eval
+                with load_model_context(model_cfg, cfg, need_hooks=True) as (
+                    model,
+                    tokenizer,
+                ):
+                    steered_convs = run_steered_eval(
+                        model=model,
+                        tokenizer=tokenizer,
+                        conversations=conversations,
+                        direction=random_dir,
+                        alpha=1.5,
+                        target_layer=target_layer,
+                        config=cfg,
+                    )
+
+                # Save
+                with open(random_conv_path, "w") as f:
+                    for conv in steered_convs:
+                        f.write(json.dumps(conv, default=str) + "\n")
+                logger.info(
+                    f"Saved {len(steered_convs)} random-baseline convs for {model_cfg.name}"
+                )
+
+            except FileNotFoundError as e:
+                logger.error(f"Cannot run random baseline for {model_cfg.name}: {e}")
+            except Exception as e:
+                logger.error(
+                    f"Random baseline failed for {model_cfg.name}: {e}", exc_info=True
+                )
 
     # Save aggregate summary across all models
     aggregate_dir = ensure_output_dir(cfg.output_dir, MODULE_NAME)

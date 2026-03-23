@@ -286,3 +286,119 @@ def run_permutation_test(
         "p_value": p_value,
         "n_permutations": n_permutations,
     }
+
+
+def train_confound_probes(
+    activations: np.ndarray,
+    metadata: Dict,
+    config_probing: Optional[Dict] = None,
+) -> Dict:
+    """Train confound probes to rule out surface-level explanations.
+
+    Addresses reviewer concern: "what if the authority probe just predicts
+    prompt length or keyword presence?"
+
+    Trains probes predicting:
+    a) prompt_length: above/below median token count
+    b) authority_keyword: whether the prompt contains high/medium authority keywords
+
+    Returns weight vectors and accuracy for cosine comparison with the
+    authority direction.
+
+    Args:
+        activations: [n_prompts, n_layers, d_model] tensor.
+        metadata: Dict with 'token_positions', 'conditions', 'domains'.
+        config_probing: Probing config dict.
+
+    Returns:
+        Dict mapping confound name to probe results (weight_vectors, peak_layer, etc).
+    """
+    if config_probing is None:
+        config_probing = {}
+
+    n_prompts, n_layers, d_model = activations.shape
+    domains = metadata.get("domains", ["unknown"] * n_prompts)
+    conditions = metadata.get("conditions", [{}] * n_prompts)
+
+    # Build confound labels
+    confound_labels = {}
+
+    # a) Prompt length: above/below median token position
+    token_positions = metadata.get("token_positions", None)
+    if token_positions is not None:
+        positions = np.array(token_positions, dtype=float)
+        median_pos = np.median(positions)
+        confound_labels["prompt_length"] = (positions > median_pos).astype(int)
+    else:
+        logger.warning("No token_positions in metadata, skipping prompt_length confound")
+
+    # b) Authority keyword: high/medium authority vs low/none
+    keyword_labels = np.array(
+        [
+            1 if c.get("authority", "") in ["high", "medium"] else 0
+            for c in conditions
+        ],
+        dtype=int,
+    )
+    confound_labels["authority_keyword"] = keyword_labels
+
+    results = {}
+    for confound_name, c_labels in confound_labels.items():
+        n_pos = int(c_labels.sum())
+        n_neg = len(c_labels) - n_pos
+
+        if n_pos < 5 or n_neg < 5:
+            logger.warning(f"Confound '{confound_name}': insufficient diversity ({n_pos}/{n_neg})")
+            results[confound_name] = {"error": "insufficient_label_diversity"}
+            continue
+
+        logger.info(f"Training confound probe '{confound_name}' ({n_pos}+ / {n_neg}-)")
+
+        class_weight = determine_class_weight(c_labels)
+        weight_vectors = np.zeros((n_layers, d_model), dtype=np.float32)
+        layer_results = []
+
+        for layer_idx in range(n_layers):
+            X = activations[:, layer_idx, :]
+
+            X_train, X_test, y_train, y_test, _, _ = prepare_probe_data(
+                X,
+                c_labels,
+                domains,
+                train_fraction=config_probing.get("train_fraction", 0.8),
+                seed=config_probing.get("seed", 42),
+            )
+
+            result = train_probe_single_layer(
+                X_train,
+                y_train,
+                X_test,
+                y_test,
+                C=config_probing.get("probe_regularization", 1.0),
+                solver=config_probing.get("solver", "lbfgs"),
+                max_iter=config_probing.get("max_iter", 1000),
+                seed=config_probing.get("seed", 42),
+                class_weight=class_weight,
+            )
+
+            layer_results.append(result["metrics"])
+            weight_vectors[layer_idx] = result["weight_vector"]
+
+        accuracies = [r["accuracy"] for r in layer_results]
+        peak_layer = int(np.argmax(accuracies))
+
+        results[confound_name] = {
+            "layer_results": layer_results,
+            "weight_vectors": weight_vectors,
+            "peak_layer": peak_layer,
+            "peak_accuracy": accuracies[peak_layer],
+            "n_positive": n_pos,
+            "n_negative": n_neg,
+        }
+
+        logger.info(
+            f"  Confound '{confound_name}': peak accuracy {accuracies[peak_layer]:.3f} "
+            f"at layer {peak_layer}"
+        )
+
+    return results

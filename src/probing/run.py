@@ -23,7 +23,7 @@ from src.core.utils import (
     save_checkpoint,
 )
 from src.activations.collector import load_activations
-from src.probing.trainer import train_all_probes_single_model, run_permutation_test
+from src.probing.trainer import train_all_probes_single_model, run_permutation_test, train_confound_probes
 
 load_dotenv()
 
@@ -149,6 +149,38 @@ def main(config: str, model_name: str, permtest: bool):
 
             with open(model_output_dir / "permutation_results.json", "w") as f:
                 json.dump(perm_results, f, indent=2)
+
+        # Confound control probes (reviewer concern: surface confounds)
+        logger.info(f"Training confound probes for {model_cfg.name}")
+        confound_results = train_confound_probes(
+            activations, data["metadata"], probing_config
+        )
+
+        confound_summary = {}
+        confound_weight_vectors = {}
+        for conf_name, conf_data in confound_results.items():
+            if "error" in conf_data:
+                confound_summary[conf_name] = {"error": conf_data["error"]}
+                continue
+            confound_summary[conf_name] = {
+                "peak_layer": conf_data["peak_layer"],
+                "peak_accuracy": conf_data["peak_accuracy"],
+                "n_positive": conf_data["n_positive"],
+                "n_negative": conf_data["n_negative"],
+            }
+            confound_weight_vectors[f"w_{conf_name}"] = torch.from_numpy(
+                conf_data["weight_vectors"]
+            )
+            confound_weight_vectors[f"peak_layer_{conf_name}"] = conf_data["peak_layer"]
+
+        with open(model_output_dir / "confound_probe_summary.json", "w") as f:
+            json.dump(confound_summary, f, indent=2)
+
+        if confound_weight_vectors:
+            torch.save(
+                confound_weight_vectors,
+                str(model_output_dir / "confound_weight_vectors.pt"),
+            )
 
         save_checkpoint(cfg.output_dir, MODULE_NAME, model_cfg.name)
         logger.info(f"Probing complete for {model_cfg.name}")

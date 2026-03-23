@@ -1,6 +1,6 @@
 """CLI entry point for figure generation.
 
-Loads the matplotlib publication style and calls all six figure generators,
+Loads the matplotlib publication style and calls all eight figure generators,
 saving output to ``outputs/figures/``.
 
 Usage:
@@ -29,6 +29,8 @@ from src.figures.generators import (
     figure4_cosine_similarity_matrices,
     figure5_layer_trajectories,
     figure6_steering_pareto,
+    figure7_random_baseline,
+    figure8_question_sensitivity,
     MODEL_ORDER,
     AUTHORITY_LEVELS,
     PROBE_NAMES,
@@ -247,23 +249,104 @@ def _load_figure6_data(output_dir: str, models: list) -> dict:
             alpha = cond_data.get("alpha", 0.0)
             metrics = cond_data.get("metrics", {})
             gap = metrics.get("persona_sycophancy_gap", 0.0)
+            ci_lo = metrics.get("persona_sycophancy_gap_ci_low")
+            ci_hi = metrics.get("persona_sycophancy_gap_ci_high")
 
             if direction not in by_direction:
                 by_direction[direction] = []
-            by_direction[direction].append((alpha, gap))
+            by_direction[direction].append((alpha, gap, ci_lo, ci_hi))
 
         model_data = {}
         for direction in PROBE_NAMES:
             if direction not in by_direction:
                 continue
             pairs = sorted(by_direction[direction], key=lambda x: x[0])
-            model_data[direction] = {
+            dir_data = {
                 "alphas": [p[0] for p in pairs],
                 "sycophancy_gaps": [p[1] for p in pairs],
             }
+            # Include CIs if available
+            if all(p[2] is not None for p in pairs):
+                dir_data["ci_low"] = [p[2] for p in pairs]
+                dir_data["ci_high"] = [p[3] for p in pairs]
+            model_data[direction] = dir_data
         data[name] = model_data
 
     return data
+
+
+def _load_figure7_data(output_dir: str, models: list) -> dict:
+    """Load random baseline comparison data from steering outputs.
+
+    Compares unsteered flip rate, authority-steered flip rate (alpha=1.5),
+    and random-direction-steered flip rate (alpha=1.5).
+
+    Returns:
+        Dict[model_name -> {'unsteered': {...}, 'authority': {...}, 'random': {...}}]
+    """
+    import pandas as pd
+    from src.figures.generators import _bootstrap_ci
+
+    data = {}
+    for model_cfg in models:
+        name = model_cfg.name
+        model_data = {}
+
+        # Unsteered flip rate from behavioral scores
+        scores_path = Path(output_dir) / "behavioral" / f"{name}_scores.csv"
+        if scores_path.exists():
+            df = pd.read_csv(scores_path)
+            flips = df["flip"].dropna().values.astype(float)
+            rate = float(flips.mean()) if len(flips) > 0 else 0.0
+            if len(flips) > 1:
+                ci_lo, ci_hi = _bootstrap_ci(flips)
+            else:
+                ci_lo, ci_hi = rate, rate
+            model_data["unsteered"] = {"rate": rate, "ci_low": ci_lo, "ci_high": ci_hi}
+
+        # Authority-steered at alpha=1.5
+        auth_scores = Path(output_dir) / "steering" / name / "steered_authority_alpha1.5_scores.csv"
+        if auth_scores.exists():
+            df = pd.read_csv(auth_scores)
+            flips = df["flip"].dropna().values.astype(float)
+            rate = float(flips.mean()) if len(flips) > 0 else 0.0
+            if len(flips) > 1:
+                ci_lo, ci_hi = _bootstrap_ci(flips)
+            else:
+                ci_lo, ci_hi = rate, rate
+            model_data["authority"] = {"rate": rate, "ci_low": ci_lo, "ci_high": ci_hi}
+
+        # Random-direction-steered at alpha=1.5
+        rand_scores = Path(output_dir) / "steering" / name / "steered_random_alpha1.5_scores.csv"
+        if rand_scores.exists():
+            df = pd.read_csv(rand_scores)
+            flips = df["flip"].dropna().values.astype(float)
+            rate = float(flips.mean()) if len(flips) > 0 else 0.0
+            if len(flips) > 1:
+                ci_lo, ci_hi = _bootstrap_ci(flips)
+            else:
+                ci_lo, ci_hi = rate, rate
+            model_data["random"] = {"rate": rate, "ci_low": ci_lo, "ci_high": ci_hi}
+
+        if model_data:
+            data[name] = model_data
+
+    return data
+
+
+def _load_figure8_data(output_dir: str) -> dict:
+    """Load question-level sensitivity analysis from analysis outputs.
+
+    Returns:
+        Dict with 'per_question_rates', 'top_outlier_qids', 'leave5out_bootstrap'.
+    """
+    analysis_path = Path(output_dir) / "analysis" / "question_level_analysis.json"
+    if not analysis_path.exists():
+        logger.warning(f"Question-level analysis not found at {analysis_path}")
+        return {}
+
+    with open(analysis_path) as f:
+        return json.load(f)
 
 
 # ---------------------------------------------------------------------------
@@ -277,12 +360,14 @@ FIGURE_GENERATORS = {
     4: ("figure4_cosine_similarity_matrices", figure4_cosine_similarity_matrices, _load_figure4_data),
     5: ("figure5_layer_trajectories", figure5_layer_trajectories, _load_figure5_data),
     6: ("figure6_steering_pareto", figure6_steering_pareto, _load_figure6_data),
+    7: ("figure7_random_baseline", figure7_random_baseline, _load_figure7_data),
+    8: ("figure8_question_sensitivity", figure8_question_sensitivity, _load_figure8_data),
 }
 
 
 @click.command()
 @click.option("--config", default="configs/base.yaml", help="Path to config YAML")
-@click.option("--figure", "figure_num", default=None, type=int, help="Generate a single figure (1-6)")
+@click.option("--figure", "figure_num", default=None, type=int, help="Generate a single figure (1-8)")
 def main(config: str, figure_num: int):
     """Generate all publication figures for the sycophancy probing paper."""
     cfg = load_config(config)
@@ -300,7 +385,7 @@ def main(config: str, figure_num: int):
     # Determine which figures to generate
     if figure_num is not None:
         if figure_num not in FIGURE_GENERATORS:
-            click.echo(f"Invalid figure number {figure_num}. Choose 1-6.")
+            click.echo(f"Invalid figure number {figure_num}. Choose 1-8.")
             return
         figures_to_gen = {figure_num: FIGURE_GENERATORS[figure_num]}
     else:

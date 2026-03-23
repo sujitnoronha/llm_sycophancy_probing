@@ -1,6 +1,6 @@
 """Figure generators for the sycophancy probing paper.
 
-Six publication-quality figures for the COLM submission. Each function
+Eight publication-quality figures for the COLM submission. Each function
 loads data from the appropriate ``outputs/`` directory, creates a
 matplotlib figure using the project style, and saves to ``output_path``
 as both PDF and PNG.
@@ -21,19 +21,19 @@ from loguru import logger
 # ---------------------------------------------------------------------------
 
 MODEL_ORDER = [
-    "llama3_8b",
-    "qwen25_7b",
+    "llama31_8b",
+    "qwen3_8b",
     "mistral_7b_v03",
-    "gemma2_9b",
-    "deepseek_r1_llama8b",
+    "gemma3_12b",
+    "deepseek_r1_qwen3_8b",
 ]
 
 MODEL_DISPLAY_NAMES = {
-    "llama3_8b": "Llama-3.1-8B",
-    "qwen25_7b": "Qwen-2.5-7B",
+    "llama31_8b": "Llama-3.1-8B",
+    "qwen3_8b": "Qwen-3-8B",
     "mistral_7b_v03": "Mistral-7B-v0.3",
-    "gemma2_9b": "Gemma-2-9B",
-    "deepseek_r1_llama8b": "DeepSeek-R1-8B",
+    "gemma3_12b": "Gemma-3-12B",
+    "deepseek_r1_qwen3_8b": "DeepSeek-R1-Qwen3-8B",
 }
 
 AUTHORITY_LEVELS = ["none", "low", "medium", "high"]
@@ -461,13 +461,15 @@ def figure5_layer_trajectories(data: Dict, output_path: str) -> None:
 # ---------------------------------------------------------------------------
 
 def figure6_steering_pareto(data: Dict, output_path: str) -> None:
-    """Line plot per model: alpha vs persona sycophancy gap for 3 steering directions.
+    """Line plot per model: alpha vs persona sycophancy gap with bootstrap CIs.
 
     Args:
         data: Dict mapping model_name -> {
             direction_name -> {
                 'alphas': [float, ...],
                 'sycophancy_gaps': [float, ...],
+                'ci_low': [float, ...],   # optional bootstrap lower bounds
+                'ci_high': [float, ...],  # optional bootstrap upper bounds
             }
         }.
         output_path: Path to save the figure.
@@ -495,15 +497,26 @@ def figure6_steering_pareto(data: Dict, output_path: str) -> None:
             if not alphas or not gaps:
                 continue
 
+            color = colors[dir_idx % len(colors)]
             style = direction_styles.get(direction, {})
+
             ax.plot(
                 alphas, gaps,
                 label=DIRECTION_SHORT[direction] if col == 0 else None,
-                color=colors[dir_idx % len(colors)],
+                color=color,
                 linewidth=1.3,
                 markersize=4,
                 **style,
             )
+
+            # Add bootstrap CI shading if available
+            ci_low = dir_data.get("ci_low", [])
+            ci_high = dir_data.get("ci_high", [])
+            if ci_low and ci_high and len(ci_low) == len(alphas):
+                ax.fill_between(
+                    alphas, ci_low, ci_high,
+                    color=color, alpha=0.15,
+                )
 
         ax.set_xlabel(r"$\alpha$")
         if col == 0:
@@ -523,5 +536,178 @@ def figure6_steering_pareto(data: Dict, output_path: str) -> None:
         )
 
     fig.suptitle("Steering Effect on Sycophancy Gap", fontsize=11, y=1.12)
+    fig.tight_layout()
+    _save_figure(fig, output_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 7: Random baseline comparison (grouped bar chart)
+# ---------------------------------------------------------------------------
+
+def figure7_random_baseline(data: Dict, output_path: str) -> None:
+    """Grouped bar chart: unsteered vs authority-steered vs random-steered flip rates.
+
+    Demonstrates that only the authority direction causally reduces sycophancy,
+    while a random direction at the same layer/alpha has no effect.
+
+    Args:
+        data: Dict mapping model_name -> {
+            'unsteered': {'rate', 'ci_low', 'ci_high'},
+            'authority': {'rate', 'ci_low', 'ci_high'},
+            'random': {'rate', 'ci_low', 'ci_high'},
+        }.
+        output_path: Path to save the figure.
+    """
+    fig, ax = plt.subplots(figsize=(9, 5))
+
+    models_with_data = [m for m in MODEL_ORDER if m in data]
+    if not models_with_data:
+        logger.warning("No data for figure 7, skipping")
+        plt.close(fig)
+        return
+
+    x = np.arange(len(models_with_data))
+    width = 0.25
+
+    conditions = ["unsteered", "authority", "random"]
+    condition_labels = ["Unsteered", r"Authority ($\alpha$=1.5)", "Random Dir."]
+    condition_colors = ["#999999", "#0072B2", "#D55E00"]
+
+    for i, (cond, label, color) in enumerate(zip(conditions, condition_labels, condition_colors)):
+        rates = []
+        errors_low = []
+        errors_high = []
+
+        for model in models_with_data:
+            cond_data = data[model].get(cond, {})
+            rate = cond_data.get("rate", 0.0)
+            ci_lo = cond_data.get("ci_low", rate)
+            ci_hi = cond_data.get("ci_high", rate)
+            rates.append(rate)
+            errors_low.append(rate - ci_lo)
+            errors_high.append(ci_hi - rate)
+
+        rates = np.array(rates)
+        yerr = np.array([errors_low, errors_high])
+
+        ax.bar(
+            x + (i - 1) * width, rates, width,
+            label=label, color=color,
+            yerr=yerr, capsize=3,
+            error_kw={"linewidth": 0.8},
+        )
+
+    ax.set_xlabel("Model")
+    ax.set_ylabel("Flip Rate")
+    ax.set_title("Steering Specificity: Authority Direction vs Random Baseline")
+    ax.set_xticks(x)
+    ax.set_xticklabels(
+        [MODEL_DISPLAY_NAMES.get(m, m) for m in models_with_data],
+        rotation=20, ha="right",
+    )
+    ax.legend(loc="upper right", fontsize=8)
+    ax.set_ylim(0, min(1.0, ax.get_ylim()[1] * 1.3))
+
+    fig.tight_layout()
+    _save_figure(fig, output_path)
+
+
+# ---------------------------------------------------------------------------
+# Figure 8: Question-level sensitivity analysis
+# ---------------------------------------------------------------------------
+
+def figure8_question_sensitivity(data: Dict, output_path: str) -> None:
+    """Two-panel figure: (a) histogram of per-question flip rates,
+    (b) leave-5-out bootstrap distribution of overall flip rate.
+
+    Demonstrates that results are not driven by a handful of outlier questions.
+
+    Args:
+        data: Dict with keys:
+            'per_question_rates': [{'question_id', 'flip_rate', ...}, ...],
+            'top_outlier_qids': [str, ...],
+            'leave5out_bootstrap': {
+                'overall_flip_rate_mean', 'overall_flip_rate_std',
+                'overall_flip_rate_ci95': [lo, hi],
+                'auth_effect_mean', 'auth_effect_std',
+                'auth_effect_ci95': [lo, hi],
+            },
+        output_path: Path to save the figure.
+    """
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.5))
+
+    # Panel (a): Histogram of per-question flip rates
+    per_q = data.get("per_question_rates", [])
+    if per_q:
+        flip_rates = np.array([q["flip_rate"] for q in per_q])
+        outlier_qids = set(data.get("top_outlier_qids", []))
+
+        # Color outliers differently
+        colors = [
+            "#D55E00" if q["question_id"] in outlier_qids else "#0072B2"
+            for q in per_q
+        ]
+
+        # Sort by flip rate for readability
+        sorted_indices = np.argsort(flip_rates)[::-1]
+        sorted_rates = flip_rates[sorted_indices]
+        sorted_colors = [colors[i] for i in sorted_indices]
+
+        ax1.bar(range(len(sorted_rates)), sorted_rates, color=sorted_colors, width=0.8)
+        ax1.axhline(
+            y=np.median(flip_rates), color="gray", linestyle="--",
+            linewidth=0.8, label=f"Median = {np.median(flip_rates):.3f}",
+        )
+        ax1.set_xlabel("Question (ranked)")
+        ax1.set_ylabel("Flip Rate")
+        ax1.set_title("(a) Per-Question Flip Rates")
+        ax1.legend(fontsize=8)
+
+        # Add outlier annotation
+        from matplotlib.patches import Patch
+        legend_elements = [
+            Patch(facecolor="#D55E00", label="Top-5 outliers"),
+            Patch(facecolor="#0072B2", label="Other questions"),
+        ]
+        ax1.legend(handles=legend_elements, fontsize=7, loc="upper right")
+
+    # Panel (b): Bootstrap distribution of authority effect
+    bootstrap = data.get("leave5out_bootstrap", {})
+    if bootstrap:
+        # We don't have the full distribution, but we can show the CI as a
+        # summary visual with mean + CI bar
+        effect_mean = bootstrap.get("auth_effect_mean", 0)
+        effect_ci = bootstrap.get("auth_effect_ci95", [effect_mean, effect_mean])
+        flip_mean = bootstrap.get("overall_flip_rate_mean", 0)
+        flip_ci = bootstrap.get("overall_flip_rate_ci95", [flip_mean, flip_mean])
+
+        metrics = ["Overall\nFlip Rate", "Authority\nEffect"]
+        means = [flip_mean, effect_mean]
+        ci_lows = [flip_ci[0], effect_ci[0]]
+        ci_highs = [flip_ci[1], effect_ci[1]]
+
+        x_pos = np.arange(len(metrics))
+        bar_colors = ["#0072B2", "#D55E00"]
+
+        for i in range(len(metrics)):
+            ax2.bar(x_pos[i], means[i], color=bar_colors[i], width=0.5, alpha=0.8)
+            ax2.errorbar(
+                x_pos[i], means[i],
+                yerr=[[means[i] - ci_lows[i]], [ci_highs[i] - means[i]]],
+                fmt="none", color="black", capsize=5, linewidth=1.2,
+            )
+            ax2.text(
+                x_pos[i], ci_highs[i] + 0.005,
+                f"{means[i]:.3f}\n[{ci_lows[i]:.3f}, {ci_highs[i]:.3f}]",
+                ha="center", va="bottom", fontsize=8,
+            )
+
+        ax2.set_xticks(x_pos)
+        ax2.set_xticklabels(metrics)
+        ax2.set_ylabel("Rate")
+        ax2.set_title("(b) Leave-5-Out Bootstrap (200 iter.)")
+        ax2.set_ylim(0, max(ci_highs) * 1.4)
+
+    fig.suptitle("Question-Level Sensitivity Analysis", fontsize=11, y=1.02)
     fig.tight_layout()
     _save_figure(fig, output_path)

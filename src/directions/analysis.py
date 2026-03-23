@@ -406,3 +406,46 @@ def permutation_test_cosine(
         "p_value": p_value,
         "n_permutations": n_permutations,
     }
+
+
+def compute_confound_cosine_analysis(
+    authority_direction: np.ndarray,
+    confound_directions: Dict[str, np.ndarray],
+) -> Dict:
+    """Compute cosine similarity between authority direction and confound directions.
+
+    Addresses reviewer concern: if the authority probe is merely encoding
+    prompt length or keyword presence, the authority direction will have
+    high cosine similarity with the confound direction. Low cosine (<0.3)
+    indicates the directions are distinct.
+
+    Args:
+        authority_direction: Unit-normalized authority probe weight vector [d_model].
+        confound_directions: Dict mapping confound name to unit-normalized
+            weight vector [d_model].
+
+    Returns:
+        Dict with per-confound cosine similarity and interpretation.
+    """
+    results = {}
+    for confound_name, confound_dir in confound_directions.items():
+        cos_sim = float(1.0 - cosine_distance(authority_direction, confound_dir))
+
+        if abs(cos_sim) < 0.3:
+            interpretation = "distinct"
+        elif abs(cos_sim) < 0.5:
+            interpretation = "weak_overlap"
+        else:
+            interpretation = "substantial_overlap_WARNING"
+
+        results[confound_name] = {
+            "cosine_similarity": cos_sim,
+            "abs_cosine": abs(cos_sim),
+            "interpretation": interpretation,
+        }
+
+        logger.info(
+            f"Authority vs {confound_name}: cos={cos_sim:.4f} ({interpretation})"
+        )
+
+    return results

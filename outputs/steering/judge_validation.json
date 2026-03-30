@@ -1,0 +1,7 @@
+{
+  "n_samples": 50,
+  "raw_agreement": 0.98,
+  "cohens_kappa": 0.6575342465753424,
+  "mini_flip_rate": 0.04,
+  "gpt5_flip_rate": 0.02
+}

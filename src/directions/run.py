@@ -116,21 +116,12 @@ def extract_peak_directions(probe_results: dict) -> dict:
             logger.warning(f"Missing weight vectors for '{wv_key}', skipping")
             continue
 
-        # Get peak layer from weight_vectors.pt metadata or summary
-        peak_layer_key = f"peak_layer_{probe_name}"
-        if peak_layer_key in wv:
-            peak_layer = int(wv[peak_layer_key])
-        elif probe_name in summary and "peak_layer" in summary[probe_name]:
-            peak_layer = summary[probe_name]["peak_layer"]
-        else:
-            # Fallback: use the middle layer
-            w_all = wv[wv_key].numpy()
-            peak_layer = w_all.shape[0] // 2
-            logger.warning(
-                f"No peak layer info for {probe_name}, defaulting to layer {peak_layer}"
-            )
-
         w_all = wv[wv_key].numpy()  # [n_layers, d_model]
+        n_layers = w_all.shape[0]
+
+        # Use middle layer — early layers decode surface tokens, not
+        # meaningful internal representations useful for steering
+        peak_layer = n_layers // 2
         w_peak = w_all[peak_layer].astype(np.float64)
 
         # Ensure unit normalization
@@ -299,12 +290,8 @@ def run_permutation_tests_for_model(
             logger.warning(f"Missing labels for {label_a_name} or {label_b_name}, skipping")
             continue
 
-        # Use the peak layer of probe_a for the test
-        if label_a_name in summary and "peak_layer" in summary[label_a_name]:
-            layer_idx = summary[label_a_name]["peak_layer"]
-        else:
-            layer_idx = activations.shape[1] // 2
-            logger.warning(f"No peak layer for {label_a_name}, using layer {layer_idx}")
+        # Use middle layer for direction analysis
+        layer_idx = activations.shape[1] // 2
 
         pair_name = f"{label_a_name}_vs_{label_b_name}"
         logger.info(
@@ -417,7 +404,7 @@ def main(config: str, model_name: str, permtest: bool, n_permutations: int):
                 peak_key = f"peak_layer_{conf_name}"
                 if w_key in confound_wv and peak_key in confound_wv:
                     w_all = confound_wv[w_key].numpy()
-                    peak_layer = int(confound_wv[peak_key])
+                    peak_layer = w_all.shape[0] // 2
                     w = w_all[peak_layer].astype(np.float64)
                     norm = np.linalg.norm(w)
                     if norm > 1e-10:

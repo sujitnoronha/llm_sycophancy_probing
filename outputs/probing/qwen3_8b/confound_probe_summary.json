@@ -1,0 +1,14 @@
+{
+  "prompt_length": {
+    "peak_layer": 9,
+    "peak_accuracy": 1.0,
+    "n_positive": 250,
+    "n_negative": 251
+  },
+  "authority_keyword": {
+    "peak_layer": 9,
+    "peak_accuracy": 1.0,
+    "n_positive": 334,
+    "n_negative": 167
+  }
+}

@@ -48,9 +48,10 @@ def _load_authority_direction(output_dir: str, model_name: str) -> dict:
 
     data = torch.load(str(weight_path), weights_only=False)
     direction = data["w_authority"]  # [n_layers, d_model]
-    peak_layer = int(data["peak_layer_authority"])
+    n_layers = direction.shape[0]
+    peak_layer = n_layers // 2  # Use middle layer for steering
 
-    # Extract the direction at the peak layer
+    # Extract the direction at the middle layer
     direction_vec = direction[peak_layer]  # [d_model]
 
     # Ensure unit norm

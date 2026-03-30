@@ -89,6 +89,86 @@ def create_steering_hook(
     return hook_fn
 
 
+def run_hf_steered_generation(
+    model,
+    tokenizer,
+    messages: List[Dict[str, str]],
+    direction: np.ndarray,
+    alpha: float,
+    target_layer: int,
+    max_new_tokens: int = 512,
+    config: Optional[Config] = None,
+) -> str:
+    """Generate Turn 4 with steering using HuggingFace register_forward_hook.
+
+    Uses native HF generate() which preserves KV-cache, making it ~2x faster
+    than TransformerLens. The hook subtracts alpha * direction from the
+    residual stream output of the target decoder layer.
+    """
+    direction_tensor = torch.from_numpy(
+        np.asarray(direction, dtype=np.float64)
+    ).clone()
+    _cached = {}
+
+    def steering_hook(module, input, output):
+        if isinstance(output, tuple):
+            hidden_states = output[0]
+        elif isinstance(output, torch.Tensor):
+            hidden_states = output
+        else:
+            hidden_states = output[0]
+
+        cache_key = (hidden_states.device, hidden_states.dtype)
+        if cache_key not in _cached:
+            _cached[cache_key] = direction_tensor.to(
+                device=hidden_states.device, dtype=hidden_states.dtype
+            )
+        d = _cached[cache_key]
+        modified = hidden_states - alpha * d
+
+        if isinstance(output, tuple):
+            return (modified,) + tuple(output[i] for i in range(1, len(output)))
+        elif isinstance(output, torch.Tensor):
+            return modified
+        else:
+            output[0] = modified
+            return output
+
+    # Find the target layer module
+    if hasattr(model, "model") and hasattr(model.model, "layers"):
+        layer_module = model.model.layers[target_layer]
+    elif hasattr(model, "transformer") and hasattr(model.transformer, "h"):
+        layer_module = model.transformer.h[target_layer]
+    else:
+        raise ValueError(f"Cannot find layer modules in model: {type(model)}")
+
+    handle = layer_module.register_forward_hook(steering_hook)
+    try:
+        # enable_thinking=False disables Qwen3 internal reasoning mode,
+        # which would waste token budget on <think> tokens. Safely ignored
+        # by models whose templates don't reference this variable.
+        input_text = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True,
+            enable_thinking=False,
+        )
+        input_ids = tokenizer.encode(input_text, return_tensors="pt")
+        input_ids = input_ids.to(model.device)
+
+        with torch.no_grad():
+            output_ids = model.generate(
+                input_ids,
+                max_new_tokens=max_new_tokens,
+                do_sample=False,
+                eos_token_id=tokenizer.eos_token_id,
+                pad_token_id=tokenizer.eos_token_id,
+            )
+
+        generated_ids = output_ids[0, input_ids.shape[1]:]
+        return tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
+    finally:
+        handle.remove()
+
+
 def run_steered_generation(
     model,
     tokenizer,
@@ -143,7 +223,7 @@ def run_steered_generation(
                 max_new_tokens=max_new_tokens,
                 temperature=0.0,
                 do_sample=False,
-                pad_token_id=tokenizer.pad_token_id,
+                eos_token_id=tokenizer.eos_token_id,
             )
 
     # Decode only the newly generated tokens
@@ -161,28 +241,25 @@ def run_steered_eval(
     alpha: float,
     target_layer: int,
     config: Config,
+    use_hf: bool = False,
 ) -> List[Dict]:
     """Run behavioral evaluation on all conversations with steering active.
 
-    For each conversation, builds the message list (Turns 1-3), generates
-    a steered Turn 4, and returns the completed conversation dicts with
-    metadata about the steering intervention.
-
     Args:
-        model: A TransformerLens HookedTransformer model.
+        model: A TransformerLens HookedTransformer or HuggingFace model.
         tokenizer: The model's tokenizer.
-        conversations: List of conversation dicts, each containing
-            'system_prompt', 'turn1_user', 'turn2_assistant', 'turn3_user',
-            and condition metadata.
+        conversations: List of conversation dicts.
         direction: Unit-normalized steering direction, shape [d_model].
         alpha: Steering strength coefficient.
         target_layer: Layer index for steering hook.
         config: Global config (for generation parameters).
+        use_hf: If True, use HuggingFace register_forward_hook (with KV-cache).
+                If False, use TransformerLens hooks.
 
     Returns:
-        List of completed conversation dicts with steered Turn 4 and
-        steering metadata attached.
+        List of completed conversation dicts with steered Turn 4.
     """
+    gen_fn = run_hf_steered_generation if use_hf else run_steered_generation
     results = []
 
     for idx, conv in enumerate(conversations):
@@ -197,7 +274,7 @@ def run_steered_eval(
         start_time = time.time()
 
         try:
-            generated_text = run_steered_generation(
+            generated_text = gen_fn(
                 model=model,
                 tokenizer=tokenizer,
                 messages=messages,
@@ -268,15 +345,11 @@ def _load_probe_directions(output_dir: str, model_name: str) -> Dict:
             continue
 
         w_all = weight_vectors[wv_key].numpy()  # [n_layers, d_model]
+        n_layers = w_all.shape[0]
 
-        # Get peak layer
-        if peak_key in weight_vectors:
-            peak_layer = int(weight_vectors[peak_key])
-        elif probe_name in summary and "peak_layer" in summary[probe_name]:
-            peak_layer = summary[probe_name]["peak_layer"]
-        else:
-            peak_layer = w_all.shape[0] // 2
-            logger.warning(f"No peak layer for {probe_name}, using layer {peak_layer}")
+        # Use middle layer — early layers decode surface tokens, not
+        # meaningful internal representations useful for steering
+        peak_layer = n_layers // 2
 
         # Extract direction at peak layer, ensure unit normalization
         w = w_all[peak_layer].astype(np.float64)
@@ -320,13 +393,21 @@ def _load_conversations(output_dir: str, model_name: str) -> List[Dict]:
             if line.strip():
                 conversations.append(json.loads(line))
 
-    logger.info(f"Loaded {len(conversations)} conversations for {model_name}")
+    # Subsample to keep runtime practical: take first 200 conversations
+    # (50 questions × 4 conditions), still statistically sufficient
+    max_convs = 200
+    if len(conversations) > max_convs:
+        conversations = conversations[:max_convs]
+        logger.info(f"Subsampled to {len(conversations)} conversations for {model_name}")
+    else:
+        logger.info(f"Loaded {len(conversations)} conversations for {model_name}")
     return conversations
 
 
 def run_full_sweep(
     model_name: str,
     config: Config,
+    use_hf: bool = False,
 ) -> Dict:
     """Run the full activation steering sweep for one model.
 
@@ -371,8 +452,9 @@ def run_full_sweep(
     }
 
     # Load model once, run all conditions
-    with load_model_context(model_cfg, config, need_hooks=True) as (model, tokenizer):
-        log_gpu_memory(f"Model loaded for steering ({model_name}): ")
+    # use_hf=True: load via HuggingFace (faster, KV-cache); False: TransformerLens
+    with load_model_context(model_cfg, config, need_hooks=not use_hf) as (model, tokenizer):
+        log_gpu_memory(f"Model loaded for steering ({model_name}, {'HF' if use_hf else 'TL'}): ")
 
         for dir_name in direction_names:
             if dir_name not in probe_directions:
@@ -383,7 +465,9 @@ def run_full_sweep(
             direction = direction_info["direction"]
 
             # Determine target layer based on config
-            if config.steering.layer_selection == "peak_probe_accuracy":
+            if config.steering.layer_selection == "middle":
+                target_layer = model_cfg.n_layers // 2
+            elif config.steering.layer_selection == "peak_probe_accuracy":
                 target_layer = direction_info["peak_layer"]
             else:
                 target_layer = model_cfg.n_layers // 2
@@ -394,6 +478,14 @@ def run_full_sweep(
 
             for alpha in alpha_values:
                 condition_key = f"{dir_name}_alpha{alpha}"
+
+                # Skip if output already exists (resume support)
+                conv_output_dir = Path(config.output_dir) / "steering" / model_name
+                conv_path = conv_output_dir / f"steered_{condition_key}.jsonl"
+                if conv_path.exists() and conv_path.stat().st_size > 0:
+                    logger.info(f"Skipping {condition_key} (already exists at {conv_path})")
+                    continue
+
                 logger.info(
                     f"Running steered eval: {condition_key} at layer {target_layer}"
                 )
@@ -406,6 +498,7 @@ def run_full_sweep(
                     alpha=alpha,
                     target_layer=target_layer,
                     config=config,
+                    use_hf=use_hf,
                 )
 
                 # Save steered conversations to JSONL for downstream scoring

@@ -1,0 +1,47 @@
+{
+  "models_completed": [
+    "llama31_8b",
+    "qwen3_8b",
+    "gemma3_12b",
+    "deepseek_r1_qwen3_8b",
+    "mistral_7b_v03"
+  ],
+  "config": {
+    "directions": [
+      "authority"
+    ],
+    "alpha_values": [
+      0.5,
+      1.5,
+      3.0
+    ],
+    "layer_selection": "peak_probe_accuracy"
+  },
+  "per_model": {
+    "llama31_8b": {
+      "n_conversations": 200,
+      "n_conditions": 0,
+      "conditions": {}
+    },
+    "qwen3_8b": {
+      "n_conversations": 200,
+      "n_conditions": 0,
+      "conditions": {}
+    },
+    "gemma3_12b": {
+      "n_conversations": 200,
+      "n_conditions": 0,
+      "conditions": {}
+    },
+    "deepseek_r1_qwen3_8b": {
+      "n_conversations": 200,
+      "n_conditions": 0,
+      "conditions": {}
+    },
+    "mistral_7b_v03": {
+      "n_conversations": 200,
+      "n_conditions": 0,
+      "conditions": {}
+    }
+  }
+}

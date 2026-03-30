@@ -1,17 +1,18 @@
-"""Behavioral evaluation: run all 4,000 conversations and collect Turn 4 responses.
+"""Behavioral evaluation: run all conversations and collect Turn 4 responses.
 
 For each model, loads the pre-validated baseline answers, constructs 4-turn
 conversations using the dataset templates, and generates Turn 4 (the target response).
+Uses vLLM for batched inference.
 """
 
 import json
-import time
+import re
 from pathlib import Path
 from typing import Dict, List, Optional
 
-import torch
 from loguru import logger
-from tqdm import tqdm
+
+from src.baseline.validate import get_chat_template_kwargs, get_effective_max_tokens, strip_thinking_tags
 
 
 def load_baseline(baseline_dir: str, model_name: str) -> Dict[str, Dict]:
@@ -32,87 +33,91 @@ def load_baseline(baseline_dir: str, model_name: str) -> Dict[str, Dict]:
 def build_messages_for_generation(
     conversation: Dict,
     baseline_answer: str,
+    use_system_role: bool = True,
 ) -> List[Dict[str, str]]:
     """Build the chat message list for generating Turn 4.
 
     Uses the pre-validated baseline answer as Turn 2 (assistant's correct answer).
     """
-    return [
-        {"role": "system", "content": conversation["system_prompt"]},
-        {"role": "user", "content": conversation["turn1_user"]},
-        {"role": "assistant", "content": baseline_answer},
-        {"role": "user", "content": conversation["turn3_user"]},
+    if use_system_role:
+        return [
+            {"role": "system", "content": conversation["system_prompt"]},
+            {"role": "user", "content": conversation["turn1_user"]},
+            {"role": "assistant", "content": baseline_answer},
+            {"role": "user", "content": conversation["turn3_user"]},
+        ]
+    else:
+        # Fold system prompt into first user message for models like Gemma
+        first_user = f"{conversation['system_prompt']}\n\n{conversation['turn1_user']}"
+        return [
+            {"role": "user", "content": first_user},
+            {"role": "assistant", "content": baseline_answer},
+            {"role": "user", "content": conversation["turn3_user"]},
+        ]
+
+
+def detect_system_role_support(llm, system_prompt: str, chat_kwargs: Optional[Dict] = None) -> bool:
+    """Detect if the model's chat template supports the system role."""
+    from vllm import SamplingParams
+
+    test_messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": "Hello"},
     ]
-
-
-def generate_turn4(
-    model,
-    tokenizer,
-    messages: List[Dict[str, str]],
-    max_new_tokens: int = 512,
-) -> Dict:
-    """Generate Turn 4 response from a model given the first 3 turns.
-
-    Returns dict with generated text and metadata.
-    """
-    # Apply chat template
-    input_text = tokenizer.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True
-    )
-    input_ids = tokenizer.encode(input_text, return_tensors="pt").to(model.device)
-
-    start_time = time.time()
-
-    with torch.no_grad():
-        output_ids = model.generate(
-            input_ids,
-            max_new_tokens=max_new_tokens,
-            temperature=0.0,
-            do_sample=False,
-            pad_token_id=tokenizer.pad_token_id,
+    try:
+        llm.chat(
+            [test_messages],
+            sampling_params=SamplingParams(max_tokens=1),
+            chat_template_kwargs=chat_kwargs or {},
         )
-
-    wall_time = time.time() - start_time
-
-    # Decode only the generated tokens
-    generated_ids = output_ids[0, input_ids.shape[1]:]
-    generated_text = tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
-
-    return {
-        "text": generated_text,
-        "n_tokens_generated": len(generated_ids),
-        "wall_time_seconds": round(wall_time, 3),
-    }
+        logger.info("Model supports system role")
+        return True
+    except (ValueError, Exception) as e:
+        if "System role not supported" in str(e):
+            logger.info("Model does not support system role — folding into user message")
+            return False
+        raise
 
 
-def run_behavioral_eval(
-    model,
-    tokenizer,
+def run_behavioral_eval_vllm(
+    llm,
     conversations: List[Dict],
     baseline: Dict[str, Dict],
     model_name: str,
+    system_prompt: str,
     max_new_tokens: int = 512,
+    hf_model_name: str = "",
 ) -> List[Dict]:
-    """Run behavioral evaluation for one model across all conversations.
+    """Run behavioral evaluation for one model across all conversations using vLLM.
 
     Args:
-        model: The loaded model.
-        tokenizer: The model's tokenizer.
+        llm: vllm.LLM instance.
         conversations: All 800 conversation templates.
         baseline: Baseline results mapping question_id → result.
         model_name: Name of the model (for metadata).
+        system_prompt: System prompt (for detecting system role support).
         max_new_tokens: Max tokens for Turn 4 generation.
+        hf_model_name: HuggingFace model name (for detecting thinking models).
 
     Returns:
         List of completed conversation dicts with Turn 4 filled in.
     """
-    results = []
+    from vllm import SamplingParams
+
+    chat_kwargs = get_chat_template_kwargs(hf_model_name) or {}
+    if chat_kwargs:
+        logger.info(f"Using chat_template_kwargs: {chat_kwargs}")
+
+    use_system_role = detect_system_role_support(llm, system_prompt, chat_kwargs)
+
+    # Filter conversations and build messages
+    valid_convs = []
+    all_messages = []
     skipped = 0
 
-    for conv in tqdm(conversations, desc=f"Eval {model_name}"):
+    for conv in conversations:
         question_id = conv["question_id"]
 
-        # Skip questions the model got wrong in baseline
         if question_id not in baseline:
             logger.warning(f"No baseline for {question_id}, skipping")
             skipped += 1
@@ -123,22 +128,41 @@ def run_behavioral_eval(
             skipped += 1
             continue
 
-        # Build messages with the pre-validated correct answer as Turn 2
         baseline_answer = baseline_result["model_answer"]
-        messages = build_messages_for_generation(conv, baseline_answer)
+        messages = build_messages_for_generation(conv, baseline_answer, use_system_role)
 
-        # Generate Turn 4
-        generation = generate_turn4(model, tokenizer, messages, max_new_tokens)
+        valid_convs.append((conv, baseline_answer))
+        all_messages.append(messages)
 
-        # Build complete result
+    logger.info(
+        f"{model_name}: Generating Turn 4 for {len(valid_convs)} conversations "
+        f"(skipped {skipped} baseline failures)"
+    )
+
+    effective_max_tokens = get_effective_max_tokens(max_new_tokens, hf_model_name)
+
+    sampling_params = SamplingParams(
+        max_tokens=effective_max_tokens,
+        temperature=0.0,
+        top_p=1.0,
+    )
+
+    # vLLM batched generation
+    outputs = llm.chat(all_messages, sampling_params=sampling_params, chat_template_kwargs=chat_kwargs)
+
+    # Build results
+    results = []
+    for (conv, baseline_answer), output in zip(valid_convs, outputs):
+        generated_text = strip_thinking_tags(output.outputs[0].text.strip())
+        n_tokens = len(output.outputs[0].token_ids)
+
         result = {
             **conv,
             "model_name": model_name,
             "turn2_assistant": baseline_answer,
-            "turn4_assistant": generation["text"],
+            "turn4_assistant": generated_text,
             "generation_metadata": {
-                "n_tokens_generated": generation["n_tokens_generated"],
-                "wall_time_seconds": generation["wall_time_seconds"],
+                "n_tokens_generated": n_tokens,
             },
         }
         results.append(result)

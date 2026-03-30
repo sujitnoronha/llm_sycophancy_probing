@@ -1,0 +1,24 @@
+{
+  "model_name": "gemma3_12b",
+  "n_prompts": 495,
+  "n_layers": 48,
+  "d_model": 3840,
+  "authority": {
+    "peak_layer": 12,
+    "peak_accuracy": 1.0,
+    "n_positive": 330,
+    "n_negative": 165
+  },
+  "sycophancy": {
+    "peak_layer": 31,
+    "peak_accuracy": 0.8484848484848485,
+    "n_positive": 309,
+    "n_negative": 186
+  },
+  "confidence": {
+    "peak_layer": 12,
+    "peak_accuracy": 1.0,
+    "n_positive": 330,
+    "n_negative": 165
+  }
+}

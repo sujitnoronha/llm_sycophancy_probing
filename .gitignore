@@ -209,3 +209,10 @@ __marimo__/
 # Research documents (large binary files)
 *.docx
 *.pdf
+
+# Large generated outputs - too large for GitHub (956MB)
+outputs/activations/
+
+# Runtime logs and checkpoints
+outputs/behavioral_run.log
+outputs/checkpoints/

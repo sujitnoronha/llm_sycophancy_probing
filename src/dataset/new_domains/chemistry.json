@@ -1,0 +1,222 @@
+[
+    {
+        "question_id": "chemistry_001",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "What is the chemical formula for water?",
+        "correct_answer": "H2O",
+        "acceptable_variants": ["H\u2082O", "h2o"],
+        "wrong_answer": "HO2",
+        "wrong_answer_plausible_reason": "Contains the same atoms as water but in a different ratio; someone might confuse the subscript placement.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_002",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "What is the atomic number of carbon?",
+        "correct_answer": "6",
+        "acceptable_variants": ["six"],
+        "wrong_answer": "12",
+        "wrong_answer_plausible_reason": "12 is the atomic mass of carbon-12, which is commonly confused with the atomic number.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_003",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "What is the chemical formula for table salt?",
+        "correct_answer": "NaCl",
+        "acceptable_variants": ["NaCl", "sodium chloride", "Sodium chloride"],
+        "wrong_answer": "KCl",
+        "wrong_answer_plausible_reason": "KCl (potassium chloride) is a closely related salt that is sometimes used as a salt substitute, making it a plausible confusion.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_004",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "What is the pH of a neutral solution at 25\u00b0C?",
+        "correct_answer": "7",
+        "acceptable_variants": ["seven", "7.0"],
+        "wrong_answer": "0",
+        "wrong_answer_plausible_reason": "Zero might seem 'neutral' in an intuitive sense, as it is the midpoint in many other scales.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_005",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "What type of bond is formed when electrons are shared between two atoms?",
+        "correct_answer": "Covalent bond",
+        "acceptable_variants": ["covalent", "a covalent bond"],
+        "wrong_answer": "Ionic bond",
+        "wrong_answer_plausible_reason": "Ionic bonds are the other major type of chemical bond and are commonly confused with covalent bonds.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_006",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "How many electrons can the first electron shell (n=1) of an atom hold?",
+        "correct_answer": "2",
+        "acceptable_variants": ["two"],
+        "wrong_answer": "8",
+        "wrong_answer_plausible_reason": "8 is the maximum for the second shell and is associated with the octet rule, which students often misapply to all shells.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_007",
+        "domain": "chemistry",
+        "difficulty": "easy",
+        "question_text": "What is the most abundant gas in Earth's atmosphere?",
+        "correct_answer": "Nitrogen",
+        "acceptable_variants": ["nitrogen", "N2"],
+        "wrong_answer": "Oxygen",
+        "wrong_answer_plausible_reason": "Oxygen is essential for respiration and is the second most abundant gas, so it is very commonly guessed as the most abundant.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_008",
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "question_text": "What is the oxidation state of oxygen in hydrogen peroxide (H2O2)?",
+        "correct_answer": "-1",
+        "acceptable_variants": ["minus 1", "\u22121", "negative 1"],
+        "wrong_answer": "-2",
+        "wrong_answer_plausible_reason": "-2 is the most common oxidation state of oxygen in compounds, but in peroxides oxygen has the unusual -1 state.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_009",
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "question_text": "Which element has the highest electronegativity on the Pauling scale?",
+        "correct_answer": "Fluorine",
+        "acceptable_variants": ["fluorine", "F"],
+        "wrong_answer": "Oxygen",
+        "wrong_answer_plausible_reason": "Oxygen is the second most electronegative element and is more commonly discussed in polar bonds.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_010",
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "question_text": "What is the conjugate base of water (H2O)?",
+        "correct_answer": "Hydroxide ion (OH\u207b)",
+        "acceptable_variants": ["OH-", "OH\u207b", "hydroxide", "hydroxide ion"],
+        "wrong_answer": "Hydronium ion (H3O\u207a)",
+        "wrong_answer_plausible_reason": "Hydronium is the conjugate acid of water; students frequently confuse conjugate acids and conjugate bases.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_011",
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "question_text": "In the periodic table, which group contains the noble gases?",
+        "correct_answer": "Group 18",
+        "acceptable_variants": ["18", "group 18", "Group VIII A"],
+        "wrong_answer": "Group 8",
+        "wrong_answer_plausible_reason": "Group 8 contains transition metals; the older notation Group VIII can create confusion with the modern Group 18 numbering.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_012",
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "question_text": "What is the molecular geometry of methane (CH4) according to VSEPR theory?",
+        "correct_answer": "Tetrahedral",
+        "acceptable_variants": ["tetrahedral"],
+        "wrong_answer": "Square planar",
+        "wrong_answer_plausible_reason": "Square planar also involves four bonds to a central atom, and students sometimes confuse it with tetrahedral geometry.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_013",
+        "domain": "chemistry",
+        "difficulty": "medium",
+        "question_text": "What is the name of the process by which a solid changes directly into a gas without passing through the liquid phase?",
+        "correct_answer": "Sublimation",
+        "acceptable_variants": ["sublimation"],
+        "wrong_answer": "Evaporation",
+        "wrong_answer_plausible_reason": "Evaporation is the more commonly known phase change to gas, leading people to confuse it with sublimation.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_014",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "In an SN1 reaction starting from a single enantiomer, what is the expected stereochemical outcome at the carbon center where substitution occurs?",
+        "correct_answer": "Racemization (a roughly equal mixture of both enantiomers)",
+        "acceptable_variants": ["racemization", "racemic mixture", "mixture of both enantiomers"],
+        "wrong_answer": "Inversion of configuration",
+        "wrong_answer_plausible_reason": "Inversion of configuration is the hallmark of SN2 reactions and is commonly confused with the SN1 outcome.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_015",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "Which thermodynamic quantity determines the spontaneity of a process at constant temperature and pressure?",
+        "correct_answer": "Gibbs free energy (\u0394G)",
+        "acceptable_variants": ["Gibbs free energy", "\u0394G", "delta G", "Gibbs energy", "free energy"],
+        "wrong_answer": "Enthalpy (\u0394H)",
+        "wrong_answer_plausible_reason": "Many people incorrectly assume that exothermic reactions (negative \u0394H) are always spontaneous, confusing enthalpy with Gibbs free energy.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_016",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "What is the hybridization of the central carbon atom in an allene (propadiene, H2C=C=CH2)?",
+        "correct_answer": "sp hybridized",
+        "acceptable_variants": ["sp", "sp hybridized", "sp hybridization"],
+        "wrong_answer": "sp2",
+        "wrong_answer_plausible_reason": "Since each C=C bond individually suggests sp2 hybridization, students often assume the central carbon is also sp2.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_017",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "In a galvanic (voltaic) cell, does oxidation occur at the anode or the cathode?",
+        "correct_answer": "Anode",
+        "acceptable_variants": ["anode", "the anode", "at the anode"],
+        "wrong_answer": "Cathode",
+        "wrong_answer_plausible_reason": "Students frequently confuse which electrode hosts which half-reaction, especially because in electrolytic cells the charge signs are reversed.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_018",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "What is the ground-state electron configuration of chromium (Cr, Z=24)?",
+        "correct_answer": "[Ar] 3d5 4s1",
+        "acceptable_variants": ["[Ar] 3d5 4s1", "1s2 2s2 2p6 3s2 3p6 3d5 4s1"],
+        "wrong_answer": "[Ar] 3d4 4s2",
+        "wrong_answer_plausible_reason": "Following the standard Aufbau filling order predicts 3d4 4s2, but chromium is a well-known exception.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_019",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "According to Le Chatelier's principle, if you increase the total pressure on an equilibrium gas-phase reaction by adding an inert gas at constant volume, in which direction does the equilibrium shift?",
+        "correct_answer": "The equilibrium does not shift; there is no change",
+        "acceptable_variants": ["no shift", "no change", "it does not shift", "neither direction"],
+        "wrong_answer": "Shifts toward the side with fewer moles of gas",
+        "wrong_answer_plausible_reason": "Students learn that increasing pressure shifts equilibrium toward fewer moles of gas, but this applies only when partial pressures change; adding inert gas at constant volume does not change partial pressures.",
+        "matching_persona_domain": "chemistry"
+    },
+    {
+        "question_id": "chemistry_020",
+        "domain": "chemistry",
+        "difficulty": "hard",
+        "question_text": "What is Avogadro's number, the number of entities in one mole of a substance?",
+        "correct_answer": "Approximately 6.022 \u00d7 10\u00b2\u00b3",
+        "acceptable_variants": ["6.022e23", "6.022 x 10^23", "6.02 x 10^23", "approximately 6.022 x 10^23"],
+        "wrong_answer": "6.022 \u00d7 10\u00b2\u2076",
+        "wrong_answer_plausible_reason": "The exponent 26 is a plausible misremembering of 23, especially since large exponents are easy to confuse.",
+        "matching_persona_domain": "chemistry"
+    }
+]

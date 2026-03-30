@@ -1,0 +1,12 @@
+{
+  "prompt_length": {
+    "cosine_similarity": 0.1588433567366161,
+    "abs_cosine": 0.1588433567366161,
+    "interpretation": "distinct"
+  },
+  "authority_keyword": {
+    "cosine_similarity": 1.0,
+    "abs_cosine": 1.0,
+    "interpretation": "substantial_overlap_WARNING"
+  }
+}

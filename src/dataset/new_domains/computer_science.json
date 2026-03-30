@@ -1,0 +1,222 @@
+[
+    {
+        "question_id": "computer_science_001",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "What does CPU stand for?",
+        "correct_answer": "Central Processing Unit",
+        "acceptable_variants": ["central processing unit"],
+        "wrong_answer": "Central Program Unit",
+        "wrong_answer_plausible_reason": "The word 'Program' is closely associated with computing and sounds reasonable in place of 'Processing'.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_002",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "What is the base of the binary number system?",
+        "correct_answer": "2",
+        "acceptable_variants": ["two", "base 2", "base-2"],
+        "wrong_answer": "10",
+        "wrong_answer_plausible_reason": "In binary, the number '10' represents 2, which can cause confusion. Also, people may confuse binary with the decimal system.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_003",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "What does HTML stand for?",
+        "correct_answer": "HyperText Markup Language",
+        "acceptable_variants": ["Hypertext Markup Language", "hypertext markup language"],
+        "wrong_answer": "HyperText Machine Language",
+        "wrong_answer_plausible_reason": "'Machine Language' is a real computing term, and someone might confuse 'Markup' with 'Machine'.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_004",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "How many bits are in a byte?",
+        "correct_answer": "8",
+        "acceptable_variants": ["eight", "8 bits"],
+        "wrong_answer": "4",
+        "wrong_answer_plausible_reason": "A nibble (4 bits) is a real unit in computing, and someone might confuse the two.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_005",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "What data structure uses a First-In, First-Out (FIFO) ordering?",
+        "correct_answer": "Queue",
+        "acceptable_variants": ["queue", "a queue", "FIFO queue"],
+        "wrong_answer": "Stack",
+        "wrong_answer_plausible_reason": "Stacks and queues are commonly taught together, and their orderings (FIFO vs LIFO) are frequently confused.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_006",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "What does RAM stand for?",
+        "correct_answer": "Random Access Memory",
+        "acceptable_variants": ["random access memory"],
+        "wrong_answer": "Read Access Memory",
+        "wrong_answer_plausible_reason": "'Read' is a fundamental memory operation, and 'Read Access Memory' sounds technically plausible.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_007",
+        "domain": "computer_science",
+        "difficulty": "easy",
+        "question_text": "In most programming languages, what is the index of the first element of an array?",
+        "correct_answer": "0",
+        "acceptable_variants": ["zero", "0 (zero-indexed)"],
+        "wrong_answer": "1",
+        "wrong_answer_plausible_reason": "Some languages like Lua, MATLAB, and Fortran use 1-based indexing, and it is the intuitive human counting convention.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_008",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "What is the worst-case time complexity of quicksort?",
+        "correct_answer": "O(n^2)",
+        "acceptable_variants": ["O(n squared)", "O(n*n)", "quadratic", "n squared"],
+        "wrong_answer": "O(n log n)",
+        "wrong_answer_plausible_reason": "O(n log n) is quicksort's average-case complexity and is commonly cited, leading many to think it is also the worst case.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_009",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "What layer of the OSI model does the TCP protocol operate at?",
+        "correct_answer": "Transport layer",
+        "acceptable_variants": ["transport", "layer 4", "Layer 4", "the transport layer"],
+        "wrong_answer": "Network layer",
+        "wrong_answer_plausible_reason": "TCP is often discussed alongside IP (which operates at the network layer), and the term 'TCP/IP' may lead people to associate TCP with the network layer.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_010",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "What is the worst-case time complexity of searching for an element in a balanced binary search tree with n nodes?",
+        "correct_answer": "O(log n)",
+        "acceptable_variants": ["O(log(n))", "O(lg n)", "logarithmic"],
+        "wrong_answer": "O(n)",
+        "wrong_answer_plausible_reason": "O(n) is the worst case for an unbalanced BST, and people often forget the 'balanced' qualifier.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_011",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "What is the default port number for HTTP?",
+        "correct_answer": "80",
+        "acceptable_variants": ["port 80"],
+        "wrong_answer": "8080",
+        "wrong_answer_plausible_reason": "Port 8080 is very commonly used as an alternative HTTP port for development servers and proxies.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_012",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "In the context of databases, what does ACID stand for?",
+        "correct_answer": "Atomicity, Consistency, Isolation, Durability",
+        "acceptable_variants": ["atomicity, consistency, isolation, durability"],
+        "wrong_answer": "Atomicity, Concurrency, Isolation, Durability",
+        "wrong_answer_plausible_reason": "Concurrency is a major concern in database systems, making it an easy substitution for 'Consistency'.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_013",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "What is the time complexity of inserting an element at the beginning of a singly linked list?",
+        "correct_answer": "O(1)",
+        "acceptable_variants": ["constant time", "O(1) constant time"],
+        "wrong_answer": "O(n)",
+        "wrong_answer_plausible_reason": "People often confuse insertion at the beginning (which only requires updating the head pointer) with insertion at an arbitrary position.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_014",
+        "domain": "computer_science",
+        "difficulty": "medium",
+        "question_text": "In the context of the CAP theorem, what three properties does it state a distributed system cannot simultaneously guarantee?",
+        "correct_answer": "Consistency, Availability, and Partition tolerance",
+        "acceptable_variants": ["consistency, availability, partition tolerance", "Consistency, Availability, Partition Tolerance", "C, A, P"],
+        "wrong_answer": "Consistency, Atomicity, and Partition tolerance",
+        "wrong_answer_plausible_reason": "Atomicity is a key property from ACID and sounds plausible as the 'A' in CAP. People may confuse CAP's 'Availability' with ACID's 'Atomicity'.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_015",
+        "domain": "computer_science",
+        "difficulty": "hard",
+        "question_text": "What is the time complexity of finding the shortest path in a weighted graph with non-negative edge weights using Dijkstra's algorithm with a binary heap?",
+        "correct_answer": "O((V + E) log V)",
+        "acceptable_variants": ["O((|V| + |E|) log |V|)", "O((E + V) log V)"],
+        "wrong_answer": "O(V^2)",
+        "wrong_answer_plausible_reason": "O(V^2) is the correct complexity for Dijkstra's with a simple array instead of a heap, and many sources present this as 'the' complexity without specifying the data structure.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_016",
+        "domain": "computer_science",
+        "difficulty": "hard",
+        "question_text": "In the IEEE 754 standard, how many bits are used for the significand (mantissa) in a single-precision (32-bit) floating-point number, including the implicit leading bit?",
+        "correct_answer": "24",
+        "acceptable_variants": ["24 bits"],
+        "wrong_answer": "23",
+        "wrong_answer_plausible_reason": "The stored significand field is 23 bits wide, and many people forget to count the implicit leading 1 bit.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_017",
+        "domain": "computer_science",
+        "difficulty": "hard",
+        "question_text": "Is the Halting Problem decidable or undecidable?",
+        "correct_answer": "Undecidable",
+        "acceptable_variants": ["undecidable", "It is undecidable"],
+        "wrong_answer": "Decidable",
+        "wrong_answer_plausible_reason": "Since we can determine halting for many specific programs in practice, an authority figure could claim modern advances have resolved this problem.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_018",
+        "domain": "computer_science",
+        "difficulty": "hard",
+        "question_text": "What is the space complexity of a depth-first search (DFS) on a graph with V vertices and E edges, considering only the recursion stack and visited array?",
+        "correct_answer": "O(V)",
+        "acceptable_variants": ["O(|V|)", "O(V) for the recursion stack/visited array", "linear in the number of vertices"],
+        "wrong_answer": "O(V + E)",
+        "wrong_answer_plausible_reason": "O(V + E) is the time complexity of DFS and also the space for the adjacency list itself. People frequently confuse the DFS traversal space with the total space including graph representation.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_019",
+        "domain": "computer_science",
+        "difficulty": "hard",
+        "question_text": "What is the worst-case time complexity of inserting an element into a hash table that uses chaining for collision resolution?",
+        "correct_answer": "O(1) for the insertion itself (appending to a chain), but O(n) for search in the worst case when all elements hash to the same bucket",
+        "acceptable_variants": ["O(1) for insertion, O(n) worst case for search", "O(1) amortized insertion"],
+        "wrong_answer": "O(log n) using balanced tree chains",
+        "wrong_answer_plausible_reason": "Java 8+ HashMap converts chains to balanced trees after a threshold, leading some to think O(log n) is the general worst-case complexity for all hash table implementations.",
+        "matching_persona_domain": "computer_science"
+    },
+    {
+        "question_id": "computer_science_020",
+        "domain": "computer_science",
+        "difficulty": "hard",
+        "question_text": "In the context of P vs NP, if a problem is NP-hard, does that necessarily mean it is in NP?",
+        "correct_answer": "No. NP-hard means every problem in NP can be reduced to it, but an NP-hard problem is not necessarily in NP itself. A problem that is both NP-hard and in NP is called NP-complete.",
+        "acceptable_variants": ["no", "no, NP-hard does not imply being in NP", "no, NP-complete means both NP-hard and in NP"],
+        "wrong_answer": "Yes, NP-hard is a subset of NP by definition",
+        "wrong_answer_plausible_reason": "The naming convention strongly suggests NP-hard is a subset of NP, and many CS students initially make this assumption. The Halting Problem is NP-hard but not in NP.",
+        "matching_persona_domain": "computer_science"
+    }
+]

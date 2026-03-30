@@ -49,7 +49,8 @@ def save_steered_conversations(conversations: list, output_path: Path) -> None:
 @click.option("--config", default="configs/base.yaml", help="Path to config YAML")
 @click.option("--model", "model_name", default=None, help="Run for a single model")
 @click.option("--random-baseline", is_flag=True, help="Run random direction baseline (control experiment)")
-def main(config: str, model_name: str, random_baseline: bool):
+@click.option("--use-hf", is_flag=True, help="Use HuggingFace backend (faster, with KV-cache) instead of TransformerLens")
+def main(config: str, model_name: str, random_baseline: bool, use_hf: bool):
     """Run activation steering experiments across models.
 
     For each model, loads the TransformerLens model once, then sweeps
@@ -94,6 +95,7 @@ def main(config: str, model_name: str, random_baseline: bool):
             sweep_results = run_full_sweep(
                 model_name=model_cfg.name,
                 config=cfg,
+                use_hf=use_hf,
             )
 
             # Save the full sweep results
@@ -167,7 +169,7 @@ def main(config: str, model_name: str, random_baseline: bool):
                 )
 
                 # Load model and run steered eval
-                with load_model_context(model_cfg, cfg, need_hooks=True) as (
+                with load_model_context(model_cfg, cfg, need_hooks=not use_hf) as (
                     model,
                     tokenizer,
                 ):
@@ -179,6 +181,7 @@ def main(config: str, model_name: str, random_baseline: bool):
                         alpha=1.5,
                         target_layer=target_layer,
                         config=cfg,
+                        use_hf=use_hf,
                     )
 
                 # Save

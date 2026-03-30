@@ -1,0 +1,86 @@
+{
+  "models_analyzed": [
+    "llama31_8b",
+    "qwen3_8b",
+    "gemma3_12b",
+    "deepseek_r1_qwen3_8b",
+    "mistral_7b_v03"
+  ],
+  "per_model_summary": {
+    "llama31_8b": {
+      "peak_layers": {
+        "authority": 16,
+        "sycophancy": 16,
+        "confidence": 16
+      },
+      "cosine_auth_syc": 0.009237739319412741,
+      "cosine_auth_conf": -0.23266918069587117,
+      "cosine_syc_conf": 0.022710782226346704,
+      "subspace_decomposition": {
+        "variance_auth": 8.533582773342485e-05,
+        "variance_conf": 0.0006533971609264108,
+        "variance_residual": 0.9992612670113401
+      }
+    },
+    "qwen3_8b": {
+      "peak_layers": {
+        "authority": 18,
+        "sycophancy": 18,
+        "confidence": 18
+      },
+      "cosine_auth_syc": 0.015497519777377788,
+      "cosine_auth_conf": -0.35769109799491305,
+      "cosine_syc_conf": 0.0193172852702288,
+      "subspace_decomposition": {
+        "variance_auth": 0.00024017311925021695,
+        "variance_conf": 0.0007087264717090993,
+        "variance_residual": 0.9990511004090408
+      }
+    },
+    "gemma3_12b": {
+      "peak_layers": {
+        "authority": 24,
+        "sycophancy": 24,
+        "confidence": 24
+      },
+      "cosine_auth_syc": -0.06287586213195806,
+      "cosine_auth_conf": -0.5216213904486307,
+      "cosine_syc_conf": 0.04388431819725991,
+      "subspace_decomposition": {
+        "variance_auth": 0.003953374038836987,
+        "variance_conf": 0.00016886659640105803,
+        "variance_residual": 0.9958777593647621
+      }
+    },
+    "deepseek_r1_qwen3_8b": {
+      "peak_layers": {
+        "authority": 18,
+        "sycophancy": 18,
+        "confidence": 18
+      },
+      "cosine_auth_syc": 0.027691339630433243,
+      "cosine_auth_conf": -0.23826314205212218,
+      "cosine_syc_conf": -0.0016332907497855764,
+      "subspace_decomposition": {
+        "variance_auth": 0.0007668102905280013,
+        "variance_conf": 2.612998793322495e-05,
+        "variance_residual": 0.9992070597215382
+      }
+    },
+    "mistral_7b_v03": {
+      "peak_layers": {
+        "authority": 16,
+        "sycophancy": 16,
+        "confidence": 16
+      },
+      "cosine_auth_syc": -0.020178851121772645,
+      "cosine_auth_conf": -0.2175040225044078,
+      "cosine_syc_conf": 0.015522184453005017,
+      "subspace_decomposition": {
+        "variance_auth": 0.0004071860325946653,
+        "variance_conf": 0.00013010313162783275,
+        "variance_residual": 0.9994627108357779
+      }
+    }
+  }
+}

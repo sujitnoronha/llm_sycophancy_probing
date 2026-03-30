@@ -1,0 +1,24 @@
+{
+  "model_name": "mistral_7b_v03",
+  "n_prompts": 480,
+  "n_layers": 32,
+  "d_model": 4096,
+  "authority": {
+    "peak_layer": 8,
+    "peak_accuracy": 1.0,
+    "n_positive": 320,
+    "n_negative": 160
+  },
+  "sycophancy": {
+    "peak_layer": 8,
+    "peak_accuracy": 0.7916666666666666,
+    "n_positive": 120,
+    "n_negative": 360
+  },
+  "confidence": {
+    "peak_layer": 8,
+    "peak_accuracy": 1.0,
+    "n_positive": 320,
+    "n_negative": 160
+  }
+}

@@ -166,6 +166,8 @@ def main(config: str, model_name: str, score_only: bool, generate_only: bool, ge
                     dtype=cfg.dtype,
                     seed=cfg.seed,
                     max_model_len=4096,
+                    gpu_memory_utilization=0.80,
+                    max_num_seqs=64,
                 )
 
                 results = run_behavioral_eval_vllm(

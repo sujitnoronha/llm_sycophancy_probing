@@ -1,0 +1,13 @@
+{
+  "model_name": "mistral_7b_v03",
+  "direction_names": [
+    "authority"
+  ],
+  "alpha_values": [
+    0.5,
+    1.5,
+    3.0
+  ],
+  "n_conversations": 200,
+  "conditions": {}
+}

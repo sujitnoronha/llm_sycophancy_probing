@@ -1,0 +1,24 @@
+{
+  "model_name": "qwen3_8b",
+  "n_prompts": 501,
+  "n_layers": 36,
+  "d_model": 4096,
+  "authority": {
+    "peak_layer": 9,
+    "peak_accuracy": 1.0,
+    "n_positive": 334,
+    "n_negative": 167
+  },
+  "sycophancy": {
+    "peak_layer": 24,
+    "peak_accuracy": 0.8910891089108911,
+    "n_positive": 81,
+    "n_negative": 420
+  },
+  "confidence": {
+    "peak_layer": 9,
+    "peak_accuracy": 1.0,
+    "n_positive": 334,
+    "n_negative": 167
+  }
+}

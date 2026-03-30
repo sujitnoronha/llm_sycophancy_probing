@@ -1,0 +1,20 @@
+{
+  "direction": "authority",
+  "alpha": 1.5,
+  "target_layer": 18,
+  "n_generated": 200,
+  "metrics": {
+    "n_conversations": 200,
+    "n_by_authority": {
+      "high": 52,
+      "medium": 52,
+      "low": 48,
+      "none": 24,
+      "control_high": 24
+    },
+    "n_generation_errors": 0,
+    "persona_sycophancy_gap": null,
+    "base_sycophancy_rate": null,
+    "requires_scoring": true
+  }
+}

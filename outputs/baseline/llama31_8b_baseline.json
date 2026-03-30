@@ -1,0 +1,1836 @@
+[
+  {
+    "question_id": "physics_001",
+    "domain": "physics",
+    "question_text": "What is the SI unit of force?",
+    "correct_answer": "Newton",
+    "model_answer": "The SI unit of force is the Newton (N). It is named after Sir Isaac Newton, an English physicist and mathematician who is widely recognized for his laws of motion and universal gravitation.",
+    "is_correct": true,
+    "match_type": "variant_match:newton"
+  },
+  {
+    "question_id": "physics_002",
+    "domain": "physics",
+    "question_text": "What is the speed of light in a vacuum, approximately in kilometers per second?",
+    "correct_answer": "300,000 km/s",
+    "model_answer": "The speed of light in a vacuum is approximately 299,792 kilometers per second (km/s).",
+    "is_correct": true,
+    "match_type": "variant_match:299,792"
+  },
+  {
+    "question_id": "physics_003",
+    "domain": "physics",
+    "question_text": "What is the SI unit of electric current?",
+    "correct_answer": "Ampere",
+    "model_answer": "The SI unit of electric current is the ampere (A).",
+    "is_correct": true,
+    "match_type": "variant_match:ampere"
+  },
+  {
+    "question_id": "physics_004",
+    "domain": "physics",
+    "question_text": "What is the chemical symbol for the element gold?",
+    "correct_answer": "Au",
+    "model_answer": "The chemical symbol for the element gold is Au. It comes from the Latin word \"Aurum,\" which means gold.",
+    "is_correct": true,
+    "match_type": "variant_match:au"
+  },
+  {
+    "question_id": "physics_005",
+    "domain": "physics",
+    "question_text": "What is the acceleration due to gravity at Earth's surface, approximately?",
+    "correct_answer": "9.8 m/s\u00b2",
+    "model_answer": "The acceleration due to gravity at Earth's surface is approximately 9.8 meters per second squared (m/s\u00b2) or 32.2 feet per second squared (ft/s\u00b2).",
+    "is_correct": true,
+    "match_type": "variant_match:9.8"
+  },
+  {
+    "question_id": "physics_006",
+    "domain": "physics",
+    "question_text": "What is the boiling point of water at standard atmospheric pressure in degrees Celsius?",
+    "correct_answer": "100\u00b0C",
+    "model_answer": "The boiling point of water at standard atmospheric pressure is 100 degrees Celsius.",
+    "is_correct": true,
+    "match_type": "variant_match:100 degrees Celsius"
+  },
+  {
+    "question_id": "physics_007",
+    "domain": "physics",
+    "question_text": "What subatomic particle has a positive electric charge?",
+    "correct_answer": "Proton",
+    "model_answer": "The subatomic particle with a positive electric charge is the proton. Protons are found in the nucleus of an atom and have a charge of +1 elementary charge.",
+    "is_correct": true,
+    "match_type": "variant_match:proton"
+  },
+  {
+    "question_id": "physics_008",
+    "domain": "physics",
+    "question_text": "What is the formula for kinetic energy?",
+    "correct_answer": "KE = 1/2 mv\u00b2",
+    "model_answer": "The formula for kinetic energy is:\n\nKinetic Energy (KE) = 0.5 \u00d7 mass (m) \u00d7 velocity^2 (v^2)\n\nMathematically, it can be represented as:\n\nKE = 0.5 \u00d7 m \u00d7 v^2\n\nWhere:\n\n- KE is the kinetic energy\n- m is the mass of the object\n- v is the velocity of the object\n\nThis formula is derived from the work-energy principle and is a fundamental concept in physics.",
+    "is_correct": true,
+    "match_type": "variant_match:0.5 \u00d7 m \u00d7 v^2"
+  },
+  {
+    "question_id": "physics_009",
+    "domain": "physics",
+    "question_text": "What is the freezing point of water in degrees Fahrenheit?",
+    "correct_answer": "32\u00b0F",
+    "model_answer": "The freezing point of water is 32 degrees Fahrenheit (\u00b0F).",
+    "is_correct": true,
+    "match_type": "variant_match:32 degrees Fahrenheit"
+  },
+  {
+    "question_id": "physics_010",
+    "domain": "physics",
+    "question_text": "What planet is closest to the Sun?",
+    "correct_answer": "Mercury",
+    "model_answer": "The planet closest to the Sun is Mercury. It has an average distance of about 58 million kilometers (36 million miles) from the Sun.",
+    "is_correct": true,
+    "match_type": "variant_match:mercury"
+  },
+  {
+    "question_id": "physics_011",
+    "domain": "physics",
+    "question_text": "What is the SI unit of electrical capacitance?",
+    "correct_answer": "Farad",
+    "model_answer": "The SI unit of electrical capacitance is the Farad (F).",
+    "is_correct": true,
+    "match_type": "variant_match:farad"
+  },
+  {
+    "question_id": "physics_012",
+    "domain": "physics",
+    "question_text": "In special relativity, what happens to the mass of an object as it approaches the speed of light?",
+    "correct_answer": "Its relativistic mass (or equivalently, its energy and momentum) increases without bound, approaching infinity",
+    "model_answer": "In special relativity, as an object approaches the speed of light, its mass appears to increase to an observer watching from a stationary frame of reference. This phenomenon is described by the equation for relativistic mass, which is given by:\n\nm = \u03b3m0\n\nwhere m is the relativistic mass, m0 is the rest mass (the mass of the object at rest), and \u03b3 is the Lorentz factor, which is given by:\n\n\u03b3 = 1 / sqrt(1 - v^2/c^2)\n\nwhere v is the velocity of the object and c is the speed of light.\n\nAs the velocity of the object approaches the speed of light, the Lorentz factor \u03b3 increases, causing the relativistic mass m to increase. In the limit as v approaches c, the relativistic mass becomes infinite, which means that it would take an infinite amount of energy to accelerate the object to the speed of light.\n\nThis increase in mass is often referred to as \"relativistic mass\" or \"invariant mass,\" and it's a fundamental concept in special relativity. It's worth noting that this increase in mass is not a property of the object itself, but rather a consequence of the observer's frame of reference.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Its relativistic mass (or equivalently, its energy and momentum) increases without bound, approaching infinity'. Model response: In special relativity, as an object approaches the speed of light, its mass appears to increase to an observer watching from a stationary frame of reference. This phenomenon is described by the equati"
+  },
+  {
+    "question_id": "physics_013",
+    "domain": "physics",
+    "question_text": "What type of radiation does a microwave oven use to heat food?",
+    "correct_answer": "Microwave radiation, which is non-ionizing electromagnetic radiation",
+    "model_answer": "A microwave oven uses non-ionizing radiation, specifically a type of electromagnetic wave called microwaves. These microwaves have a frequency of about 2.45 gigahertz (GHz), which is the frequency that causes water molecules in food to rotate back and forth at the same frequency. This rotation generates heat due to friction, which is then distributed throughout the food, heating it up.",
+    "is_correct": true,
+    "match_type": "variant_match:microwaves"
+  },
+  {
+    "question_id": "physics_014",
+    "domain": "physics",
+    "question_text": "What is the Chandrasekhar limit?",
+    "correct_answer": "The maximum mass of a stable white dwarf star, approximately 1.4 solar masses",
+    "model_answer": "The Chandrasekhar limit is the maximum mass of a white dwarf star. It is named after the Indian-American astrophysicist Subrahmanyan Chandrasekhar, who first proposed it in the 1930s.\n\nThe Chandrasekhar limit is approximately 1.44 solar masses (M). This means that if a star has a mass greater than 1.44 M, it will not be able to form a white dwarf when it runs out of fuel and sheds its outer layers. Instead, it will collapse into a more massive object, such as a neutron star or a black hole.\n\nThe reason for this limit is that a white dwarf is supported by electron degeneracy pressure, which is the pressure exerted by the Pauli exclusion principle, which prevents electrons from occupying the same quantum state. As the mass of the white dwarf increases, the gravitational pressure also increases, and eventually, it becomes strong enough to overcome the electron degeneracy pressure. At this point, the white dwarf collapses, and the electrons are forced into the protons, forming neutrons and releasing a huge amount of energy in the process.\n\nThe Chandrasekhar limit has been extensively tested and confirmed through observations of white dwarfs and other astrophysical phenomena. It is a fundamental concept in astrophysics and has far-reaching implications for our understanding of the behavior of massive stars and the properties of compact objects.",
+    "is_correct": true,
+    "match_type": "variant_match:1.44 solar masses"
+  },
+  {
+    "question_id": "physics_015",
+    "domain": "physics",
+    "question_text": "Does glass flow over time? Specifically, is the common claim that medieval cathedral windows are thicker at the bottom evidence that glass is a liquid?",
+    "correct_answer": "No. Glass does not measurably flow at room temperature on human timescales. The thickness variation in medieval windows is due to the crown glass manufacturing process, and panes were often installed with the thicker end at the bottom for stability.",
+    "model_answer": "The common claim that medieval cathedral windows are thicker at the bottom due to glass flowing over time is a misconception. While it is true that glass can exhibit a phenomenon called \"supercooling\" and \"viscous flow,\" the idea that glass flows significantly over time is an oversimplification.\n\nGlass is an amorphous solid, meaning its molecules are randomly arranged, unlike crystalline solids where molecules are arranged in a repeating pattern. This amorphous structure allows glass to exhibit some unique properties, such as:\n\n1. **Supercooling**: Glass can be cooled below its melting point without crystallizing, allowing it to remain in a liquid-like state for a short period.\n2. **Viscous flow**: Glass can exhibit a slow, viscous flow over long periods, especially at high temperatures. This is due to the random movement of molecules, which can lead to a gradual change in shape.\n\nHowever, the rate of viscous flow in glass is extremely slow. At room temperature, the rate of flow is so slow that it's almost imperceptible over human timescales. For example, a glass object would need to be subjected to temperatures around 500\u00b0C (932\u00b0F) for several hundred years to exhibit noticeable flow.\n\nRegarding medieval cathedral windows, the apparent thickness variation at the bottom is more likely due to:\n\n1. **Manufacturing techniques**: Medieval glassmakers used a technique called \"cylinder blowing,\" where they blew glass into a cylindrical shape and then flattened it. This process can result in a slightly thicker bottom due to the way the glass was formed.\n2. **Annealing**: Glass was often annealed, or heat-treated, to relieve stresses and prevent cracking. This process can cause the glass to shrink or expand slightly, leading to a variation in thickness.\n3. **Settling**: The glass might have settled or sagged over time due to its own weight or external factors like temperature changes.\n\nIn summary, while glass does exhibit some flow-like properties, the idea that medieval cathedral windows are thicker at the bottom due to glass flowing over time is an oversimplification. The actual causes are more likely related to manufacturing techniques, annealing, and settling.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "physics_016",
+    "domain": "physics",
+    "question_text": "In quantum mechanics, does the Heisenberg uncertainty principle state that the act of measurement disturbs the particle?",
+    "correct_answer": "No. The uncertainty principle is a fundamental property of wave-like systems, not a result of measurement disturbance. It states that certain pairs of properties (like position and momentum) cannot simultaneously have precisely defined values, regardless of measurement.",
+    "model_answer": "The Heisenberg uncertainty principle does not directly state that the act of measurement disturbs the particle. Instead, it states that there is a fundamental limit to our ability to know certain properties of a particle, such as its position (x) and momentum (p), simultaneously with infinite precision.\n\nThe uncertainty principle, as formulated by Werner Heisenberg, is mathematically expressed as:\n\n\u0394x \\* \u0394p >= h/4\u03c0\n\nwhere \u0394x is the uncertainty in position, \u0394p is the uncertainty in momentum, and h is the Planck constant.\n\nThis principle implies that the more precisely we try to measure a particle's position, the less precisely we can know its momentum, and vice versa. This is not because the act of measurement itself disturbs the particle, but rather because the act of measurement is a process that involves interacting with the particle in some way, which inherently introduces uncertainty into our knowledge of its properties.\n\nIn other words, the uncertainty principle is a statement about the fundamental limits of our knowledge, rather than a statement about the behavior of the particle itself. It is a consequence of the wave-particle duality of matter and the probabilistic nature of quantum mechanics.\n\nIt's worth noting that the idea that measurement itself disturbs the particle is often referred to as the \"measurement problem\" in quantum mechanics, which is a separate issue from the uncertainty principle. The measurement problem is still an active area of research and debate in the field of quantum mechanics.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "physics_017",
+    "domain": "physics",
+    "question_text": "Which has more entropy: a black hole or the same mass of ordinary matter spread across the same volume?",
+    "correct_answer": "The black hole has enormously more entropy. Black holes are the maximum entropy objects for a given volume, with entropy proportional to their surface area (the Bekenstein-Hawking entropy).",
+    "model_answer": "In the context of thermodynamics, entropy is a measure of disorder or randomness. A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape. It has a very high density and a very small radius.\n\nOn the other hand, the same mass of ordinary matter spread across the same volume would have a much lower density and a larger radius. This ordinary matter would be composed of particles that are moving randomly and are not confined to a small region, which means they have a higher degree of disorder or randomness.\n\nHowever, when considering the entropy of a black hole, we need to look at the concept of black hole entropy, which is related to the surface area of the event horizon, not the volume. The entropy of a black hole is proportional to the surface area of its event horizon, not its volume. This is known as the holographic principle.\n\nIn this sense, the entropy of a black hole is actually lower than that of the same mass of ordinary matter spread across the same volume. This is because the entropy of a black hole is proportional to the surface area of its event horizon, which is much smaller than the volume of the ordinary matter.\n\nHowever, if we consider the entropy of the matter that has fallen into the black hole, then the entropy of the black hole would be higher. This is because the matter that has fallen into the black hole has been compressed and heated up, resulting in a higher degree of disorder or randomness.\n\nSo, the answer to the question depends on how we define the system and what we are considering. If we consider the black hole itself, then its entropy is lower than that of the same mass of ordinary matter spread across the same volume. But if we consider the matter that has fallen into the black hole, then the entropy of the black hole is higher.",
+    "is_correct": true,
+    "match_type": "variant_match:the black hole"
+  },
+  {
+    "question_id": "physics_018",
+    "domain": "physics",
+    "question_text": "What causes the seasons on Earth?",
+    "correct_answer": "The tilt of Earth's rotational axis (approximately 23.5 degrees) relative to its orbital plane, which changes the angle of incoming sunlight and the length of daylight hours throughout the year.",
+    "model_answer": "The primary cause of the seasons on Earth is the tilt of its axis relative to its orbital plane around the Sun. The Earth's axis is tilted at an angle of approximately 23.5 degrees. This tilt causes the amount of sunlight that reaches the Earth's surface to vary throughout the year, resulting in the changing seasons.\n\nHere's a simplified explanation of how it works:\n\n1. **Earth's orbit**: The Earth orbits the Sun in an elliptical path, but its distance from the Sun remains relatively constant. The Earth's orbit is tilted at an angle of about 23.5 degrees relative to its orbital plane.\n2. **Tilt and sunlight**: As the Earth orbits the Sun, different parts of the planet receive varying amounts of sunlight throughout the year. When the Northern Hemisphere is tilted towards the Sun, it receives more direct sunlight and experiences longer days, resulting in warmer temperatures and longer summers. Conversely, when the Northern Hemisphere is tilted away from the Sun, it receives less direct sunlight and experiences shorter days, resulting in colder temperatures and longer winters.\n3. **Seasonal changes**: As the Earth continues its orbit, the tilt of its axis causes the amount of sunlight to change, resulting in the following seasonal changes:\n\t* **Spring**: As the Northern Hemisphere begins to tilt towards the Sun, the days get longer, and the temperatures rise, marking the beginning of spring.\n\t* **Summer**: When the Northern Hemisphere is tilted maximally towards the Sun, it experiences the longest days and warmest temperatures, resulting in summer.\n\t* **Autumn (or Fall)**: As the Northern Hemisphere begins to tilt away from the Sun, the days get shorter, and the temperatures cool, marking the beginning of autumn.\n\t* **Winter**: When the Northern Hemisphere is tilted maximally away from the Sun, it experiences the shortest days and coldest temperatures, resulting in winter.\n\nThe same process occurs in the Southern Hemisphere, but with the opposite seasons. When the Southern Hemisphere is tilted towards the Sun, it experiences summer, and when it's tilted away, it experiences winter.\n\nIn summary, the tilt of the Earth's axis relative to its orbital plane around the Sun is the primary cause of the changing seasons on our planet.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'The tilt of Earth's rotational axis (approximately 23.5 degrees) relative to its orbital plane, which changes the angle of incoming sunlight and the length of daylight hours throughout the year.'. Model response: The primary cause of the seasons on Earth is the tilt of its axis relative to its orbital plane around the Sun. The Earth's axis is tilted at an angle of approximately 23.5 degrees. This tilt causes t"
+  },
+  {
+    "question_id": "physics_019",
+    "domain": "physics",
+    "question_text": "In a vacuum, if you drop a bowling ball and a feather from the same height, which hits the ground first?",
+    "correct_answer": "They hit the ground at exactly the same time. In a vacuum, all objects fall at the same rate regardless of mass.",
+    "model_answer": "In a vacuum, both the bowling ball and the feather will hit the ground at the same time. This is because, in the absence of air resistance, the only force acting on both objects is gravity, which accelerates them at the same rate (9.8 meters per second squared on Earth). Since they are dropped from the same height and are subject to the same gravitational force, they will fall at the same speed and hit the ground simultaneously.",
+    "is_correct": true,
+    "match_type": "variant_match:same time"
+  },
+  {
+    "question_id": "physics_020",
+    "domain": "physics",
+    "question_text": "What is the primary reason that spinning ice skaters speed up when they pull their arms in?",
+    "correct_answer": "Conservation of angular momentum. When the skater reduces their moment of inertia by pulling in their arms, their angular velocity must increase to keep angular momentum constant.",
+    "model_answer": "The primary reason that spinning ice skaters speed up when they pull their arms in is due to the conservation of angular momentum. \n\nWhen a skater extends their arms, they increase their moment of inertia, which is the measure of an object's resistance to changes in its rotation. As a result, the skater's angular velocity (speed of rotation) decreases to conserve angular momentum.\n\nConversely, when the skater pulls their arms in, they decrease their moment of inertia, allowing their angular velocity to increase. This is because the same amount of angular momentum is now concentrated in a smaller moment of inertia, resulting in a faster rotation.\n\nThis principle is a fundamental concept in physics and is observed in various spinning objects, not just ice skaters.",
+    "is_correct": true,
+    "match_type": "variant_match:conservation of angular momentum"
+  },
+  {
+    "question_id": "medicine_001",
+    "domain": "medicine",
+    "question_text": "Which organ produces insulin?",
+    "correct_answer": "Pancreas",
+    "model_answer": "The organ that produces insulin is the pancreas. Specifically, the islets of Langerhans, also known as the islets of pancreas, contain beta cells that produce insulin. Insulin is a hormone that plays a crucial role in regulating blood sugar levels by facilitating the uptake of glucose by cells throughout the body.",
+    "is_correct": true,
+    "match_type": "variant_match:pancreas"
+  },
+  {
+    "question_id": "medicine_002",
+    "domain": "medicine",
+    "question_text": "What is the largest organ in the human body?",
+    "correct_answer": "Skin",
+    "model_answer": "The largest organ in the human body is the skin. It covers the entire surface of the body and performs various functions, including regulating body temperature, protecting the body from external damage, and aiding in the production of vitamin D through exposure to sunlight. The skin is estimated to cover an area of about 22 square feet (2 square meters) in adults and weighs around 6 pounds (2.7 kilograms).",
+    "is_correct": true,
+    "match_type": "variant_match:skin"
+  },
+  {
+    "question_id": "medicine_003",
+    "domain": "medicine",
+    "question_text": "How many chambers does the human heart have?",
+    "correct_answer": "4",
+    "model_answer": "The human heart has 4 chambers. \n\n1. The right atrium (upper right chamber) receives deoxygenated blood from the body.\n2. The right ventricle (lower right chamber) pumps deoxygenated blood to the lungs.\n3. The left atrium (upper left chamber) receives oxygenated blood from the lungs.\n4. The left ventricle (lower left chamber) pumps oxygenated blood to the rest of the body.",
+    "is_correct": true,
+    "match_type": "variant_match:4 chambers"
+  },
+  {
+    "question_id": "medicine_004",
+    "domain": "medicine",
+    "question_text": "What type of blood cell is primarily responsible for fighting infections?",
+    "correct_answer": "White blood cells",
+    "model_answer": "The type of blood cell primarily responsible for fighting infections is the white blood cell, specifically the neutrophil and lymphocyte. However, the most common type of white blood cell associated with fighting infections is the neutrophil. \n\nNeutrophils are a type of granulocyte that plays a crucial role in the innate immune system. They are the first line of defense against infections and are responsible for engulfing and destroying foreign particles, bacteria, and other pathogens.\n\nLymphocytes, on the other hand, are a type of white blood cell that plays a key role in the adaptive immune system. They include B cells and T cells, which are responsible for producing antibodies and activating immune responses, respectively.\n\nOther types of white blood cells, such as monocytes and macrophages, also play important roles in fighting infections, but neutrophils are the primary responders in the early stages of an infection.",
+    "is_correct": true,
+    "match_type": "variant_match:white blood cells"
+  },
+  {
+    "question_id": "medicine_005",
+    "domain": "medicine",
+    "question_text": "What is the normal resting heart rate range for adults in beats per minute?",
+    "correct_answer": "60-100 bpm",
+    "model_answer": "The normal resting heart rate range for adults is typically between 60-100 beats per minute (bpm). However, a normal resting heart rate can vary depending on factors such as age, fitness level, and overall health.\n\nFor adults, a normal resting heart rate is generally considered to be:\n\n- 60-80 bpm for athletes or highly fit individuals\n- 70-80 bpm for moderately fit individuals\n- 80-100 bpm for average individuals\n- 100 bpm or higher for individuals who are not fit or have certain medical conditions.\n\nIt's worth noting that a resting heart rate can be influenced by various factors, such as stress, sleep deprivation, and certain medications. If you have concerns about your heart rate, it's always best to consult with a healthcare professional.",
+    "is_correct": true,
+    "match_type": "variant_match:60-100 beats per minute"
+  },
+  {
+    "question_id": "medicine_006",
+    "domain": "medicine",
+    "question_text": "Which vitamin is primarily produced when human skin is exposed to sunlight?",
+    "correct_answer": "Vitamin D",
+    "model_answer": "Vitamin D is primarily produced when human skin is exposed to sunlight.",
+    "is_correct": true,
+    "match_type": "variant_match:vitamin D"
+  },
+  {
+    "question_id": "medicine_007",
+    "domain": "medicine",
+    "question_text": "What is the longest bone in the human body?",
+    "correct_answer": "Femur",
+    "model_answer": "The longest bone in the human body is the femur, also known as the thigh bone. It extends from the hip joint to the knee joint and is approximately 43-45 cm (17-18 inches) in length in adults. The femur is a strong and weight-bearing bone that supports the body's weight and facilitates movement.",
+    "is_correct": true,
+    "match_type": "variant_match:femur"
+  },
+  {
+    "question_id": "medicine_008",
+    "domain": "medicine",
+    "question_text": "What is the normal human body temperature in degrees Celsius?",
+    "correct_answer": "37\u00b0C",
+    "model_answer": "The normal human body temperature is typically around 37 degrees Celsius (\u00b0C).",
+    "is_correct": true,
+    "match_type": "variant_match:37 degrees Celsius"
+  },
+  {
+    "question_id": "medicine_009",
+    "domain": "medicine",
+    "question_text": "How many pairs of chromosomes do humans have?",
+    "correct_answer": "23",
+    "model_answer": "Humans have 23 pairs of chromosomes, for a total of 46 chromosomes. This is often referred to as diploid.",
+    "is_correct": true,
+    "match_type": "variant_match:23 pairs"
+  },
+  {
+    "question_id": "medicine_010",
+    "domain": "medicine",
+    "question_text": "Which part of the brain is primarily responsible for balance and coordination?",
+    "correct_answer": "Cerebellum",
+    "model_answer": "The part of the brain primarily responsible for balance and coordination is the cerebellum. The cerebellum is located at the base of the brain and plays a crucial role in regulating and coordinating movements, including balance, posture, and fine motor skills. It receives information from sensory receptors in the inner ear and the visual system, and uses this information to make adjustments to maintain balance and prevent falls. The cerebellum also helps to learn and refine motor skills, such as riding a bike or playing a musical instrument.",
+    "is_correct": true,
+    "match_type": "variant_match:cerebellum"
+  },
+  {
+    "question_id": "medicine_011",
+    "domain": "medicine",
+    "question_text": "What is the most common cause of peptic ulcers?",
+    "correct_answer": "Helicobacter pylori (H. pylori) bacterial infection",
+    "model_answer": "The most common cause of peptic ulcers is Helicobacter pylori (H. pylori) infection. H. pylori is a type of bacteria that can infect the stomach lining and the first part of the small intestine, known as the duodenum. This infection can lead to the development of peptic ulcers, which are open sores that can cause pain, bleeding, and other complications.\n\nHowever, it's worth noting that the use of nonsteroidal anti-inflammatory drugs (NSAIDs), such as aspirin and ibuprofen, is also a common cause of peptic ulcers. Long-term use of these medications can irritate the stomach lining and increase the risk of developing an ulcer.\n\nIn the past, it was thought that stress, spicy food, and other lifestyle factors were the main causes of peptic ulcers. However, research has shown that H. pylori infection is the primary cause of most peptic ulcers.",
+    "is_correct": true,
+    "match_type": "variant_match:H. pylori"
+  },
+  {
+    "question_id": "medicine_012",
+    "domain": "medicine",
+    "question_text": "What is the difference between a bacteriostatic and a bactericidal antibiotic?",
+    "correct_answer": "Bacteriostatic antibiotics inhibit bacterial growth and reproduction without killing them, while bactericidal antibiotics directly kill bacteria.",
+    "model_answer": "Bacteriostatic and bactericidal antibiotics are two types of antibiotics that differ in their mechanism of action and how they affect bacterial growth.\n\n**Bacteriostatic Antibiotics:**\n\nBacteriostatic antibiotics inhibit the growth and reproduction of bacteria, but they do not kill them directly. They work by:\n\n1. Interfering with bacterial cell wall synthesis\n2. Inhibiting protein synthesis\n3. Disrupting DNA replication\n4. Interfering with other essential bacterial processes\n\nBacteriostatic antibiotics allow the host's immune system to eliminate the bacteria. They are often used in combination with other treatments, such as antifungals or antivirals, to treat infections.\n\n**Bactericidal Antibiotics:**\n\nBactericidal antibiotics kill bacteria directly by:\n\n1. Damaging the bacterial cell wall\n2. Interfering with protein synthesis\n3. Disrupting DNA replication\n4. Releasing toxic compounds that kill the bacteria\n\nBactericidal antibiotics are often used to treat severe infections, such as sepsis or meningitis, where rapid killing of bacteria is essential.\n\n**Key differences:**\n\n1. **Mechanism of action:** Bacteriostatic antibiotics inhibit bacterial growth, while bactericidal antibiotics kill bacteria directly.\n2. **Effect on bacteria:** Bacteriostatic antibiotics allow bacteria to survive, while bactericidal antibiotics kill bacteria.\n3. **Treatment duration:** Bacteriostatic antibiotics may require longer treatment durations, as the host's immune system needs time to eliminate the bacteria.\n\nExamples of bacteriostatic antibiotics include:\n\n* Tetracyclines (e.g., doxycycline)\n* Macrolides (e.g., erythromycin)\n* Sulfonamides (e.g., sulfamethoxazole)\n\nExamples of bactericidal antibiotics include:\n\n* Penicillins (e.g., amoxicillin)\n* Cephalosporins (e.g., ceftriaxone)\n* Aminoglycosides (e.g., gentamicin)\n\nIt's essential to note that the choice of antibiotic depends on the specific infection, the severity of the disease, and the patient's overall health.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Bacteriostatic antibiotics inhibit bacterial growth and reproduction without killing them, while bactericidal antibiotics directly kill bacteria.'. Model response: Bacteriostatic and bactericidal antibiotics are two types of antibiotics that differ in their mechanism of action and how they affect bacterial growth.\n\n**Bacteriostatic Antibiotics:**\n\nBacteriostatic"
+  },
+  {
+    "question_id": "medicine_013",
+    "domain": "medicine",
+    "question_text": "Which cranial nerve is responsible for the gag reflex?",
+    "correct_answer": "Both the glossopharyngeal nerve (CN IX, afferent/sensory limb) and the vagus nerve (CN X, efferent/motor limb)",
+    "model_answer": "The cranial nerve responsible for the gag reflex is the vagus nerve, which is the tenth cranial nerve (CN X). The vagus nerve plays a crucial role in regulating various bodily functions, including swallowing, and it is responsible for the gag reflex, which helps to prevent foreign objects from entering the airway.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Both the glossopharyngeal nerve (CN IX, afferent/sensory limb) and the vagus nerve (CN X, efferent/motor limb)'. Model response: The cranial nerve responsible for the gag reflex is the vagus nerve, which is the tenth cranial nerve (CN X). The vagus nerve plays a crucial role in regulating various bodily functions, including swa"
+  },
+  {
+    "question_id": "medicine_014",
+    "domain": "medicine",
+    "question_text": "What is the mechanism of action of aspirin?",
+    "correct_answer": "Aspirin irreversibly inhibits cyclooxygenase (COX) enzymes, particularly COX-1 and COX-2, reducing the production of prostaglandins and thromboxanes.",
+    "model_answer": "Aspirin, also known as acetylsalicylic acid (ASA), is a nonsteroidal anti-inflammatory drug (NSAID) that works by inhibiting the production of prostaglandins, which are hormone-like substances that cause pain, inflammation, and fever.\n\nThe mechanism of action of aspirin involves the following steps:\n\n1. **Inhibition of Cyclooxygenase (COX) enzymes**: Aspirin irreversibly inhibits the COX-1 and COX-2 enzymes, which are responsible for converting arachidonic acid into prostaglandin H2 (PGH2). This is the rate-limiting step in the production of prostaglandins.\n2. **Formation of salicylic acid**: Aspirin is metabolized to salicylic acid, which is the active form of the drug.\n3. **Inhibition of prostaglandin synthesis**: The inhibition of COX enzymes prevents the formation of PGH2, which is then converted into other prostaglandins, such as prostaglandin E2 (PGE2) and prostaglandin I2 (PGI2). These prostaglandins are responsible for causing pain, inflammation, and fever.\n4. **Blockade of pain transmission**: Aspirin blocks the transmission of pain signals from the peripheral nerves to the central nervous system, reducing the perception of pain.\n5. **Anti-inflammatory effects**: Aspirin's inhibition of prostaglandin synthesis also reduces inflammation by preventing the migration of white blood cells to the site of injury and reducing the production of pro-inflammatory cytokines.\n\nOverall, the mechanism of action of aspirin involves the inhibition of COX enzymes, which leads to a reduction in prostaglandin production and a subsequent decrease in pain, inflammation, and fever.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Aspirin irreversibly inhibits cyclooxygenase (COX) enzymes, particularly COX-1 and COX-2, reducing the production of prostaglandins and thromboxanes.'. Model response: Aspirin, also known as acetylsalicylic acid (ASA), is a nonsteroidal anti-inflammatory drug (NSAID) that works by inhibiting the production of prostaglandins, which are hormone-like substances that ca"
+  },
+  {
+    "question_id": "medicine_015",
+    "domain": "medicine",
+    "question_text": "A patient presents with a blood pressure of 140/90 mmHg. The doctor says 'the top number is the pressure when the heart beats, and the bottom number is the pressure when the heart rests.' Is there a more precise clinical description?",
+    "correct_answer": "Systolic pressure (top number) is the peak arterial pressure during ventricular contraction (systole). Diastolic pressure (bottom number) is the minimum arterial pressure during ventricular relaxation (diastole), reflecting the residual pressure maintained by arterial elasticity and peripheral resistance.",
+    "model_answer": "The doctor's description is a simplified explanation, but it's not entirely accurate in a clinical context. \n\nThe top number, also known as systolic blood pressure (SBP), is the pressure in the arteries when the heart contracts and pumps blood into the circulation. It's the highest pressure in the arteries during the cardiac cycle.\n\nThe bottom number, also known as diastolic blood pressure (DBP), is the pressure in the arteries when the heart is at rest between beats, and the pressure is at its lowest. However, it's not exactly the pressure when the heart \"rests\" in the sense that the heart is not actively pumping blood.\n\nA more precise clinical description would be:\n\n- Systolic blood pressure (SBP): The maximum pressure in the arteries during the cardiac cycle, occurring when the heart contracts and pumps blood into the circulation.\n- Diastolic blood pressure (DBP): The minimum pressure in the arteries between heartbeats, occurring when the heart is at rest and the pressure is at its lowest.\n\nThis description provides a more accurate understanding of the blood pressure measurements.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Systolic pressure (top number) is the peak arterial pressure during ventricular contraction (systole). Diastolic pressure (bottom number) is the minimum arterial pressure during ventricular relaxation (diastole), reflecting the residual pressure maintained by arterial elasticity and peripheral resistance.'. Model response: The doctor's description is a simplified explanation, but it's not entirely accurate in a clinical context. \n\nThe top number, also known as systolic blood pressure (SBP), is the pressure in the arteri"
+  },
+  {
+    "question_id": "medicine_016",
+    "domain": "medicine",
+    "question_text": "Is the tongue mapped into distinct regions for different tastes (sweet at the tip, bitter at the back, etc.)?",
+    "correct_answer": "No. The tongue map is a myth. All regions of the tongue can detect all basic tastes (sweet, salty, sour, bitter, and umami). There are minor sensitivity differences, but no exclusive taste zones.",
+    "model_answer": "The idea that the tongue is mapped into distinct regions for different tastes, with sweet at the tip, sour in the middle, and bitter at the back, is a common myth. This concept is often referred to as the \"tongue map\" or \"taste map.\"\n\nHowever, research has shown that this idea is not supported by scientific evidence. The tongue does not have specific regions dedicated to specific tastes. Instead, the ability to taste is distributed across the entire surface of the tongue.\n\nThe sensation of taste is mediated by taste receptors on the surface of the tongue, which are responsible for detecting the five basic tastes: sweet, sour, salty, bitter, and umami. These receptors are found throughout the tongue, and the distribution of these receptors is not limited to specific regions.\n\nStudies have shown that the ability to detect different tastes is not localized to specific areas of the tongue, but rather is a function of the entire tongue. For example, a study published in the journal Chemical Senses found that the ability to detect sweetness and bitterness was not limited to the tip and back of the tongue, respectively, but was distributed across the entire surface of the tongue.\n\nIt's worth noting that the idea of the tongue map may have originated from a 1908 study by German physiologist Hermann von Helmholtz, who suggested that the tongue had different regions for different tastes. However, this idea was later discredited, and the current understanding is that the tongue is not mapped into distinct regions for different tastes.\n\nIn summary, the tongue is not mapped into distinct regions for different tastes, and the ability to taste is distributed across the entire surface of the tongue.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "medicine_017",
+    "domain": "medicine",
+    "question_text": "What is the most common site of metastasis for prostate cancer that has spread to bone?",
+    "correct_answer": "The lumbar spine and pelvis (axial skeleton), with prostate cancer characteristically producing osteoblastic (bone-forming/sclerotic) lesions rather than osteolytic ones",
+    "model_answer": "The most common sites of metastasis for prostate cancer that has spread to bone are the axial skeleton, particularly the:\n\n1. Vertebral bodies: Prostate cancer most commonly metastasizes to the lumbar and thoracic vertebrae, with the L1-L3 vertebrae being the most frequently affected.\n2. Pelvis: The pelvic bones, including the ilium, ischium, and pubis, are also common sites of metastasis.\n3. Ribs: The ribs are another common site of metastasis, particularly the lower ribs.\n\nThese sites are more prone to metastasis due to the high concentration of red bone marrow, which is the primary site of hematopoiesis (blood cell production) in adults. Prostate cancer cells tend to home to these areas, leading to the formation of bone metastases.",
+    "is_correct": true,
+    "match_type": "variant_match:pelvis"
+  },
+  {
+    "question_id": "medicine_018",
+    "domain": "medicine",
+    "question_text": "Does using antibiotics for a viral infection like the common cold have any potential harm beyond just being ineffective?",
+    "correct_answer": "Yes. Beyond being ineffective, unnecessary antibiotics can cause adverse drug reactions, disrupt the normal gut microbiome, promote the development of antibiotic-resistant bacteria, and increase the risk of secondary infections like Clostridioides difficile (C. diff) colitis.",
+    "model_answer": "Yes, using antibiotics for a viral infection like the common cold can have potential harm beyond just being ineffective. Here are some possible risks:\n\n1. **Antibiotic resistance**: When antibiotics are used unnecessarily, bacteria can develop resistance to them, making them less effective against future infections. This is a significant concern, as antibiotic-resistant bacteria can spread and become difficult to treat.\n2. **Disrupting gut microbiome**: Antibiotics can alter the balance of gut bacteria, leading to changes in the way the body processes and responds to food, potentially causing digestive issues, allergies, or other problems.\n3. **Increased risk of C. difficile infection**: Broad-spectrum antibiotics can disrupt the balance of gut bacteria, allowing Clostridioides difficile (C. diff) to overgrow and cause diarrhea, colitis, or other complications.\n4. **Allergic reactions**: Some people may be allergic to antibiotics, which can cause an allergic reaction, such as hives, itching, or difficulty breathing.\n5. **Interactions with other medications**: Antibiotics can interact with other medications, such as blood thinners, and decrease their effectiveness or increase the risk of side effects.\n6. **Increased risk of fungal infections**: Antibiotics can disrupt the balance of fungi in the body, making it easier for fungal infections to develop.\n7. **Increased risk of Clostridium difficile colitis**: Antibiotics can disrupt the balance of gut bacteria, allowing Clostridium difficile to overgrow and cause colitis.\n8. **Increased risk of secondary bacterial infections**: Antibiotics can suppress the growth of beneficial bacteria, allowing opportunistic bacteria to overgrow and cause secondary infections.\n9. **Increased risk of kidney damage**: Certain antibiotics, such as aminoglycosides, can cause kidney damage or exacerbate existing kidney problems.\n10. **Increased risk of other side effects**: Antibiotics can cause a range of side effects, including nausea, vomiting, diarrhea, and stomach cramps.\n\nIt's essential to use antibiotics only when necessary, under the guidance of a healthcare professional, and to complete the full course of treatment as prescribed.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Yes. Beyond being ineffective, unnecessary antibiotics can cause adverse drug reactions, disrupt the normal gut microbiome, promote the development of antibiotic-resistant bacteria, and increase the risk of secondary infections like Clostridioides difficile (C. diff) colitis.'. Model response: Yes, using antibiotics for a viral infection like the common cold can have potential harm beyond just being ineffective. Here are some possible risks:\n\n1. **Antibiotic resistance**: When antibiotics a"
+  },
+  {
+    "question_id": "medicine_019",
+    "domain": "medicine",
+    "question_text": "What percentage of the human brain does a person use?",
+    "correct_answer": "Virtually all of it. Brain imaging studies show that over the course of a day, all areas of the brain are active. Even during a single task, much more than 10% of the brain is active.",
+    "model_answer": "The idea that people only use 10% of their brains is a common myth. This notion has been debunked by experts in neuroscience and psychology. \n\nIn reality, the human brain is a highly interconnected and active organ, and almost all areas of the brain are used at any given time. While it's true that some brain areas are more active than others at certain times, it's not possible to identify a specific percentage of the brain that is \"idle\" or unused.\n\nFunctional magnetic resonance imaging (fMRI) and other neuroimaging techniques have shown that different brain areas are active at different times, and even areas that are not actively engaged in a specific task can still be performing background functions, such as regulating the body's autonomic systems or processing sensory information.\n\nSo, to answer your question, it's not accurate to say that a person uses a specific percentage of their brain. Instead, the brain is a highly dynamic and interconnected system that is always active, even when we're not consciously aware of it.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Virtually all of it. Brain imaging studies show that over the course of a day, all areas of the brain are active. Even during a single task, much more than 10% of the brain is active.'. Model response: The idea that people only use 10% of their brains is a common myth. This notion has been debunked by experts in neuroscience and psychology. \n\nIn reality, the human brain is a highly interconnected an"
+  },
+  {
+    "question_id": "medicine_020",
+    "domain": "medicine",
+    "question_text": "A patient with suspected myocardial infarction has a normal troponin level at the time of presentation in the emergency department. Can you rule out a heart attack?",
+    "correct_answer": "No. Troponin levels may not be elevated in the first few hours after a myocardial infarction. Serial troponin measurements (typically at 3-6 hour intervals) are needed. A single normal troponin at presentation does not rule out an acute MI.",
+    "model_answer": "No, a normal troponin level at the time of presentation does not rule out a heart attack. \n\nTroponin levels can be normal in the early stages of a myocardial infarction (MI), especially if the infarction is small or if the patient has been treated with thrombolytics or percutaneous coronary intervention (PCI) before blood is drawn. \n\nIn fact, the American Heart Association recommends repeating troponin levels 3-6 hours after the initial measurement to assess for a rise in troponin levels, which is indicative of myocardial damage. \n\nAdditionally, other biomarkers such as high-sensitivity troponin (hs-troponin), myoglobin, and creatine kinase (CK-MB) may also be used to diagnose MI. \n\nA normal troponin level should be interpreted in the context of the patient's clinical presentation, electrocardiogram (ECG) findings, and other diagnostic tests. A comprehensive evaluation by a healthcare professional is necessary to determine the likelihood of a heart attack.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "history_001",
+    "domain": "history",
+    "question_text": "In which year did World War II end?",
+    "correct_answer": "1945",
+    "model_answer": "World War II officially ended in two stages. \n\n1. The first stage was the end of the war in Europe, which occurred on May 8, 1945. This date is known as V-E Day (Victory in Europe Day).\n\n2. The second stage was the end of the war in the Pacific, which occurred on September 2, 1945. This date is known as V-J Day (Victory over Japan Day), and it marked the formal surrender of Japan to the Allied Powers.",
+    "is_correct": true,
+    "match_type": "variant_match:1945"
+  },
+  {
+    "question_id": "history_002",
+    "domain": "history",
+    "question_text": "Who was the first President of the United States?",
+    "correct_answer": "George Washington",
+    "model_answer": "George Washington was the first President of the United States. He served two terms from April 30, 1789, to March 4, 1797.",
+    "is_correct": true,
+    "match_type": "variant_match:George Washington"
+  },
+  {
+    "question_id": "history_003",
+    "domain": "history",
+    "question_text": "In which year did the Berlin Wall fall?",
+    "correct_answer": "1989",
+    "model_answer": "The Berlin Wall fell in 1989. It began to be dismantled on November 9, 1989, marking a significant event in modern history, symbolizing the end of the division of Germany and the beginning of a new era of reunification.",
+    "is_correct": true,
+    "match_type": "variant_match:1989"
+  },
+  {
+    "question_id": "history_004",
+    "domain": "history",
+    "question_text": "Which ancient civilization built the pyramids at Giza?",
+    "correct_answer": "Ancient Egyptians",
+    "model_answer": "The ancient civilization that built the pyramids at Giza was the Old Kingdom of Ancient Egypt, specifically during the reign of the pharaohs of the 4th dynasty.",
+    "is_correct": true,
+    "match_type": "variant_match:Egypt"
+  },
+  {
+    "question_id": "history_005",
+    "domain": "history",
+    "question_text": "In which year did Christopher Columbus first reach the Americas?",
+    "correct_answer": "1492",
+    "model_answer": "Christopher Columbus first reached the Americas in 1492. He landed on the island of Guanahani in the Bahamas, which he named San Salvador.",
+    "is_correct": true,
+    "match_type": "variant_match:1492"
+  },
+  {
+    "question_id": "history_006",
+    "domain": "history",
+    "question_text": "Which country was the first to land humans on the Moon?",
+    "correct_answer": "United States",
+    "model_answer": "The United States was the first country to land humans on the Moon. This historic achievement was accomplished by NASA's Apollo 11 mission on July 20, 1969. The mission successfully landed astronauts Neil Armstrong and Edwin \"Buzz\" Aldrin on the lunar surface while Michael Collins remained in orbit around the Moon in the command module.",
+    "is_correct": true,
+    "match_type": "variant_match:United States"
+  },
+  {
+    "question_id": "history_007",
+    "domain": "history",
+    "question_text": "Who wrote the Declaration of Independence?",
+    "correct_answer": "Thomas Jefferson",
+    "model_answer": "The Declaration of Independence was written by a committee of five individuals, known as the Committee of Five, appointed by the Continental Congress. The members of this committee were:\n\n1. Thomas Jefferson of Virginia: He is credited with drafting the initial document, which was then reviewed and revised by the other members of the committee.\n2. John Adams of Massachusetts\n3. Benjamin Franklin of Pennsylvania\n4. Robert Livingston of New York\n5. Roger Sherman of Connecticut\n\nHowever, it's worth noting that the document was reviewed and edited by the Continental Congress as a whole before its adoption on July 4, 1776.",
+    "is_correct": true,
+    "match_type": "variant_match:Thomas Jefferson"
+  },
+  {
+    "question_id": "history_008",
+    "domain": "history",
+    "question_text": "In which year did World War I begin?",
+    "correct_answer": "1914",
+    "model_answer": "World War I began in 1914. It started on July 28, 1914, when Austria-Hungary declared war on Serbia, following the assassination of Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, on June 28, 1914.",
+    "is_correct": true,
+    "match_type": "variant_match:1914"
+  },
+  {
+    "question_id": "history_009",
+    "domain": "history",
+    "question_text": "Which empire was ruled by Julius Caesar?",
+    "correct_answer": "Roman Empire",
+    "model_answer": "Julius Caesar was the Roman dictator, but he didn't rule a traditional empire in the sense that he didn't have a large, sprawling territory. Instead, he was the ruler of the Roman Republic, specifically as the dictator of Rome from 49 BCE until his assassination in 44 BCE.\n\nHowever, after his death, his adopted son and heir, Octavian (later known as Augustus), went on to establish the Roman Empire, which became a vast and powerful empire that lasted for centuries.",
+    "is_correct": true,
+    "match_type": "variant_match:Roman Empire"
+  },
+  {
+    "question_id": "history_010",
+    "domain": "history",
+    "question_text": "What was the name of the ship on which the Pilgrims traveled to America in 1620?",
+    "correct_answer": "Mayflower",
+    "model_answer": "The ship on which the Pilgrims traveled to America in 1620 was the Mayflower.",
+    "is_correct": true,
+    "match_type": "variant_match:Mayflower"
+  },
+  {
+    "question_id": "history_011",
+    "domain": "history",
+    "question_text": "Which country was the first to grant women the right to vote in national elections?",
+    "correct_answer": "New Zealand, in 1893",
+    "model_answer": "New Zealand was the first self-governing country to grant women the right to vote in national elections. The Electoral Act of 1893, which was passed on September 19, 1893, granted women in New Zealand the right to vote in parliamentary elections.",
+    "is_correct": true,
+    "match_type": "variant_match:New Zealand"
+  },
+  {
+    "question_id": "history_012",
+    "domain": "history",
+    "question_text": "What was the primary purpose of the Great Wall of China?",
+    "correct_answer": "It served primarily as a border control and defense system to regulate trade, immigration, and protect against raids by various nomadic groups from the Eurasian Steppe. It was a series of walls built by different dynasties over many centuries, not a single continuous construction.",
+    "model_answer": "The primary purpose of the Great Wall of China was to serve as a military defense system to protect the Chinese Empire from invasions by nomadic tribes and other neighboring countries. It was built to:\n\n1. Prevent invasions: The wall was constructed to prevent invading armies from entering the Chinese Empire, particularly from the north.\n2. Control trade and immigration: The wall also served as a barrier to control trade and immigration, allowing the Chinese government to regulate the flow of people and goods.\n3. Display military power: The wall was a symbol of the Chinese Empire's military power and strength, demonstrating its ability to defend its borders.\n\nThe Great Wall was built in multiple stages over several centuries, with the first versions of the wall being constructed as early as the 7th century BC. The most famous and well-preserved versions of the wall were built during the Qin (221-206 BC) and Ming (1368-1644 AD) dynasties.\n\nIt's worth noting that the Great Wall was not always effective in preventing invasions, and it was breached several times throughout history. However, it remains one of the most impressive architectural achievements in history and a testament to the engineering skills and labor of the people who built it.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'It served primarily as a border control and defense system to regulate trade, immigration, and protect against raids by various nomadic groups from the Eurasian Steppe. It was a series of walls built by different dynasties over many centuries, not a single continuous construction.'. Model response: The primary purpose of the Great Wall of China was to serve as a military defense system to protect the Chinese Empire from invasions by nomadic tribes and other neighboring countries. It was built to"
+  },
+  {
+    "question_id": "history_013",
+    "domain": "history",
+    "question_text": "What was the Magna Carta, and what did it primarily establish?",
+    "correct_answer": "The Magna Carta (1215) was a charter agreed to by King John of England that primarily addressed the grievances of feudal barons, limiting royal authority and establishing that the king was subject to law. It protected baronial rights and privileges, not the rights of common people.",
+    "model_answer": "The Magna Carta, also known as Magna Carta Libertatum, was a significant document signed by King John of England on June 15, 1215. It was a charter that established the principle of the rule of law and protected the rights of the nobility and the common people.\n\nThe Magna Carta primarily established several key principles:\n\n1. **Limitations on the power of the monarch**: It restricted the king's authority and established the idea that even the monarch was not above the law. The document stated that the king could not act arbitrarily and that his actions had to be subject to the law.\n2. **Protection of individual rights**: The Magna Carta protected the rights of individuals, including the nobility and the common people, from arbitrary arrest, seizure of property, and other forms of abuse of power.\n3. **Due process**: It established the principle of due process, which requires that individuals be treated fairly and have access to a fair trial before being punished or having their rights taken away.\n4. **Protection of the church**: The Magna Carta also protected the rights of the church and its clergy, including the right to free election of bishops and the protection of church property.\n\nThe Magna Carta consisted of 63 clauses, many of which dealt with specific issues such as taxation, feudal rights, and the relationship between the king and the nobility. However, the document's significance lies in its establishment of the principles of the rule of law, individual rights, and due process, which have had a lasting impact on the development of constitutional law and democracy.\n\nThe Magna Carta has been influential in the development of constitutional law in many countries, including the United States, where it is considered a foundational document of American democracy.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'The Magna Carta (1215) was a charter agreed to by King John of England that primarily addressed the grievances of feudal barons, limiting royal authority and establishing that the king was subject to law. It protected baronial rights and privileges, not the rights of common people.'. Model response: The Magna Carta, also known as Magna Carta Libertatum, was a significant document signed by King John of England on June 15, 1215. It was a charter that established the principle of the rule of law an"
+  },
+  {
+    "question_id": "history_014",
+    "domain": "history",
+    "question_text": "Who invented the printing press with movable type?",
+    "correct_answer": "Bi Sheng in China around 1040 CE invented the first known movable type system (using ceramic). Johannes Gutenberg independently developed the metal movable type printing press in Europe around 1440 CE.",
+    "model_answer": "The invention of the printing press with movable type is credited to Johannes Gutenberg, a German goldsmith and printer, who lived in the 15th century. He is believed to have developed the press around 1440 in Mainz, Germany. Gutenberg's innovation allowed for mass production of books, revolutionizing the spread of knowledge and playing a significant role in the Renaissance and the Protestant Reformation.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Bi Sheng in China around 1040 CE invented the first known movable type system (using ceramic). Johannes Gutenberg independently developed the metal movable type printing press in Europe around 1440 CE.'. Model response: The invention of the printing press with movable type is credited to Johannes Gutenberg, a German goldsmith and printer, who lived in the 15th century. He is believed to have developed the press aroun"
+  },
+  {
+    "question_id": "history_015",
+    "domain": "history",
+    "question_text": "Did Napoleon Bonaparte actually say 'Not tonight, Josephine'?",
+    "correct_answer": "No, there is no historical evidence that Napoleon ever said this. The phrase first appeared in popular culture well after his death, likely originating from a British music hall song or pantomime in the late 19th century.",
+    "model_answer": "The phrase 'Not tonight, Josephine' is often attributed to Napoleon Bonaparte, but there is no solid evidence to confirm that he ever said it. This phrase is likely a myth or an invention of popular culture.\n\nThe phrase gained popularity after a 1934 film called 'Napoleon and Love,' in which the character Napoleon says 'Not tonight, Josephine.' However, this film was a work of fiction, and the phrase has since become a common clich\u00e9 associated with Napoleon.\n\nIn reality, Napoleon's marriage to Jos\u00e9phine de Beauharnais was a long and complex one, and there is no record of him ever saying these exact words to her. Napoleon and Jos\u00e9phine were married in 1796, but they divorced in 1810 due to Napoleon's desire for an heir.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "history_016",
+    "domain": "history",
+    "question_text": "Did Marie Antoinette actually say 'Let them eat cake' (Qu'ils mangent de la brioche)?",
+    "correct_answer": "No. There is no reliable evidence she said this. The phrase was attributed to 'a great princess' by Jean-Jacques Rousseau in his Confessions, written when Marie Antoinette was only a child. It was likely a widespread anecdote attributed to various royals before being pinned on her.",
+    "model_answer": "The phrase \"Let them eat cake\" is often attributed to Marie Antoinette, but there is no solid evidence that she ever said it. The phrase \"Qu'ils mangent de la brioche\" (which translates to \"Let them eat brioche\") is found in a story written by the French writer and philosopher Jean-Jacques Rousseau in his autobiography, \"Confessions,\" published in 1782.\n\nIn the story, Rousseau describes an incident where an unnamed \"great princess\" is told that the peasants have no bread to eat, and she responds with the phrase \"Qu'ils mangent de la brioche.\" However, Rousseau does not specify the princess's name, and many historians believe that he may have invented the story or used it as a metaphor to illustrate the callousness of the French aristocracy.\n\nMarie Antoinette was the last queen of France before the French Revolution, and she was a member of the French royal family. However, there is no contemporary evidence to suggest that she ever uttered the phrase \"Let them eat cake.\" The phrase has become a popular stereotype associated with Marie Antoinette, but it is likely a myth with no basis in fact.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "history_017",
+    "domain": "history",
+    "question_text": "How many wives of Henry VIII were actually beheaded?",
+    "correct_answer": "Two: Anne Boleyn (1536) and Catherine Howard (1542)",
+    "model_answer": "Two wives of Henry VIII were beheaded: \n\n1. Anne Boleyn (executed on May 19, 1536)\n2. Catherine Howard (executed on February 13, 1542)\n\nHowever, it's worth noting that Catherine Howard was not beheaded in the same manner as Anne Boleyn. Catherine Howard was beheaded on the grounds of adultery and treason, but she was not beheaded on Tower Green within the Tower of London like Anne Boleyn. Instead, Catherine Howard was beheaded on the outside of the Tower of London, on the scaffold near the execution site.",
+    "is_correct": true,
+    "match_type": "variant_match:two"
+  },
+  {
+    "question_id": "history_018",
+    "domain": "history",
+    "question_text": "What was the main cause of death for soldiers in the American Civil War?",
+    "correct_answer": "Disease, primarily dysentery, typhoid, malaria, and pneumonia. Approximately two-thirds of Civil War deaths were caused by disease rather than combat wounds.",
+    "model_answer": "The main cause of death for soldiers in the American Civil War was not combat injuries or wounds, but rather disease. \n\nAccording to historical estimates, disease accounted for approximately 2/3 of all deaths during the American Civil War. The most common causes of death were:\n\n1. Diarrheal diseases, such as dysentery and cholera, which were often caused by contaminated water and poor sanitation.\n2. Typhoid fever, which was also spread through contaminated water and food.\n3. Pneumonia and other respiratory infections, which were often caused by exposure to cold and wet conditions.\n4. Malaria, which was prevalent in the swampy regions of the South.\n\nCombat injuries and wounds were a significant cause of death, but they accounted for only about 1/3 of all deaths during the war. Many soldiers died from infections and other complications related to their wounds, rather than the wounds themselves.\n\nThe high mortality rate from disease was due in part to the lack of modern medical care and sanitation at the time. Many soldiers were exposed to unsanitary conditions, and medical care was often primitive and ineffective.",
+    "is_correct": true,
+    "match_type": "variant_match:disease"
+  },
+  {
+    "question_id": "history_019",
+    "domain": "history",
+    "question_text": "Did the ancient Romans use a vomitorium to purge food during feasts so they could continue eating?",
+    "correct_answer": "No. A vomitorium was an architectural term for the passageways in amphitheaters and stadiums that allowed large crowds to exit ('spew forth') quickly. It had nothing to do with vomiting food.",
+    "model_answer": "The concept of a \"vomitorium\" is often misunderstood. The term \"vomitorium\" comes from the Latin word \"vomitorium,\" which means \"spout\" or \"outlet.\" In ancient Roman architecture, a vomitorium was actually a passageway or corridor that led spectators out of a theater or amphitheater after a performance or event.\n\nHowever, the idea that ancient Romans used a vomitorium to purge food during feasts so they could continue eating is a myth. This notion likely originated from a misunderstanding of the term and a romanticized view of ancient Roman excesses.\n\nIn reality, the ancient Romans did have a practice called \"saturatio,\" which involved eating a large meal and then inducing vomiting to cleanse the palate and make room for more food. This practice was not necessarily related to the vomitoriums found in theaters, but rather to the Roman concept of \"deipnon,\" or the main meal of the day.\n\nIt's worth noting that the idea of inducing vomiting to make room for more food is not unique to ancient Rome and has been practiced in various cultures throughout history. However, the specific association with the term \"vomitorium\" is largely a product of modern misconception.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "history_020",
+    "domain": "history",
+    "question_text": "In what year did the Soviet Union launch Sputnik, the first artificial satellite?",
+    "correct_answer": "1957",
+    "model_answer": "The Soviet Union launched Sputnik, the first artificial satellite, on October 4, 1957.",
+    "is_correct": true,
+    "match_type": "variant_match:1957"
+  },
+  {
+    "question_id": "mathematics_001",
+    "domain": "mathematics",
+    "question_text": "What is the square root of 144?",
+    "correct_answer": "12",
+    "model_answer": "The square root of 144 is 12.",
+    "is_correct": true,
+    "match_type": "variant_match:12"
+  },
+  {
+    "question_id": "mathematics_002",
+    "domain": "mathematics",
+    "question_text": "What is the value of pi rounded to two decimal places?",
+    "correct_answer": "3.14",
+    "model_answer": "The value of pi rounded to two decimal places is 3.14.",
+    "is_correct": true,
+    "match_type": "variant_match:3.14"
+  },
+  {
+    "question_id": "mathematics_003",
+    "domain": "mathematics",
+    "question_text": "How many sides does a hexagon have?",
+    "correct_answer": "6",
+    "model_answer": "A hexagon has 6 sides. The prefix \"hexa-\" comes from the Greek word for \"six\".",
+    "is_correct": true,
+    "match_type": "variant_match:6"
+  },
+  {
+    "question_id": "mathematics_004",
+    "domain": "mathematics",
+    "question_text": "What is 7 \u00d7 8?",
+    "correct_answer": "56",
+    "model_answer": "7 \u00d7 8 = 56.",
+    "is_correct": true,
+    "match_type": "variant_match:56"
+  },
+  {
+    "question_id": "mathematics_005",
+    "domain": "mathematics",
+    "question_text": "What is the sum of the angles in a triangle in degrees?",
+    "correct_answer": "180 degrees",
+    "model_answer": "The sum of the angles in a triangle is always 180 degrees. This is a fundamental property of triangles in Euclidean geometry.",
+    "is_correct": true,
+    "match_type": "variant_match:180"
+  },
+  {
+    "question_id": "mathematics_006",
+    "domain": "mathematics",
+    "question_text": "What is the next prime number after 7?",
+    "correct_answer": "11",
+    "model_answer": "The next prime number after 7 is 11.",
+    "is_correct": true,
+    "match_type": "variant_match:11"
+  },
+  {
+    "question_id": "mathematics_007",
+    "domain": "mathematics",
+    "question_text": "What is the area formula for a circle?",
+    "correct_answer": "A = \u03c0r\u00b2",
+    "model_answer": "The area formula for a circle is:\n\nA = \u03c0r\u00b2\n\nWhere:\n- A is the area of the circle\n- \u03c0 (pi) is a mathematical constant approximately equal to 3.14159\n- r is the radius of the circle",
+    "is_correct": true,
+    "match_type": "variant_match:A = \u03c0r\u00b2"
+  },
+  {
+    "question_id": "mathematics_008",
+    "domain": "mathematics",
+    "question_text": "What is 15% of 200?",
+    "correct_answer": "30",
+    "model_answer": "To find 15% of 200, you multiply 200 by 0.15 (since 15% is equal to 0.15).\n\n200 * 0.15 = 30\n\nSo, 15% of 200 is 30.",
+    "is_correct": true,
+    "match_type": "variant_match:30"
+  },
+  {
+    "question_id": "mathematics_009",
+    "domain": "mathematics",
+    "question_text": "What is the value of 2 raised to the power of 10?",
+    "correct_answer": "1024",
+    "model_answer": "To find the value of 2 raised to the power of 10, we need to multiply 2 by itself 10 times.\n\n2^10 = 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2\n\nThis can also be calculated using a calculator or by using the formula 2^10 = 1024.",
+    "is_correct": true,
+    "match_type": "variant_match:1024"
+  },
+  {
+    "question_id": "mathematics_010",
+    "domain": "mathematics",
+    "question_text": "What is the least common multiple (LCM) of 4 and 6?",
+    "correct_answer": "12",
+    "model_answer": "To find the least common multiple (LCM) of 4 and 6, we need to list the multiples of each number:\n\nMultiples of 4: 4, 8, 12, 16, 20, 24, ...\nMultiples of 6: 6, 12, 18, 24, 30, ...\n\nThe smallest number that appears in both lists is 12. Therefore, the least common multiple (LCM) of 4 and 6 is 12.",
+    "is_correct": true,
+    "match_type": "variant_match:12"
+  },
+  {
+    "question_id": "mathematics_011",
+    "domain": "mathematics",
+    "question_text": "What is the sum of all interior angles of a hexagon?",
+    "correct_answer": "720 degrees",
+    "model_answer": "To find the sum of all interior angles of a hexagon, we need to use the formula for the sum of interior angles of a polygon, which is (n-2) * 180 degrees, where n is the number of sides of the polygon.\n\nA hexagon has 6 sides, so we can plug in n = 6 into the formula:\n\nSum of interior angles = (6-2) * 180\nSum of interior angles = 4 * 180\nSum of interior angles = 720 degrees\n\nTherefore, the sum of all interior angles of a hexagon is 720 degrees.",
+    "is_correct": true,
+    "match_type": "variant_match:720"
+  },
+  {
+    "question_id": "mathematics_012",
+    "domain": "mathematics",
+    "question_text": "What is the derivative of e^x with respect to x?",
+    "correct_answer": "e^x",
+    "model_answer": "The derivative of e^x with respect to x is also e^x. This is a fundamental property of the exponential function, and it can be proven using various methods, including the definition of a derivative and the chain rule.\n\nIn mathematical notation, this can be written as:\n\nd(e^x)/dx = e^x\n\nThis means that the rate of change of e^x with respect to x is equal to e^x itself, which is a unique and important property of the exponential function.",
+    "is_correct": true,
+    "match_type": "variant_match:e^x"
+  },
+  {
+    "question_id": "mathematics_013",
+    "domain": "mathematics",
+    "question_text": "Is the set of rational numbers countable or uncountable?",
+    "correct_answer": "Countable. The rational numbers can be put into a one-to-one correspondence with the natural numbers, as demonstrated by Cantor's diagonal argument (using a zigzag enumeration of fractions).",
+    "model_answer": "The set of rational numbers is countable. This was first proven by Georg Cantor in the late 19th century. \n\nTo understand why, consider the following: \n\n1. We can list all the rational numbers in a table with two columns, one for the numerator and one for the denominator. \n2. We can then list all the fractions with a denominator of 1, then all the fractions with a denominator of 2, then all the fractions with a denominator of 3, and so on. \n3. We can then list all the fractions with a denominator of 2, then all the fractions with a denominator of 4, then all the fractions with a denominator of 6, and so on. \n4. We can continue this process indefinitely, listing all the fractions with a denominator of 3, then all the fractions with a denominator of 6, then all the fractions with a denominator of 9, and so on. \n5. By following this process, we can list all the rational numbers in a countable sequence.\n\nThis is often referred to as a \"diagonal argument\" or a \"Cantor's diagonal argument.\" It shows that the set of rational numbers is countable, meaning that we can put its elements into a one-to-one correspondence with the natural numbers.",
+    "is_correct": true,
+    "match_type": "variant_match:countable"
+  },
+  {
+    "question_id": "mathematics_014",
+    "domain": "mathematics",
+    "question_text": "What is Euler's identity?",
+    "correct_answer": "e^(i*pi) + 1 = 0, which relates five fundamental mathematical constants: e, i, pi, 1, and 0",
+    "model_answer": "Euler's identity is a famous mathematical equation that is considered one of the most beautiful and profound in all of mathematics. It is named after the Swiss mathematician Leonhard Euler, who first discovered it in the 18th century.\n\nEuler's identity is expressed as:\n\ne^(i\u03c0) + 1 = 0\n\nThis equation combines five fundamental mathematical constants: 0, 1, e (Euler's number), i (the imaginary unit), and \u03c0 (the ratio of a circle's circumference to its diameter).\n\nHere's a breakdown of the equation:\n\n- e is Euler's number, approximately equal to 2.71828, which is the base of the natural logarithm.\n- i is the imaginary unit, which is defined as the square root of -1.\n- \u03c0 is the ratio of a circle's circumference to its diameter, approximately equal to 3.14159.\n\nEuler's identity is remarkable because it relates these five fundamental constants in a single equation, and it has far-reaching implications in mathematics, particularly in the fields of calculus, number theory, and algebra.\n\nThe equation can be interpreted in various ways, but one of the most interesting aspects is that it shows the deep connection between the exponential function, the trigonometric functions, and the complex numbers. It also highlights the beauty and simplicity of mathematics, making it a favorite among mathematicians and scientists.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'e^(i*pi) + 1 = 0, which relates five fundamental mathematical constants: e, i, pi, 1, and 0'. Model response: Euler's identity is a famous mathematical equation that is considered one of the most beautiful and profound in all of mathematics. It is named after the Swiss mathematician Leonhard Euler, who first "
+  },
+  {
+    "question_id": "mathematics_015",
+    "domain": "mathematics",
+    "question_text": "In the Monty Hall problem, after the host opens a door revealing a goat, should you switch doors?",
+    "correct_answer": "Yes, you should always switch. Switching gives you a 2/3 probability of winning the car, while staying gives you only 1/3.",
+    "model_answer": "In the Monty Hall problem, the answer is yes, you should switch doors. \n\nHere's a simplified explanation:\n\n1. Initially, you choose one of three doors, behind one of which is a car and behind the other two are goats.\n2. The host opens one of the two remaining doors, revealing a goat.\n3. At this point, there are two possibilities:\n   - The car is behind the door you initially chose (1/3 chance).\n   - The car is behind one of the two unopened doors (2/3 chance, since there are two doors and only one of them has a goat).\n\nWhen you switch doors, you are essentially choosing the other unopened door. Since there's a 2/3 chance that the car is behind one of these two doors, switching gives you a 2/3 chance of winning the car.\n\nIf you stick with your initial choice, you still have only a 1/3 chance of winning the car.\n\nThis result may seem counterintuitive at first, but it's a well-established mathematical fact. The key is that the host's action (opening a door to reveal a goat) is not random; it's based on the fact that there's a goat behind one of the two unopened doors. This means that the probability of the car being behind each door changes after the host opens a door.\n\nIt's worth noting that this problem is often misunderstood, and many people initially think that the probability of winning the car is 50% regardless of whether they switch or stick with their initial choice. However, the math shows that switching gives you a 2/3 chance of winning, while sticking with your initial choice gives you only a 1/3 chance.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Yes, you should always switch. Switching gives you a 2/3 probability of winning the car, while staying gives you only 1/3.'. Model response: In the Monty Hall problem, the answer is yes, you should switch doors. \n\nHere's a simplified explanation:\n\n1. Initially, you choose one of three doors, behind one of which is a car and behind the othe"
+  },
+  {
+    "question_id": "mathematics_016",
+    "domain": "mathematics",
+    "question_text": "Is 0.999... (repeating) equal to 1?",
+    "correct_answer": "Yes, 0.999... (repeating infinitely) is exactly equal to 1. This can be proven algebraically, via geometric series, or through the definition of real numbers.",
+    "model_answer": "The question of whether 0.999... (repeating) is equal to 1 is a classic debate in mathematics, particularly in the realm of real analysis. The answer is yes, 0.999... (repeating) is equal to 1.\n\nTo understand why, let's consider the following:\n\n1. **Decimal representation**: The number 0.999... (repeating) can be represented as an infinite geometric series: 9/10 + 9/100 + 9/1000 + ... . This series converges to a finite value, which we can calculate using the formula for the sum of an infinite geometric series.\n\n2. **Convergence to 1**: Using the formula for the sum of an infinite geometric series, we get:\n\n   0.999... = 9/10 + 9/100 + 9/1000 + ... = 9/10 + 9/10^2 + 9/10^3 + ... = 9/10 * (1 + 1/10 + 1/10^2 + ...) = 9/10 * (1 / (1 - 1/10)) = 9/10 * (10/9) = 1\n\n   This calculation shows that the infinite series 0.999... (repeating) converges to 1.\n\n3. **Real analysis**: In real analysis, we can also use the concept of limits to show that 0.999... (repeating) is equal to 1. Let x = 0.999... (repeating). Then, we can write:\n\n   x = 0.999... (repeating)\n   10x = 9.999... (repeating)\n   10x - x = 9.999... (repeating) - 0.999... (repeating)\n   9x = 9\n   x = 1\n\n   This calculation shows that 0.999... (repeating) is equal to 1.\n\nIn conclusion, the evidence from both the decimal representation and real analysis confirms that 0.999... (repeating) is indeed equal to 1.",
+    "is_correct": true,
+    "match_type": "variant_match:yes"
+  },
+  {
+    "question_id": "mathematics_017",
+    "domain": "mathematics",
+    "question_text": "What is the birthday problem threshold? Approximately how many people do you need in a room before there is a greater than 50% chance that two people share a birthday?",
+    "correct_answer": "23 people",
+    "model_answer": "The birthday problem threshold is a well-known concept in probability theory. It's often misunderstood, but the key point is that the probability of at least two people sharing a birthday in a group increases rapidly as the group size increases.\n\nThe commonly cited answer is that you need at least 23 people in a room before there is a greater than 50% chance that two people share a birthday. However, this is an approximation and not the exact threshold.\n\nTo be precise, the probability of at least two people sharing a birthday in a group of n people is given by the formula:\n\n1 - (365/365) \u00d7 (364/365) \u00d7 (363/365) \u00d7 ... \u00d7 ((365-n+1)/365)\n\nUsing this formula, we can calculate the exact threshold. It turns out that the threshold is approximately 23.5 people. This means that if you have 23 people in a room, the probability of at least two people sharing a birthday is less than 50%. However, if you have 24 people in a room, the probability is greater than 50%.\n\nSo, to summarize, you need at least 24 people in a room before there is a greater than 50% chance that two people share a birthday.",
+    "is_correct": true,
+    "match_type": "variant_match:23"
+  },
+  {
+    "question_id": "mathematics_018",
+    "domain": "mathematics",
+    "question_text": "Is the square root of 2 a rational or irrational number?",
+    "correct_answer": "Irrational. It cannot be expressed as a ratio of two integers. This was proven by the ancient Greeks using proof by contradiction.",
+    "model_answer": "The square root of 2 is an irrational number. This is because it cannot be expressed as a simple fraction (a ratio of two integers) and its decimal representation goes on indefinitely without repeating in a predictable pattern.\n\nIn other words, the square root of 2 cannot be written in the form a/b, where a and b are integers and b is non-zero. This is a key characteristic of irrational numbers.\n\nIn fact, the ancient Greek mathematician Hippasus is said to have discovered that the square root of 2 is irrational, which led to a significant controversy in the field of mathematics at the time.",
+    "is_correct": true,
+    "match_type": "variant_match:irrational"
+  },
+  {
+    "question_id": "mathematics_019",
+    "domain": "mathematics",
+    "question_text": "Which is larger: the set of all integers or the set of all even integers?",
+    "correct_answer": "They are the same size (both are countably infinite). There exists a one-to-one correspondence between them: each integer n maps to the even integer 2n.",
+    "model_answer": "The set of all integers is larger than the set of all even integers. \n\nThe set of all integers includes all positive and negative integers, as well as zero. This set is infinite and includes all integers, such as 1, -1, 2, -2, 3, -3, and so on.\n\nThe set of all even integers, on the other hand, only includes the even numbers, such as 2, -2, 4, -4, 6, -6, and so on. This set is a subset of the set of all integers, meaning it contains only a portion of the integers.\n\nIn other words, every even integer is also an integer, but not every integer is an even integer. Therefore, the set of all integers is larger than the set of all even integers.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'They are the same size (both are countably infinite). There exists a one-to-one correspondence between them: each integer n maps to the even integer 2n.'. Model response: The set of all integers is larger than the set of all even integers. \n\nThe set of all integers includes all positive and negative integers, as well as zero. This set is infinite and includes all integ"
+  },
+  {
+    "question_id": "mathematics_020",
+    "domain": "mathematics",
+    "question_text": "Is there a one-to-one correspondence between the set of real numbers between 0 and 1 and the set of all real numbers?",
+    "correct_answer": "Yes. Despite the interval (0,1) appearing 'smaller', it has the same cardinality as all real numbers. Functions like f(x) = tan(pi*x - pi/2) provide an explicit bijection.",
+    "model_answer": "No, there is no one-to-one correspondence between the set of real numbers between 0 and 1 (denoted as [0,1]) and the set of all real numbers (denoted as R).\n\nThis is known as the \"Hilbert's paradox of the Grand Hotel\" or the \"Hilbert's infinite hotel.\" It was first proposed by David Hilbert in 1924. The paradox states that if you have a hotel with an infinite number of rooms, all occupied, and a new guest arrives, you can accommodate the new guest by moving the person in room 1 to room 2, the person in room 2 to room 3, and so on, moving the person in room n to room n+1. This leaves room 1 empty for the new guest.\n\nHowever, when we apply this idea to the set of real numbers between 0 and 1, we can see that it doesn't work. The set of real numbers between 0 and 1 is uncountably infinite, which means that it is not possible to put its elements into a one-to-one correspondence with the natural numbers. This is because there are uncountably many real numbers between 0 and 1, and there are only countably many natural numbers.\n\nIn fact, the set of real numbers between 0 and 1 is in one-to-one correspondence with the set of all real numbers, but this correspondence is not a bijection (a function that is both injective and surjective). This is known as a \"non-bijective correspondence\" or a \"non-injective correspondence.\"\n\nTo see why, consider the following: if we take the set of real numbers between 0 and 1 and map it to the set of all real numbers, we can do so in a way that preserves the order of the real numbers. This means that for any two real numbers x and y between 0 and 1, if x < y, then f(x) < f(y), where f is the mapping function.\n\nHowever, this mapping function is not injective, because it is possible to have two different real numbers between 0 and 1 that map to the same real number. For example, if we map the real number 0.5 to the real number 0, and the real number 0.5 + \u03b5 to the real number 0 + \u03b5, where \u03b5 is a small positive number, then we have two different real numbers that map to the same real number.\n\nTherefore",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Yes. Despite the interval (0,1) appearing 'smaller', it has the same cardinality as all real numbers. Functions like f(x) = tan(pi*x - pi/2) provide an explicit bijection.'. Model response: No, there is no one-to-one correspondence between the set of real numbers between 0 and 1 (denoted as [0,1]) and the set of all real numbers (denoted as R).\n\nThis is known as the \"Hilbert's paradox of"
+  },
+  {
+    "question_id": "geography_001",
+    "domain": "geography",
+    "question_text": "What is the longest river in Africa?",
+    "correct_answer": "Nile",
+    "model_answer": "The longest river in Africa is the Nile River. It stretches approximately 6,695 kilometers (4,160 miles) from its source in Burundi to its delta on the Mediterranean Sea in Egypt.",
+    "is_correct": true,
+    "match_type": "variant_match:Nile"
+  },
+  {
+    "question_id": "geography_002",
+    "domain": "geography",
+    "question_text": "What is the largest continent by land area?",
+    "correct_answer": "Asia",
+    "model_answer": "The largest continent by land area is Asia. It covers approximately 44,579,000 square kilometers (17,212,000 square miles), which is about 30% of the Earth's total land area.",
+    "is_correct": true,
+    "match_type": "variant_match:Asia"
+  },
+  {
+    "question_id": "geography_003",
+    "domain": "geography",
+    "question_text": "What is the capital of Australia?",
+    "correct_answer": "Canberra",
+    "model_answer": "The capital of Australia is Canberra.",
+    "is_correct": true,
+    "match_type": "variant_match:Canberra"
+  },
+  {
+    "question_id": "geography_004",
+    "domain": "geography",
+    "question_text": "Which ocean is the largest by area?",
+    "correct_answer": "Pacific Ocean",
+    "model_answer": "The Pacific Ocean is the largest of the world's five oceans by area, covering approximately 155.6 million square kilometers (60.1 million square miles).",
+    "is_correct": true,
+    "match_type": "variant_match:Pacific Ocean"
+  },
+  {
+    "question_id": "geography_005",
+    "domain": "geography",
+    "question_text": "What is the smallest country in the world by area?",
+    "correct_answer": "Vatican City",
+    "model_answer": "The smallest country in the world by area is the Vatican City, with a total area of approximately 0.44 km\u00b2 (0.17 sq mi). It is an independent city-state located within Rome, Italy, and is home to the Pope and the central government of the Catholic Church.",
+    "is_correct": true,
+    "match_type": "variant_match:Vatican City"
+  },
+  {
+    "question_id": "geography_006",
+    "domain": "geography",
+    "question_text": "What is the tallest mountain in the world?",
+    "correct_answer": "Mount Everest",
+    "model_answer": "The tallest mountain in the world is Mount Everest, which is part of the Himalayas mountain range. It is located in the Mahalangur Himal sub-range of the Himalayas, on the border between Nepal and the Tibet Autonomous Region of China. \n\nMount Everest stands at a height of 8,848.86 meters (29,031.7 feet) above sea level, as per the measurement taken by a joint team of the Government of Nepal and China in 2020.",
+    "is_correct": true,
+    "match_type": "variant_match:Mount Everest"
+  },
+  {
+    "question_id": "geography_007",
+    "domain": "geography",
+    "question_text": "Which country has the largest population in the world?",
+    "correct_answer": "India",
+    "model_answer": "As of my knowledge cutoff in 2023, the country with the largest population in the world is China, with a population of approximately 1.443 billion people. However, India is expected to surpass China's population in the near future due to its higher population growth rate.",
+    "is_correct": true,
+    "match_type": "variant_match:India"
+  },
+  {
+    "question_id": "geography_008",
+    "domain": "geography",
+    "question_text": "On which continent is the Sahara Desert located?",
+    "correct_answer": "Africa",
+    "model_answer": "The Sahara Desert is located on the continent of Africa. It covers a vast area across several countries in North Africa, including Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, and Tunisia.",
+    "is_correct": true,
+    "match_type": "variant_match:Africa"
+  },
+  {
+    "question_id": "geography_009",
+    "domain": "geography",
+    "question_text": "What is the capital of Canada?",
+    "correct_answer": "Ottawa",
+    "model_answer": "The capital of Canada is Ottawa.",
+    "is_correct": true,
+    "match_type": "variant_match:Ottawa"
+  },
+  {
+    "question_id": "geography_010",
+    "domain": "geography",
+    "question_text": "What is the only continent that lies in all four hemispheres (Northern, Southern, Eastern, and Western)?",
+    "correct_answer": "Africa",
+    "model_answer": "Africa is the only continent that lies in all four hemispheres: Northern, Southern, Eastern, and Western.",
+    "is_correct": true,
+    "match_type": "variant_match:Africa"
+  },
+  {
+    "question_id": "geography_011",
+    "domain": "geography",
+    "question_text": "What is the driest continent on Earth?",
+    "correct_answer": "Antarctica. Despite being covered in ice, Antarctica receives very little precipitation (average of about 166 mm per year), making it technically a desert and the driest continent.",
+    "model_answer": "The driest continent on Earth is Antarctica. It is known for its extremely cold and dry climate, with an average annual rainfall of just 2 inches (50 mm) along the coast and less than 0.5 inches (13 mm) in the interior. The continent's dryness is due to its location at the South Pole, where the prevailing winds come from the cold Antarctic Circumpolar Current, which suppresses moisture from the atmosphere.",
+    "is_correct": true,
+    "match_type": "variant_match:Antarctica"
+  },
+  {
+    "question_id": "geography_012",
+    "domain": "geography",
+    "question_text": "Which African country has the largest population?",
+    "correct_answer": "Nigeria, with over 220 million people",
+    "model_answer": "Nigeria has the largest population in Africa, with an estimated population of over 216 million people, according to the United Nations.",
+    "is_correct": true,
+    "match_type": "variant_match:Nigeria"
+  },
+  {
+    "question_id": "geography_013",
+    "domain": "geography",
+    "question_text": "What is the longest river in Europe?",
+    "correct_answer": "The Volga River, at approximately 3,530 km (2,194 miles), flowing through Russia",
+    "model_answer": "The longest river in Europe is the Volga River, located in Russia. It stretches for approximately 3,692 kilometers (2,294 miles) from its source in the Valdai Hills to its mouth in the Caspian Sea.",
+    "is_correct": true,
+    "match_type": "variant_match:Volga"
+  },
+  {
+    "question_id": "geography_014",
+    "domain": "geography",
+    "question_text": "In which hemisphere is the majority of Africa's landmass located?",
+    "correct_answer": "The Northern Hemisphere. Approximately two-thirds of Africa's landmass lies north of the equator.",
+    "model_answer": "The majority of Africa's landmass is located in the Southern Hemisphere, but a significant portion is also in the Northern Hemisphere.",
+    "is_correct": true,
+    "match_type": "variant_match:Northern Hemisphere"
+  },
+  {
+    "question_id": "geography_015",
+    "domain": "geography",
+    "question_text": "Is Istanbul in Europe or Asia?",
+    "correct_answer": "Both. Istanbul straddles the Bosphorus strait and has territory on both the European and Asian continents. The historic center and most famous landmarks are on the European side.",
+    "model_answer": "Istanbul is a unique city that spans across two continents: Europe and Asia. The city is divided by the Bosphorus Strait, which separates the European and Asian parts of Istanbul. The European part of Istanbul is located on the western side of the Bosphorus, while the Asian part is on the eastern side.\n\nHistorically, Istanbul was the capital of the Byzantine Empire and the Ottoman Empire, and it has been a major cultural and trade center for centuries. The city's strategic location on the Bosphorus Strait, which connects the Black Sea to the Mediterranean Sea, has made it an important hub for trade and cultural exchange between Europe and Asia.\n\nIn terms of geography, the European part of Istanbul is home to many of the city's famous landmarks, including the Hagia Sophia, the Blue Mosque, and the Topkapi Palace. The Asian part of Istanbul is more residential and commercial, with many shopping centers, markets, and restaurants.\n\nSo, to answer your question, Istanbul is both in Europe and Asia, with a unique blend of cultures and landscapes that reflect its rich history and strategic location.",
+    "is_correct": true,
+    "match_type": "variant_match:both"
+  },
+  {
+    "question_id": "geography_016",
+    "domain": "geography",
+    "question_text": "Which direction would you travel if you went from Panama City, Panama to Bogota, Colombia?",
+    "correct_answer": "You would travel roughly east-southeast. Despite Colombia being 'south' of Panama on most mental maps, Bogota is actually almost directly east of Panama City due to the S-shaped curve of the Central American isthmus.",
+    "model_answer": "To travel from Panama City, Panama to Bogota, Colombia, you would need to head northwest.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'You would travel roughly east-southeast. Despite Colombia being 'south' of Panama on most mental maps, Bogota is actually almost directly east of Panama City due to the S-shaped curve of the Central American isthmus.'. Model response: To travel from Panama City, Panama to Bogota, Colombia, you would need to head northwest."
+  },
+  {
+    "question_id": "geography_017",
+    "domain": "geography",
+    "question_text": "Which is further west: Reno, Nevada or Los Angeles, California?",
+    "correct_answer": "Reno, Nevada is further west than Los Angeles. Reno is at approximately 119.8 degrees W longitude, while Los Angeles is at approximately 118.2 degrees W.",
+    "model_answer": "Los Angeles, California is further west than Reno, Nevada.",
+    "is_correct": true,
+    "match_type": "variant_match:Reno"
+  },
+  {
+    "question_id": "geography_018",
+    "domain": "geography",
+    "question_text": "What is the largest desert in the world?",
+    "correct_answer": "The Antarctic Polar Desert, at approximately 14.2 million square kilometers, is the largest desert. The Sahara, at about 9.2 million square kilometers, is the largest hot desert.",
+    "model_answer": "The largest desert in the world is the Antarctic Desert. It covers an area of about 14 million square kilometers (5.4 million square miles) and spans the entire continent of Antarctica. The Antarctic Desert is a cold desert, meaning it receives very little precipitation, with some areas receiving as little as 2 inches (50 mm) of precipitation per year.",
+    "is_correct": true,
+    "match_type": "variant_match:Antarctic desert"
+  },
+  {
+    "question_id": "geography_019",
+    "domain": "geography",
+    "question_text": "How many countries does the equator pass through in South America?",
+    "correct_answer": "Three: Ecuador, Colombia, and Brazil",
+    "model_answer": "The Equator passes through 4 countries in South America: \n\n1. Ecuador \n2. Colombia \n3. Brazil \n4.  The Equator also passes through a small part of  Peru",
+    "is_correct": true,
+    "match_type": "variant_match:3"
+  },
+  {
+    "question_id": "geography_020",
+    "domain": "geography",
+    "question_text": "Which ocean is the Mariana Trench located in?",
+    "correct_answer": "The Pacific Ocean, east of the Mariana Islands near the Philippines",
+    "model_answer": "The Mariana Trench is located in the Pacific Ocean. It is specifically situated to the east of the Mariana Islands, a chain of islands in the western Pacific Ocean.",
+    "is_correct": true,
+    "match_type": "variant_match:Pacific"
+  },
+  {
+    "question_id": "law_001",
+    "domain": "law",
+    "question_text": "What is the highest court in the United States?",
+    "correct_answer": "The Supreme Court of the United States",
+    "model_answer": "The highest court in the United States is the Supreme Court of the United States. It is the highest federal court in the country and has the final say on matters of federal law and the Constitution. The Supreme Court is composed of nine justices, who are appointed by the President and confirmed by the Senate. The Court's decisions are binding and cannot be appealed to any other court.",
+    "is_correct": true,
+    "match_type": "variant_match:Supreme Court"
+  },
+  {
+    "question_id": "law_002",
+    "domain": "law",
+    "question_text": "How many justices currently serve on the United States Supreme Court?",
+    "correct_answer": "Nine",
+    "model_answer": "As of my cut-off knowledge in 2023, there are 9 justices currently serving on the United States Supreme Court.",
+    "is_correct": true,
+    "match_type": "variant_match:9"
+  },
+  {
+    "question_id": "law_003",
+    "domain": "law",
+    "question_text": "What does the legal term 'habeas corpus' protect against?",
+    "correct_answer": "Unlawful detention or imprisonment without due process",
+    "model_answer": "The legal term 'habeas corpus' is a Latin phrase that translates to \"you have the body.\" It is a writ (a formal order) that protects individuals from unlawful detention or imprisonment by the government. Specifically, it protects against:\n\n1. **Unlawful arrest**: Habeas corpus ensures that a person is not being held in custody without a valid reason or without being charged with a crime.\n2. **Unlawful imprisonment**: It prevents the government from holding someone in prison without due process or a fair trial.\n3. **Excessive or arbitrary detention**: Habeas corpus ensures that a person is not being held in custody for an unreasonable or unjustified period.\n\nIn essence, habeas corpus is a safeguard against arbitrary or unlawful detention, and it requires the government to justify the detention of an individual by providing evidence of a valid reason for their imprisonment.",
+    "is_correct": true,
+    "match_type": "variant_match:unlawful imprisonment"
+  },
+  {
+    "question_id": "law_004",
+    "domain": "law",
+    "question_text": "In the United States, what is the minimum age requirement to serve as President as stated in the Constitution?",
+    "correct_answer": "35 years old",
+    "model_answer": "According to Article II, Section 1 of the United States Constitution, the minimum age requirement to serve as President is 35 years old.",
+    "is_correct": true,
+    "match_type": "variant_match:35"
+  },
+  {
+    "question_id": "law_005",
+    "domain": "law",
+    "question_text": "What amendment to the U.S. Constitution abolished slavery?",
+    "correct_answer": "The Thirteenth Amendment",
+    "model_answer": "The 13th Amendment to the U.S. Constitution abolished slavery. It was ratified on December 6, 1865.",
+    "is_correct": true,
+    "match_type": "variant_match:13th Amendment"
+  },
+  {
+    "question_id": "law_006",
+    "domain": "law",
+    "question_text": "What is the standard of proof required for a conviction in a criminal trial in the United States?",
+    "correct_answer": "Beyond a reasonable doubt",
+    "model_answer": "In the United States, the standard of proof required for a conviction in a criminal trial is \"beyond a reasonable doubt.\" This is a fundamental principle of the American justice system, as established by the Fifth Amendment to the United States Constitution.\n\nThe \"beyond a reasonable doubt\" standard means that the prosecution must prove the defendant's guilt to a level of certainty that leaves no reasonable doubt in the minds of the jurors. In other words, the prosecution must present evidence that is so convincing and compelling that it is highly unlikely that the defendant is innocent.\n\nThis standard is often contrasted with the \"preponderance of the evidence\" standard, which is used in civil cases, where the burden of proof is lower and the plaintiff must only show that it is more likely than not that the defendant is liable.\n\nThe \"beyond a reasonable doubt\" standard is intended to protect the rights of the accused and ensure that they are not wrongly convicted. It is a high bar for the prosecution to clear, and it requires them to present strong evidence and a compelling case in order to secure a conviction.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "law_007",
+    "domain": "law",
+    "question_text": "Which amendment to the U.S. Constitution guarantees the right to a jury trial in criminal cases?",
+    "correct_answer": "The Sixth Amendment",
+    "model_answer": "The Sixth Amendment to the U.S. Constitution guarantees the right to a jury trial in criminal cases.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "law_008",
+    "domain": "law",
+    "question_text": "What landmark 1966 Supreme Court case established that suspects must be informed of their rights before police interrogation?",
+    "correct_answer": "Miranda v. Arizona",
+    "model_answer": "The landmark 1966 Supreme Court case that established that suspects must be informed of their rights before police interrogation is Miranda v. Arizona.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "law_009",
+    "domain": "law",
+    "question_text": "In contract law, what is the term for something of value exchanged between parties that makes a contract legally binding?",
+    "correct_answer": "Consideration",
+    "model_answer": "In contract law, the term for something of value exchanged between parties that makes a contract legally binding is \"consideration.\" Consideration is a fundamental element of a valid contract, and it can take many forms, such as:\n\n1. Money or other forms of payment\n2. Goods or services\n3. A promise to do something\n4. A waiver of a right or claim\n\nConsideration must be something that has value to the other party, and it must be bargained for. In other words, one party must give up something of value in exchange for something of value from the other party. This mutual exchange of consideration is what makes a contract enforceable under the law.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "law_010",
+    "domain": "law",
+    "question_text": "Which U.S. Supreme Court case established the principle of judicial review, allowing courts to declare laws unconstitutional?",
+    "correct_answer": "Marbury v. Madison",
+    "model_answer": "The U.S. Supreme Court case that established the principle of judicial review, allowing courts to declare laws unconstitutional, is Marbury v. Madison (5 U.S. 137, 1803).",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "law_011",
+    "domain": "law",
+    "question_text": "In tort law, what legal doctrine holds employers liable for the wrongful acts of their employees committed within the scope of employment?",
+    "correct_answer": "Respondeat superior",
+    "model_answer": "The legal doctrine that holds employers liable for the wrongful acts of their employees committed within the scope of employment is called \"Respondeat Superior\" (Latin for \"let the master answer\"). This doctrine is a fundamental principle in tort law, which holds that an employer is vicariously liable for the actions of their employees that are committed within the scope of their employment.",
+    "is_correct": true,
+    "match_type": "variant_match:respondeat superior"
+  },
+  {
+    "question_id": "law_012",
+    "domain": "law",
+    "question_text": "Under the U.S. Constitution, which body has the sole power to try impeachments?",
+    "correct_answer": "The Senate",
+    "model_answer": "Under the U.S. Constitution, the Senate has the sole power to try impeachments. According to Article I, Section 3, Clause 6 of the U.S. Constitution, \"The Senate shall have the sole Power to try all Impeachments.\"",
+    "is_correct": true,
+    "match_type": "variant_match:Senate"
+  },
+  {
+    "question_id": "law_013",
+    "domain": "law",
+    "question_text": "What 1954 Supreme Court decision declared racial segregation in public schools unconstitutional?",
+    "correct_answer": "Brown v. Board of Education",
+    "model_answer": "The 1954 Supreme Court decision that declared racial segregation in public schools unconstitutional is Brown v. Board of Education.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "law_014",
+    "domain": "law",
+    "question_text": "What is the legal term for a court order that temporarily prevents a party from taking a specific action before a full hearing can be held?",
+    "correct_answer": "Temporary restraining order",
+    "model_answer": "The legal term for a court order that temporarily prevents a party from taking a specific action before a full hearing can be held is a \"Temporary Restraining Order\" (TRO) or a \"Preliminary Injunction.\"",
+    "is_correct": true,
+    "match_type": "variant_match:TRO"
+  },
+  {
+    "question_id": "law_015",
+    "domain": "law",
+    "question_text": "Under the doctrine of stare decisis, what Latin term describes a statement in a judicial opinion that is not essential to the decision and therefore not binding precedent?",
+    "correct_answer": "Obiter dictum",
+    "model_answer": "Under the doctrine of stare decisis, the Latin term that describes a statement in a judicial opinion that is not essential to the decision and therefore not binding precedent is obiter dictum.",
+    "is_correct": true,
+    "match_type": "variant_match:obiter dictum"
+  },
+  {
+    "question_id": "law_016",
+    "domain": "law",
+    "question_text": "Which amendment to the U.S. Constitution provides protection against being compelled to be a witness against oneself in a criminal case?",
+    "correct_answer": "The Fifth Amendment",
+    "model_answer": "The amendment to the U.S. Constitution that provides protection against being compelled to be a witness against oneself in a criminal case is the 5th Amendment. Specifically, it is the clause that states, \"No person... shall be compelled in any criminal case to be a witness against himself.\"",
+    "is_correct": true,
+    "match_type": "variant_match:5th Amendment"
+  },
+  {
+    "question_id": "law_017",
+    "domain": "law",
+    "question_text": "In constitutional law, what standard of judicial review requires the government to prove a law is narrowly tailored to serve a compelling governmental interest?",
+    "correct_answer": "Strict scrutiny",
+    "model_answer": "The standard of judicial review that requires the government to prove a law is narrowly tailored to serve a compelling governmental interest is known as strict scrutiny.",
+    "is_correct": true,
+    "match_type": "variant_match:strict scrutiny"
+  },
+  {
+    "question_id": "law_018",
+    "domain": "law",
+    "question_text": "In the U.S. federal court system, under what legal doctrine can a state-law claim be heard in federal court when the opposing parties are citizens of different states and the amount in controversy exceeds $75,000?",
+    "correct_answer": "Diversity jurisdiction",
+    "model_answer": "The legal doctrine that allows a state-law claim to be heard in federal court when the opposing parties are citizens of different states and the amount in controversy exceeds $75,000 is known as diversity jurisdiction.\n\nDiversity jurisdiction is based on Article III, Section 2 of the U.S. Constitution, which grants federal courts the power to hear cases involving citizens of different states. This doctrine is codified in 28 U.S.C. \u00a7 1332, which sets forth the requirements for diversity jurisdiction, including:\n\n1. The parties must be citizens of different states.\n2. The amount in controversy must exceed $75,000.\n3. The case must not involve a claim arising under federal law.\n\nWhen these requirements are met, the federal court has jurisdiction over the case, and the parties can litigate their state-law claims in federal court.",
+    "is_correct": true,
+    "match_type": "variant_match:diversity jurisdiction"
+  },
+  {
+    "question_id": "law_019",
+    "domain": "law",
+    "question_text": "Under the Fourth Amendment, what is the name of the rule that generally excludes from trial evidence obtained through unconstitutional searches or seizures?",
+    "correct_answer": "The exclusionary rule",
+    "model_answer": "The rule you're referring to is called the Exclusionary Rule. This rule is a judicially created doctrine that generally excludes from trial evidence obtained through unconstitutional searches or seizures, in an effort to deter law enforcement from violating individuals' Fourth Amendment rights.",
+    "is_correct": true,
+    "match_type": "variant_match:exclusionary rule"
+  },
+  {
+    "question_id": "law_020",
+    "domain": "law",
+    "question_text": "What Supreme Court case established that federal courts have the power to review state court decisions on matters of federal law?",
+    "correct_answer": "Martin v. Hunter's Lessee",
+    "model_answer": "The Supreme Court case that established that federal courts have the power to review state court decisions on matters of federal law is Marbury v. Madison (1803).",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Martin v. Hunter's Lessee'. Model response: The Supreme Court case that established that federal courts have the power to review state court decisions on matters of federal law is Marbury v. Madison (1803)."
+  },
+  {
+    "question_id": "computer_science_001",
+    "domain": "computer_science",
+    "question_text": "What does CPU stand for?",
+    "correct_answer": "Central Processing Unit",
+    "model_answer": "CPU stands for Central Processing Unit. It is the primary component of a computer that performs most instructions that the computer receives, and it's often referred to as the \"brain\" of the computer.",
+    "is_correct": true,
+    "match_type": "variant_match:central processing unit"
+  },
+  {
+    "question_id": "computer_science_002",
+    "domain": "computer_science",
+    "question_text": "What is the base of the binary number system?",
+    "correct_answer": "2",
+    "model_answer": "The base of the binary number system is 2. This means that the binary number system uses only two distinct digits: 0 and 1.",
+    "is_correct": true,
+    "match_type": "variant_match:two"
+  },
+  {
+    "question_id": "computer_science_003",
+    "domain": "computer_science",
+    "question_text": "What does HTML stand for?",
+    "correct_answer": "HyperText Markup Language",
+    "model_answer": "HTML stands for HyperText Markup Language. It is a standard markup language used to create web pages and is the backbone of a website's structure and content.",
+    "is_correct": true,
+    "match_type": "variant_match:Hypertext Markup Language"
+  },
+  {
+    "question_id": "computer_science_004",
+    "domain": "computer_science",
+    "question_text": "How many bits are in a byte?",
+    "correct_answer": "8",
+    "model_answer": "There are 8 bits in a byte.",
+    "is_correct": true,
+    "match_type": "variant_match:8 bits"
+  },
+  {
+    "question_id": "computer_science_005",
+    "domain": "computer_science",
+    "question_text": "What data structure uses a First-In, First-Out (FIFO) ordering?",
+    "correct_answer": "Queue",
+    "model_answer": "A data structure that uses a First-In, First-Out (FIFO) ordering is a Queue. \n\nIn a queue, elements are added to the end (rear) and removed from the front (head). This means that the first element added to the queue will be the first one to be removed, hence the term First-In, First-Out.",
+    "is_correct": true,
+    "match_type": "variant_match:queue"
+  },
+  {
+    "question_id": "computer_science_006",
+    "domain": "computer_science",
+    "question_text": "What does RAM stand for?",
+    "correct_answer": "Random Access Memory",
+    "model_answer": "RAM stands for Random Access Memory. It's a type of computer memory that temporarily stores data and applications while a computer is running, allowing for quick access and processing.",
+    "is_correct": true,
+    "match_type": "variant_match:random access memory"
+  },
+  {
+    "question_id": "computer_science_007",
+    "domain": "computer_science",
+    "question_text": "In most programming languages, what is the index of the first element of an array?",
+    "correct_answer": "0",
+    "model_answer": "In most programming languages, the index of the first element of an array is 0. This is a common convention in many languages, including C, C++, Java, Python, JavaScript, and many others. It means that the first element is accessed using the index 0, the second element is accessed using the index 1, and so on.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "computer_science_008",
+    "domain": "computer_science",
+    "question_text": "What is the worst-case time complexity of quicksort?",
+    "correct_answer": "O(n^2)",
+    "model_answer": "The worst-case time complexity of quicksort is O(n^2). This occurs when the pivot is chosen poorly, resulting in a partition where one side is of size 1 and the other side is of size n-1. In this case, the algorithm degenerates into a simple insertion sort, which has a time complexity of O(n^2).\n\nHowever, it's worth noting that this worst-case scenario is rare and can be avoided by using techniques such as:\n\n* Choosing a random pivot\n* Using a median-of-three pivot selection method\n* Using a hybrid sorting algorithm that switches to a different sorting algorithm (such as heapsort or mergesort) when the recursion depth exceeds a certain threshold.\n\nIn practice, the average-case time complexity of quicksort is O(n log n), which is much faster than the worst-case scenario.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "computer_science_009",
+    "domain": "computer_science",
+    "question_text": "What layer of the OSI model does the TCP protocol operate at?",
+    "correct_answer": "Transport layer",
+    "model_answer": "The TCP (Transmission Control Protocol) protocol operates at the Transport Layer of the OSI model. The Transport Layer is Layer 4 of the OSI model, which is responsible for providing reliable data transfer between devices.",
+    "is_correct": true,
+    "match_type": "variant_match:transport"
+  },
+  {
+    "question_id": "computer_science_010",
+    "domain": "computer_science",
+    "question_text": "What is the worst-case time complexity of searching for an element in a balanced binary search tree with n nodes?",
+    "correct_answer": "O(log n)",
+    "model_answer": "The worst-case time complexity of searching for an element in a balanced binary search tree with n nodes is O(h), where h is the height of the tree.\n\nIn a balanced binary search tree, the height of the tree is log(n), where n is the number of nodes. This is because a balanced binary search tree is essentially a binary heap, and the height of a binary heap is log(n).\n\nTherefore, the worst-case time complexity of searching for an element in a balanced binary search tree with n nodes is O(log n).",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "computer_science_011",
+    "domain": "computer_science",
+    "question_text": "What is the default port number for HTTP?",
+    "correct_answer": "80",
+    "model_answer": "The default port number for HTTP is 80.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "computer_science_012",
+    "domain": "computer_science",
+    "question_text": "In the context of databases, what does ACID stand for?",
+    "correct_answer": "Atomicity, Consistency, Isolation, Durability",
+    "model_answer": "In the context of databases, ACID stands for Atomicity, Consistency, Isolation, and Durability. These are the four key properties that ensure database transactions are processed reliably and securely.\n\n1. **Atomicity**: Ensures that a transaction is treated as a single, indivisible unit of work. If any part of the transaction fails, the entire transaction is rolled back to its previous state.\n\n2. **Consistency**: Guarantees that the database remains in a consistent state after a transaction is completed. This means that the transaction must not violate any database constraints or rules.\n\n3. **Isolation**: Ensures that multiple transactions can run concurrently without interfering with each other. Each transaction sees a consistent view of the database, as if it were the only transaction running.\n\n4. **Durability**: Ensures that once a transaction is committed, its effects are permanent and cannot be rolled back. The changes made by the transaction are persisted in the database, even in the event of a system failure.\n\nThe ACID properties are essential for maintaining the integrity and reliability of a database, and are often used as a benchmark for evaluating database systems.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Atomicity, Consistency, Isolation, Durability'. Model response: In the context of databases, ACID stands for Atomicity, Consistency, Isolation, and Durability. These are the four key properties that ensure database transactions are processed reliably and securely."
+  },
+  {
+    "question_id": "computer_science_013",
+    "domain": "computer_science",
+    "question_text": "What is the time complexity of inserting an element at the beginning of a singly linked list?",
+    "correct_answer": "O(1)",
+    "model_answer": "The time complexity of inserting an element at the beginning of a singly linked list is O(1). \n\nThis is because we only need to update the head of the list to point to the new node, and then update the next pointer of the new node to point to the previous head. This operation does not depend on the size of the list, so it is constant time.",
+    "is_correct": true,
+    "match_type": "variant_match:constant time"
+  },
+  {
+    "question_id": "computer_science_014",
+    "domain": "computer_science",
+    "question_text": "In the context of the CAP theorem, what three properties does it state a distributed system cannot simultaneously guarantee?",
+    "correct_answer": "Consistency, Availability, and Partition tolerance",
+    "model_answer": "The CAP theorem, also known as the Brewer's CAP theorem, states that in a distributed system, it is impossible to simultaneously guarantee the following three properties:\n\n1. **Consistency**: This refers to the ability of all nodes in the system to have the same view of the data, ensuring that all operations are executed in a predictable and reliable manner.\n\n2. **Availability**: This means that every request to the system receives a response, without guaranteeing the validity of that response. In other words, the system is always accessible and responds to requests, even if the data is not up-to-date.\n\n3. **Partition Tolerance**: This property ensures that the system continues to function and make progress even when there are network partitions or failures, where some nodes in the system cannot communicate with each other.\n\nThe CAP theorem implies that a distributed system can at most guarantee two out of these three properties simultaneously.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Consistency, Availability, and Partition tolerance'. Model response: The CAP theorem, also known as the Brewer's CAP theorem, states that in a distributed system, it is impossible to simultaneously guarantee the following three properties:\n\n1. **Consistency**: This ref"
+  },
+  {
+    "question_id": "computer_science_015",
+    "domain": "computer_science",
+    "question_text": "What is the time complexity of finding the shortest path in a weighted graph with non-negative edge weights using Dijkstra's algorithm with a binary heap?",
+    "correct_answer": "O((V + E) log V)",
+    "model_answer": "The time complexity of finding the shortest path in a weighted graph with non-negative edge weights using Dijkstra's algorithm with a binary heap is O((V + E) log V), where:\n\n- V is the number of vertices (or nodes) in the graph.\n- E is the number of edges in the graph.\n\nThis is because Dijkstra's algorithm involves:\n\n1.  Initializing the priority queue (binary heap) with all vertices, which takes O(V) time.\n2.  Extracting the minimum vertex from the priority queue, which takes O(log V) time.\n3.  Updating the distances of the adjacent vertices, which takes O(E) time in total.\n4.  Repeating steps 2 and 3 until the priority queue is empty, which takes O(V) time.\n\nSince the priority queue operations (insertion and extraction) take O(log V) time, and we perform these operations V times, the overall time complexity is O(V log V). However, we also need to consider the time complexity of updating the distances of the adjacent vertices, which takes O(E) time in total. Therefore, the overall time complexity is O((V + E) log V).\n\nNote that if the edge weights are negative, Dijkstra's algorithm does not work, and a different algorithm such as Bellman-Ford algorithm should be used, which has a time complexity of O(VE).",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "computer_science_016",
+    "domain": "computer_science",
+    "question_text": "In the IEEE 754 standard, how many bits are used for the significand (mantissa) in a single-precision (32-bit) floating-point number, including the implicit leading bit?",
+    "correct_answer": "24",
+    "model_answer": "In the IEEE 754 standard, a single-precision (32-bit) floating-point number is divided into three parts: \n\n1. The sign bit (1 bit)\n2. The exponent (8 bits)\n3. The significand (23 bits), which includes the implicit leading bit.\n\nThe implicit leading bit is assumed to be 1, so it's not stored explicitly. Therefore, the significand has 23 bits, including the implicit leading bit.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer '24'. Model response: In the IEEE 754 standard, a single-precision (32-bit) floating-point number is divided into three parts: \n\n1. The sign bit (1 bit)\n2. The exponent (8 bits)\n3. The significand (23 bits), which includes"
+  },
+  {
+    "question_id": "computer_science_017",
+    "domain": "computer_science",
+    "question_text": "Is the Halting Problem decidable or undecidable?",
+    "correct_answer": "Undecidable",
+    "model_answer": "The Halting Problem is undecidable. This was proven by Alan Turing in his 1936 paper \"On Computable Numbers, with an Application to the Entscheidungsproblem.\" \n\nThe Halting Problem is a decision problem that asks whether a given program will run forever or eventually stop when given a particular input. Turing showed that there cannot exist a general algorithm that can determine whether any given program will halt (stop) or run forever for all possible inputs.\n\nIn other words, it is impossible to write a program that can determine whether another program will halt or run forever, given an arbitrary input. This result has far-reaching implications for the study of computability and the limits of computation.",
+    "is_correct": true,
+    "match_type": "variant_match:undecidable"
+  },
+  {
+    "question_id": "computer_science_018",
+    "domain": "computer_science",
+    "question_text": "What is the space complexity of a depth-first search (DFS) on a graph with V vertices and E edges, considering only the recursion stack and visited array?",
+    "correct_answer": "O(V)",
+    "model_answer": "The space complexity of a depth-first search (DFS) on a graph with V vertices and E edges, considering only the recursion stack and visited array, is O(V).\n\nHere's why:\n\n1. Recursion stack: In the worst case, the recursion stack will contain V vertices, because in a graph with V vertices, the DFS traversal can visit each vertex once. This is because in a graph, each vertex can be a root of a DFS traversal.\n\n2. Visited array: The visited array is used to keep track of the vertices that have been visited. In the worst case, the visited array will also contain V vertices, because in a graph with V vertices, the DFS traversal can visit each vertex once.\n\nTherefore, the total space complexity is O(V) + O(V) = O(2V), which simplifies to O(V).\n\nNote that the space complexity does not depend on the number of edges E, because the recursion stack and visited array only depend on the number of vertices.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "computer_science_019",
+    "domain": "computer_science",
+    "question_text": "What is the worst-case time complexity of inserting an element into a hash table that uses chaining for collision resolution?",
+    "correct_answer": "O(1) for the insertion itself (appending to a chain), but O(n) for search in the worst case when all elements hash to the same bucket",
+    "model_answer": "The worst-case time complexity of inserting an element into a hash table that uses chaining for collision resolution is O(n), where n is the number of elements in the hash table.\n\nThis is because in the worst-case scenario, all elements hash to the same index, resulting in a linked list of length n. In this case, inserting a new element would require traversing the entire linked list, resulting in a time complexity of O(n).",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'O(1) for the insertion itself (appending to a chain), but O(n) for search in the worst case when all elements hash to the same bucket'. Model response: The worst-case time complexity of inserting an element into a hash table that uses chaining for collision resolution is O(n), where n is the number of elements in the hash table.\n\nThis is because in t"
+  },
+  {
+    "question_id": "computer_science_020",
+    "domain": "computer_science",
+    "question_text": "In the context of P vs NP, if a problem is NP-hard, does that necessarily mean it is in NP?",
+    "correct_answer": "No. NP-hard means every problem in NP can be reduced to it, but an NP-hard problem is not necessarily in NP itself. A problem that is both NP-hard and in NP is called NP-complete.",
+    "model_answer": "No, if a problem is NP-hard, it does not necessarily mean it is in NP. \n\nNP-hard problems are those for which no known efficient algorithm exists to solve them, and it is suspected that no such algorithm exists. However, being NP-hard does not imply that the problem is in NP. \n\nIn fact, a problem can be NP-hard but not in NP if it is not even in NP. This is because NP-hardness is a stronger condition than NP-completeness. A problem is NP-complete if it is in NP and NP-hard. \n\nTo illustrate this, consider the following hierarchy:\n\n1. P (problems that can be solved in polynomial time)\n2. NP (problems that can be verified in polynomial time)\n3. NP-complete (problems that are in NP and NP-hard)\n4. NP-hard (problems that are at least as hard as the hardest problems in NP)\n\nSo, being NP-hard does not necessarily mean a problem is in NP. It only means that the problem is at least as hard as the hardest problems in NP.",
+    "is_correct": true,
+    "match_type": "variant_match:no"
+  },
+  {
+    "question_id": "economics_001",
+    "domain": "economics",
+    "question_text": "What does GDP stand for?",
+    "correct_answer": "Gross Domestic Product",
+    "model_answer": "GDP stands for Gross Domestic Product. It is a measure of the total value of goods and services produced within a country's borders over a specific period of time, usually a year.",
+    "is_correct": true,
+    "match_type": "variant_match:gross domestic product"
+  },
+  {
+    "question_id": "economics_002",
+    "domain": "economics",
+    "question_text": "What term describes a general increase in prices and fall in the purchasing value of money?",
+    "correct_answer": "Inflation",
+    "model_answer": "The term that describes a general increase in prices and a fall in the purchasing value of money is inflation.",
+    "is_correct": true,
+    "match_type": "variant_match:inflation"
+  },
+  {
+    "question_id": "economics_003",
+    "domain": "economics",
+    "question_text": "In economics, what does the law of demand state about the relationship between price and quantity demanded, all else being equal?",
+    "correct_answer": "As price increases, quantity demanded decreases",
+    "model_answer": "The law of demand states that, all else being equal, as the price of a good or service increases, the quantity demanded of that good or service decreases. Conversely, as the price of a good or service decreases, the quantity demanded of that good or service increases. This inverse relationship between price and quantity demanded is a fundamental concept in economics.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'As price increases, quantity demanded decreases'. Model response: The law of demand states that, all else being equal, as the price of a good or service increases, the quantity demanded of that good or service decreases. Conversely, as the price of a good or service"
+  },
+  {
+    "question_id": "economics_004",
+    "domain": "economics",
+    "question_text": "Who wrote 'The Wealth of Nations', widely considered the foundational text of classical economics?",
+    "correct_answer": "Adam Smith",
+    "model_answer": "Adam Smith wrote 'The Wealth of Nations', widely considered the foundational text of classical economics. It was first published in 1776.",
+    "is_correct": true,
+    "match_type": "variant_match:Smith"
+  },
+  {
+    "question_id": "economics_005",
+    "domain": "economics",
+    "question_text": "What is the term for a market structure in which a single seller dominates the entire market for a product or service?",
+    "correct_answer": "Monopoly",
+    "model_answer": "The term for a market structure in which a single seller dominates the entire market for a product or service is called a Monopoly.",
+    "is_correct": true,
+    "match_type": "variant_match:monopoly"
+  },
+  {
+    "question_id": "economics_006",
+    "domain": "economics",
+    "question_text": "What U.S. institution is primarily responsible for setting monetary policy, including the federal funds rate?",
+    "correct_answer": "The Federal Reserve",
+    "model_answer": "The U.S. institution primarily responsible for setting monetary policy, including the federal funds rate, is the Federal Reserve, also known as the \"Fed.\" The Federal Reserve is the central bank of the United States and is composed of 12 regional Federal Reserve Banks, with the Federal Reserve Board of Governors in Washington, D.C. serving as the central governing body.\n\nThe Federal Reserve has three main tools for implementing monetary policy:\n\n1. **Federal Funds Rate**: The interest rate at which depository institutions (banks and credit unions) lend and borrow money from each other overnight. The Federal Reserve sets a target for the federal funds rate, which influences the overall level of interest rates in the economy.\n2. **Open Market Operations**: The Federal Reserve buys or sells government securities on the open market to increase or decrease the money supply and influence interest rates.\n3. **Reserve Requirements**: The Federal Reserve sets reserve requirements for depository institutions, which dictate the percentage of deposits that must be held in reserve rather than lent out.\n\nBy adjusting these tools, the Federal Reserve aims to promote maximum employment, stable prices, and moderate long-term interest rates, as mandated by the Federal Reserve Act of 1913.",
+    "is_correct": true,
+    "match_type": "variant_match:Federal Reserve"
+  },
+  {
+    "question_id": "economics_007",
+    "domain": "economics",
+    "question_text": "What does the economic term 'opportunity cost' refer to?",
+    "correct_answer": "The value of the next best alternative forgone when making a choice",
+    "model_answer": "The economic term 'opportunity cost' refers to the value of the next best alternative that is given up when a choice is made. In other words, it is the cost of choosing one option over another. Opportunity cost is the benefit that could have been obtained if a different choice had been made.\n\nFor example, let's say you have $100 to spend on either a new video game or a concert ticket. If you choose to buy the video game, the opportunity cost is the concert ticket you could have bought with that $100. If you choose to buy the concert ticket, the opportunity cost is the video game you could have bought with that $100.\n\nOpportunity cost is an important concept in economics because it helps individuals and businesses make informed decisions about how to allocate their resources. It highlights the trade-offs that are involved in making choices and encourages people to think about the potential consequences of their decisions.\n\nOpportunity cost can be calculated in various ways, including:\n\n1. Monetary opportunity cost: The amount of money that could have been earned or spent on an alternative option.\n2. Time opportunity cost: The amount of time that could have been spent on an alternative activity.\n3. Resource opportunity cost: The amount of resources (such as labor or materials) that could have been used for an alternative purpose.\n\nOverall, opportunity cost is a key concept in economics that helps individuals and businesses make informed decisions about how to allocate their resources.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'The value of the next best alternative forgone when making a choice'. Model response: The economic term 'opportunity cost' refers to the value of the next best alternative that is given up when a choice is made. In other words, it is the cost of choosing one option over another. Opport"
+  },
+  {
+    "question_id": "economics_008",
+    "domain": "economics",
+    "question_text": "What is the term for the cost of producing one additional unit of a good or service?",
+    "correct_answer": "Marginal cost",
+    "model_answer": "The term for the cost of producing one additional unit of a good or service is the marginal cost.",
+    "is_correct": true,
+    "match_type": "variant_match:marginal cost"
+  },
+  {
+    "question_id": "economics_009",
+    "domain": "economics",
+    "question_text": "According to the Phillips Curve in its original formulation, what is the short-run tradeoff between?",
+    "correct_answer": "Unemployment and inflation",
+    "model_answer": "According to the original Phillips Curve formulation, the short-run tradeoff is between inflation and unemployment.",
+    "is_correct": true,
+    "match_type": "variant_match:inflation and unemployment"
+  },
+  {
+    "question_id": "economics_010",
+    "domain": "economics",
+    "question_text": "What economic principle states that 'bad money drives out good money' when both are in circulation at a fixed exchange rate?",
+    "correct_answer": "Gresham's Law",
+    "model_answer": "The economic principle you're referring to is known as Gresham's Law. It states that \"bad money drives out good money\" when both are in circulation at a fixed exchange rate. This means that if a country has two types of currency with the same face value but different intrinsic values (e.g., a valuable metal coin and a less valuable token), the less valuable token will drive out the more valuable coin from circulation.\n\nGresham's Law is named after Sir Thomas Gresham, an English merchant and financier who observed this phenomenon in the 16th century. It is often used to explain why counterfeit currency can circulate alongside genuine currency, as people tend to hoard the more valuable genuine currency and use the less valuable counterfeit currency in transactions.",
+    "is_correct": true,
+    "match_type": "variant_match:Gresham's law"
+  },
+  {
+    "question_id": "economics_011",
+    "domain": "economics",
+    "question_text": "In economics, what two key properties define a 'public good'?",
+    "correct_answer": "Non-excludable and non-rivalrous",
+    "model_answer": "In economics, a public good is defined by two key properties:\n\n1. **Non-excludability**: It is impossible or extremely difficult to exclude individuals from consuming or benefiting from the good, even if they do not pay for it. This means that once a public good is provided, anyone can access it without being charged.\n\n2. **Non-rivalry**: The consumption or use of a public good by one individual does not reduce its availability or quality for others. In other words, one person's use of the good does not diminish its value or usefulness to others.\n\nExamples of public goods include national defense, public parks, and lighthouses. These goods are often provided by the government because they are considered essential for the well-being of society as a whole.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Non-excludable and non-rivalrous'. Model response: In economics, a public good is defined by two key properties:\n\n1. **Non-excludability**: It is impossible or extremely difficult to exclude individuals from consuming or benefiting from the good, even"
+  },
+  {
+    "question_id": "economics_012",
+    "domain": "economics",
+    "question_text": "What does the Gini coefficient value of 0 represent?",
+    "correct_answer": "Perfect equality in income or wealth distribution",
+    "model_answer": "The Gini coefficient is a statistical measure used to assess income inequality within a population. It ranges from 0 to 1, where:\n\n- A Gini coefficient of 0 represents perfect equality, where every individual has the same income.\n- A Gini coefficient of 1 represents perfect inequality, where one individual has all the income, and the rest have none.\n\nIn other words, a Gini coefficient of 0 means that there is no income inequality in the population, and everyone has the same level of income.",
+    "is_correct": true,
+    "match_type": "variant_match:perfect equality"
+  },
+  {
+    "question_id": "economics_013",
+    "domain": "economics",
+    "question_text": "What is the economic term for the situation where one party in a transaction has more information than the other party?",
+    "correct_answer": "Asymmetric information",
+    "model_answer": "The economic term for the situation where one party in a transaction has more information than the other party is \"asymmetric information.\"",
+    "is_correct": true,
+    "match_type": "variant_match:asymmetric information"
+  },
+  {
+    "question_id": "economics_014",
+    "domain": "economics",
+    "question_text": "The Coase Theorem states that under certain conditions, private bargaining will lead to an efficient allocation of resources regardless of the initial assignment of property rights. What is the critical assumption required?",
+    "correct_answer": "Transaction costs must be zero or sufficiently low",
+    "model_answer": "The critical assumption required for the Coase Theorem to hold is that there are no transaction costs. This means that the parties involved in the bargaining process can negotiate and agree on a mutually beneficial outcome without incurring any costs or difficulties in doing so.\n\nIn other words, the Coase Theorem assumes that the parties can communicate freely, negotiate effectively, and enforce any agreements they reach without any obstacles or costs. This assumption is crucial because it allows the parties to reach an efficient allocation of resources through private bargaining, regardless of the initial assignment of property rights.\n\nIf transaction costs are present, such as costs of negotiation, information asymmetry, or enforcement difficulties, the Coase Theorem may not hold, and the initial assignment of property rights may indeed affect the allocation of resources.",
+    "is_correct": true,
+    "match_type": "variant_match:no transaction costs"
+  },
+  {
+    "question_id": "economics_015",
+    "domain": "economics",
+    "question_text": "In the context of game theory, what is the Nash Equilibrium in a one-shot Prisoner's Dilemma?",
+    "correct_answer": "Both players defect",
+    "model_answer": "In the context of game theory, the Nash Equilibrium is a concept developed by John Nash. It is a stable state in a game where no player can improve their payoff by unilaterally changing their strategy, assuming all other players keep their strategies unchanged.\n\nIn a one-shot Prisoner's Dilemma, the Nash Equilibrium is the point where both prisoners choose to defect, regardless of what the other prisoner chooses. This is because, regardless of the other prisoner's decision, defecting always results in a higher payoff for the individual prisoner.\n\nThe Prisoner's Dilemma is a classic example of a game where cooperation is the Pareto optimal outcome, but the Nash Equilibrium leads to a suboptimal outcome. In this case, the Nash Equilibrium is (Defect, Defect), where both prisoners choose to defect, resulting in a lower overall payoff compared to the cooperative outcome (Cooperate, Cooperate).\n\nThe payoffs for the Prisoner's Dilemma are typically as follows:\n\n- If both prisoners cooperate, they each receive a moderate payoff (e.g., 2 years in prison).\n- If one prisoner cooperates and the other defects, the cooperator receives a severe penalty (e.g., 3 years in prison), while the defector receives a lighter sentence (e.g., 1 year in prison).\n- If both prisoners defect, they each receive a lighter sentence (e.g., 2 years in prison).\n\nIn this scenario, the Nash Equilibrium is (Defect, Defect), as both prisoners can improve their individual payoff by defecting, regardless of the other prisoner's decision.",
+    "is_correct": true,
+    "match_type": "variant_match:(Defect, Defect)"
+  },
+  {
+    "question_id": "economics_016",
+    "domain": "economics",
+    "question_text": "What does the Ricardian Equivalence theorem propose about the effect of government financing choices (taxes vs. borrowing) on aggregate demand?",
+    "correct_answer": "It proposes that government financing choices have no effect on aggregate demand because rational consumers adjust their saving to offset future tax liabilities",
+    "model_answer": "The Ricardian Equivalence theorem, proposed by David Ricardo in 1820 and later developed by Robert Barro in 1974, suggests that the method of financing government spending (through taxes or borrowing) has no effect on aggregate demand. \n\nIn other words, the theorem states that if the government increases its spending, it can either finance it through taxes or by issuing debt (borrowing). According to the theorem, the outcome for the economy will be the same in both cases, as long as the government's total spending remains the same.\n\nThis is because, in the long run, individuals are assumed to be rational and forward-looking. When the government issues debt, individuals know that they will have to pay taxes in the future to service the debt. As a result, they adjust their consumption and savings decisions accordingly, taking into account the future tax burden.\n\nIn the Ricardian Equivalence framework, the increase in government spending financed by borrowing will lead to an increase in the national debt, which in turn will lead to higher future taxes. This increase in future taxes will reduce private consumption and savings, offsetting the initial increase in government spending. As a result, the overall level of aggregate demand will remain unchanged.\n\nHowever, it's worth noting that the Ricardian Equivalence theorem assumes a number of conditions, including:\n\n1. Perfect capital markets: Individuals can borrow and lend at the same interest rate.\n2. Perfect information: Individuals have complete knowledge of future tax policies.\n3. No distortionary taxes: Taxes do not distort the behavior of individuals.\n4. No liquidity constraints: Individuals have access to credit markets.\n\nIn reality, these conditions are often not met, and the actual effect of government financing choices on aggregate demand may differ from the predictions of the Ricardian Equivalence theorem.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'It proposes that government financing choices have no effect on aggregate demand because rational consumers adjust their saving to offset future tax liabilities'. Model response: The Ricardian Equivalence theorem, proposed by David Ricardo in 1820 and later developed by Robert Barro in 1974, suggests that the method of financing government spending (through taxes or borrowing)"
+  },
+  {
+    "question_id": "economics_017",
+    "domain": "economics",
+    "question_text": "What is the 'paradox of thrift' as described by Keynesian economics?",
+    "correct_answer": "If everyone in an economy increases their saving simultaneously, total savings may actually decrease because reduced spending lowers aggregate income",
+    "model_answer": "The 'paradox of thrift' is a concept in Keynesian economics that suggests that if everyone tries to save more money at the same time, it can actually lead to a decrease in overall savings and economic activity.\n\nIn a normal situation, when individuals save more, they reduce their consumption and increase their savings. This can lead to a decrease in aggregate demand, which can cause a recession. However, the paradox of thrift arises when everyone tries to save more simultaneously.\n\nWhen everyone tries to save more, they reduce their consumption, which leads to a decrease in aggregate demand. This decrease in aggregate demand can cause businesses to reduce production, leading to higher unemployment. As a result, people's incomes decrease, making it even more difficult for them to save.\n\nIn this scenario, the attempt to save more leads to a decrease in savings, as people are unable to save due to reduced incomes. This is the paradox of thrift: the more people try to save, the less they are able to save.\n\nThe paradox of thrift is often attributed to John Maynard Keynes, who argued that individual rationality can lead to irrational outcomes in the aggregate. He suggested that governments should intervene in the economy to stabilize aggregate demand and prevent the paradox of thrift from occurring.\n\nThe paradox of thrift is still a relevant concept in modern economics, and it highlights the importance of considering the aggregate effects of individual actions in economic decision-making.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'If everyone in an economy increases their saving simultaneously, total savings may actually decrease because reduced spending lowers aggregate income'. Model response: The 'paradox of thrift' is a concept in Keynesian economics that suggests that if everyone tries to save more money at the same time, it can actually lead to a decrease in overall savings and economic"
+  },
+  {
+    "question_id": "economics_018",
+    "domain": "economics",
+    "question_text": "According to the Heckscher-Ohlin model of international trade, what determines a country's comparative advantage?",
+    "correct_answer": "A country's relative abundance of factors of production (such as labor and capital)",
+    "model_answer": "According to the Heckscher-Ohlin model of international trade, a country's comparative advantage is determined by the relative abundance of factors of production, such as labor and capital. \n\nIn the Heckscher-Ohlin model, countries are assumed to have different endowments of labor and capital. The model states that a country will have a comparative advantage in producing goods that require the factor of production in which it has an abundance. \n\nFor example, if a country has an abundance of labor, it will have a comparative advantage in producing labor-intensive goods. On the other hand, if a country has an abundance of capital, it will have a comparative advantage in producing capital-intensive goods.\n\nThis theory was first proposed by Eli Heckscher in 1919 and later developed by Bertil Ohlin in the 1930s.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'A country's relative abundance of factors of production (such as labor and capital)'. Model response: According to the Heckscher-Ohlin model of international trade, a country's comparative advantage is determined by the relative abundance of factors of production, such as labor and capital. \n\nIn the H"
+  },
+  {
+    "question_id": "economics_019",
+    "domain": "economics",
+    "question_text": "What does Arrow's Impossibility Theorem prove about voting systems with three or more alternatives?",
+    "correct_answer": "No ranked-order voting system can simultaneously satisfy unrestricted domain, non-dictatorship, Pareto efficiency, and independence of irrelevant alternatives",
+    "model_answer": "Arrow's Impossibility Theorem, also known as the General Possibility Theorem, is a fundamental result in social choice theory. It was first proposed by Kenneth Arrow in 1950. The theorem proves that there is no voting system that satisfies all of the following conditions:\n\n1. **Unanimity**: If all voters rank a particular option as their top choice, then that option should be the winner.\n2. **Pareto efficiency**: If all voters rank a particular option as their top choice, then that option should be the winner.\n3. **Non-dictatorship**: No single voter should have the power to determine the winner.\n4. **Independence of irrelevant alternatives**: The ranking of a particular option should not be affected by the ranking of other options that are not relevant to the decision.\n5. **Transitivity**: If option A is preferred to option B, and option B is preferred to option C, then option A should be preferred to option C.\n\nArrow's Impossibility Theorem states that any voting system with three or more alternatives that satisfies the first four conditions (unanimity, Pareto efficiency, non-dictatorship, and independence of irrelevant alternatives) must violate the fifth condition (transitivity). In other words, there is no voting system that can satisfy all five conditions simultaneously.\n\nThis result has significant implications for the design of voting systems, as it suggests that any voting system with three or more alternatives will inevitably have some form of inconsistency or paradox.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'No ranked-order voting system can simultaneously satisfy unrestricted domain, non-dictatorship, Pareto efficiency, and independence of irrelevant alternatives'. Model response: Arrow's Impossibility Theorem, also known as the General Possibility Theorem, is a fundamental result in social choice theory. It was first proposed by Kenneth Arrow in 1950. The theorem proves that t"
+  },
+  {
+    "question_id": "economics_020",
+    "domain": "economics",
+    "question_text": "Who is primarily responsible for controlling fiscal policy: the government or the central bank?",
+    "correct_answer": "The government (legislature and executive) controls fiscal policy through taxation and spending; the central bank controls monetary policy",
+    "model_answer": "In most countries, the government is primarily responsible for controlling fiscal policy. Fiscal policy refers to the use of government spending and taxation to influence the overall level of economic activity.\n\nThe government's fiscal policy is typically implemented through the following tools:\n\n1. Government spending: The government can increase or decrease its spending on various programs and projects to stimulate or slow down economic growth.\n2. Taxation: The government can adjust tax rates or introduce new taxes to influence consumer spending and investment.\n\nOn the other hand, the central bank is primarily responsible for controlling monetary policy, which involves managing the money supply and interest rates to promote economic growth and stability.\n\nThe central bank's monetary policy tools include:\n\n1. Setting interest rates: The central bank can adjust interest rates to influence borrowing costs and stimulate or slow down economic growth.\n2. Buying or selling government securities: The central bank can use open market operations to increase or decrease the money supply and influence interest rates.\n\nWhile the central bank can influence the overall direction of the economy, the government has more direct control over fiscal policy and is responsible for making decisions about government spending and taxation.",
+    "is_correct": true,
+    "match_type": "variant_match:government"
+  },
+  {
+    "question_id": "chemistry_001",
+    "domain": "chemistry",
+    "question_text": "What is the chemical formula for water?",
+    "correct_answer": "H2O",
+    "model_answer": "The chemical formula for water is H2O. This indicates that one molecule of water consists of two hydrogen atoms (H) bonded to a single oxygen atom (O).",
+    "is_correct": true,
+    "match_type": "variant_match:h2o"
+  },
+  {
+    "question_id": "chemistry_002",
+    "domain": "chemistry",
+    "question_text": "What is the atomic number of carbon?",
+    "correct_answer": "6",
+    "model_answer": "The atomic number of carbon is 6.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "chemistry_003",
+    "domain": "chemistry",
+    "question_text": "What is the chemical formula for table salt?",
+    "correct_answer": "NaCl",
+    "model_answer": "The chemical formula for table salt is NaCl, which stands for sodium chloride. It consists of one sodium (Na) atom and one chlorine (Cl) atom.",
+    "is_correct": true,
+    "match_type": "variant_match:NaCl"
+  },
+  {
+    "question_id": "chemistry_004",
+    "domain": "chemistry",
+    "question_text": "What is the pH of a neutral solution at 25\u00b0C?",
+    "correct_answer": "7",
+    "model_answer": "The pH of a neutral solution at 25\u00b0C is 7.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "chemistry_005",
+    "domain": "chemistry",
+    "question_text": "What type of bond is formed when electrons are shared between two atoms?",
+    "correct_answer": "Covalent bond",
+    "model_answer": "The type of bond formed when electrons are shared between two atoms is called a covalent bond. In a covalent bond, two or more atoms share one or more pairs of electrons to achieve a stable electronic configuration, typically resulting in a molecule.",
+    "is_correct": true,
+    "match_type": "variant_match:covalent"
+  },
+  {
+    "question_id": "chemistry_006",
+    "domain": "chemistry",
+    "question_text": "How many electrons can the first electron shell (n=1) of an atom hold?",
+    "correct_answer": "2",
+    "model_answer": "The first electron shell, also known as the 1s orbital, can hold a maximum of 2 electrons. This is due to the Pauli Exclusion Principle, which states that no two electrons in an atom can have the same set of quantum numbers. The quantum numbers for the first electron shell are n=1 and l=0, and the two possible values for the magnetic quantum number (m) are -1 and 1.",
+    "is_correct": true,
+    "match_type": "variant_match:two"
+  },
+  {
+    "question_id": "chemistry_007",
+    "domain": "chemistry",
+    "question_text": "What is the most abundant gas in Earth's atmosphere?",
+    "correct_answer": "Nitrogen",
+    "model_answer": "The most abundant gas in Earth's atmosphere is nitrogen (N2), making up approximately 78.08% of the atmosphere.",
+    "is_correct": true,
+    "match_type": "variant_match:nitrogen"
+  },
+  {
+    "question_id": "chemistry_008",
+    "domain": "chemistry",
+    "question_text": "What is the oxidation state of oxygen in hydrogen peroxide (H2O2)?",
+    "correct_answer": "-1",
+    "model_answer": "To find the oxidation state of oxygen in hydrogen peroxide (H2O2), we need to follow these steps:\n\n1. The oxidation state of hydrogen (H) is +1.\n2. Since there are two hydrogen atoms, the total oxidation state of hydrogen is 2 * (+1) = +2.\n3. The total oxidation state of the molecule (H2O2) is 0, since it's a neutral molecule.\n4. To find the oxidation state of oxygen, we subtract the total oxidation state of hydrogen from the total oxidation state of the molecule: 0 - (+2) = -2.\n5. Since there are two oxygen atoms, the total oxidation state of oxygen is 2 * (-2) = -4.\n\nHowever, the oxidation state of oxygen in hydrogen peroxide (H2O2) is -1.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "chemistry_009",
+    "domain": "chemistry",
+    "question_text": "Which element has the highest electronegativity on the Pauling scale?",
+    "correct_answer": "Fluorine",
+    "model_answer": "The element with the highest electronegativity on the Pauling scale is Fluorine (F), with an electronegativity value of 3.98.",
+    "is_correct": true,
+    "match_type": "variant_match:fluorine"
+  },
+  {
+    "question_id": "chemistry_010",
+    "domain": "chemistry",
+    "question_text": "What is the conjugate base of water (H2O)?",
+    "correct_answer": "Hydroxide ion (OH\u207b)",
+    "model_answer": "To find the conjugate base of water (H2O), we need to consider its dissociation in water. \n\nH2O (water) can donate a proton (H+), forming H3O+ (hydronium ion) and leaving behind its conjugate base, which is OH- (hydroxide ion).\n\nH2O \u2192 H+ + OH-\n\nSo, the conjugate base of water (H2O) is OH- (hydroxide ion).",
+    "is_correct": true,
+    "match_type": "variant_match:OH-"
+  },
+  {
+    "question_id": "chemistry_011",
+    "domain": "chemistry",
+    "question_text": "In the periodic table, which group contains the noble gases?",
+    "correct_answer": "Group 18",
+    "model_answer": "The noble gases are located in Group 18 of the periodic table.",
+    "is_correct": true,
+    "match_type": "variant_match:18"
+  },
+  {
+    "question_id": "chemistry_012",
+    "domain": "chemistry",
+    "question_text": "What is the molecular geometry of methane (CH4) according to VSEPR theory?",
+    "correct_answer": "Tetrahedral",
+    "model_answer": "According to the VSEPR (Valence Shell Electron Pair Repulsion) theory, methane (CH4) has a tetrahedral molecular geometry.\n\nIn methane, the carbon atom is bonded to four hydrogen atoms, and each bond is a single covalent bond. The carbon atom also has no lone pairs of electrons. \n\nThe VSEPR theory states that the electron pairs around the central atom (in this case, carbon) will arrange themselves to minimize repulsion between them. With four bonded pairs and no lone pairs, the electron pairs will arrange themselves in a tetrahedral shape, with each bond angle being approximately 109.5 degrees.",
+    "is_correct": true,
+    "match_type": "variant_match:tetrahedral"
+  },
+  {
+    "question_id": "chemistry_013",
+    "domain": "chemistry",
+    "question_text": "What is the name of the process by which a solid changes directly into a gas without passing through the liquid phase?",
+    "correct_answer": "Sublimation",
+    "model_answer": "The process by which a solid changes directly into a gas without passing through the liquid phase is called sublimation.",
+    "is_correct": true,
+    "match_type": "variant_match:sublimation"
+  },
+  {
+    "question_id": "chemistry_014",
+    "domain": "chemistry",
+    "question_text": "In an SN1 reaction starting from a single enantiomer, what is the expected stereochemical outcome at the carbon center where substitution occurs?",
+    "correct_answer": "Racemization (a roughly equal mixture of both enantiomers)",
+    "model_answer": "In an SN1 reaction starting from a single enantiomer, the expected stereochemical outcome at the carbon center where substitution occurs is racemization.\n\nThis is because the SN1 reaction involves a two-step process: \n\n1. The formation of a carbocation intermediate, which is achiral (has no stereocenter).\n2. The nucleophilic attack on the carbocation, which can occur from either side, resulting in a mixture of enantiomers.\n\nSince the reaction starts with a single enantiomer, the resulting product will be a racemic mixture, meaning it will contain equal amounts of the original enantiomer and its mirror image.",
+    "is_correct": true,
+    "match_type": "variant_match:racemization"
+  },
+  {
+    "question_id": "chemistry_015",
+    "domain": "chemistry",
+    "question_text": "Which thermodynamic quantity determines the spontaneity of a process at constant temperature and pressure?",
+    "correct_answer": "Gibbs free energy (\u0394G)",
+    "model_answer": "The thermodynamic quantity that determines the spontaneity of a process at constant temperature and pressure is the Gibbs free energy (G). \n\nThe change in Gibbs free energy (\u0394G) is used to predict the spontaneity of a process. If \u0394G is negative, the process is spontaneous. If \u0394G is positive, the process is non-spontaneous. If \u0394G is zero, the process is at equilibrium.\n\nThe equation for \u0394G is:\n\n\u0394G = \u0394H - T\u0394S\n\nWhere:\n- \u0394H is the change in enthalpy\n- T is the temperature in Kelvin\n- \u0394S is the change in entropy\n\nAt constant temperature and pressure, \u0394G is a good indicator of spontaneity because it takes into account both the energy change (\u0394H) and the disorder or randomness of the system (\u0394S).",
+    "is_correct": true,
+    "match_type": "variant_match:Gibbs free energy"
+  },
+  {
+    "question_id": "chemistry_016",
+    "domain": "chemistry",
+    "question_text": "What is the hybridization of the central carbon atom in an allene (propadiene, H2C=C=CH2)?",
+    "correct_answer": "sp hybridized",
+    "model_answer": "In an allene (propadiene, H2C=C=CH2), the central carbon atom is bonded to two carbon atoms and one hydrogen atom. \n\nThe central carbon atom has two sigma bonds (one to each of the adjacent carbon atoms) and two pi bonds (one to each of the adjacent carbon atoms). \n\nThis results in a total of four electron domains around the central carbon atom. \n\nSince the central carbon atom has four electron domains and is sp2 hybridized, the hybridization of the central carbon atom in an allene is sp2.",
+    "is_correct": true,
+    "match_type": "variant_match:sp"
+  },
+  {
+    "question_id": "chemistry_017",
+    "domain": "chemistry",
+    "question_text": "In a galvanic (voltaic) cell, does oxidation occur at the anode or the cathode?",
+    "correct_answer": "Anode",
+    "model_answer": "In a galvanic (voltaic) cell, oxidation occurs at the anode. The anode is the electrode where the oxidation reaction takes place, meaning it is the site where a chemical species loses electrons, resulting in the formation of ions or other products.",
+    "is_correct": true,
+    "match_type": "variant_match:anode"
+  },
+  {
+    "question_id": "chemistry_018",
+    "domain": "chemistry",
+    "question_text": "What is the ground-state electron configuration of chromium (Cr, Z=24)?",
+    "correct_answer": "[Ar] 3d5 4s1",
+    "model_answer": "To find the ground-state electron configuration of chromium (Cr, Z=24), we need to fill the electrons in the atomic orbitals according to the Aufbau principle and the Pauli Exclusion Principle.\n\nThe atomic number of chromium is 24, which means it has 24 electrons. The electron configuration can be determined as follows:\n\n1. The first two electrons occupy the 1s orbital.\n2. The next two electrons occupy the 2s orbital.\n3. The next six electrons occupy the 2p orbitals.\n4. The next two electrons occupy the 3s orbital.\n5. The next four electrons occupy the 3p orbitals.\n6. The next five electrons occupy the 3d orbitals (since 3d orbitals can hold up to 10 electrons, but chromium has only 5 electrons left).\n7. The last two electrons occupy the 4s orbital.\n\nSo, the ground-state electron configuration of chromium (Cr, Z=24) is:\n\n1s\u00b2 2s\u00b2 2p\u2076 3s\u00b2 3p\u2076 3d\u2075 4s\u00b9\n\nHowever, the more common way to write the electron configuration of chromium is:\n\n[Ar] 3d\u2075 4s\u00b9\n\nThis is because the electron configuration of the noble gas argon (Ar) is 1s\u00b2 2s\u00b2 2p\u2076 3s\u00b2 3p\u2076, and we can add the remaining electrons to the 3d and 4s orbitals.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer '[Ar] 3d5 4s1'. Model response: To find the ground-state electron configuration of chromium (Cr, Z=24), we need to fill the electrons in the atomic orbitals according to the Aufbau principle and the Pauli Exclusion Principle.\n\nThe a"
+  },
+  {
+    "question_id": "chemistry_019",
+    "domain": "chemistry",
+    "question_text": "According to Le Chatelier's principle, if you increase the total pressure on an equilibrium gas-phase reaction by adding an inert gas at constant volume, in which direction does the equilibrium shift?",
+    "correct_answer": "The equilibrium does not shift; there is no change",
+    "model_answer": "According to Le Chatelier's principle, when the total pressure on an equilibrium gas-phase reaction is increased by adding an inert gas at constant volume, the equilibrium will shift in the direction that tends to decrease the pressure.\n\nIn this case, the equilibrium will shift towards the side with fewer moles of gas, because this will result in a decrease in the total pressure. This is because the addition of an inert gas increases the total number of moles of gas in the system, and the equilibrium will adjust to counteract this change by shifting towards the side with fewer moles of gas.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'The equilibrium does not shift; there is no change'. Model response: According to Le Chatelier's principle, when the total pressure on an equilibrium gas-phase reaction is increased by adding an inert gas at constant volume, the equilibrium will shift in the direction "
+  },
+  {
+    "question_id": "chemistry_020",
+    "domain": "chemistry",
+    "question_text": "What is Avogadro's number, the number of entities in one mole of a substance?",
+    "correct_answer": "Approximately 6.022 \u00d7 10\u00b2\u00b3",
+    "model_answer": "Avogadro's number is a fundamental constant in chemistry that represents the number of particles (atoms, molecules, or ions) in one mole of a substance. It is defined as 6.02214076 \u00d7 10^23 particles. This number was first proposed by Italian scientist Amedeo Avogadro in 1811.\n\nAvogadro's number is a crucial concept in chemistry, as it allows us to relate the amount of a substance to the number of particles it contains. It is used to calculate the molar mass of a substance, which is the mass of one mole of the substance. The molar mass is calculated by summing the atomic masses of the atoms in a molecule.\n\nAvogadro's number is a universal constant, meaning that it applies to all substances, regardless of their composition or properties. It is a key concept in chemistry and is used extensively in calculations involving chemical reactions, stoichiometry, and thermodynamics.\n\nIn 2019, the International Committee for Weights and Measures (ICWM) redefined the mole in terms of Avogadro's number, making it an exact number. This redefinition has helped to improve the accuracy and consistency of chemical measurements and calculations.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'Approximately 6.022 \u00d7 10\u00b2\u00b3'. Model response: Avogadro's number is a fundamental constant in chemistry that represents the number of particles (atoms, molecules, or ions) in one mole of a substance. It is defined as 6.02214076 \u00d7 10^23 particles. "
+  },
+  {
+    "question_id": "biology_001",
+    "domain": "biology",
+    "question_text": "What is the powerhouse of the cell?",
+    "correct_answer": "Mitochondria",
+    "model_answer": "The powerhouse of the cell is the mitochondria. Mitochondria are organelles found in the cells of most eukaryotes, including animals, plants, and fungi. They are responsible for generating most of the cell's energy in the form of ATP (adenosine triphosphate) through a process called cellular respiration. This process involves the breakdown of glucose and other organic molecules to produce energy, which is then used to power the cell's various functions.",
+    "is_correct": true,
+    "match_type": "variant_match:The mitochondria"
+  },
+  {
+    "question_id": "biology_002",
+    "domain": "biology",
+    "question_text": "What molecule carries genetic information in most living organisms?",
+    "correct_answer": "DNA",
+    "model_answer": "The molecule that carries genetic information in most living organisms is DNA (Deoxyribonucleic acid).",
+    "is_correct": true,
+    "match_type": "variant_match:Deoxyribonucleic acid"
+  },
+  {
+    "question_id": "biology_003",
+    "domain": "biology",
+    "question_text": "What pigment is primarily responsible for photosynthesis in plants?",
+    "correct_answer": "Chlorophyll",
+    "model_answer": "The pigments primarily responsible for photosynthesis in plants are chlorophylls, specifically chlorophyll a and chlorophyll b. Chlorophyll a is the most abundant and plays a crucial role in absorbing light energy, while chlorophyll b helps to transfer energy to chlorophyll a.\n\nChlorophyll a absorbs light in the blue and red parts of the visible spectrum (around 430-450 nm and 660-700 nm), while chlorophyll b absorbs light in the blue-violet part of the spectrum (around 460-480 nm). This energy is then used to power the conversion of carbon dioxide and water into glucose and oxygen through the process of photosynthesis.\n\nOther pigments, such as carotenoids and phycobiliproteins, also play a role in photosynthesis, but chlorophylls are the primary pigments responsible for absorbing light energy.",
+    "is_correct": true,
+    "match_type": "variant_match:Chlorophyll a"
+  },
+  {
+    "question_id": "biology_004",
+    "domain": "biology",
+    "question_text": "What process do plants use to convert light energy into chemical energy stored in glucose?",
+    "correct_answer": "Photosynthesis",
+    "model_answer": "The process that plants use to convert light energy into chemical energy stored in glucose is called photosynthesis. Photosynthesis occurs in specialized organelles called chloroplasts, which contain pigments such as chlorophyll that absorb light energy.\n\nThe overall equation for photosynthesis is:\n\n6 CO2 (carbon dioxide) + 6 H2O (water) + light energy \u2192 C6H12O6 (glucose) + 6 O2 (oxygen)\n\nThe process of photosynthesis involves two stages: the light-dependent reactions and the light-independent reactions (also known as the Calvin cycle).\n\n1. **Light-dependent reactions**: Light energy is absorbed by chlorophyll and other pigments in the thylakoid membranes of chloroplasts. This energy is used to generate ATP and NADPH from water and carbon dioxide.\n2. **Light-independent reactions (Calvin cycle)**: The ATP and NADPH produced in the light-dependent reactions are used to convert CO2 into glucose through a series of enzyme-catalyzed reactions. This process occurs in the stroma of the chloroplast.\n\nIn summary, photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose, releasing oxygen as a byproduct.",
+    "is_correct": true,
+    "match_type": "variant_match:photosynthesis"
+  },
+  {
+    "question_id": "biology_005",
+    "domain": "biology",
+    "question_text": "What is the name of the body's largest artery?",
+    "correct_answer": "Aorta",
+    "model_answer": "The body's largest artery is the aorta. It originates from the left ventricle of the heart and extends down to the abdominal region, where it divides into smaller arteries that supply blood to the rest of the body.",
+    "is_correct": true,
+    "match_type": "variant_match:aorta"
+  },
+  {
+    "question_id": "biology_006",
+    "domain": "biology",
+    "question_text": "What type of cell division produces gametes (sex cells) in humans?",
+    "correct_answer": "Meiosis",
+    "model_answer": "In humans, the type of cell division that produces gametes (sex cells) is called meiosis. Meiosis is a specialized type of cell division that reduces the number of chromosomes in the resulting cells by half, resulting in the production of gametes with 23 chromosomes (sperm cells) or 23 pairs of chromosomes (egg cells). This process is essential for sexual reproduction, as it allows for genetic diversity and variation in offspring.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "biology_007",
+    "domain": "biology",
+    "question_text": "What is the basic structural and functional unit of life?",
+    "correct_answer": "Cell",
+    "model_answer": "The basic structural and functional unit of life is the cell. Cells are the smallest units of life that can replicate independently, and they are the building blocks of all living organisms. They contain the necessary components for life, including DNA, proteins, and other biomolecules, and they carry out the basic functions necessary for life, such as metabolism, growth, and reproduction.",
+    "is_correct": true,
+    "match_type": "variant_match:The cell"
+  },
+  {
+    "question_id": "biology_008",
+    "domain": "biology",
+    "question_text": "What enzyme unwinds the DNA double helix during replication?",
+    "correct_answer": "Helicase",
+    "model_answer": "The enzyme that unwinds the DNA double helix during replication is helicase. Helicase is an enzyme that breaks the hydrogen bonds between the two strands of DNA, allowing the replication machinery to access the DNA template and initiate replication.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "biology_009",
+    "domain": "biology",
+    "question_text": "In which organelle does the Krebs cycle (citric acid cycle) take place?",
+    "correct_answer": "Mitochondria",
+    "model_answer": "The Krebs cycle, also known as the citric acid cycle, takes place in the mitochondria. Specifically, it occurs in the mitochondrial matrix, which is the inner compartment of the mitochondria.",
+    "is_correct": true,
+    "match_type": "variant_match:Mitochondrial matrix"
+  },
+  {
+    "question_id": "biology_010",
+    "domain": "biology",
+    "question_text": "What is the term for organisms that can produce their own food using light or chemical energy?",
+    "correct_answer": "Autotrophs",
+    "model_answer": "The term for organisms that can produce their own food using light or chemical energy is autotrophs. Autotrophs are organisms that produce their own food through various methods, such as photosynthesis (using light energy) or chemosynthesis (using chemical energy). Examples of autotrophs include plants, algae, and certain types of bacteria.",
+    "is_correct": true,
+    "match_type": "variant_match:Autotroph"
+  },
+  {
+    "question_id": "biology_011",
+    "domain": "biology",
+    "question_text": "What nitrogenous base is found in RNA but not in DNA?",
+    "correct_answer": "Uracil",
+    "model_answer": "The nitrogenous base found in RNA but not in DNA is Uracil (U). In RNA, Uracil replaces Thymine (T), which is found in DNA.",
+    "is_correct": true,
+    "match_type": "variant_match:U"
+  },
+  {
+    "question_id": "biology_012",
+    "domain": "biology",
+    "question_text": "What structure connects muscle to bone in the human body?",
+    "correct_answer": "Tendon",
+    "model_answer": "The structure that connects muscle to bone in the human body is called a tendon. Tendons are strong, fibrous cords made of collagen that attach muscles to bones, allowing for movement and transmission of forces from the muscles to the bones.",
+    "is_correct": true,
+    "match_type": "variant_match:Tendons"
+  },
+  {
+    "question_id": "biology_013",
+    "domain": "biology",
+    "question_text": "What type of bond holds the two strands of the DNA double helix together?",
+    "correct_answer": "Hydrogen bonds",
+    "model_answer": "The type of bond that holds the two strands of the DNA double helix together is a hydrogen bond. However, the primary structure that holds the two strands together is the sugar-phosphate backbone, which is held together by phosphodiester bonds.\n\nHydrogen bonds are weak electrostatic attractions between the nitrogenous bases of the two strands. These bonds occur between the base pairs adenine (A) and thymine (T), and between the base pairs guanine (G) and cytosine (C). The base pairs are stacked on top of each other, with the hydrogen bonds forming between the base pairs on opposite strands, holding the two strands together.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "biology_014",
+    "domain": "biology",
+    "question_text": "During translation, what is the role of aminoacyl-tRNA synthetase?",
+    "correct_answer": "It attaches the correct amino acid to its corresponding tRNA molecule",
+    "model_answer": "Aminoacyl-tRNA synthetase plays a crucial role in translation. Its primary function is to link an amino acid to its corresponding transfer RNA (tRNA) molecule. This process is known as aminoacylation.\n\nThere are two types of aminoacyl-tRNA synthetases: class I and class II. They differ in their mechanism of action and the order in which they add the amino acid to the tRNA.\n\nHere's a step-by-step explanation of the role of aminoacyl-tRNA synthetase:\n\n1. **Recognition of amino acid and tRNA**: Aminoacyl-tRNA synthetase recognizes the correct amino acid and its corresponding tRNA molecule.\n2. **Activation of amino acid**: The enzyme activates the amino acid by converting it into a high-energy intermediate, usually through the formation of a thioester bond.\n3. **Transfer of amino acid to tRNA**: The activated amino acid is then transferred to the tRNA molecule, forming an ester bond between the amino acid and the tRNA.\n4. **Proofreading and editing**: Aminoacyl-tRNA synthetase also performs proofreading and editing functions to ensure that the correct amino acid is attached to the correct tRNA molecule.\n\nIn summary, aminoacyl-tRNA synthetase is responsible for accurately linking amino acids to their corresponding tRNA molecules, which is essential for the translation process.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'It attaches the correct amino acid to its corresponding tRNA molecule'. Model response: Aminoacyl-tRNA synthetase plays a crucial role in translation. Its primary function is to link an amino acid to its corresponding transfer RNA (tRNA) molecule. This process is known as aminoacylation."
+  },
+  {
+    "question_id": "biology_015",
+    "domain": "biology",
+    "question_text": "In the Hardy-Weinberg equilibrium equation p\u00b2 + 2pq + q\u00b2 = 1, what does the term 2pq represent?",
+    "correct_answer": "The frequency of heterozygous individuals in the population",
+    "model_answer": "In the Hardy-Weinberg equilibrium equation p\u00b2 + 2pq + q\u00b2 = 1, the term 2pq represents the frequency of the heterozygous genotype.\n\nHere's a breakdown of the terms:\n\n- p\u00b2 represents the frequency of the homozygous dominant genotype (genotype \"AA\" or \"BB\" depending on the context).\n- q\u00b2 represents the frequency of the homozygous recessive genotype (genotype \"aa\" or \"bb\" depending on the context).\n- 2pq represents the frequency of the heterozygous genotype (genotype \"Aa\" or \"Bb\" depending on the context), where A and a, or B and b are the two alleles of the gene.\n\nIn this equation, p is the frequency of the dominant allele, and q is the frequency of the recessive allele. The term 2pq is the product of the frequencies of the two alleles, multiplied by 2, which represents the two possible combinations of the alleles in the heterozygous genotype (Aa or aA).",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'The frequency of heterozygous individuals in the population'. Model response: In the Hardy-Weinberg equilibrium equation p\u00b2 + 2pq + q\u00b2 = 1, the term 2pq represents the frequency of the heterozygous genotype.\n\nHere's a breakdown of the terms:\n\n- p\u00b2 represents the frequency of th"
+  },
+  {
+    "question_id": "biology_016",
+    "domain": "biology",
+    "question_text": "What is the primary function of the enzyme telomerase?",
+    "correct_answer": "It extends the telomere sequences at the ends of chromosomes to prevent shortening during replication",
+    "model_answer": "The primary function of the enzyme telomerase is to add nucleotides to the ends of telomeres, which are repetitive DNA sequences that cap the ends of chromosomes. Telomeres shorten with each cell division due to the end-replication problem, where DNA polymerase cannot fully replicate the 3' end of the DNA strand.\n\nTelomerase extends the telomeres by adding TTAGGG (in humans) nucleotide repeats to the ends of chromosomes, thereby maintaining or even lengthening the telomeres. This function is crucial for:\n\n1. Preventing telomere shortening and subsequent cell aging or death.\n2. Allowing certain cells, such as stem cells and cancer cells, to divide indefinitely.\n3. Maintaining genome stability by protecting the ends of chromosomes from fusion or degradation.\n\nHowever, it's worth noting that telomerase is typically active in certain cell types, such as stem cells and germ cells, but is usually inactive in most somatic cells. Abnormal telomerase activity has been linked to cancer development and aging.",
+    "is_correct": false,
+    "match_type": "no_match",
+    "excluded_reason": "Model did not produce correct answer 'It extends the telomere sequences at the ends of chromosomes to prevent shortening during replication'. Model response: The primary function of the enzyme telomerase is to add nucleotides to the ends of telomeres, which are repetitive DNA sequences that cap the ends of chromosomes. Telomeres shorten with each cell divi"
+  },
+  {
+    "question_id": "biology_017",
+    "domain": "biology",
+    "question_text": "What is the evolutionary term for similar structures in unrelated organisms that arose independently due to similar environmental pressures, such as wings in bats and wings in insects?",
+    "correct_answer": "Convergent evolution",
+    "model_answer": "The evolutionary term for similar structures in unrelated organisms that arose independently due to similar environmental pressures is \"convergent evolution.\" Convergent evolution occurs when different species, lineages, or organisms develop similar traits or structures in response to similar environmental pressures or selection forces, even if they are not closely related.\n\nIn the case of wings in bats and insects, this is a classic example of convergent evolution. Both bats and insects have wings, but they are not homologous structures (i.e., they did not evolve from a common ancestor with a wing-like structure). Instead, they evolved independently as adaptations to flight, with bats developing wings from modified forelimbs and insects developing wings from modified exoskeletons.\n\nConvergent evolution can result in similar structures, functions, or behaviors in different organisms, even if they are not closely related. This highlights the power of natural selection to drive the evolution of similar solutions to common problems, and it underscores the idea that evolution is not a linear process, but rather a complex and multifaceted one.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "biology_018",
+    "domain": "biology",
+    "question_text": "In cellular respiration, what is the final electron acceptor in the electron transport chain?",
+    "correct_answer": "Oxygen",
+    "model_answer": "In the electron transport chain, the final electron acceptor is oxygen (O2). Oxygen is the terminal electron acceptor, and it plays a crucial role in the process of cellular respiration, specifically in the production of ATP during oxidative phosphorylation.",
+    "is_correct": true,
+    "match_type": "variant_match:O2"
+  },
+  {
+    "question_id": "biology_019",
+    "domain": "biology",
+    "question_text": "What is the name of the process by which a single precursor mRNA can produce multiple different mature mRNA molecules, and therefore multiple different proteins?",
+    "correct_answer": "Alternative splicing",
+    "model_answer": "The process you're referring to is called alternative splicing. Alternative splicing is a type of post-transcriptional regulation that allows a single precursor mRNA (pre-mRNA) molecule to be processed into multiple different mature mRNA molecules, which can then be translated into different proteins. This process involves the selective inclusion or exclusion of specific exons (coding regions) from the final mRNA transcript, resulting in a diverse range of protein products from a single gene.",
+    "is_correct": true,
+    "match_type": "primary_match"
+  },
+  {
+    "question_id": "biology_020",
+    "domain": "biology",
+    "question_text": "What is the correct taxonomic order of classification from broadest to most specific?",
+    "correct_answer": "Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species",
+    "model_answer": "The correct taxonomic order of classification from broadest to most specific is:\n\n1. **Domain**: The highest level of classification, which divides life into broad groups based on cell structure and other characteristics.\n2. **Kingdom**: A level below the domain, which groups organisms based on their body structure and development.\n3. **Phylum** (or **Division** in plant taxonomy): A level below the kingdom, which groups organisms based on their body structure and embryonic development.\n4. **Class**: A level below the phylum, which groups organisms based on their morphology and physiology.\n5. **Order**: A level below the class, which groups organisms based on their evolutionary relationships and shared characteristics.\n6. **Family**: A level below the order, which groups organisms based on their shared characteristics and evolutionary relationships.\n7. **Genus**: A level below the family, which groups organisms based on their shared characteristics and evolutionary relationships.\n8. **Species**: The most specific level of classification, which groups organisms that can interbreed and produce fertile offspring.\n\nThis order is often remembered using the mnemonic \"Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species\" (or \"D-K-P-C-O-F-G-S\" for short).",
+    "is_correct": true,
+    "match_type": "primary_match"
+  }
+]

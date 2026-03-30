@@ -1,0 +1,3267 @@
+{
+  "model_name": "mistral_7b_v03",
+  "n_shot": 5,
+  "unsteered": {
+    "accuracy": 0.79,
+    "n_correct": 79,
+    "n_total": 100,
+    "per_question": [
+      {
+        "question": "Find the degree of the extension Q(sqrt(2), sqrt(3)) over Q.",
+        "subject": "abstract_algebra",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following is a group under multiplication?",
+        "subject": "abstract_algebra",
+        "correct_answer": "B",
+        "predicted": "D",
+        "is_correct": false,
+        "generated_text": "D\n\nQuestion:"
+      },
+      {
+        "question": "What is the order of the element 5 in the group Z_12 under addition?",
+        "subject": "abstract_algebra",
+        "correct_answer": "C",
+        "predicted": "B",
+        "is_correct": false,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The center of the symmetric group S_3 is",
+        "subject": "abstract_algebra",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "How many elements of order 2 are there in the dihedral group D_4?",
+        "subject": "abstract_algebra",
+        "correct_answer": "C",
+        "predicted": "B",
+        "is_correct": false,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following rings is an integral domain?",
+        "subject": "abstract_algebra",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The number of subgroups of Z_12 is",
+        "subject": "abstract_algebra",
+        "correct_answer": "B",
+        "predicted": "C",
+        "is_correct": false,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "If G is a group of order 35, then G is",
+        "subject": "abstract_algebra",
+        "correct_answer": "A",
+        "predicted": "A",
+        "is_correct": true,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Let F be a field with 27 elements. The characteristic of F is",
+        "subject": "abstract_algebra",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following is NOT a property of every ideal in a commutative ring?",
+        "subject": "abstract_algebra",
+        "correct_answer": "D",
+        "predicted": "D",
+        "is_correct": true,
+        "generated_text": "D\n\nQuestion:"
+      },
+      {
+        "question": "Which muscle is the primary flexor of the forearm at the elbow joint?",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The thoracic duct drains lymph into the",
+        "subject": "anatomy",
+        "correct_answer": "C",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "The celiac trunk branches from the abdominal aorta and gives rise to all of the following arteries EXCEPT the",
+        "subject": "anatomy",
+        "correct_answer": "D",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Which cranial nerve is responsible for general sensation from the anterior two-thirds of the tongue?",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The blood-brain barrier is primarily formed by",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The right recurrent laryngeal nerve loops around the",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Which structure passes through the foramen magnum?",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The pudendal nerve arises from which sacral nerve roots?",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following bones does NOT contribute to the orbit?",
+        "subject": "anatomy",
+        "correct_answer": "C",
+        "predicted": "D",
+        "is_correct": false,
+        "generated_text": "D\n\nQuestion:"
+      },
+      {
+        "question": "The azygos vein drains into the",
+        "subject": "anatomy",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "The Hertzsprung-Russell diagram plots stars according to their",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "What is the primary source of energy in main-sequence stars like the Sun?",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Chandrasekhar limit is approximately",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Olbers' paradox asks why the night sky is dark if the universe is",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The cosmic microwave background radiation has a temperature of approximately",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following is the correct order of planets from the Sun outward?",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "A parsec is defined as the distance at which one astronomical unit subtends an angle of",
+        "subject": "astronomy",
+        "correct_answer": "C",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "The Roche limit is the distance within which",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Hubble's law states that the recession velocity of a galaxy is proportional to its",
+        "subject": "astronomy",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Which type of galaxy is characterized by a flat, rotating disk with spiral arms and a central bulge?",
+        "subject": "astronomy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following is the primary function of the rough endoplasmic reticulum?",
+        "subject": "college_biology",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "During which phase of meiosis does crossing over occur?",
+        "subject": "college_biology",
+        "correct_answer": "A",
+        "predicted": "A",
+        "is_correct": true,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "The oxygen produced during photosynthesis comes from the splitting of",
+        "subject": "college_biology",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "In the lac operon of E. coli, the repressor protein is inactivated by binding to",
+        "subject": "college_biology",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Hardy-Weinberg equilibrium requires all of the following conditions EXCEPT",
+        "subject": "college_biology",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The net yield of ATP from the complete oxidation of one molecule of glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation is approximately",
+        "subject": "college_biology",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Which type of signaling involves the release of hormones into the bloodstream to act on distant target cells?",
+        "subject": "college_biology",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following best describes the function of telomerase?",
+        "subject": "college_biology",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The fluid mosaic model of the cell membrane describes the membrane as",
+        "subject": "college_biology",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "In C4 plants, carbon dioxide is initially fixed into a four-carbon compound in the",
+        "subject": "college_biology",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "What is the hybridization of the central carbon atom in formaldehyde (CH2O)?",
+        "subject": "college_chemistry",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "According to the Aufbau principle, which of the following orbitals is filled immediately after the 4s orbital?",
+        "subject": "college_chemistry",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following aqueous solutions has the highest boiling point?",
+        "subject": "college_chemistry",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "In a galvanic cell, oxidation occurs at the",
+        "subject": "college_chemistry",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "The rate law for a reaction is found to be rate = k[A]^2[B]. If the concentration of A is doubled while B is held constant, the rate will",
+        "subject": "college_chemistry",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following molecules is polar?",
+        "subject": "college_chemistry",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Le Chatelier's principle predicts that increasing the pressure on a gaseous equilibrium will shift the equilibrium toward the side with",
+        "subject": "college_chemistry",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "The pH of a 0.01 M solution of a strong acid such as HCl is",
+        "subject": "college_chemistry",
+        "correct_answer": "B",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following transitions in the hydrogen atom produces light of the longest wavelength?",
+        "subject": "college_chemistry",
+        "correct_answer": "C",
+        "predicted": "D",
+        "is_correct": false,
+        "generated_text": "D\n\nQuestion:"
+      },
+      {
+        "question": "A buffer solution is prepared by mixing equal volumes of 0.1 M acetic acid and 0.1 M sodium acetate. The pH of this buffer is closest to the",
+        "subject": "college_chemistry",
+        "correct_answer": "A",
+        "predicted": "A",
+        "is_correct": true,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "What is the worst-case time complexity of quicksort?",
+        "subject": "computer_science",
+        "correct_answer": "C",
+        "predicted": "B",
+        "is_correct": false,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "In a binary search tree, what is the time complexity of searching for an element in the average case?",
+        "subject": "computer_science",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following problems is known to be NP-complete?",
+        "subject": "computer_science",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "In the context of operating systems, a deadlock requires all of the following conditions EXCEPT",
+        "subject": "computer_science",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Which data structure uses a FIFO (First-In, First-Out) ordering?",
+        "subject": "computer_science",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "In the TCP/IP model, the transport layer is responsible for",
+        "subject": "computer_science",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The halting problem is an example of a problem that is",
+        "subject": "computer_science",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "In a relational database, a foreign key is used to",
+        "subject": "computer_science",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which of the following is true about a hash table with separate chaining for collision resolution?",
+        "subject": "computer_science",
+        "correct_answer": "C",
+        "predicted": "A",
+        "is_correct": false,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "Dijkstra's algorithm is used to find the",
+        "subject": "computer_science",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "If the marginal cost of production exceeds the marginal revenue, a profit-maximizing firm should",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "According to the law of diminishing marginal returns, as more of a variable input is added to a fixed input,",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "In a perfectly competitive market in the long run, firms earn",
+        "subject": "economics",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The GDP deflator is defined as",
+        "subject": "economics",
+        "correct_answer": "A",
+        "predicted": "A",
+        "is_correct": true,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "When a good has a price elasticity of demand greater than 1 in absolute value, demand is said to be",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Phillips curve illustrates a short-run tradeoff between",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "A negative externality occurs when",
+        "subject": "economics",
+        "correct_answer": "A",
+        "predicted": "A",
+        "is_correct": true,
+        "generated_text": "A\n\nQuestion:"
+      },
+      {
+        "question": "In the Keynesian model, the multiplier effect implies that",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The concept of comparative advantage states that a country should specialize in producing goods for which it has the",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "If the central bank increases the reserve requirement, this will tend to",
+        "subject": "economics",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "According to Immanuel Kant, the moral worth of an action depends on",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "John Rawls's 'veil of ignorance' is a thought experiment used to derive",
+        "subject": "philosophy",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The problem of induction, as formulated by David Hume, challenges our ability to",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Which philosopher argued that existence precedes essence?",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "C",
+        "is_correct": false,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "Plato's allegory of the cave appears in which of his dialogues?",
+        "subject": "philosophy",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The 'is-ought problem' refers to the difficulty of deriving",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "According to utilitarianism, the morally right action is the one that",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Descartes's method of radical doubt leads him to conclude that the one thing he cannot doubt is",
+        "subject": "philosophy",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The philosophical zombie thought experiment is most commonly used as an argument against",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Thomas Kuhn's concept of a 'paradigm shift' describes",
+        "subject": "philosophy",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Emancipation Proclamation issued by President Lincoln in 1863 declared slaves free in",
+        "subject": "us_history",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The Monroe Doctrine of 1823 was primarily a statement of foreign policy asserting that",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Seneca Falls Convention of 1848 was primarily concerned with",
+        "subject": "us_history",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The Marshall Plan, implemented after World War II, provided economic aid primarily to",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Supreme Court case Brown v. Board of Education (1954) ruled that",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Missouri Compromise of 1820 attempted to maintain the balance between free and slave states by admitting Missouri as a slave state and",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Gulf of Tonkin Resolution (1964) gave President Johnson authorization to",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "During the Progressive Era (1890s-1920s), muckrakers were journalists who",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Federalist Papers were primarily written to",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Homestead Act of 1862 provided settlers with",
+        "subject": "us_history",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Five Pillars of Islam include all of the following EXCEPT",
+        "subject": "world_religions",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "In Hinduism, the concept of dharma refers to",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Four Noble Truths are central teachings of",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Torah refers to the first five books of the Hebrew Bible, also known as the",
+        "subject": "world_religions",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The Sikh holy scripture is known as the",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "In Christianity, the doctrine of the Trinity holds that God is",
+        "subject": "world_religions",
+        "correct_answer": "C",
+        "predicted": "C",
+        "is_correct": true,
+        "generated_text": "C\n\nQuestion:"
+      },
+      {
+        "question": "The concept of 'karma' in Hinduism and Buddhism most closely means",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Eightfold Path in Buddhism includes right view, right intention, and right",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "Confucianism places particular emphasis on",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      },
+      {
+        "question": "The Quran is considered by Muslims to be",
+        "subject": "world_religions",
+        "correct_answer": "B",
+        "predicted": "B",
+        "is_correct": true,
+        "generated_text": "B\n\nQuestion:"
+      }
+    ]
+  },
+  "steered": {
+    "0.5": {
+      "accuracy": 0.79,
+      "n_correct": 79,
+      "n_total": 100,
+      "steering_config": {
+        "alpha": 0.5,
+        "target_layer": 16,
+        "direction_norm": 1.0
+      },
+      "per_question": [
+        {
+          "question": "Find the degree of the extension Q(sqrt(2), sqrt(3)) over Q.",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is a group under multiplication?",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "What is the order of the element 5 in the group Z_12 under addition?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "B",
+          "is_correct": false,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The center of the symmetric group S_3 is",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "How many elements of order 2 are there in the dihedral group D_4?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "B",
+          "is_correct": false,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following rings is an integral domain?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The number of subgroups of Z_12 is",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "C",
+          "is_correct": false,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "If G is a group of order 35, then G is",
+          "subject": "abstract_algebra",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Let F be a field with 27 elements. The characteristic of F is",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is NOT a property of every ideal in a commutative ring?",
+          "subject": "abstract_algebra",
+          "correct_answer": "D",
+          "predicted": "D",
+          "is_correct": true,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Which muscle is the primary flexor of the forearm at the elbow joint?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The thoracic duct drains lymph into the",
+          "subject": "anatomy",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The celiac trunk branches from the abdominal aorta and gives rise to all of the following arteries EXCEPT the",
+          "subject": "anatomy",
+          "correct_answer": "D",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which cranial nerve is responsible for general sensation from the anterior two-thirds of the tongue?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The blood-brain barrier is primarily formed by",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The right recurrent laryngeal nerve loops around the",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which structure passes through the foramen magnum?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The pudendal nerve arises from which sacral nerve roots?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following bones does NOT contribute to the orbit?",
+          "subject": "anatomy",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "The azygos vein drains into the",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The Hertzsprung-Russell diagram plots stars according to their",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "What is the primary source of energy in main-sequence stars like the Sun?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Chandrasekhar limit is approximately",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Olbers' paradox asks why the night sky is dark if the universe is",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The cosmic microwave background radiation has a temperature of approximately",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is the correct order of planets from the Sun outward?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "A parsec is defined as the distance at which one astronomical unit subtends an angle of",
+          "subject": "astronomy",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The Roche limit is the distance within which",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Hubble's law states that the recession velocity of a galaxy is proportional to its",
+          "subject": "astronomy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which type of galaxy is characterized by a flat, rotating disk with spiral arms and a central bulge?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is the primary function of the rough endoplasmic reticulum?",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "During which phase of meiosis does crossing over occur?",
+          "subject": "college_biology",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The oxygen produced during photosynthesis comes from the splitting of",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In the lac operon of E. coli, the repressor protein is inactivated by binding to",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Hardy-Weinberg equilibrium requires all of the following conditions EXCEPT",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The net yield of ATP from the complete oxidation of one molecule of glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation is approximately",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which type of signaling involves the release of hormones into the bloodstream to act on distant target cells?",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following best describes the function of telomerase?",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The fluid mosaic model of the cell membrane describes the membrane as",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In C4 plants, carbon dioxide is initially fixed into a four-carbon compound in the",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "What is the hybridization of the central carbon atom in formaldehyde (CH2O)?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to the Aufbau principle, which of the following orbitals is filled immediately after the 4s orbital?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following aqueous solutions has the highest boiling point?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a galvanic cell, oxidation occurs at the",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The rate law for a reaction is found to be rate = k[A]^2[B]. If the concentration of A is doubled while B is held constant, the rate will",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following molecules is polar?",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Le Chatelier's principle predicts that increasing the pressure on a gaseous equilibrium will shift the equilibrium toward the side with",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The pH of a 0.01 M solution of a strong acid such as HCl is",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following transitions in the hydrogen atom produces light of the longest wavelength?",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "A buffer solution is prepared by mixing equal volumes of 0.1 M acetic acid and 0.1 M sodium acetate. The pH of this buffer is closest to the",
+          "subject": "college_chemistry",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "What is the worst-case time complexity of quicksort?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "B",
+          "is_correct": false,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a binary search tree, what is the time complexity of searching for an element in the average case?",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following problems is known to be NP-complete?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In the context of operating systems, a deadlock requires all of the following conditions EXCEPT",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which data structure uses a FIFO (First-In, First-Out) ordering?",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In the TCP/IP model, the transport layer is responsible for",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The halting problem is an example of a problem that is",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In a relational database, a foreign key is used to",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is true about a hash table with separate chaining for collision resolution?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Dijkstra's algorithm is used to find the",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "If the marginal cost of production exceeds the marginal revenue, a profit-maximizing firm should",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to the law of diminishing marginal returns, as more of a variable input is added to a fixed input,",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a perfectly competitive market in the long run, firms earn",
+          "subject": "economics",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The GDP deflator is defined as",
+          "subject": "economics",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "When a good has a price elasticity of demand greater than 1 in absolute value, demand is said to be",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Phillips curve illustrates a short-run tradeoff between",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "A negative externality occurs when",
+          "subject": "economics",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "In the Keynesian model, the multiplier effect implies that",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The concept of comparative advantage states that a country should specialize in producing goods for which it has the",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "If the central bank increases the reserve requirement, this will tend to",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to Immanuel Kant, the moral worth of an action depends on",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "John Rawls's 'veil of ignorance' is a thought experiment used to derive",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The problem of induction, as formulated by David Hume, challenges our ability to",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which philosopher argued that existence precedes essence?",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "C",
+          "is_correct": false,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Plato's allegory of the cave appears in which of his dialogues?",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The 'is-ought problem' refers to the difficulty of deriving",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to utilitarianism, the morally right action is the one that",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Descartes's method of radical doubt leads him to conclude that the one thing he cannot doubt is",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The philosophical zombie thought experiment is most commonly used as an argument against",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Thomas Kuhn's concept of a 'paradigm shift' describes",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Emancipation Proclamation issued by President Lincoln in 1863 declared slaves free in",
+          "subject": "us_history",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Monroe Doctrine of 1823 was primarily a statement of foreign policy asserting that",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Seneca Falls Convention of 1848 was primarily concerned with",
+          "subject": "us_history",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Marshall Plan, implemented after World War II, provided economic aid primarily to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Supreme Court case Brown v. Board of Education (1954) ruled that",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Missouri Compromise of 1820 attempted to maintain the balance between free and slave states by admitting Missouri as a slave state and",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Gulf of Tonkin Resolution (1964) gave President Johnson authorization to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "During the Progressive Era (1890s-1920s), muckrakers were journalists who",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Federalist Papers were primarily written to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Homestead Act of 1862 provided settlers with",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Five Pillars of Islam include all of the following EXCEPT",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In Hinduism, the concept of dharma refers to",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Four Noble Truths are central teachings of",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Torah refers to the first five books of the Hebrew Bible, also known as the",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Sikh holy scripture is known as the",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In Christianity, the doctrine of the Trinity holds that God is",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The concept of 'karma' in Hinduism and Buddhism most closely means",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Eightfold Path in Buddhism includes right view, right intention, and right",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Confucianism places particular emphasis on",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Quran is considered by Muslims to be",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        }
+      ]
+    },
+    "1.5": {
+      "accuracy": 0.79,
+      "n_correct": 79,
+      "n_total": 100,
+      "steering_config": {
+        "alpha": 1.5,
+        "target_layer": 16,
+        "direction_norm": 1.0
+      },
+      "per_question": [
+        {
+          "question": "Find the degree of the extension Q(sqrt(2), sqrt(3)) over Q.",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is a group under multiplication?",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "What is the order of the element 5 in the group Z_12 under addition?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "B",
+          "is_correct": false,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The center of the symmetric group S_3 is",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "How many elements of order 2 are there in the dihedral group D_4?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "B",
+          "is_correct": false,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following rings is an integral domain?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The number of subgroups of Z_12 is",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "C",
+          "is_correct": false,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "If G is a group of order 35, then G is",
+          "subject": "abstract_algebra",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Let F be a field with 27 elements. The characteristic of F is",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is NOT a property of every ideal in a commutative ring?",
+          "subject": "abstract_algebra",
+          "correct_answer": "D",
+          "predicted": "D",
+          "is_correct": true,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Which muscle is the primary flexor of the forearm at the elbow joint?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The thoracic duct drains lymph into the",
+          "subject": "anatomy",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The celiac trunk branches from the abdominal aorta and gives rise to all of the following arteries EXCEPT the",
+          "subject": "anatomy",
+          "correct_answer": "D",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which cranial nerve is responsible for general sensation from the anterior two-thirds of the tongue?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The blood-brain barrier is primarily formed by",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The right recurrent laryngeal nerve loops around the",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which structure passes through the foramen magnum?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The pudendal nerve arises from which sacral nerve roots?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following bones does NOT contribute to the orbit?",
+          "subject": "anatomy",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "The azygos vein drains into the",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The Hertzsprung-Russell diagram plots stars according to their",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "What is the primary source of energy in main-sequence stars like the Sun?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Chandrasekhar limit is approximately",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Olbers' paradox asks why the night sky is dark if the universe is",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The cosmic microwave background radiation has a temperature of approximately",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is the correct order of planets from the Sun outward?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "A parsec is defined as the distance at which one astronomical unit subtends an angle of",
+          "subject": "astronomy",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The Roche limit is the distance within which",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Hubble's law states that the recession velocity of a galaxy is proportional to its",
+          "subject": "astronomy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which type of galaxy is characterized by a flat, rotating disk with spiral arms and a central bulge?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is the primary function of the rough endoplasmic reticulum?",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "During which phase of meiosis does crossing over occur?",
+          "subject": "college_biology",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The oxygen produced during photosynthesis comes from the splitting of",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In the lac operon of E. coli, the repressor protein is inactivated by binding to",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Hardy-Weinberg equilibrium requires all of the following conditions EXCEPT",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The net yield of ATP from the complete oxidation of one molecule of glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation is approximately",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Which type of signaling involves the release of hormones into the bloodstream to act on distant target cells?",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following best describes the function of telomerase?",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The fluid mosaic model of the cell membrane describes the membrane as",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In C4 plants, carbon dioxide is initially fixed into a four-carbon compound in the",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "What is the hybridization of the central carbon atom in formaldehyde (CH2O)?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to the Aufbau principle, which of the following orbitals is filled immediately after the 4s orbital?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following aqueous solutions has the highest boiling point?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a galvanic cell, oxidation occurs at the",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The rate law for a reaction is found to be rate = k[A]^2[B]. If the concentration of A is doubled while B is held constant, the rate will",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following molecules is polar?",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Le Chatelier's principle predicts that increasing the pressure on a gaseous equilibrium will shift the equilibrium toward the side with",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The pH of a 0.01 M solution of a strong acid such as HCl is",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following transitions in the hydrogen atom produces light of the longest wavelength?",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "A buffer solution is prepared by mixing equal volumes of 0.1 M acetic acid and 0.1 M sodium acetate. The pH of this buffer is closest to the",
+          "subject": "college_chemistry",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "What is the worst-case time complexity of quicksort?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In a binary search tree, what is the time complexity of searching for an element in the average case?",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following problems is known to be NP-complete?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In the context of operating systems, a deadlock requires all of the following conditions EXCEPT",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which data structure uses a FIFO (First-In, First-Out) ordering?",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In the TCP/IP model, the transport layer is responsible for",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The halting problem is an example of a problem that is",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In a relational database, a foreign key is used to",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is true about a hash table with separate chaining for collision resolution?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Dijkstra's algorithm is used to find the",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "If the marginal cost of production exceeds the marginal revenue, a profit-maximizing firm should",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to the law of diminishing marginal returns, as more of a variable input is added to a fixed input,",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a perfectly competitive market in the long run, firms earn",
+          "subject": "economics",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The GDP deflator is defined as",
+          "subject": "economics",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "When a good has a price elasticity of demand greater than 1 in absolute value, demand is said to be",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Phillips curve illustrates a short-run tradeoff between",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "A negative externality occurs when",
+          "subject": "economics",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "In the Keynesian model, the multiplier effect implies that",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The concept of comparative advantage states that a country should specialize in producing goods for which it has the",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "If the central bank increases the reserve requirement, this will tend to",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to Immanuel Kant, the moral worth of an action depends on",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "John Rawls's 'veil of ignorance' is a thought experiment used to derive",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The problem of induction, as formulated by David Hume, challenges our ability to",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which philosopher argued that existence precedes essence?",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "C",
+          "is_correct": false,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Plato's allegory of the cave appears in which of his dialogues?",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The 'is-ought problem' refers to the difficulty of deriving",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to utilitarianism, the morally right action is the one that",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Descartes's method of radical doubt leads him to conclude that the one thing he cannot doubt is",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The philosophical zombie thought experiment is most commonly used as an argument against",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Thomas Kuhn's concept of a 'paradigm shift' describes",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Emancipation Proclamation issued by President Lincoln in 1863 declared slaves free in",
+          "subject": "us_history",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Monroe Doctrine of 1823 was primarily a statement of foreign policy asserting that",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Seneca Falls Convention of 1848 was primarily concerned with",
+          "subject": "us_history",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Marshall Plan, implemented after World War II, provided economic aid primarily to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Supreme Court case Brown v. Board of Education (1954) ruled that",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Missouri Compromise of 1820 attempted to maintain the balance between free and slave states by admitting Missouri as a slave state and",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Gulf of Tonkin Resolution (1964) gave President Johnson authorization to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "During the Progressive Era (1890s-1920s), muckrakers were journalists who",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Federalist Papers were primarily written to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Homestead Act of 1862 provided settlers with",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Five Pillars of Islam include all of the following EXCEPT",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In Hinduism, the concept of dharma refers to",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Four Noble Truths are central teachings of",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Torah refers to the first five books of the Hebrew Bible, also known as the",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Sikh holy scripture is known as the",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In Christianity, the doctrine of the Trinity holds that God is",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The concept of 'karma' in Hinduism and Buddhism most closely means",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Eightfold Path in Buddhism includes right view, right intention, and right",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Confucianism places particular emphasis on",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Quran is considered by Muslims to be",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        }
+      ]
+    },
+    "3.0": {
+      "accuracy": 0.76,
+      "n_correct": 76,
+      "n_total": 100,
+      "steering_config": {
+        "alpha": 3.0,
+        "target_layer": 16,
+        "direction_norm": 1.0
+      },
+      "per_question": [
+        {
+          "question": "Find the degree of the extension Q(sqrt(2), sqrt(3)) over Q.",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is a group under multiplication?",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "What is the order of the element 5 in the group Z_12 under addition?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The center of the symmetric group S_3 is",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "How many elements of order 2 are there in the dihedral group D_4?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "B",
+          "is_correct": false,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following rings is an integral domain?",
+          "subject": "abstract_algebra",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The number of subgroups of Z_12 is",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "C",
+          "is_correct": false,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "If G is a group of order 35, then G is",
+          "subject": "abstract_algebra",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Let F be a field with 27 elements. The characteristic of F is",
+          "subject": "abstract_algebra",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is NOT a property of every ideal in a commutative ring?",
+          "subject": "abstract_algebra",
+          "correct_answer": "D",
+          "predicted": "D",
+          "is_correct": true,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Which muscle is the primary flexor of the forearm at the elbow joint?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The thoracic duct drains lymph into the",
+          "subject": "anatomy",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The celiac trunk branches from the abdominal aorta and gives rise to all of the following arteries EXCEPT the",
+          "subject": "anatomy",
+          "correct_answer": "D",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which cranial nerve is responsible for general sensation from the anterior two-thirds of the tongue?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The blood-brain barrier is primarily formed by",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The right recurrent laryngeal nerve loops around the",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which structure passes through the foramen magnum?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The pudendal nerve arises from which sacral nerve roots?",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following bones does NOT contribute to the orbit?",
+          "subject": "anatomy",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "The azygos vein drains into the",
+          "subject": "anatomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The Hertzsprung-Russell diagram plots stars according to their",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "What is the primary source of energy in main-sequence stars like the Sun?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Chandrasekhar limit is approximately",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Olbers' paradox asks why the night sky is dark if the universe is",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The cosmic microwave background radiation has a temperature of approximately",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is the correct order of planets from the Sun outward?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "A parsec is defined as the distance at which one astronomical unit subtends an angle of",
+          "subject": "astronomy",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The Roche limit is the distance within which",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Hubble's law states that the recession velocity of a galaxy is proportional to its",
+          "subject": "astronomy",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Which type of galaxy is characterized by a flat, rotating disk with spiral arms and a central bulge?",
+          "subject": "astronomy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is the primary function of the rough endoplasmic reticulum?",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "During which phase of meiosis does crossing over occur?",
+          "subject": "college_biology",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The oxygen produced during photosynthesis comes from the splitting of",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In the lac operon of E. coli, the repressor protein is inactivated by binding to",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Hardy-Weinberg equilibrium requires all of the following conditions EXCEPT",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The net yield of ATP from the complete oxidation of one molecule of glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation is approximately",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Which type of signaling involves the release of hormones into the bloodstream to act on distant target cells?",
+          "subject": "college_biology",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following best describes the function of telomerase?",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The fluid mosaic model of the cell membrane describes the membrane as",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In C4 plants, carbon dioxide is initially fixed into a four-carbon compound in the",
+          "subject": "college_biology",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "What is the hybridization of the central carbon atom in formaldehyde (CH2O)?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to the Aufbau principle, which of the following orbitals is filled immediately after the 4s orbital?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following aqueous solutions has the highest boiling point?",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a galvanic cell, oxidation occurs at the",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The rate law for a reaction is found to be rate = k[A]^2[B]. If the concentration of A is doubled while B is held constant, the rate will",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following molecules is polar?",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Le Chatelier's principle predicts that increasing the pressure on a gaseous equilibrium will shift the equilibrium toward the side with",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "The pH of a 0.01 M solution of a strong acid such as HCl is",
+          "subject": "college_chemistry",
+          "correct_answer": "B",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following transitions in the hydrogen atom produces light of the longest wavelength?",
+          "subject": "college_chemistry",
+          "correct_answer": "C",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "A buffer solution is prepared by mixing equal volumes of 0.1 M acetic acid and 0.1 M sodium acetate. The pH of this buffer is closest to the",
+          "subject": "college_chemistry",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "What is the worst-case time complexity of quicksort?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In a binary search tree, what is the time complexity of searching for an element in the average case?",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following problems is known to be NP-complete?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In the context of operating systems, a deadlock requires all of the following conditions EXCEPT",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Which data structure uses a FIFO (First-In, First-Out) ordering?",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In the TCP/IP model, the transport layer is responsible for",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The halting problem is an example of a problem that is",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In a relational database, a foreign key is used to",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which of the following is true about a hash table with separate chaining for collision resolution?",
+          "subject": "computer_science",
+          "correct_answer": "C",
+          "predicted": "A",
+          "is_correct": false,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "Dijkstra's algorithm is used to find the",
+          "subject": "computer_science",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "If the marginal cost of production exceeds the marginal revenue, a profit-maximizing firm should",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to the law of diminishing marginal returns, as more of a variable input is added to a fixed input,",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In a perfectly competitive market in the long run, firms earn",
+          "subject": "economics",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The GDP deflator is defined as",
+          "subject": "economics",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "When a good has a price elasticity of demand greater than 1 in absolute value, demand is said to be",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Phillips curve illustrates a short-run tradeoff between",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "A negative externality occurs when",
+          "subject": "economics",
+          "correct_answer": "A",
+          "predicted": "A",
+          "is_correct": true,
+          "generated_text": "A\n\nQuestion:"
+        },
+        {
+          "question": "In the Keynesian model, the multiplier effect implies that",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The concept of comparative advantage states that a country should specialize in producing goods for which it has the",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "If the central bank increases the reserve requirement, this will tend to",
+          "subject": "economics",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to Immanuel Kant, the moral worth of an action depends on",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "John Rawls's 'veil of ignorance' is a thought experiment used to derive",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The problem of induction, as formulated by David Hume, challenges our ability to",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Which philosopher argued that existence precedes essence?",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "C",
+          "is_correct": false,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "Plato's allegory of the cave appears in which of his dialogues?",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": null,
+          "is_correct": false,
+          "generated_text": "Republic\n\nQuestion:"
+        },
+        {
+          "question": "The 'is-ought problem' refers to the difficulty of deriving",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "According to utilitarianism, the morally right action is the one that",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Descartes's method of radical doubt leads him to conclude that the one thing he cannot doubt is",
+          "subject": "philosophy",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The philosophical zombie thought experiment is most commonly used as an argument against",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "Thomas Kuhn's concept of a 'paradigm shift' describes",
+          "subject": "philosophy",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Emancipation Proclamation issued by President Lincoln in 1863 declared slaves free in",
+          "subject": "us_history",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Monroe Doctrine of 1823 was primarily a statement of foreign policy asserting that",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Seneca Falls Convention of 1848 was primarily concerned with",
+          "subject": "us_history",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Marshall Plan, implemented after World War II, provided economic aid primarily to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Supreme Court case Brown v. Board of Education (1954) ruled that",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Missouri Compromise of 1820 attempted to maintain the balance between free and slave states by admitting Missouri as a slave state and",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Gulf of Tonkin Resolution (1964) gave President Johnson authorization to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "During the Progressive Era (1890s-1920s), muckrakers were journalists who",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Federalist Papers were primarily written to",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Homestead Act of 1862 provided settlers with",
+          "subject": "us_history",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Five Pillars of Islam include all of the following EXCEPT",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "In Hinduism, the concept of dharma refers to",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Four Noble Truths are central teachings of",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Torah refers to the first five books of the Hebrew Bible, also known as the",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The Sikh holy scripture is known as the",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "In Christianity, the doctrine of the Trinity holds that God is",
+          "subject": "world_religions",
+          "correct_answer": "C",
+          "predicted": "C",
+          "is_correct": true,
+          "generated_text": "C\n\nQuestion:"
+        },
+        {
+          "question": "The concept of 'karma' in Hinduism and Buddhism most closely means",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Eightfold Path in Buddhism includes right view, right intention, and right",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "D",
+          "is_correct": false,
+          "generated_text": "D\n\nQuestion:"
+        },
+        {
+          "question": "Confucianism places particular emphasis on",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        },
+        {
+          "question": "The Quran is considered by Muslims to be",
+          "subject": "world_religions",
+          "correct_answer": "B",
+          "predicted": "B",
+          "is_correct": true,
+          "generated_text": "B\n\nQuestion:"
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "unsteered_accuracy": 0.79,
+    "alpha_0.5": {
+      "steered_accuracy": 0.79,
+      "accuracy_drop": 0.0,
+      "relative_drop_pct": 0.0
+    },
+    "alpha_1.5": {
+      "steered_accuracy": 0.79,
+      "accuracy_drop": 0.0,
+      "relative_drop_pct": 0.0
+    },
+    "alpha_3.0": {
+      "steered_accuracy": 0.76,
+      "accuracy_drop": 0.03,
+      "relative_drop_pct": 3.8
+    }
+  }
+}

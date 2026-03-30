@@ -1,0 +1,26 @@
+{
+  "authority": {
+    "observed_accuracy": 1.0,
+    "null_mean": 0.5619191919191919,
+    "null_std": 0.045368155840084246,
+    "null_95th": 0.6267676767676768,
+    "p_value": 0.0,
+    "n_permutations": 100
+  },
+  "sycophancy": {
+    "observed_accuracy": 0.9393939393939394,
+    "null_mean": 0.9113131313131311,
+    "null_std": 0.016261057707152117,
+    "null_95th": 0.9292929292929293,
+    "p_value": 0.03,
+    "n_permutations": 100
+  },
+  "confidence": {
+    "observed_accuracy": 1.0,
+    "null_mean": 0.5727272727272728,
+    "null_std": 0.05447994569762343,
+    "null_95th": 0.657070707070707,
+    "p_value": 0.0,
+    "n_permutations": 100
+  }
+}

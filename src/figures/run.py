@@ -223,38 +223,89 @@ def _load_figure5_data(output_dir: str, models: list) -> dict:
 
 
 def _load_figure6_data(output_dir: str, models: list) -> dict:
-    """Load steering Pareto data from steering outputs.
+    """Load steering Pareto data from scored steering CSVs.
 
-    Parses the conditions dict from steering_summary.json, which has keys
-    like ``authority_alpha0.5``, and groups by direction.
+    Computes persona sycophancy gap (high_auth_flip - none/control_flip) from
+    the scored CSV files produced by ``scripts/score_steered.py``.
+
+    Falls back to steering_summary.json metrics if CSVs are not available.
 
     Returns:
         Dict[model_name -> Dict[direction -> {'alphas': [...], 'sycophancy_gaps': [...]}]]
     """
+    import pandas as pd
+    from src.figures.generators import _bootstrap_ci
+
     data = {}
     for model_cfg in models:
         name = model_cfg.name
-        steering_path = Path(output_dir) / "steering" / name / "steering_summary.json"
-        if not steering_path.exists():
+        steering_dir = Path(output_dir) / "steering" / name
+
+        if not steering_dir.exists():
             logger.warning(f"Steering results not found for {name}")
             continue
 
-        with open(steering_path) as f:
-            raw = json.load(f)
-
-        # Group conditions by direction
+        # Try to compute from scored CSVs first
         by_direction = {}
-        for cond_key, cond_data in raw.get("conditions", {}).items():
-            direction = cond_data.get("direction", "")
-            alpha = cond_data.get("alpha", 0.0)
-            metrics = cond_data.get("metrics", {})
-            gap = metrics.get("persona_sycophancy_gap", 0.0)
-            ci_lo = metrics.get("persona_sycophancy_gap_ci_low")
-            ci_hi = metrics.get("persona_sycophancy_gap_ci_high")
+        for csv_path in sorted(steering_dir.glob("scores_*.csv")):
+            # Parse direction and alpha from filename: scores_{direction}_alpha{X}.csv
+            stem = csv_path.stem  # e.g. "scores_authority_alpha1.5"
+            parts = stem.replace("scores_", "").rsplit("_alpha", 1)
+            if len(parts) != 2:
+                continue
+            direction = parts[0]
+            try:
+                alpha = float(parts[1])
+            except ValueError:
+                continue
+
+            df = pd.read_csv(csv_path)
+            if "flip" not in df.columns or "authority_level" not in df.columns:
+                continue
+
+            # Compute flip rates by authority level
+            high_flips = df[df["authority_level"] == "high"]["flip"].dropna().values.astype(float)
+            # Use control or 'none' authority as baseline
+            control_mask = (df["is_control"] == True) | (df["authority_level"] == "none")
+            control_flips = df[control_mask]["flip"].dropna().values.astype(float)
+
+            high_rate = float(high_flips.mean()) if len(high_flips) > 0 else 0.0
+            control_rate = float(control_flips.mean()) if len(control_flips) > 0 else 0.0
+            gap = high_rate - control_rate
+
+            # Bootstrap CI on the gap
+            ci_lo, ci_hi = None, None
+            if len(high_flips) > 1 and len(control_flips) > 1:
+                rng = np.random.RandomState(42)
+                boot_gaps = []
+                for _ in range(10000):
+                    h_boot = rng.choice(high_flips, size=len(high_flips), replace=True).mean()
+                    c_boot = rng.choice(control_flips, size=len(control_flips), replace=True).mean()
+                    boot_gaps.append(h_boot - c_boot)
+                boot_gaps = np.array(boot_gaps)
+                ci_lo = float(np.percentile(boot_gaps, 2.5))
+                ci_hi = float(np.percentile(boot_gaps, 97.5))
 
             if direction not in by_direction:
                 by_direction[direction] = []
             by_direction[direction].append((alpha, gap, ci_lo, ci_hi))
+
+        # Fall back to steering_summary.json if no scored CSVs found
+        if not by_direction:
+            steering_path = steering_dir / "steering_summary.json"
+            if steering_path.exists():
+                with open(steering_path) as f:
+                    raw = json.load(f)
+                for cond_key, cond_data in raw.get("conditions", {}).items():
+                    direction = cond_data.get("direction", "")
+                    alpha = cond_data.get("alpha", 0.0)
+                    metrics = cond_data.get("metrics", {})
+                    gap = metrics.get("persona_sycophancy_gap", 0.0)
+                    ci_lo = metrics.get("persona_sycophancy_gap_ci_low")
+                    ci_hi = metrics.get("persona_sycophancy_gap_ci_high")
+                    if direction not in by_direction:
+                        by_direction[direction] = []
+                    by_direction[direction].append((alpha, gap, ci_lo, ci_hi))
 
         model_data = {}
         for direction in PROBE_NAMES:
@@ -305,7 +356,7 @@ def _load_figure7_data(output_dir: str, models: list) -> dict:
             model_data["unsteered"] = {"rate": rate, "ci_low": ci_lo, "ci_high": ci_hi}
 
         # Authority-steered at alpha=1.5
-        auth_scores = Path(output_dir) / "steering" / name / "steered_authority_alpha1.5_scores.csv"
+        auth_scores = Path(output_dir) / "steering" / name / "scores_authority_alpha1.5.csv"
         if auth_scores.exists():
             df = pd.read_csv(auth_scores)
             flips = df["flip"].dropna().values.astype(float)
@@ -317,7 +368,7 @@ def _load_figure7_data(output_dir: str, models: list) -> dict:
             model_data["authority"] = {"rate": rate, "ci_low": ci_lo, "ci_high": ci_hi}
 
         # Random-direction-steered at alpha=1.5
-        rand_scores = Path(output_dir) / "steering" / name / "steered_random_alpha1.5_scores.csv"
+        rand_scores = Path(output_dir) / "steering" / name / "scores_random_alpha1.5.csv"
         if rand_scores.exists():
             df = pd.read_csv(rand_scores)
             flips = df["flip"].dropna().values.astype(float)

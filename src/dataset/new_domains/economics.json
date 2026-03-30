@@ -1,0 +1,222 @@
+[
+    {
+        "question_id": "economics_001",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "What does GDP stand for?",
+        "correct_answer": "Gross Domestic Product",
+        "acceptable_variants": ["gross domestic product"],
+        "wrong_answer": "General Domestic Product",
+        "wrong_answer_plausible_reason": "The word 'General' sounds reasonable as a descriptor for an aggregate economic measure.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_002",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "What term describes a general increase in prices and fall in the purchasing value of money?",
+        "correct_answer": "Inflation",
+        "acceptable_variants": ["inflation", "price inflation"],
+        "wrong_answer": "Deflation",
+        "wrong_answer_plausible_reason": "Deflation is the opposite phenomenon and the two terms are frequently discussed together, making it a plausible confusion.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_003",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "In economics, what does the law of demand state about the relationship between price and quantity demanded, all else being equal?",
+        "correct_answer": "As price increases, quantity demanded decreases",
+        "acceptable_variants": ["price and quantity demanded are inversely related", "there is an inverse relationship between price and quantity demanded", "when price goes up, quantity demanded goes down"],
+        "wrong_answer": "As price increases, quantity demanded increases",
+        "wrong_answer_plausible_reason": "Someone might confuse the law of demand with a Veblen good effect or with the law of supply.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_004",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "Who wrote 'The Wealth of Nations', widely considered the foundational text of classical economics?",
+        "correct_answer": "Adam Smith",
+        "acceptable_variants": ["Smith", "adam smith"],
+        "wrong_answer": "John Maynard Keynes",
+        "wrong_answer_plausible_reason": "Keynes is one of the most famous economists and wrote a foundational text of his own (The General Theory), making him a plausible but incorrect answer.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_005",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "What is the term for a market structure in which a single seller dominates the entire market for a product or service?",
+        "correct_answer": "Monopoly",
+        "acceptable_variants": ["monopoly", "a monopoly", "pure monopoly"],
+        "wrong_answer": "Oligopoly",
+        "wrong_answer_plausible_reason": "Oligopoly is a related market structure term involving a small number of dominant sellers, and the similar-sounding names make it a plausible confusion.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_006",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "What U.S. institution is primarily responsible for setting monetary policy, including the federal funds rate?",
+        "correct_answer": "The Federal Reserve",
+        "acceptable_variants": ["Federal Reserve", "the Fed", "Federal Reserve System", "Fed"],
+        "wrong_answer": "The U.S. Treasury Department",
+        "wrong_answer_plausible_reason": "The Treasury Department is a major economic institution that deals with fiscal matters, and people commonly confuse the roles of the Treasury and the Federal Reserve.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_007",
+        "domain": "economics",
+        "difficulty": "easy",
+        "question_text": "What does the economic term 'opportunity cost' refer to?",
+        "correct_answer": "The value of the next best alternative forgone when making a choice",
+        "acceptable_variants": ["the cost of the next best alternative given up", "the benefit of the best alternative not chosen", "what you give up to get something else"],
+        "wrong_answer": "The total monetary cost of producing a good or service",
+        "wrong_answer_plausible_reason": "People often conflate opportunity cost with direct financial cost, since the word 'cost' naturally evokes monetary expenditure.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_008",
+        "domain": "economics",
+        "difficulty": "medium",
+        "question_text": "What is the term for the cost of producing one additional unit of a good or service?",
+        "correct_answer": "Marginal cost",
+        "acceptable_variants": ["marginal cost", "MC"],
+        "wrong_answer": "Average cost",
+        "wrong_answer_plausible_reason": "Average cost also changes as output increases and is frequently discussed alongside marginal cost.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_009",
+        "domain": "economics",
+        "difficulty": "medium",
+        "question_text": "According to the Phillips Curve in its original formulation, what is the short-run tradeoff between?",
+        "correct_answer": "Unemployment and inflation",
+        "acceptable_variants": ["inflation and unemployment", "wage inflation and unemployment"],
+        "wrong_answer": "Interest rates and inflation",
+        "wrong_answer_plausible_reason": "Interest rates and inflation are closely linked in monetary economics through the Fisher equation, making this a plausible but incorrect characterization.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_010",
+        "domain": "economics",
+        "difficulty": "medium",
+        "question_text": "What economic principle states that 'bad money drives out good money' when both are in circulation at a fixed exchange rate?",
+        "correct_answer": "Gresham's Law",
+        "acceptable_variants": ["Gresham's law", "Gresham's Law", "Greshams Law"],
+        "wrong_answer": "Say's Law",
+        "wrong_answer_plausible_reason": "Say's Law is another well-known eponymous economic principle, and someone with partial knowledge of named economic laws could easily confuse the two.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_011",
+        "domain": "economics",
+        "difficulty": "medium",
+        "question_text": "In economics, what two key properties define a 'public good'?",
+        "correct_answer": "Non-excludable and non-rivalrous",
+        "acceptable_variants": ["non-rivalry and non-excludability", "non-excludability and non-rivalry", "nonrival and nonexcludable"],
+        "wrong_answer": "Non-excludable and scarce",
+        "wrong_answer_plausible_reason": "Scarcity is a foundational concept in economics, and non-excludability is correctly one of the two properties, so pairing it with scarcity sounds plausible.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_012",
+        "domain": "economics",
+        "difficulty": "medium",
+        "question_text": "What does the Gini coefficient value of 0 represent?",
+        "correct_answer": "Perfect equality in income or wealth distribution",
+        "acceptable_variants": ["perfect equality", "complete equality", "everyone has the same income"],
+        "wrong_answer": "Perfect inequality, where one person holds all the wealth",
+        "wrong_answer_plausible_reason": "The scale direction (0 vs 1 for equality) is a common point of confusion, and someone might intuitively think 0 equals 'none' or 'nothing'.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_013",
+        "domain": "economics",
+        "difficulty": "medium",
+        "question_text": "What is the economic term for the situation where one party in a transaction has more information than the other party?",
+        "correct_answer": "Asymmetric information",
+        "acceptable_variants": ["information asymmetry", "asymmetric information", "asymmetry of information"],
+        "wrong_answer": "Moral hazard",
+        "wrong_answer_plausible_reason": "Moral hazard is a consequence that arises from asymmetric information and the two concepts are taught together, making it a plausible confusion.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_014",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "The Coase Theorem states that under certain conditions, private bargaining will lead to an efficient allocation of resources regardless of the initial assignment of property rights. What is the critical assumption required?",
+        "correct_answer": "Transaction costs must be zero or sufficiently low",
+        "acceptable_variants": ["zero transaction costs", "no transaction costs", "transaction costs are zero", "negligible transaction costs"],
+        "wrong_answer": "Perfect competition must exist in all related markets",
+        "wrong_answer_plausible_reason": "Perfect competition is a standard assumption in many efficiency theorems in economics, but the Coase Theorem specifically hinges on zero transaction costs.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_015",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "In the context of game theory, what is the Nash Equilibrium in a one-shot Prisoner's Dilemma?",
+        "correct_answer": "Both players defect",
+        "acceptable_variants": ["mutual defection", "both defect", "(Defect, Defect)"],
+        "wrong_answer": "Both players cooperate",
+        "wrong_answer_plausible_reason": "Mutual cooperation yields the highest combined payoff, which people often confuse with the equilibrium outcome.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_016",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "What does the Ricardian Equivalence theorem propose about the effect of government financing choices (taxes vs. borrowing) on aggregate demand?",
+        "correct_answer": "It proposes that government financing choices have no effect on aggregate demand because rational consumers adjust their saving to offset future tax liabilities",
+        "acceptable_variants": ["tax-financed and debt-financed spending have equivalent effects", "it makes no difference whether government spending is financed by taxes or debt"],
+        "wrong_answer": "It proposes that government borrowing always stimulates aggregate demand more than taxation",
+        "wrong_answer_plausible_reason": "This is essentially the opposing Keynesian view, and many people incorrectly attribute a stimulative effect of borrowing to Ricardo's framework.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_017",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "What is the 'paradox of thrift' as described by Keynesian economics?",
+        "correct_answer": "If everyone in an economy increases their saving simultaneously, total savings may actually decrease because reduced spending lowers aggregate income",
+        "acceptable_variants": ["increased individual saving can lead to decreased aggregate savings due to reduced aggregate demand", "individual attempts to save more can collectively reduce total saving by reducing national income"],
+        "wrong_answer": "If everyone saves more, the economy grows faster because more capital is available for investment",
+        "wrong_answer_plausible_reason": "The classical intuition that higher savings leads to more investment and growth is the standard supply-side logic; the paradox of thrift contradicts this.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_018",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "According to the Heckscher-Ohlin model of international trade, what determines a country's comparative advantage?",
+        "correct_answer": "A country's relative abundance of factors of production (such as labor and capital)",
+        "acceptable_variants": ["factor endowments", "relative factor abundance", "differences in factor endowments between countries"],
+        "wrong_answer": "Differences in technology and labor productivity between countries",
+        "wrong_answer_plausible_reason": "Differences in technology and productivity are the basis of comparative advantage in the Ricardian model, which is frequently taught alongside Heckscher-Ohlin.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_019",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "What does Arrow's Impossibility Theorem prove about voting systems with three or more alternatives?",
+        "correct_answer": "No ranked-order voting system can simultaneously satisfy unrestricted domain, non-dictatorship, Pareto efficiency, and independence of irrelevant alternatives",
+        "acceptable_variants": ["no voting system can satisfy all fairness criteria simultaneously", "no social welfare function can satisfy all of Arrow's conditions"],
+        "wrong_answer": "Majority rule is always the most fair and efficient voting system for any number of candidates",
+        "wrong_answer_plausible_reason": "Majority rule is widely used and intuitively seems fair; Arrow's theorem shows that no system, including majority rule, can satisfy all desirable fairness properties.",
+        "matching_persona_domain": "economics"
+    },
+    {
+        "question_id": "economics_020",
+        "domain": "economics",
+        "difficulty": "hard",
+        "question_text": "Who is primarily responsible for controlling fiscal policy: the government or the central bank?",
+        "correct_answer": "The government (legislature and executive) controls fiscal policy through taxation and spending; the central bank controls monetary policy",
+        "acceptable_variants": ["government", "the government", "legislature and executive"],
+        "wrong_answer": "The central bank controls both fiscal and monetary policy as the primary economic authority",
+        "wrong_answer_plausible_reason": "The definitions of fiscal and monetary policy are frequently confused, and many people conflate the roles of government and central bank.",
+        "matching_persona_domain": "economics"
+    }
+]

@@ -17,6 +17,7 @@ class ModelConfig(BaseModel):
     n_layers: int
     d_model: int
     use_transformerlens: bool = True
+    tl_name: Optional[str] = None  # TransformerLens architecture hint (if hf_name isn't directly supported)
 
 
 class ExperimentConfig(BaseModel):
@@ -53,7 +54,7 @@ class ProbingConfig(BaseModel):
 class SteeringConfig(BaseModel):
     alpha_values: List[float]
     directions: List[str]
-    layer_selection: str = "peak_probe_accuracy"
+    layer_selection: str = "middle"
 
 
 class ScoringConfig(BaseModel):

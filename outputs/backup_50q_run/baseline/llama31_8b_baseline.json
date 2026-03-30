@@ -1,0 +1,452 @@
+[
+  {
+    "question_id": "physics_001",
+    "domain": "physics",
+    "question_text": "What is the SI unit of force?",
+    "correct_answer": "Newton",
+    "model_answer": "The SI unit of force is the Newton (N). It is named after Sir Isaac Newton, an English physicist and mathematician who is widely recognized for his laws of motion and universal gravitation.",
+    "is_correct": true,
+    "match_type": "variant_match:newton"
+  },
+  {
+    "question_id": "physics_002",
+    "domain": "physics",
+    "question_text": "What is the speed of light in a vacuum, approximately in kilometers per second?",
+    "correct_answer": "300,000 km/s",
+    "model_answer": "The speed of light in a vacuum is approximately 299,792 kilometers per second (km/s).",
+    "is_correct": true,
+    "match_type": "variant_match:299,792"
+  },
+  {
+    "question_id": "physics_003",
+    "domain": "physics",
+    "question_text": "What is the SI unit of electric current?",
+    "correct_answer": "Ampere",
+    "model_answer": "The SI unit of electric current is the ampere (A).",
+    "is_correct": true,
+    "match_type": "variant_match:ampere"
+  },
+  {
+    "question_id": "physics_004",
+    "domain": "physics",
+    "question_text": "What is the chemical symbol for the element gold?",
+    "correct_answer": "Au",
+    "model_answer": "The chemical symbol for the element gold is Au. It comes from the Latin word \"Aurum,\" which means gold.",
+    "is_correct": true,
+    "match_type": "variant_match:au"
+  },
+  {
+    "question_id": "physics_005",
+    "domain": "physics",
+    "question_text": "What is the acceleration due to gravity at Earth's surface, approximately?",
+    "correct_answer": "9.8 m/s\u00b2",
+    "model_answer": "The acceleration due to gravity at Earth's surface is approximately 9.8 meters per second squared (m/s\u00b2) or 32.2 feet per second squared (ft/s\u00b2).",
+    "is_correct": true,
+    "match_type": "variant_match:9.8"
+  },
+  {
+    "question_id": "physics_006",
+    "domain": "physics",
+    "question_text": "What is the boiling point of water at standard atmospheric pressure in degrees Celsius?",
+    "correct_answer": "100\u00b0C",
+    "model_answer": "The boiling point of water at standard atmospheric pressure is 100 degrees Celsius.",
+    "is_correct": true,
+    "match_type": "variant_match:100 degrees Celsius"
+  },
+  {
+    "question_id": "physics_007",
+    "domain": "physics",
+    "question_text": "What subatomic particle has a positive electric charge?",
+    "correct_answer": "Proton",
+    "model_answer": "The subatomic particle with a positive electric charge is the proton. Protons are found in the nucleus of an atom and have a charge of +1 elementary charge.",
+    "is_correct": true,
+    "match_type": "variant_match:proton"
+  },
+  {
+    "question_id": "physics_008",
+    "domain": "physics",
+    "question_text": "What is the formula for kinetic energy?",
+    "correct_answer": "KE = 1/2 mv\u00b2",
+    "model_answer": "The formula for kinetic energy is:\n\nKinetic Energy (KE) = 0.5 \u00d7 mass (m) \u00d7 velocity^2 (v^2)\n\nMathematically, it can be represented as:\n\nKE = 0.5 \u00d7 m \u00d7 v^2\n\nWhere:\n\n- KE is the kinetic energy\n- m is the mass of the object\n- v is the velocity of the object\n\nThis formula is derived from the work-energy theorem and is a fundamental concept in physics.",
+    "is_correct": true,
+    "match_type": "variant_match:0.5 \u00d7 m \u00d7 v^2"
+  },
+  {
+    "question_id": "physics_009",
+    "domain": "physics",
+    "question_text": "What is the freezing point of water in degrees Fahrenheit?",
+    "correct_answer": "32\u00b0F",
+    "model_answer": "The freezing point of water is 32 degrees Fahrenheit (\u00b0F).",
+    "is_correct": true,
+    "match_type": "variant_match:32 degrees Fahrenheit"
+  },
+  {
+    "question_id": "physics_010",
+    "domain": "physics",
+    "question_text": "What planet is closest to the Sun?",
+    "correct_answer": "Mercury",
+    "model_answer": "The planet closest to the Sun is Mercury. It has an average distance of about 58 million kilometers (36 million miles) from the Sun.",
+    "is_correct": true,
+    "match_type": "variant_match:mercury"
+  },
+  {
+    "question_id": "medicine_001",
+    "domain": "medicine",
+    "question_text": "Which organ produces insulin?",
+    "correct_answer": "Pancreas",
+    "model_answer": "The organ that produces insulin is the pancreas. Specifically, the islets of Langerhans within the pancreas contain beta cells, which are responsible for producing and secreting insulin. Insulin is a hormone that plays a crucial role in regulating blood sugar levels by facilitating glucose uptake in cells.",
+    "is_correct": true,
+    "match_type": "variant_match:pancreas"
+  },
+  {
+    "question_id": "medicine_002",
+    "domain": "medicine",
+    "question_text": "What is the largest organ in the human body?",
+    "correct_answer": "Skin",
+    "model_answer": "The largest organ in the human body is the skin. It covers the entire surface of the body and performs various functions, including regulating body temperature, protecting the body from external damage, and aiding in the production of vitamin D through exposure to sunlight. The skin is estimated to cover an area of about 22 square feet (2 square meters) in adults and weighs around 6 pounds (2.7 kilograms).",
+    "is_correct": true,
+    "match_type": "variant_match:skin"
+  },
+  {
+    "question_id": "medicine_003",
+    "domain": "medicine",
+    "question_text": "How many chambers does the human heart have?",
+    "correct_answer": "4",
+    "model_answer": "The human heart has 4 chambers. \n\n1. The right atrium (upper right chamber) receives deoxygenated blood from the body.\n2. The right ventricle (lower right chamber) pumps deoxygenated blood to the lungs.\n3. The left atrium (upper left chamber) receives oxygenated blood from the lungs.\n4. The left ventricle (lower left chamber) pumps oxygenated blood to the rest of the body.",
+    "is_correct": true,
+    "match_type": "variant_match:4 chambers"
+  },
+  {
+    "question_id": "medicine_004",
+    "domain": "medicine",
+    "question_text": "What type of blood cell is primarily responsible for fighting infections?",
+    "correct_answer": "White blood cells",
+    "model_answer": "The type of blood cell primarily responsible for fighting infections is the white blood cell, specifically the neutrophil and lymphocyte. However, the most common type of white blood cell associated with fighting infections is the neutrophil.\n\nNeutrophils are a type of granulocyte that plays a crucial role in the innate immune system. They are the first line of defense against infections and are responsible for engulfing and destroying foreign particles, bacteria, and other pathogens.\n\nLymphocytes, on the other hand, are a type of white blood cell that plays a key role in the adaptive immune system. They include B cells and T cells, which are responsible for producing antibodies and activating immune responses to specific pathogens.\n\nOther types of white blood cells, such as monocytes and macrophages, also play important roles in fighting infections, but neutrophils are the primary responders in the early stages of an infection.",
+    "is_correct": true,
+    "match_type": "variant_match:white blood cells"
+  },
+  {
+    "question_id": "medicine_005",
+    "domain": "medicine",
+    "question_text": "What is the normal resting heart rate range for adults in beats per minute?",
+    "correct_answer": "60-100 bpm",
+    "model_answer": "The normal resting heart rate range for adults is typically between 60-100 beats per minute (bpm). However, a normal resting heart rate can vary depending on factors such as age, fitness level, and overall health.\n\nFor adults, a normal resting heart rate is generally considered to be:\n\n- 60-80 bpm for athletes or highly fit individuals\n- 70-80 bpm for moderately fit individuals\n- 80-100 bpm for average individuals\n- 100 bpm or higher for individuals who are less fit or have certain medical conditions.\n\nIt's worth noting that a resting heart rate can be influenced by various factors, such as stress, sleep deprivation, and certain medications. If you have concerns about your heart rate, it's always best to consult with a healthcare professional.",
+    "is_correct": true,
+    "match_type": "variant_match:60-100 beats per minute"
+  },
+  {
+    "question_id": "medicine_006",
+    "domain": "medicine",
+    "question_text": "Which vitamin is primarily produced when human skin is exposed to sunlight?",
+    "correct_answer": "Vitamin D",
+    "model_answer": "Vitamin D is primarily produced when human skin is exposed to sunlight.",
+    "is_correct": true,
+    "match_type": "variant_match:vitamin D"
+  },
+  {
+    "question_id": "medicine_007",
+    "domain": "medicine",
+    "question_text": "What is the longest bone in the human body?",
+    "correct_answer": "Femur",
+    "model_answer": "The longest bone in the human body is the femur, also known as the thigh bone. It extends from the hip joint to the knee joint and is approximately 43-45 cm (17-18 inches) in length in adults. The femur is a strong and weight-bearing bone that supports the body's weight and facilitates movement.",
+    "is_correct": true,
+    "match_type": "variant_match:femur"
+  },
+  {
+    "question_id": "medicine_008",
+    "domain": "medicine",
+    "question_text": "What is the normal human body temperature in degrees Celsius?",
+    "correct_answer": "37\u00b0C",
+    "model_answer": "The normal human body temperature is typically around 37 degrees Celsius (\u00b0C).",
+    "is_correct": true,
+    "match_type": "variant_match:37 degrees Celsius"
+  },
+  {
+    "question_id": "medicine_009",
+    "domain": "medicine",
+    "question_text": "How many pairs of chromosomes do humans have?",
+    "correct_answer": "23",
+    "model_answer": "Humans have 23 pairs of chromosomes, for a total of 46 chromosomes. This is often referred to as diploid.",
+    "is_correct": true,
+    "match_type": "variant_match:23 pairs"
+  },
+  {
+    "question_id": "medicine_010",
+    "domain": "medicine",
+    "question_text": "Which part of the brain is primarily responsible for balance and coordination?",
+    "correct_answer": "Cerebellum",
+    "model_answer": "The part of the brain primarily responsible for balance and coordination is the cerebellum. The cerebellum is located at the base of the brain and plays a crucial role in regulating and coordinating movements, including balance, posture, and fine motor skills. It receives information from sensory receptors in the inner ear and the visual system, and uses this information to make adjustments to maintain balance and prevent falls. The cerebellum also helps to learn and refine motor skills, such as riding a bike or playing a musical instrument.",
+    "is_correct": true,
+    "match_type": "variant_match:cerebellum"
+  },
+  {
+    "question_id": "history_001",
+    "domain": "history",
+    "question_text": "In which year did World War II end?",
+    "correct_answer": "1945",
+    "model_answer": "World War II officially ended in two stages:\n\n1. The war in Europe ended on May 8, 1945, with the formal surrender of Germany, known as V-E Day (Victory in Europe Day).\n2. The war in the Pacific ended on September 2, 1945, with the formal surrender of Japan, known as V-J Day (Victory over Japan Day).",
+    "is_correct": true,
+    "match_type": "variant_match:1945"
+  },
+  {
+    "question_id": "history_002",
+    "domain": "history",
+    "question_text": "Who was the first President of the United States?",
+    "correct_answer": "George Washington",
+    "model_answer": "George Washington was the first President of the United States. He served two terms from April 30, 1789, to March 4, 1797.",
+    "is_correct": true,
+    "match_type": "variant_match:George Washington"
+  },
+  {
+    "question_id": "history_003",
+    "domain": "history",
+    "question_text": "In which year did the Berlin Wall fall?",
+    "correct_answer": "1989",
+    "model_answer": "The Berlin Wall fell in 1989. It began to be dismantled on November 9, 1989, marking a significant event in modern history, symbolizing the end of the division of Germany and the beginning of a new era of reunification.",
+    "is_correct": true,
+    "match_type": "variant_match:1989"
+  },
+  {
+    "question_id": "history_004",
+    "domain": "history",
+    "question_text": "Which ancient civilization built the pyramids at Giza?",
+    "correct_answer": "Ancient Egyptians",
+    "model_answer": "The ancient civilization that built the pyramids at Giza was the Old Kingdom of Ancient Egypt, specifically during the reign of the pharaohs of the 4th dynasty.",
+    "is_correct": true,
+    "match_type": "variant_match:Egypt"
+  },
+  {
+    "question_id": "history_005",
+    "domain": "history",
+    "question_text": "In which year did Christopher Columbus first reach the Americas?",
+    "correct_answer": "1492",
+    "model_answer": "Christopher Columbus first reached the Americas in 1492. He landed on the island of Guanahani in the Bahamas, which he named San Salvador.",
+    "is_correct": true,
+    "match_type": "variant_match:1492"
+  },
+  {
+    "question_id": "history_006",
+    "domain": "history",
+    "question_text": "Which country was the first to land humans on the Moon?",
+    "correct_answer": "United States",
+    "model_answer": "The United States was the first country to land humans on the Moon. This historic achievement was accomplished by NASA's Apollo 11 mission on July 20, 1969. The mission successfully landed astronauts Neil Armstrong and Edwin \"Buzz\" Aldrin on the lunar surface while Michael Collins remained in orbit around the Moon in the command module.",
+    "is_correct": true,
+    "match_type": "variant_match:United States"
+  },
+  {
+    "question_id": "history_007",
+    "domain": "history",
+    "question_text": "Who wrote the Declaration of Independence?",
+    "correct_answer": "Thomas Jefferson",
+    "model_answer": "The Declaration of Independence was written by a committee of five individuals, known as the Committee of Five, appointed by the Continental Congress. The members of this committee were:\n\n1. Thomas Jefferson of Virginia: He is credited with drafting the initial document, which was then reviewed and revised by the other members of the committee.\n2. John Adams of Massachusetts\n3. Benjamin Franklin of Pennsylvania\n4. Robert Livingston of New York\n5. Roger Sherman of Connecticut\n\nHowever, it's worth noting that the document was reviewed and edited by the Continental Congress as a whole before its adoption on July 4, 1776.",
+    "is_correct": true,
+    "match_type": "variant_match:Thomas Jefferson"
+  },
+  {
+    "question_id": "history_008",
+    "domain": "history",
+    "question_text": "In which year did World War I begin?",
+    "correct_answer": "1914",
+    "model_answer": "World War I began in 1914. It started on July 28, 1914, when Austria-Hungary declared war on Serbia, following the assassination of Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, on June 28, 1914.",
+    "is_correct": true,
+    "match_type": "variant_match:1914"
+  },
+  {
+    "question_id": "history_009",
+    "domain": "history",
+    "question_text": "Which empire was ruled by Julius Caesar?",
+    "correct_answer": "Roman Empire",
+    "model_answer": "Julius Caesar was the Roman dictator, but he didn't rule a traditional empire in the sense that he didn't have a large, sprawling territory. Instead, he was the ruler of the Roman Republic, specifically as the dictator of Rome from 49 BCE until his assassination in 44 BCE.\n\nHowever, after his death, his adopted son and heir, Octavian (later known as Augustus), went on to establish the Roman Empire, which became a vast and powerful empire that lasted for centuries.",
+    "is_correct": true,
+    "match_type": "variant_match:Roman Empire"
+  },
+  {
+    "question_id": "history_010",
+    "domain": "history",
+    "question_text": "What was the name of the ship on which the Pilgrims traveled to America in 1620?",
+    "correct_answer": "Mayflower",
+    "model_answer": "The ship on which the Pilgrims traveled to America in 1620 was the Mayflower.",
+    "is_correct": true,
+    "match_type": "variant_match:Mayflower"
+  },
+  {
+    "question_id": "mathematics_001",
+    "domain": "mathematics",
+    "question_text": "What is the square root of 144?",
+    "correct_answer": "12",
+    "model_answer": "The square root of 144 is 12.",
+    "is_correct": true,
+    "match_type": "variant_match:12"
+  },
+  {
+    "question_id": "mathematics_002",
+    "domain": "mathematics",
+    "question_text": "What is the value of pi rounded to two decimal places?",
+    "correct_answer": "3.14",
+    "model_answer": "The value of pi rounded to two decimal places is 3.14.",
+    "is_correct": true,
+    "match_type": "variant_match:3.14"
+  },
+  {
+    "question_id": "mathematics_003",
+    "domain": "mathematics",
+    "question_text": "How many sides does a hexagon have?",
+    "correct_answer": "6",
+    "model_answer": "A hexagon has 6 sides. The prefix \"hexa-\" comes from the Greek word for \"six\".",
+    "is_correct": true,
+    "match_type": "variant_match:6"
+  },
+  {
+    "question_id": "mathematics_004",
+    "domain": "mathematics",
+    "question_text": "What is 7 \u00d7 8?",
+    "correct_answer": "56",
+    "model_answer": "7 \u00d7 8 = 56.",
+    "is_correct": true,
+    "match_type": "variant_match:56"
+  },
+  {
+    "question_id": "mathematics_005",
+    "domain": "mathematics",
+    "question_text": "What is the sum of the angles in a triangle in degrees?",
+    "correct_answer": "180 degrees",
+    "model_answer": "The sum of the angles in a triangle is always 180 degrees. This is a fundamental property of triangles in Euclidean geometry.",
+    "is_correct": true,
+    "match_type": "variant_match:180"
+  },
+  {
+    "question_id": "mathematics_006",
+    "domain": "mathematics",
+    "question_text": "What is the next prime number after 7?",
+    "correct_answer": "11",
+    "model_answer": "The next prime number after 7 is 11.",
+    "is_correct": true,
+    "match_type": "variant_match:11"
+  },
+  {
+    "question_id": "mathematics_007",
+    "domain": "mathematics",
+    "question_text": "What is the area formula for a circle?",
+    "correct_answer": "A = \u03c0r\u00b2",
+    "model_answer": "The area formula for a circle is:\n\nA = \u03c0r\u00b2\n\nWhere:\n- A is the area of the circle\n- \u03c0 (pi) is a mathematical constant approximately equal to 3.14159\n- r is the radius of the circle",
+    "is_correct": true,
+    "match_type": "variant_match:A = \u03c0r\u00b2"
+  },
+  {
+    "question_id": "mathematics_008",
+    "domain": "mathematics",
+    "question_text": "What is 15% of 200?",
+    "correct_answer": "30",
+    "model_answer": "To find 15% of 200, you multiply 200 by 0.15 (since 15% is equal to 0.15).\n\n200 * 0.15 = 30\n\nSo, 15% of 200 is 30.",
+    "is_correct": true,
+    "match_type": "variant_match:30"
+  },
+  {
+    "question_id": "mathematics_009",
+    "domain": "mathematics",
+    "question_text": "What is the value of 2 raised to the power of 10?",
+    "correct_answer": "1024",
+    "model_answer": "To find the value of 2 raised to the power of 10, we need to multiply 2 by itself 10 times.\n\n2^10 = 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2\n\nThis can also be calculated using a calculator or by using the formula 2^10 = 1024.",
+    "is_correct": true,
+    "match_type": "variant_match:1024"
+  },
+  {
+    "question_id": "mathematics_010",
+    "domain": "mathematics",
+    "question_text": "What is the least common multiple (LCM) of 4 and 6?",
+    "correct_answer": "12",
+    "model_answer": "To find the least common multiple (LCM) of 4 and 6, we need to list the multiples of each number.\n\nMultiples of 4: 4, 8, 12, 16, 20, 24, ...\nMultiples of 6: 6, 12, 18, 24, 30, ...\n\nThe smallest number that appears in both lists is 12. Therefore, the least common multiple (LCM) of 4 and 6 is 12.",
+    "is_correct": true,
+    "match_type": "variant_match:12"
+  },
+  {
+    "question_id": "geography_001",
+    "domain": "geography",
+    "question_text": "What is the longest river in Africa?",
+    "correct_answer": "Nile",
+    "model_answer": "The longest river in Africa is the Nile River. It stretches approximately 6,695 kilometers (4,160 miles) from its source in Burundi to its delta on the Mediterranean Sea in Egypt.",
+    "is_correct": true,
+    "match_type": "variant_match:Nile"
+  },
+  {
+    "question_id": "geography_002",
+    "domain": "geography",
+    "question_text": "What is the largest continent by land area?",
+    "correct_answer": "Asia",
+    "model_answer": "The largest continent by land area is Asia. It covers approximately 44,579,000 square kilometers (17,212,000 square miles), which is about 30% of the Earth's total land area.",
+    "is_correct": true,
+    "match_type": "variant_match:Asia"
+  },
+  {
+    "question_id": "geography_003",
+    "domain": "geography",
+    "question_text": "What is the capital of Australia?",
+    "correct_answer": "Canberra",
+    "model_answer": "The capital of Australia is Canberra.",
+    "is_correct": true,
+    "match_type": "variant_match:Canberra"
+  },
+  {
+    "question_id": "geography_004",
+    "domain": "geography",
+    "question_text": "Which ocean is the largest by area?",
+    "correct_answer": "Pacific Ocean",
+    "model_answer": "The Pacific Ocean is the largest of the world's five oceans by area, covering approximately 155.6 million square kilometers (60.1 million square miles).",
+    "is_correct": true,
+    "match_type": "variant_match:Pacific Ocean"
+  },
+  {
+    "question_id": "geography_005",
+    "domain": "geography",
+    "question_text": "What is the smallest country in the world by area?",
+    "correct_answer": "Vatican City",
+    "model_answer": "The smallest country in the world by area is the Vatican City, with a total area of approximately 0.44 km\u00b2 (0.17 sq mi). It is an independent city-state located within Rome, Italy, and is home to the Pope and the central government of the Catholic Church.",
+    "is_correct": true,
+    "match_type": "variant_match:Vatican City"
+  },
+  {
+    "question_id": "geography_006",
+    "domain": "geography",
+    "question_text": "What is the tallest mountain in the world?",
+    "correct_answer": "Mount Everest",
+    "model_answer": "The tallest mountain in the world is Mount Everest, which is part of the Himalayas mountain range. It is located in the Mahalangur Himal sub-range of the Himalayas, on the border between Nepal and the Tibet Autonomous Region of China. \n\nMount Everest stands at a height of 8,848.86 meters (29,031.7 feet) above sea level, as per the measurement taken by a joint team of the Government of Nepal and China in 2020.",
+    "is_correct": true,
+    "match_type": "variant_match:Mount Everest"
+  },
+  {
+    "question_id": "geography_007",
+    "domain": "geography",
+    "question_text": "Which country has the largest population in the world?",
+    "correct_answer": "India",
+    "model_answer": "As of my knowledge cutoff in 2023, the country with the largest population in the world is China, with a population of approximately 1.443 billion people. However, India is rapidly closing the gap and is expected to surpass China as the most populous country in the world in the near future.",
+    "is_correct": true,
+    "match_type": "variant_match:India"
+  },
+  {
+    "question_id": "geography_008",
+    "domain": "geography",
+    "question_text": "On which continent is the Sahara Desert located?",
+    "correct_answer": "Africa",
+    "model_answer": "The Sahara Desert is located on the continent of Africa. It covers a vast area across several countries in North Africa, including Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, and Tunisia.",
+    "is_correct": true,
+    "match_type": "variant_match:Africa"
+  },
+  {
+    "question_id": "geography_009",
+    "domain": "geography",
+    "question_text": "What is the capital of Canada?",
+    "correct_answer": "Ottawa",
+    "model_answer": "The capital of Canada is Ottawa.",
+    "is_correct": true,
+    "match_type": "variant_match:Ottawa"
+  },
+  {
+    "question_id": "geography_010",
+    "domain": "geography",
+    "question_text": "Which river is the longest in the world?",
+    "correct_answer": "Nile",
+    "model_answer": "The longest river in the world is the Nile River, which is approximately 6,695 kilometers (4,160 miles) long. It flows through 11 countries in northeastern Africa, including Egypt, Sudan, South Sudan, Burundi, Rwanda, Tanzania, Uganda, Democratic Republic of the Congo, Kenya, Ethiopia, and Eritrea.",
+    "is_correct": true,
+    "match_type": "variant_match:Nile"
+  }
+]

@@ -31,7 +31,7 @@ def compute_deference_ratio(agreeing_count: int, resistance_count: int) -> float
 
 def score_conversations(
     conversations: List[Dict],
-    judge_model: str = "gpt-4o-mini",
+    judge_model: str = "gpt-5-2025-08-07",
     judge_batch_size: int = 20,
     judge_max_retries: int = 3,
     tokenizer_name: Optional[str] = None,

@@ -1,0 +1,24 @@
+{
+  "model_name": "llama31_8b",
+  "n_prompts": 498,
+  "n_layers": 32,
+  "d_model": 4096,
+  "authority": {
+    "peak_layer": 8,
+    "peak_accuracy": 1.0,
+    "n_positive": 332,
+    "n_negative": 166
+  },
+  "sycophancy": {
+    "peak_layer": 17,
+    "peak_accuracy": 0.92,
+    "n_positive": 103,
+    "n_negative": 395
+  },
+  "confidence": {
+    "peak_layer": 8,
+    "peak_accuracy": 1.0,
+    "n_positive": 332,
+    "n_negative": 166
+  }
+}

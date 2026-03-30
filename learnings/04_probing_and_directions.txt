@@ -1,0 +1,156 @@
+04 - PROBING AND DIRECTION EXTRACTION
+=======================================
+
+WHAT IS A LINEAR PROBE?
+-----------------------
+A linear probe is a simple logistic regression classifier trained on a model's
+internal activations. The idea: if a linear classifier can predict some property
+(like "is this a high-authority prompt?") from the model's hidden states, then
+the model has an internal representation of that property.
+
+In our case, we train three probes:
+  1. Authority probe:   Predicts high-authority vs low/no-authority
+  2. Sycophancy probe:  Predicts whether the model will flip (from behavioral data)
+  3. Confidence probe:  Predicts high-confidence vs low-confidence persona
+
+
+HOW ACTIVATION COLLECTION WORKS
+--------------------------------
+File: src/activations/collector.py
+
+For each of 200 conversations per model:
+  1. Build the chat prompt (Turn 1 + system prompt)
+  2. Pass it through the model via TransformerLens
+  3. Extract the residual stream activation at every layer
+  4. Take the activation at the LAST USER TOKEN position
+     (this is the representation the model uses to "decide" how to respond)
+
+Output shape: [200, n_layers, d_model]
+  e.g., for Llama: [200, 32, 4096] = 200 prompts x 32 layers x 4096 dimensions
+
+The "residual stream" (hook name: resid_post) is the main information highway
+in a transformer. After each layer's attention + MLP, the result is added back
+to this stream. By reading it at different layers, we see how the model
+progressively builds its representation.
+
+
+HOW PROBE TRAINING WORKS
+-------------------------
+File: src/probing/trainer.py
+
+For each model and each probe type, at each layer:
+  1. Extract activations at that layer: shape [200, d_model]
+  2. Create binary labels (e.g., 1 = high authority, 0 = low/none)
+  3. Split 80/20 train/test (stratified by label AND domain)
+  4. Fit sklearn LogisticRegression(C=1.0, solver='lbfgs', max_iter=1000)
+  5. Record test accuracy
+
+This gives us an accuracy curve across all layers. The "peak layer" is where
+the probe achieves highest accuracy -- this is where the model most clearly
+represents the feature we're looking for.
+
+Key parameters:
+  - C=1.0 (inverse regularization -- moderate regularization)
+  - solver='lbfgs' (efficient for small datasets)
+  - class_weight='balanced' if labels are imbalanced (<15% or >85% positive)
+  - Stratified splits ensure every fold has same label and domain distribution
+
+
+WHAT THE WEIGHT VECTOR MEANS
+-----------------------------
+The logistic regression produces a weight vector w of shape [d_model].
+For a 4096-dimensional model, this is a direction in 4096-dimensional space.
+
+Interpretation:
+  - The weight vector w points in the direction that maximally separates
+    high-authority from low-authority activations
+  - If you project any activation onto w (dot product), high values predict
+    "high authority" and low values predict "low authority"
+  - We normalize w to unit length: w = w / ||w||
+
+This normalized weight vector IS the "authority direction" we use for steering.
+
+Output file: outputs/probing/{model}/weight_vectors.pt
+Contains:
+  w_authority:          [n_layers, d_model] -- weight vector at every layer
+  w_sycophancy:         [n_layers, d_model]
+  w_confidence:         [n_layers, d_model]
+  peak_layer_authority:  int -- layer with highest probe accuracy
+  peak_layer_sycophancy: int
+  peak_layer_confidence: int
+
+
+PERMUTATION TESTS
+-----------------
+To verify probes are finding real signal (not noise):
+  1. Shuffle labels randomly (100 times)
+  2. Retrain probe on shuffled data
+  3. Compare: observed accuracy vs distribution of shuffled accuracies
+  4. p-value = fraction of shuffled that beat observed
+
+If p < 0.05, the probe is detecting a real feature, not fitting noise.
+We run this at the peak layer for each probe type.
+
+Output: outputs/probing/{model}/permutation_results.json
+
+
+CONFOUND PROBES
+---------------
+A potential objection: "Your authority probe just detects long prompts, not
+authority." To address this:
+  1. Train a prompt_length probe (predicts long vs short prompts)
+  2. Train an authority_keyword probe (detects surface keywords like "professor")
+  3. Compute cosine similarity between authority direction and confound directions
+  4. If cosine similarity is low, the authority direction is mechanistically
+     distinct from surface confounds
+
+Output: outputs/probing/{model}/confound_probe_summary.json
+
+
+DIRECTION ANALYSIS
+------------------
+File: src/directions/run.py
+
+Once we have weight vectors for all three probes (authority, sycophancy,
+confidence), we analyze their geometric relationships:
+
+  1. Cosine Similarity Matrix (3x3 per model):
+     How aligned are the three probe directions at their peak layers?
+     - High auth-syc cosine: authority and sycophancy share the same direction
+     - Low auth-syc cosine: they're independent features
+
+  2. Layer Trajectories:
+     Plot cos(w_authority, w_sycophancy) across all layers.
+     Shows how the relationship between these features evolves through the network.
+     Early layers: often unrelated (low cosine)
+     Middle layers: may converge (model starts linking authority to sycophancy)
+     Late layers: may diverge again
+
+  3. Subspace Decomposition (PCA):
+     Project all three directions into a shared 3D subspace.
+     Shows whether they're coplanar (2D structure) or span 3 dimensions.
+
+  4. Cross-Model Comparison:
+     Compare authority directions across models (e.g., Llama vs Mistral).
+     If cosine similarity is high, models develop similar internal representations
+     of authority despite different training.
+
+Output: outputs/directions/{model}/direction_analysis.json
+        outputs/directions/cross_model_comparison.json
+
+
+WHY THE PEAK LAYER MATTERS
+---------------------------
+We steer at the peak probe accuracy layer because:
+  - This is where the feature is most linearly separable
+  - The model's representation of "authority" is most distinct here
+  - Steering at this layer should have the strongest targeted effect
+
+For different models, peak layers differ:
+  - Llama (32 layers):  typically around layer 16 (middle)
+  - Gemma (48 layers):  typically around layer 24 (middle)
+  - Qwen (36 layers):   typically around layer 18 (middle)
+
+The "middle layers" pattern is consistent with the mechanistic interp
+literature -- features tend to be most linearly accessible in middle layers,
+before the model compresses them for output prediction.

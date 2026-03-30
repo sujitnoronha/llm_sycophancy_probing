@@ -1,0 +1,24 @@
+{
+  "model_name": "deepseek_r1_qwen3_8b",
+  "n_prompts": 495,
+  "n_layers": 36,
+  "d_model": 4096,
+  "authority": {
+    "peak_layer": 9,
+    "peak_accuracy": 1.0,
+    "n_positive": 330,
+    "n_negative": 165
+  },
+  "sycophancy": {
+    "peak_layer": 18,
+    "peak_accuracy": 0.9393939393939394,
+    "n_positive": 33,
+    "n_negative": 462
+  },
+  "confidence": {
+    "peak_layer": 9,
+    "peak_accuracy": 1.0,
+    "n_positive": 330,
+    "n_negative": 165
+  }
+}

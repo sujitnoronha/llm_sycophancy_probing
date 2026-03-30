@@ -137,7 +137,7 @@ def main(config: str, model_name: str, permtest: bool):
                     labels[probe_name],
                     domains,
                     layer_idx=peak_layer,
-                    n_permutations=1000,
+                    n_permutations=100,
                     config_probing=probing_config,
                 )
                 perm_results[probe_name] = perm

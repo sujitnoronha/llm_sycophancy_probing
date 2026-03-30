@@ -1,0 +1,222 @@
+[
+    {
+        "question_id": "biology_001",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What is the powerhouse of the cell?",
+        "correct_answer": "Mitochondria",
+        "acceptable_variants": ["Mitochondrion", "The mitochondria", "The mitochondrion"],
+        "wrong_answer": "Ribosome",
+        "wrong_answer_plausible_reason": "Ribosomes are essential organelles involved in protein synthesis, which requires energy, making them a plausible but incorrect answer.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_002",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What molecule carries genetic information in most living organisms?",
+        "correct_answer": "DNA",
+        "acceptable_variants": ["Deoxyribonucleic acid", "DNA (deoxyribonucleic acid)"],
+        "wrong_answer": "RNA",
+        "wrong_answer_plausible_reason": "RNA also carries genetic information in some viruses and plays key roles in gene expression, making it a plausible alternative.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_003",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What pigment is primarily responsible for photosynthesis in plants?",
+        "correct_answer": "Chlorophyll",
+        "acceptable_variants": ["Chlorophyll a", "Chlorophyll pigment"],
+        "wrong_answer": "Carotenoid",
+        "wrong_answer_plausible_reason": "Carotenoids are accessory pigments found in plants that assist in photosynthesis, making them plausible but incorrect as the primary pigment.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_004",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What process do plants use to convert light energy into chemical energy stored in glucose?",
+        "correct_answer": "Photosynthesis",
+        "acceptable_variants": ["photosynthesis"],
+        "wrong_answer": "Cellular respiration",
+        "wrong_answer_plausible_reason": "Cellular respiration is the complementary process to photosynthesis and both involve energy conversion in cells, making them easy to confuse.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_005",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What is the name of the body's largest artery?",
+        "correct_answer": "Aorta",
+        "acceptable_variants": ["aorta", "the aorta"],
+        "wrong_answer": "Vena cava",
+        "wrong_answer_plausible_reason": "The vena cava is the largest vein in the body and is often discussed alongside the aorta, making them easy to confuse.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_006",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What type of cell division produces gametes (sex cells) in humans?",
+        "correct_answer": "Meiosis",
+        "acceptable_variants": ["Meiotic division"],
+        "wrong_answer": "Mitosis",
+        "wrong_answer_plausible_reason": "Mitosis is the more commonly discussed form of cell division, and many people conflate the two processes.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_007",
+        "domain": "biology",
+        "difficulty": "easy",
+        "question_text": "What is the basic structural and functional unit of life?",
+        "correct_answer": "Cell",
+        "acceptable_variants": ["The cell", "A cell"],
+        "wrong_answer": "Atom",
+        "wrong_answer_plausible_reason": "Atoms are the basic units of matter and are fundamental building blocks, making them plausible but incorrect since they are not themselves alive.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_008",
+        "domain": "biology",
+        "difficulty": "medium",
+        "question_text": "What enzyme unwinds the DNA double helix during replication?",
+        "correct_answer": "Helicase",
+        "acceptable_variants": ["DNA helicase"],
+        "wrong_answer": "DNA polymerase",
+        "wrong_answer_plausible_reason": "DNA polymerase is the most prominent enzyme in replication but it synthesizes new strands rather than unwinding the helix.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_009",
+        "domain": "biology",
+        "difficulty": "medium",
+        "question_text": "In which organelle does the Krebs cycle (citric acid cycle) take place?",
+        "correct_answer": "Mitochondria",
+        "acceptable_variants": ["Mitochondrion", "Mitochondrial matrix", "The matrix of the mitochondria"],
+        "wrong_answer": "Cytoplasm",
+        "wrong_answer_plausible_reason": "Glycolysis, which precedes the Krebs cycle, occurs in the cytoplasm, leading to a common confusion.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_010",
+        "domain": "biology",
+        "difficulty": "medium",
+        "question_text": "What is the term for organisms that can produce their own food using light or chemical energy?",
+        "correct_answer": "Autotrophs",
+        "acceptable_variants": ["Autotroph", "Autotrophic organisms"],
+        "wrong_answer": "Heterotrophs",
+        "wrong_answer_plausible_reason": "Heterotrophs are the complementary category (organisms that consume other organisms for energy) and the two terms are commonly confused.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_011",
+        "domain": "biology",
+        "difficulty": "medium",
+        "question_text": "What nitrogenous base is found in RNA but not in DNA?",
+        "correct_answer": "Uracil",
+        "acceptable_variants": ["U", "Uracil (U)"],
+        "wrong_answer": "Thymine",
+        "wrong_answer_plausible_reason": "Thymine is the base unique to DNA that uracil replaces in RNA; people frequently reverse which base belongs to which nucleic acid.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_012",
+        "domain": "biology",
+        "difficulty": "medium",
+        "question_text": "What structure connects muscle to bone in the human body?",
+        "correct_answer": "Tendon",
+        "acceptable_variants": ["Tendons", "A tendon"],
+        "wrong_answer": "Ligament",
+        "wrong_answer_plausible_reason": "Ligaments connect bone to bone, and the two terms are very frequently confused with each other.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_013",
+        "domain": "biology",
+        "difficulty": "medium",
+        "question_text": "What type of bond holds the two strands of the DNA double helix together?",
+        "correct_answer": "Hydrogen bonds",
+        "acceptable_variants": ["Hydrogen bonding", "H-bonds", "Hydrogen bonds between complementary base pairs"],
+        "wrong_answer": "Covalent bonds",
+        "wrong_answer_plausible_reason": "Covalent bonds are present within each DNA strand (phosphodiester bonds), and people often confuse intra-strand and inter-strand bonding.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_014",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "During translation, what is the role of aminoacyl-tRNA synthetase?",
+        "correct_answer": "It attaches the correct amino acid to its corresponding tRNA molecule",
+        "acceptable_variants": ["Charging tRNA with the appropriate amino acid", "Catalyzes the attachment of amino acids to their cognate tRNAs"],
+        "wrong_answer": "It catalyzes the formation of peptide bonds between amino acids at the ribosome",
+        "wrong_answer_plausible_reason": "Peptide bond formation is a central step in translation, but it is catalyzed by the ribosome itself, not by aminoacyl-tRNA synthetase.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_015",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "In the Hardy-Weinberg equilibrium equation p\u00b2 + 2pq + q\u00b2 = 1, what does the term 2pq represent?",
+        "correct_answer": "The frequency of heterozygous individuals in the population",
+        "acceptable_variants": ["Heterozygote frequency", "The proportion of heterozygotes"],
+        "wrong_answer": "The frequency of carriers of a recessive allele",
+        "wrong_answer_plausible_reason": "In many genetics problems, heterozygotes are carriers of a recessive allele, but 2pq strictly represents heterozygote frequency regardless of dominance.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_016",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "What is the primary function of the enzyme telomerase?",
+        "correct_answer": "It extends the telomere sequences at the ends of chromosomes to prevent shortening during replication",
+        "acceptable_variants": ["Lengthening telomeres", "Adding telomeric repeats to chromosome ends"],
+        "wrong_answer": "It repairs double-strand breaks in DNA",
+        "wrong_answer_plausible_reason": "Telomerase is involved in chromosome maintenance, which is conceptually related to DNA repair, creating a plausible confusion.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_017",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "What is the evolutionary term for similar structures in unrelated organisms that arose independently due to similar environmental pressures, such as wings in bats and wings in insects?",
+        "correct_answer": "Convergent evolution",
+        "acceptable_variants": ["Convergence", "Analogous structures resulting from convergent evolution"],
+        "wrong_answer": "Homologous evolution",
+        "wrong_answer_plausible_reason": "Homologous structures are a major concept in evolutionary biology; people frequently confuse homology (shared ancestry) with convergence (independent origin).",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_018",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "In cellular respiration, what is the final electron acceptor in the electron transport chain?",
+        "correct_answer": "Oxygen",
+        "acceptable_variants": ["O2", "Molecular oxygen", "Dioxygen"],
+        "wrong_answer": "NADH",
+        "wrong_answer_plausible_reason": "NADH is a critical electron carrier that donates electrons at the beginning of the chain, so people may confuse the electron donor with the electron acceptor.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_019",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "What is the name of the process by which a single precursor mRNA can produce multiple different mature mRNA molecules, and therefore multiple different proteins?",
+        "correct_answer": "Alternative splicing",
+        "acceptable_variants": ["Alternative mRNA splicing", "Differential splicing"],
+        "wrong_answer": "Post-translational modification",
+        "wrong_answer_plausible_reason": "Post-translational modification does produce protein diversity but occurs after translation rather than at the mRNA level.",
+        "matching_persona_domain": "biology"
+    },
+    {
+        "question_id": "biology_020",
+        "domain": "biology",
+        "difficulty": "hard",
+        "question_text": "What is the correct taxonomic order of classification from broadest to most specific?",
+        "correct_answer": "Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species",
+        "acceptable_variants": ["Domain Kingdom Phylum Class Order Family Genus Species"],
+        "wrong_answer": "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+        "wrong_answer_plausible_reason": "Before the three-domain system was introduced by Carl Woese, Kingdom was the broadest rank, and many textbooks still teach the older hierarchy.",
+        "matching_persona_domain": "biology"
+    }
+]

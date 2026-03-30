@@ -1,0 +1,123 @@
+09 - COMPLETE STEERING RESULTS (ALL EXPERIMENTS)
+==================================================
+Note: These are heuristic flip rates (string matching). Final numbers
+will come from GPT-5 judge scoring and may differ.
+
+
+SINGLE-DIRECTION STEERING (authority direction only)
+-----------------------------------------------------
+Subtracts the authority probe direction from the residual stream.
+
+Model                  Alpha   High    Med    Low   Ctrl  Total
+---------------------------------------------------------------
+gemma3_12b               0.5   32.7%  36.5%  18.8%  27.1%  29.0%
+                         1.5   30.8%  26.9%  20.8%  20.8%  25.0%
+                         3.0   32.7%  36.5%  14.6%  27.1%  28.0%
+
+deepseek_r1_qwen3_8b    0.5   13.5%   9.6%   8.3%  12.5%  11.0%
+                         1.5   13.5%   7.7%   6.2%  12.5%  10.0%
+                         3.0   11.5%   3.8%  12.5%   8.3%   9.0%
+
+mistral_7b_v03           0.5    5.8%   1.9%  10.4%  14.6%   8.0%
+                         1.5    7.7%   7.7%  10.4%  12.5%   9.5%
+                         3.0   15.4%  13.5%  10.4%  12.5%  13.0%
+
+llama31_8b               0.5    1.9%   7.7%   4.2%   0.0%   3.5%
+                         1.5    5.8%   5.8%   2.1%   0.0%   3.5%
+                         3.0    3.8%   9.6%  10.4%  10.4%   8.5%
+
+qwen3_8b                 0.5    0.0%   3.8%   0.0%   4.2%   2.0%
+                         1.5    1.9%   0.0%   2.1%   0.0%   1.0%
+                         3.0    0.0%   0.0%   4.2%   2.1%   1.5%
+
+
+MULTI-DIRECTION STEERING (authority + sycophancy + confidence)
+--------------------------------------------------------------
+Subtracts all 3 probe directions simultaneously (summed, re-normalized).
+Tested only on models where single-direction failed.
+
+Model                  Alpha   High    Med    Low   Ctrl  Total
+---------------------------------------------------------------
+llama31_8b               1.5    3.8%   9.6%   6.2%   0.0%   5.0%
+qwen3_8b                 1.5    0.0%   5.8%   2.1%   2.1%   2.5%
+
+
+SINGLE vs MULTI COMPARISON (alpha=1.5)
+---------------------------------------
+llama31_8b:
+  Single-dir:  high=5.8%, total=3.5%
+  Multi-dir:   high=3.8%, total=5.0%  -> no improvement
+
+qwen3_8b:
+  Single-dir:  high=1.9%, total=1.0%
+  Multi-dir:   high=0.0%, total=2.5%  -> no improvement
+
+
+INTERPRETATION BY MODEL
+------------------------
+
+1. Gemma-3-12B (SFT, Google)
+   - Steering produces ~25-29% total flip rate across all alphas
+   - Effect saturates at alpha=0.5 (no benefit from stronger steering)
+   - BUT: high auth (32.7%) ~ control (27.1%) -- weak authority gradient
+   - Steering causes general behavioral shift, not authority-specific
+   - Most susceptible model overall
+
+2. DeepSeek-R1-Qwen3-8B (Reasoning distillation, DeepSeek)
+   - Moderate ~10% total flip rate, flat across alphas
+   - No authority gradient (high ~ control)
+   - Interesting: built on Qwen3 architecture but more susceptible than
+     base Qwen3 (10% vs 1.5%). Reasoning distillation may preserve
+     more localized features than GRPO alone.
+
+3. Mistral-7B-v0.3 (DPO, Mistral AI)
+   - ~8-13% total, increases with alpha (not saturating)
+   - No authority gradient -- control often HIGHER than high authority
+   - At alpha=3.0 the effect looks like general degradation
+
+4. Llama-3.1-8B (RLHF, Meta)
+   - Very low flip rate (3.5-8.5%)
+   - At alpha=3.0: control (10.4%) > high (3.8%) -- inverted pattern
+   - Clear evidence of general representation damage, not targeted steering
+   - Multi-direction (3 dirs) made no difference: 5.0% vs 3.5%
+
+5. Qwen-3-8B (GRPO, Alibaba)
+   - Nearly immune to steering (1-2% across everything)
+   - Most resistant model tested
+   - Multi-direction (3 dirs) made no difference: 2.5% vs 1.0%
+   - GRPO (Group Relative Policy Optimization) appears to distribute
+     features most thoroughly of all alignment methods tested
+
+
+KEY CONCLUSIONS
+----------------
+1. Probe detection != causal control
+   All models have above-chance probe accuracy, but only Gemma responds
+   to steering. Linear probes find correlations, not causal mechanisms.
+
+2. Post-training method predicts steerability
+   SFT (Gemma) > Distillation (DeepSeek) > DPO (Mistral) > RLHF (Llama) > GRPO (Qwen)
+   More alignment optimization = more distributed representations = less steerable.
+
+3. Multi-direction steering doesn't help
+   Adding sycophancy and confidence directions to authority didn't improve
+   results for Llama or Qwen. The feature distribution is beyond what
+   3 linear directions can capture.
+
+4. No model shows a clean authority gradient under steering
+   Even Gemma (the best case) has high~control. This suggests the
+   steering intervention is not specifically targeting authority-driven
+   sycophancy but rather disrupting a broader behavioral pattern.
+
+5. Strong steering causes general degradation, not targeted change
+   Llama at alpha=3.0 shows control flipping MORE than high authority.
+   This is a signature of representation damage, not causal intervention.
+
+
+WHAT THESE RESULTS NEED BEFORE PUBLICATION
+-------------------------------------------
+- GPT-5 judge scoring (current numbers are heuristic approximations)
+- Random baseline steering (proves direction specificity)
+- MMLU capability check (proves steering doesn't just break the model)
+- Confidence intervals on all numbers
+- Alpha=0 through the same HF pipeline as an unsteered control

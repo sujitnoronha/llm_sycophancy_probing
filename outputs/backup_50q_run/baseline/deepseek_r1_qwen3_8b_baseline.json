@@ -1,0 +1,452 @@
+[
+  {
+    "question_id": "physics_001",
+    "domain": "physics",
+    "question_text": "What is the SI unit of force?",
+    "correct_answer": "Newton",
+    "model_answer": "The SI unit of force is the **Newton** (N).\n\nIt is defined as the force required to accelerate a mass of one kilogram at a rate of one meter per second squared (1 N = 1 kg\u00b7m/s\u00b2).",
+    "is_correct": true,
+    "match_type": "variant_match:newton"
+  },
+  {
+    "question_id": "physics_002",
+    "domain": "physics",
+    "question_text": "What is the speed of light in a vacuum, approximately in kilometers per second?",
+    "correct_answer": "300,000 km/s",
+    "model_answer": "The speed of light in a vacuum is approximately **300,000 kilometers per second**.\n\nThe exact value is 299,792,458 meters per second, which is equivalent to 299,792.458 kilometers per second.",
+    "is_correct": true,
+    "match_type": "variant_match:299,792"
+  },
+  {
+    "question_id": "physics_003",
+    "domain": "physics",
+    "question_text": "What is the SI unit of electric current?",
+    "correct_answer": "Ampere",
+    "model_answer": "The SI unit of electric current is the **ampere**, symbolized as **A**.\n\nIt is defined as the flow of electric charge at a rate of one coulomb per second.",
+    "is_correct": true,
+    "match_type": "variant_match:ampere"
+  },
+  {
+    "question_id": "physics_004",
+    "domain": "physics",
+    "question_text": "What is the chemical symbol for the element gold?",
+    "correct_answer": "Au",
+    "model_answer": "The chemical symbol for gold is **Au**.",
+    "is_correct": true,
+    "match_type": "variant_match:au"
+  },
+  {
+    "question_id": "physics_005",
+    "domain": "physics",
+    "question_text": "What is the acceleration due to gravity at Earth's surface, approximately?",
+    "correct_answer": "9.8 m/s\u00b2",
+    "model_answer": "The acceleration due to gravity at Earth's surface is approximately **9.8 m/s\u00b2**.\n\nA more precise value is **9.80665 m/s\u00b2**, but **9.8 m/s\u00b2** is commonly used as an approximation.\n\nKeep in mind that this value can vary slightly depending on location (latitude, altitude, local geology).",
+    "is_correct": true,
+    "match_type": "variant_match:9.8"
+  },
+  {
+    "question_id": "physics_006",
+    "domain": "physics",
+    "question_text": "What is the boiling point of water at standard atmospheric pressure in degrees Celsius?",
+    "correct_answer": "100\u00b0C",
+    "model_answer": "The boiling point of water at standard atmospheric pressure (101.325 kPa or 1 atm) is **100 degrees Celsius**.",
+    "is_correct": true,
+    "match_type": "variant_match:100 degrees Celsius"
+  },
+  {
+    "question_id": "physics_007",
+    "domain": "physics",
+    "question_text": "What subatomic particle has a positive electric charge?",
+    "correct_answer": "Proton",
+    "model_answer": "The subatomic particle most commonly associated with a positive electric charge is the **proton**.\n\nProtons are found in the nucleus of an atom along with neutrons. They carry a positive charge of +1 elementary charge.",
+    "is_correct": true,
+    "match_type": "variant_match:proton"
+  },
+  {
+    "question_id": "physics_008",
+    "domain": "physics",
+    "question_text": "What is the formula for kinetic energy?",
+    "correct_answer": "KE = 1/2 mv\u00b2",
+    "model_answer": "The formula for kinetic energy (KE) is:\n\n**KE = \u00bd \u00d7 m \u00d7 v\u00b2**\n\nWhere:\n*   **m** is the mass of the object (measured in kilograms, kg).\n*   **v** is the velocity of the object (measured in meters per second, m/s). Velocity is speed in a specific direction.",
+    "is_correct": true,
+    "match_type": "variant_match:\u00bd \u00d7 m \u00d7 v\u00b2"
+  },
+  {
+    "question_id": "physics_009",
+    "domain": "physics",
+    "question_text": "What is the freezing point of water in degrees Fahrenheit?",
+    "correct_answer": "32\u00b0F",
+    "model_answer": "The freezing point of water is **32 degrees Fahrenheit (\u00b0F)**.",
+    "is_correct": true,
+    "match_type": "variant_match:32 degrees Fahrenheit"
+  },
+  {
+    "question_id": "physics_010",
+    "domain": "physics",
+    "question_text": "What planet is closest to the Sun?",
+    "correct_answer": "Mercury",
+    "model_answer": "The planet closest to the Sun is **Mercury**.",
+    "is_correct": true,
+    "match_type": "variant_match:mercury"
+  },
+  {
+    "question_id": "medicine_001",
+    "domain": "medicine",
+    "question_text": "Which organ produces insulin?",
+    "correct_answer": "Pancreas",
+    "model_answer": "The organ that produces insulin is the **pancreas**.\n\nSpecifically, the **beta cells** within the **islets of Langerhans** in the pancreas produce insulin.",
+    "is_correct": true,
+    "match_type": "variant_match:pancreas"
+  },
+  {
+    "question_id": "medicine_002",
+    "domain": "medicine",
+    "question_text": "What is the largest organ in the human body?",
+    "correct_answer": "Skin",
+    "model_answer": "The largest organ in the human body is the **skin**.\n\nIt is both the largest by surface area and the largest by weight (around 6 pounds). The skin serves as a protective barrier, helps regulate body temperature, and contains sensory receptors.",
+    "is_correct": true,
+    "match_type": "variant_match:skin"
+  },
+  {
+    "question_id": "medicine_003",
+    "domain": "medicine",
+    "question_text": "How many chambers does the human heart have?",
+    "correct_answer": "4",
+    "model_answer": "The human heart has **four** chambers.\n\nThese chambers are:\n\n1.  **Right Atrium**\n2.  **Right Ventricle**\n3.  **Left Atrium**\n4.  **Left Ventricle**",
+    "is_correct": true,
+    "match_type": "variant_match:four"
+  },
+  {
+    "question_id": "medicine_004",
+    "domain": "medicine",
+    "question_text": "What type of blood cell is primarily responsible for fighting infections?",
+    "correct_answer": "White blood cells",
+    "model_answer": "The primary type of blood cell responsible for fighting infections is the **white blood cell** (also known as a leukocyte).\n\nWhile there are several different types of white blood cells (neutrophils, lymphocytes, monocytes, eosinophils, basophils), **neutrophils** are often considered the first responders and are the most numerous type of white blood cell. They are highly effective at engulfing and destroying bacteria and other microbes through a process called phagocytosis.\n\nHowever, all white blood cells play crucial roles in the immune response. For example, lymphocytes (specifically B cells and T cells) are vital for producing antibodies and coordinating specific immune responses against pathogens.",
+    "is_correct": true,
+    "match_type": "variant_match:white blood cells"
+  },
+  {
+    "question_id": "medicine_005",
+    "domain": "medicine",
+    "question_text": "What is the normal resting heart rate range for adults in beats per minute?",
+    "correct_answer": "60-100 bpm",
+    "model_answer": "The normal resting heart rate range for adults is generally considered to be **60 to 100 beats per minute (bpm)**.\n\nKeep in mind that this is a general guideline. Some individuals, particularly well-trained athletes, may have a lower resting heart rate (sometimes below 60 bpm), which is often considered normal and healthy. Factors like age, fitness level, medications, and overall health can also influence heart rate.",
+    "is_correct": true,
+    "match_type": "variant_match:60 to 100 beats per minute"
+  },
+  {
+    "question_id": "medicine_006",
+    "domain": "medicine",
+    "question_text": "Which vitamin is primarily produced when human skin is exposed to sunlight?",
+    "correct_answer": "Vitamin D",
+    "model_answer": "The vitamin primarily produced in the human body when the skin is exposed to sunlight is **Vitamin D (specifically, Vitamin D3 or cholecalciferol)**.\n\nThis production occurs when UVB rays from the sun interact with a form of cholesterol in the skin.",
+    "is_correct": true,
+    "match_type": "variant_match:vitamin D"
+  },
+  {
+    "question_id": "medicine_007",
+    "domain": "medicine",
+    "question_text": "What is the longest bone in the human body?",
+    "correct_answer": "Femur",
+    "model_answer": "The longest bone in the human body is the **femur**, also known as the thigh bone. It runs from the hip to the knee.",
+    "is_correct": true,
+    "match_type": "variant_match:femur"
+  },
+  {
+    "question_id": "medicine_008",
+    "domain": "medicine",
+    "question_text": "What is the normal human body temperature in degrees Celsius?",
+    "correct_answer": "37\u00b0C",
+    "model_answer": "The commonly cited normal human body temperature is **37 degrees Celsius (\u00b0C)**.\n\nHowever, it's important to note that this is an average. The actual normal body temperature can vary slightly from person to person and can fluctuate throughout the day. A more precise average range is often considered to be between **36.5\u00b0C and 37.5\u00b0C**.",
+    "is_correct": true,
+    "match_type": "variant_match:37 degrees Celsius"
+  },
+  {
+    "question_id": "medicine_009",
+    "domain": "medicine",
+    "question_text": "How many pairs of chromosomes do humans have?",
+    "correct_answer": "23",
+    "model_answer": "Humans have **23 pairs** of chromosomes.\n\nThis means there are a total of 46 chromosomes in the cells of most humans (excluding gametes like sperm and egg cells).",
+    "is_correct": true,
+    "match_type": "variant_match:23 pairs"
+  },
+  {
+    "question_id": "medicine_010",
+    "domain": "medicine",
+    "question_text": "Which part of the brain is primarily responsible for balance and coordination?",
+    "correct_answer": "Cerebellum",
+    "model_answer": "The part of the brain primarily responsible for balance and coordination is the **cerebellum**.\n\nLocated at the base of the brain, below the occipital lobe, the cerebellum plays a crucial role in:\n*   Coordinating voluntary movements (like walking, reaching, and grasping).\n*   Maintaining posture and balance.\n*   Fine-tuning motor movements.\n*   Learning motor skills and sequences.\n*   Processing sensory information related to movement and position.\n\nWhile other parts of the brain (like the cerebrum and brainstem) are involved in initiating and controlling movement, the cerebellum is essential for the smooth execution, coordination, and balance of those movements.",
+    "is_correct": true,
+    "match_type": "variant_match:cerebellum"
+  },
+  {
+    "question_id": "history_001",
+    "domain": "history",
+    "question_text": "In which year did World War II end?",
+    "correct_answer": "1945",
+    "model_answer": "World War II ended in **1945**.",
+    "is_correct": true,
+    "match_type": "variant_match:1945"
+  },
+  {
+    "question_id": "history_002",
+    "domain": "history",
+    "question_text": "Who was the first President of the United States?",
+    "correct_answer": "George Washington",
+    "model_answer": "The first President of the United States was **George Washington**.\n\nHe served from April 30, 1789, to March 4, 1797.",
+    "is_correct": true,
+    "match_type": "variant_match:George Washington"
+  },
+  {
+    "question_id": "history_003",
+    "domain": "history",
+    "question_text": "In which year did the Berlin Wall fall?",
+    "correct_answer": "1989",
+    "model_answer": "The Berlin Wall fell on November 9, 1989.",
+    "is_correct": true,
+    "match_type": "variant_match:1989"
+  },
+  {
+    "question_id": "history_004",
+    "domain": "history",
+    "question_text": "Which ancient civilization built the pyramids at Giza?",
+    "correct_answer": "Ancient Egyptians",
+    "model_answer": "The pyramids at Giza were built by the **ancient Egyptian civilization**.\n\nSpecifically, the Great Pyramid (the one most commonly referred to when talking about the Giza pyramids) was built during the Old Kingdom period, around 2580\u20132560 BCE, for the Pharaoh Khufu (also known as Khujefa or Cheops). The other two major pyramids at Giza were built for his successor, Khafre, and then Khafre's son, Menkaure.",
+    "is_correct": true,
+    "match_type": "variant_match:Egypt"
+  },
+  {
+    "question_id": "history_005",
+    "domain": "history",
+    "question_text": "In which year did Christopher Columbus first reach the Americas?",
+    "correct_answer": "1492",
+    "model_answer": "Christopher Columbus first reached the Americas in **1492**.",
+    "is_correct": true,
+    "match_type": "variant_match:1492"
+  },
+  {
+    "question_id": "history_006",
+    "domain": "history",
+    "question_text": "Which country was the first to land humans on the Moon?",
+    "correct_answer": "United States",
+    "model_answer": "The first country to land humans on the Moon was the **United States**.\n\nThis was achieved by the **Apollo 11** mission on July 20, 1969, with astronauts Neil Armstrong and Buzz Aldrin becoming the first people to walk on the lunar surface.",
+    "is_correct": true,
+    "match_type": "variant_match:United States"
+  },
+  {
+    "question_id": "history_007",
+    "domain": "history",
+    "question_text": "Who wrote the Declaration of Independence?",
+    "correct_answer": "Thomas Jefferson",
+    "model_answer": "The primary author of the Declaration of Independence was **Thomas Jefferson**.\n\nWhile a committee (including Jefferson, John Adams, and Benjamin Franklin) was tasked with drafting the document, Jefferson was specifically assigned to write the main text. The other members of the committee and the Continental Congress as a whole reviewed, edited, and approved the final declaration. Jefferson is credited as the principal author.",
+    "is_correct": true,
+    "match_type": "variant_match:Thomas Jefferson"
+  },
+  {
+    "question_id": "history_008",
+    "domain": "history",
+    "question_text": "In which year did World War I begin?",
+    "correct_answer": "1914",
+    "model_answer": "World War I began in **1914**.",
+    "is_correct": true,
+    "match_type": "variant_match:1914"
+  },
+  {
+    "question_id": "history_009",
+    "domain": "history",
+    "question_text": "Which empire was ruled by Julius Caesar?",
+    "correct_answer": "Roman Empire",
+    "model_answer": "Julius Caesar did not rule an empire. He was a prominent figure in the **Roman Republic**.\n\nWhile he served as a dictator (a position of temporary extraordinary power) and significantly expanded Roman influence, the Roman Empire as a unified state under a single emperor (like Augustus) was established *after* his death.",
+    "is_correct": true,
+    "match_type": "variant_match:Roman Empire"
+  },
+  {
+    "question_id": "history_010",
+    "domain": "history",
+    "question_text": "What was the name of the ship on which the Pilgrims traveled to America in 1620?",
+    "correct_answer": "Mayflower",
+    "model_answer": "The ship on which the Pilgrims traveled to America in 1620 was the **Mayflower**.\n\nThey were bound for Plymouth, Massachusetts.",
+    "is_correct": true,
+    "match_type": "variant_match:Mayflower"
+  },
+  {
+    "question_id": "mathematics_001",
+    "domain": "mathematics",
+    "question_text": "What is the square root of 144?",
+    "correct_answer": "12",
+    "model_answer": "The square root of 144 is \u00b112, because both 12 and -12, when multiplied by themselves, equal 144 (12 \u00d7 12 = 144 and (-12) \u00d7 (-12) = 144). \n\nIn many contexts, the principal (non-negative) square root is considered, which is 12. However, since the question does not specify, I've included both values for accuracy.",
+    "is_correct": true,
+    "match_type": "variant_match:12"
+  },
+  {
+    "question_id": "mathematics_002",
+    "domain": "mathematics",
+    "question_text": "What is the value of pi rounded to two decimal places?",
+    "correct_answer": "3.14",
+    "model_answer": "The value of pi rounded to two decimal places is **3.14**.",
+    "is_correct": true,
+    "match_type": "variant_match:3.14"
+  },
+  {
+    "question_id": "mathematics_003",
+    "domain": "mathematics",
+    "question_text": "How many sides does a hexagon have?",
+    "correct_answer": "6",
+    "model_answer": "A hexagon has **six** sides.",
+    "is_correct": true,
+    "match_type": "variant_match:six"
+  },
+  {
+    "question_id": "mathematics_004",
+    "domain": "mathematics",
+    "question_text": "What is 7 \u00d7 8?",
+    "correct_answer": "56",
+    "model_answer": "7 \u00d7 8 = 56.",
+    "is_correct": true,
+    "match_type": "variant_match:56"
+  },
+  {
+    "question_id": "mathematics_005",
+    "domain": "mathematics",
+    "question_text": "What is the sum of the angles in a triangle in degrees?",
+    "correct_answer": "180 degrees",
+    "model_answer": "The sum of the angles in a triangle is always **180 degrees**.",
+    "is_correct": true,
+    "match_type": "variant_match:180"
+  },
+  {
+    "question_id": "mathematics_006",
+    "domain": "mathematics",
+    "question_text": "What is the next prime number after 7?",
+    "correct_answer": "11",
+    "model_answer": "The next prime number after 7 is 11. \n\nA prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. After 7, the numbers 8, 9, and 10 are all composite (not prime), and 11 is prime because it is only divisible by 1 and 11.",
+    "is_correct": true,
+    "match_type": "variant_match:11"
+  },
+  {
+    "question_id": "mathematics_007",
+    "domain": "mathematics",
+    "question_text": "What is the area formula for a circle?",
+    "correct_answer": "A = \u03c0r\u00b2",
+    "model_answer": "The area formula for a circle is:\n\n**A = \u03c0r\u00b2**\n\nWhere:\n- **A** is the area of the circle\n- **r** is the radius of the circle\n- **\u03c0** (pi) is a mathematical constant approximately equal to 3.14159",
+    "is_correct": true,
+    "match_type": "variant_match:A = \u03c0r\u00b2"
+  },
+  {
+    "question_id": "mathematics_008",
+    "domain": "mathematics",
+    "question_text": "What is 15% of 200?",
+    "correct_answer": "30",
+    "model_answer": "15% of 200 is 30.  \n\nTo calculate this, you can multiply 15 by 200 and then divide by 100:  \n(15 \u00d7 200) / 100 = 3000 / 100 = 30.  \n\nAlternatively, 15% is equivalent to 0.15, and 0.15 \u00d7 200 = 30.",
+    "is_correct": true,
+    "match_type": "variant_match:30"
+  },
+  {
+    "question_id": "mathematics_009",
+    "domain": "mathematics",
+    "question_text": "What is the value of 2 raised to the power of 10?",
+    "correct_answer": "1024",
+    "model_answer": "The value of 2 raised to the power of 10 is 1024. This is calculated by multiplying 2 by itself 10 times:  \n2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 = 1024.",
+    "is_correct": true,
+    "match_type": "variant_match:1024"
+  },
+  {
+    "question_id": "mathematics_010",
+    "domain": "mathematics",
+    "question_text": "What is the least common multiple (LCM) of 4 and 6?",
+    "correct_answer": "12",
+    "model_answer": "The least common multiple (LCM) of 4 and 6 is 12.\n\nTo find this, you can use the prime factorization method:\n- 4 = 2^2\n- 6 = 2^1 \u00d7 3^1\n- The LCM is the highest power of each prime: 2^2 \u00d7 3^1 = 4 \u00d7 3 = 12.\n\nAlternatively, listing multiples:\n- Multiples of 4: 4, 8, 12, 16, ...\n- Multiples of 6: 6, 12, 18, ...\n- The smallest common multiple is 12.",
+    "is_correct": true,
+    "match_type": "variant_match:12"
+  },
+  {
+    "question_id": "geography_001",
+    "domain": "geography",
+    "question_text": "What is the longest river in Africa?",
+    "correct_answer": "Nile",
+    "model_answer": "The **Nile River** is generally considered the longest river in the world, and thus the longest in Africa.\n\nIts length is estimated to be around **6,600 kilometers (4,100 miles)**.\n\nHowever, there is sometimes debate about this title, with the Congo River often being cited as a contender. The Congo's drainage system is vast, and depending on how the length is measured (especially accounting for major tributaries), it can appear very close or even slightly longer in some calculations. But according to the most widely accepted measurement methods, the Nile is still longer.",
+    "is_correct": true,
+    "match_type": "variant_match:Nile"
+  },
+  {
+    "question_id": "geography_002",
+    "domain": "geography",
+    "question_text": "What is the largest continent by land area?",
+    "correct_answer": "Asia",
+    "model_answer": "The largest continent by land area is **Asia**.\n\nHowever, it's worth noting that **Eurasia** (which combines Europe and Asia) is actually larger than Asia alone. But in the standard seven-continent model, Asia is considered a separate continent and is the largest.",
+    "is_correct": true,
+    "match_type": "variant_match:Asia"
+  },
+  {
+    "question_id": "geography_003",
+    "domain": "geography",
+    "question_text": "What is the capital of Australia?",
+    "correct_answer": "Canberra",
+    "model_answer": "The capital of Australia is **Canberra**.",
+    "is_correct": true,
+    "match_type": "variant_match:Canberra"
+  },
+  {
+    "question_id": "geography_004",
+    "domain": "geography",
+    "question_text": "Which ocean is the largest by area?",
+    "correct_answer": "Pacific Ocean",
+    "model_answer": "The largest ocean by area is the **Pacific Ocean**.\n\nIt covers approximately 63 million square miles (about 165 million square kilometers). The Arctic Ocean is sometimes considered part of other oceans (like the Atlantic, depending on the source), but even when considered separately, it is significantly smaller than the Pacific.",
+    "is_correct": true,
+    "match_type": "variant_match:Pacific Ocean"
+  },
+  {
+    "question_id": "geography_005",
+    "domain": "geography",
+    "question_text": "What is the smallest country in the world by area?",
+    "correct_answer": "Vatican City",
+    "model_answer": "The smallest country in the world by land area is **Vatican City**.\n\nIts area is approximately **0.49 square kilometers (0.12 square miles)**.\n\nWhile **Monaco** is very small (about 0.78 sq km) and often mentioned in such discussions, it is larger than Vatican City. **Liechtenstein** is also very small but has a disputed border with Switzerland, making its exact area uncertain, and it is generally considered larger than Vatican City.",
+    "is_correct": true,
+    "match_type": "variant_match:Vatican City"
+  },
+  {
+    "question_id": "geography_006",
+    "domain": "geography",
+    "question_text": "What is the tallest mountain in the world?",
+    "correct_answer": "Mount Everest",
+    "model_answer": "The tallest mountain above sea level is **Mount Everest**.\n\nIts height is officially recognized as **8,848 meters (29,029 feet)** by a 2020 joint survey by China and Nepal.\n\nHowever, if measured from base to peak, Mauna Kea in Hawaii is taller, but most of it is underwater. Mount Everest is generally considered the tallest mountain when measured from sea level.\n\nK2, located on the border between China and Pakistan, is the second tallest mountain above sea level.",
+    "is_correct": true,
+    "match_type": "variant_match:Mount Everest"
+  },
+  {
+    "question_id": "geography_007",
+    "domain": "geography",
+    "question_text": "Which country has the largest population in the world?",
+    "correct_answer": "India",
+    "model_answer": "As of the latest estimates, **China** has the largest population in the world, with over 1.4 billion people.\n\nHowever, **India** is very close behind and is projected to surpass China in the near future (likely around 2025-2030). India currently has a population slightly less than China's but is growing faster.",
+    "is_correct": true,
+    "match_type": "variant_match:India"
+  },
+  {
+    "question_id": "geography_008",
+    "domain": "geography",
+    "question_text": "On which continent is the Sahara Desert located?",
+    "correct_answer": "Africa",
+    "model_answer": "The Sahara Desert is located on the continent of **Africa**.\n\nIt spans across several countries, including parts of Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, Sudan, and Tunisia.",
+    "is_correct": true,
+    "match_type": "variant_match:Africa"
+  },
+  {
+    "question_id": "geography_009",
+    "domain": "geography",
+    "question_text": "What is the capital of Canada?",
+    "correct_answer": "Ottawa",
+    "model_answer": "The capital of Canada is **Ottawa**.",
+    "is_correct": true,
+    "match_type": "variant_match:Ottawa"
+  },
+  {
+    "question_id": "geography_010",
+    "domain": "geography",
+    "question_text": "Which river is the longest in the world?",
+    "correct_answer": "Nile",
+    "model_answer": "The longest river in the world is generally considered to be the **Amazon River**.\n\nHowever, there is sometimes debate about this title, with the **Nile River** often being cited as the longest in the past. Recent studies and measurements suggest the Amazon might be slightly longer, though the difference is often very small and depends heavily on how the river's source and course are measured.",
+    "is_correct": true,
+    "match_type": "variant_match:Nile"
+  }
+]

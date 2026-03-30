@@ -209,9 +209,13 @@ def train_all_probes_single_model(
             layer_results.append(result["metrics"])
             weight_vectors[layer_idx] = result["weight_vector"]
 
-        # Find peak accuracy layer
+        # Find peak accuracy layer, excluding early layers (first 25%)
+        # Early layers trivially decode surface features (e.g. token "professor")
+        # rather than meaningful internal representations
         accuracies = [r["accuracy"] for r in layer_results]
-        peak_layer = int(np.argmax(accuracies))
+        min_layer = n_layers // 4
+        upper_accuracies = np.array(accuracies[min_layer:])
+        peak_layer = int(min_layer + np.argmax(upper_accuracies))
         peak_accuracy = accuracies[peak_layer]
 
         results["probes"][probe_name] = {
@@ -225,7 +229,8 @@ def train_all_probes_single_model(
         }
 
         logger.info(
-            f"  {probe_name}: peak accuracy {peak_accuracy:.3f} at layer {peak_layer}"
+            f"  {probe_name}: peak accuracy {peak_accuracy:.3f} at layer {peak_layer} "
+            f"(searched layers {min_layer}-{n_layers-1})"
         )
 
     return results
@@ -385,7 +390,9 @@ def train_confound_probes(
             weight_vectors[layer_idx] = result["weight_vector"]
 
         accuracies = [r["accuracy"] for r in layer_results]
-        peak_layer = int(np.argmax(accuracies))
+        min_layer = n_layers // 4
+        upper_accuracies = np.array(accuracies[min_layer:])
+        peak_layer = int(min_layer + np.argmax(upper_accuracies))
 
         results[confound_name] = {
             "layer_results": layer_results,
@@ -398,7 +405,7 @@ def train_confound_probes(
 
         logger.info(
             f"  Confound '{confound_name}': peak accuracy {accuracies[peak_layer]:.3f} "
-            f"at layer {peak_layer}"
+            f"at layer {peak_layer} (searched layers {min_layer}-{n_layers-1})"
         )
 
     return results

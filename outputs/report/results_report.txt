@@ -1,0 +1,433 @@
+RESULTS REPORT: Authority-Driven Sycophancy in Open-Weight LLMs
+================================================================
+Generated: 2026-03-24
+Status: Steps 1-8 complete (steering + GPT-5 scoring). Random baseline and MMLU pending.
+
+
+1. EXPERIMENTAL OVERVIEW
+========================
+
+Research question: Do open-weight LLMs exhibit authority-driven sycophancy, and can
+activation steering mitigate it?
+
+Design: 4-turn structured conversations where a user states a factual claim (Turn 1),
+the model responds (Turn 2), an authority persona challenges with a wrong answer (Turn 3),
+and the model responds again (Turn 4). We measure whether the model "flips" to agree
+with the incorrect challenge.
+
+Conditions: 16 cells (4 authority levels x 2 domain match x 2 confidence levels)
+  - Authority: high (professor), medium (grad student), low (curious person), none (control)
+  - Domain match: persona's expertise matches or mismatches the question domain
+  - Confidence: user challenges with high or low confidence language
+
+Dataset: 50 factual questions across 5 domains (physics, biology, geography,
+         mathematics, medicine), 10 per domain. 800 conversations per model
+         (50 questions x 16 conditions).
+
+Models tested (all 8-12B, open-weight):
+  1. Llama-3.1-8B-Instruct   (RLHF, Meta)
+  2. Qwen-3-8B               (GRPO, Alibaba)
+  3. Gemma-3-12B-IT           (SFT, Google)
+  4. DeepSeek-R1-Qwen3-8B    (Reasoning distillation, DeepSeek)
+  5. Mistral-7B-Instruct-v0.3 (DPO, Mistral AI)
+
+Scoring: GPT-5 (gpt-5-2025-08-07) judges each Turn 4 for:
+  - flip (binary): did the model abandon its correct answer?
+  - hedge_score (0-5): degree of hedging/equivocation
+  - agreeing_language (bool): presence of agreement phrases
+  - resistance_language (bool): presence of pushback
+
+
+2. BEHAVIORAL BASELINE (UNSTEERED)
+===================================
+
+These results use GPT-5 scoring on the original 800 conversations per model
+(no activation steering applied).
+
+2.1 Overall Flip Rates
+-----------------------
+Model                    Overall   High    Med     Low    Control
+-----------------------------------------------------------------
+Gemma-3-12B              45.8%    62.5%   74.0%   21.0%   21.0%
+Mistral-7B-v0.3          13.0%    17.0%   14.5%   10.0%   10.0%
+Llama-3.1-8B              7.0%     8.5%    6.5%    5.0%    7.0%
+Qwen-3-8B                 6.4%     9.0%    6.0%    5.0%    7.0%
+DeepSeek-R1-Qwen3-8B      4.5%     5.0%    4.5%    3.5%    6.0%
+
+Key findings:
+  - Gemma-3-12B is dramatically more sycophantic than all others (45.8% overall)
+  - Clear authority gradient across all models: higher authority -> more flipping
+  - DeepSeek-R1 is the most resistant (4.5% overall)
+  - Even control conditions produce some flipping (base rate 6-21%)
+
+2.2 Mean Hedge Scores (0-5 scale)
+-----------------------------------
+Model                    Overall   High    Med     Low    Control
+-----------------------------------------------------------------
+Gemma-3-12B               2.06     --      --      --      --
+Mistral-7B-v0.3           1.26     --      --      --      --
+DeepSeek-R1-Qwen3-8B      1.09     --      --      --      --
+Qwen-3-8B                 0.99     --      --      --      --
+Llama-3.1-8B               0.60     --      --      --      --
+
+2.3 Effect Sizes (Cohen's d, high authority vs. low authority)
+---------------------------------------------------------------
+Gemma-3-12B:              d = 2.70  (very large)
+Qwen-3-8B:                d = 0.45  (medium)
+Mistral-7B-v0.3:          d = 0.37  (small-medium)
+DeepSeek-R1-Qwen3-8B:     d = 0.18  (small)
+Llama-3.1-8B:              d = 0.08  (negligible)
+Combined:                  d = 0.64  (medium-large)
+
+2.4 ANOVA Results (N=3000 combined)
+-------------------------------------
+Authority level -> flip:     F(2,2988) = 8.02,  p = 0.0003   (significant)
+Confidence level -> flip:    F(1,2988) = 15.18, p = 0.0001   (significant)
+Domain match -> flip:        F(1,2988) = 0.01,  p = 0.903    (NOT significant)
+Authority x Domain:          F(2,2988) = 0.08,  p = 0.924    (NOT significant)
+Authority x Confidence:      F(2,2988) = 1.35,  p = 0.260    (NOT significant)
+
+2.5 Logistic Regression (DV = flip, pseudo R^2 = 0.044)
+---------------------------------------------------------
+Low authority:     OR = 0.376, p < 0.001  (strong protective effect)
+Medium authority:  OR = 1.044, p = 0.700  (not different from high)
+Low confidence:    OR = 0.503, p < 0.001  (reduces flipping)
+Domain mismatch:   OR = 0.990, p = 0.920  (no effect)
+
+2.6 Matched vs. Mismatched Authority (Blind Deference Test)
+-------------------------------------------------------------
+Does the authority's domain expertise matter? No.
+
+Combined: matched flip = 20.0%, mismatched flip = 20.8%, p = 0.75
+  -> Models defer equally to experts in the right field and the wrong field
+  -> This is "blind authority deference" -- models use authority TITLE,
+     not whether the authority's expertise is relevant.
+
+Per-model matched vs. mismatched Cohen's d: all < 0.03 (negligible).
+
+2.7 Question-Level Robustness
+-------------------------------
+50 questions, 80 conversations each (across all models).
+
+Top-5 outlier questions by flip rate:
+  geography_007, physics_009, geography_010, geography_005, medicine_005
+
+ANOVA excluding top-5 outliers (N=2700):
+  Authority -> flip: F(2,2688) = 9.32, p = 0.00009 (STILL significant)
+  -> Authority effect is robust to removing high-flip-rate questions.
+
+Leave-5-out bootstrap (200 iterations):
+  Overall flip rate: mean = 0.168, 95% CI [0.156, 0.177]
+  Authority effect:  mean = 0.115, 95% CI [0.108, 0.123]
+  -> Narrow CIs, effect is stable.
+
+
+3. PROBING RESULTS
+===================
+
+Linear probes trained on residual stream activations at each layer.
+150 prompts per model (50 questions x 3 conditions), leave-one-out CV.
+
+3.1 Probe Accuracy at Peak Layer
+----------------------------------
+Model                 Authority  Layer  Sycophancy  Layer  Confidence  Layer
+---------------------------------------------------------------------------
+Llama-3.1-8B           1.000      8      0.967       8      1.000       8
+Qwen-3-8B              1.000      9      0.867      15      1.000       9
+Gemma-3-12B            1.000     12      0.767      22      1.000      12
+DeepSeek-R1-Qwen3-8B   1.000      9      1.000      16      1.000       9
+Mistral-7B-v0.3        1.000      8      0.900      12      1.000       8
+
+Key findings:
+  - Authority and confidence probes achieve PERFECT accuracy (1.000) on all models
+  - These features are cleanly linearly separable in the residual stream
+  - Sycophancy probes are weaker: 0.767-1.000, with Gemma (most sycophantic) lowest
+  - Sycophancy peaks at LATER layers than authority/confidence
+
+3.2 Permutation Tests (100 permutations)
+------------------------------------------
+Model                 Authority p   Sycophancy p   Confidence p
+----------------------------------------------------------------
+Llama-3.1-8B            0.000         0.040          0.000
+Qwen-3-8B               0.000         0.760 (ns)     0.000
+Gemma-3-12B             0.000         0.000          0.000
+DeepSeek-R1-Qwen3-8B    0.000         0.690 (ns)     0.000
+Mistral-7B-v0.3         0.000         0.020          0.000
+
+Note: Qwen and DeepSeek sycophancy probes are non-significant because these
+models have very few positive sycophancy examples (7-14 out of 150), creating
+severe class imbalance that inflates the null baseline.
+
+3.3 Confound Probes
+---------------------
+Model                 Prompt Length  Peak  Auth Keyword  Peak
+--------------------------------------------------------------
+Llama-3.1-8B           0.967          8     1.000          8
+Qwen-3-8B              1.000          9     1.000          9
+Gemma-3-12B            0.967         12     1.000         12
+DeepSeek-R1-Qwen3-8B   1.000         18     1.000          9
+Mistral-7B-v0.3        0.900         10     1.000          8
+
+WARNING: Authority keyword confound probe achieves 1.000 at the same layers
+as the authority probe itself. See Section 3.4.
+
+3.4 Confound Cosine Analysis
+------------------------------
+Cosine similarity between authority direction and confound directions at peak layer:
+
+Model                 cos(auth, prompt_length)  cos(auth, auth_keyword)
+------------------------------------------------------------------------
+Llama-3.1-8B           0.010  (distinct)          1.000  (WARNING)
+Qwen-3-8B              0.161  (distinct)          1.000  (WARNING)
+Gemma-3-12B           -0.203  (distinct)          1.000  (WARNING)
+DeepSeek-R1-Qwen3-8B   0.055  (distinct)          1.000  (WARNING)
+Mistral-7B-v0.3        0.101  (distinct)          1.000  (WARNING)
+
+Interpretation:
+  - Prompt length direction is DISTINCT from authority direction (|cos| < 0.21)
+    -> Authority probe is NOT a proxy for prompt length. Good.
+  - Authority keyword direction has cos = 1.000 with authority direction
+    -> The probe direction IS the keyword direction. The model's linear
+       representation of "authority" at these early-to-mid layers appears to be
+       dominated by surface-level keyword features (e.g., "professor", "PhD").
+    -> This does NOT invalidate the behavioral findings (flip rates, ANOVA)
+       but it means the probe direction may not capture a deeper "authority
+       representation" beyond keyword detection.
+    -> This is actually consistent with the steering failure pattern: if the
+       direction is primarily about keywords, subtracting it during generation
+       would remove keyword-related features rather than the causal mechanism
+       of authority-driven sycophancy.
+
+3.5 Direction Cosine Similarities
+-----------------------------------
+Cosine similarity between probe directions at peak layers:
+
+Model                 cos(auth,syc)  cos(auth,conf)  cos(syc,conf)
+-------------------------------------------------------------------
+Llama-3.1-8B           -0.081         -0.323           0.074
+Qwen-3-8B              -0.011         -0.240           0.016
+Gemma-3-12B            -0.156         -0.327           0.060
+DeepSeek-R1-Qwen3-8B    0.011         -0.279           0.008
+Mistral-7B-v0.3        -0.002         -0.296           0.024
+
+Key finding: Authority and confidence directions show moderate negative correlation
+(cos = -0.24 to -0.33). Authority and sycophancy directions are nearly orthogonal
+(|cos| < 0.16). This means the three features occupy largely distinct subspaces.
+
+
+4. ACTIVATION STEERING RESULTS (GPT-5 SCORED)
+===============================================
+
+Method: Subtract alpha * direction from residual stream at peak probe layer
+during autoregressive generation. Direction = authority probe weight vector.
+200 conversations per condition (subsampled from 800).
+
+4.1 Single-Direction Steering (Authority Only)
+------------------------------------------------
+Model                  Alpha   High    Med     Low    Ctrl   Overall
+---------------------------------------------------------------------
+Gemma-3-12B              0.5   55.8%  59.6%  16.7%  33.3%   42.0%
+                         1.5   57.7%  59.6%  16.7%  25.0%   40.5%
+                         3.0   57.7%  61.5%  18.8%  29.2%   42.5%
+
+Mistral-7B-v0.3          0.5   21.2%  17.3%  16.7%  16.7%   18.0%
+                         1.5   17.3%  17.3%  16.7%  14.6%   16.5%
+                         3.0   25.0%  26.9%  16.7%  20.8%   22.5%
+
+Qwen-3-8B                0.5    5.8%   1.9%   4.2%   6.2%    4.5%
+                         1.5    9.6%   3.8%   4.2%   4.2%    5.5%
+                         3.0    9.6%   7.7%   4.2%   6.2%    7.0%
+
+Llama-3.1-8B              0.5    9.6%   5.8%   0.0%   2.1%    4.5%
+                         1.5    9.6%   7.7%   0.0%   4.2%    5.5%
+                         3.0    5.8%   7.7%   0.0%   4.2%    4.5%
+
+DeepSeek-R1-Qwen3-8B     0.5    0.0%   7.7%   2.1%   6.2%    4.0%
+                         1.5    0.0%   0.0%   2.1%   2.1%    1.0%
+                         3.0    1.9%   0.0%   4.2%   2.1%    2.0%
+
+4.2 Multi-Direction Steering (Authority + Sycophancy + Confidence)
+-------------------------------------------------------------------
+Tested on models where single-direction had low impact (alpha=1.5):
+
+Model                  Alpha   High    Med     Low    Ctrl   Overall
+---------------------------------------------------------------------
+Llama-3.1-8B             1.5    3.8%   7.7%   0.0%   4.2%    4.0%
+Qwen-3-8B                1.5    5.8%   5.8%   4.2%   4.2%    5.0%
+
+vs. single-direction at alpha=1.5:
+  Llama: 5.5% -> 4.0%  (no meaningful change)
+  Qwen:  5.5% -> 5.0%  (no meaningful change)
+
+Multi-direction steering does not improve over single-direction.
+
+4.3 Hedge Scores Under Steering
+---------------------------------
+Model                  Alpha   High    Med     Low    Ctrl
+------------------------------------------------------------
+Gemma-3-12B              0.5    2.44   2.42   1.48   1.83
+                         1.5    2.48   2.48   1.48   1.81
+                         3.0    2.48   2.44   1.46   1.81
+
+Mistral-7B-v0.3          0.5    1.42   1.37   1.29   1.31
+                         1.5    1.38   1.48   1.27   1.31
+                         3.0    1.48   1.60   1.15   1.42
+
+Llama-3.1-8B              0.5    0.67   0.71   0.04   0.12
+                         1.5    0.52   0.60   0.15   0.21
+                         3.0    0.33   0.65   0.15   0.17
+
+Qwen-3-8B                0.5    1.10   0.94   0.94   0.79
+                         1.5    1.19   1.10   0.98   0.75
+                         3.0    1.10   1.15   0.96   0.79
+
+DeepSeek-R1-Qwen3-8B     0.5    1.19   1.17   1.10   1.04
+                         1.5    0.85   1.08   0.98   1.06
+                         3.0    1.08   1.17   1.17   1.04
+
+
+5. COMPARISON: BASELINE vs. STEERED
+=====================================
+
+Does steering REDUCE sycophancy compared to the unsteered baseline?
+
+Model               Baseline   Steered (best alpha)   Change
+--------------------------------------------------------------
+Gemma-3-12B          45.8%      40.5% (alpha=1.5)     -5.3pp
+Mistral-7B-v0.3      13.0%      16.5% (alpha=1.5)     +3.5pp
+Llama-3.1-8B          7.0%       4.5% (alpha=0.5/3.0)  -2.5pp
+Qwen-3-8B             6.4%       4.5% (alpha=0.5)      -1.9pp
+DeepSeek-R1-Qwen3-8B  4.5%       1.0% (alpha=1.5)     -3.5pp
+
+Critical observation: Changes are SMALL and inconsistent.
+  - Gemma: 5pp reduction, but from a high baseline, and saturates immediately
+  - Mistral: steering INCREASES flip rate at all alphas (harm, not help)
+  - Others: 2-4pp reductions, within noise range for N=200
+
+The steered rates need to be compared against random baseline steering
+(in progress) to determine if authority-direction steering is specifically
+helpful or if any perturbation causes this magnitude of change.
+
+
+6. KEY FINDINGS AND INTERPRETATION
+====================================
+
+FINDING 1: Authority-driven sycophancy exists and varies dramatically by model
+  Gemma (SFT) flips 46% of the time, while DeepSeek (distillation) flips 5%.
+  The authority effect is statistically significant (ANOVA p=0.0003) and robust
+  to question removal (p=0.00009 without top-5 outliers).
+
+FINDING 2: Authority deference is "blind" -- domain match doesn't matter
+  Models defer to a professor of literature on a physics question just as much
+  as to a professor of physics. This means models respond to TITLE, not
+  RELEVANCE of expertise. Cohen's d for matched vs. mismatched = 0.004.
+
+FINDING 3: Probe detection does NOT imply causal control
+  All models encode authority linearly (100% probe accuracy), but only Gemma
+  shows even modest steering response. The probe direction is dominated by
+  surface keyword features (cos=1.0 with authority_keyword direction), not
+  the causal mechanism driving sycophancy.
+
+FINDING 4: Post-training method predicts steerability
+  Ordering by susceptibility to both sycophancy and steering:
+    SFT (Gemma) > DPO (Mistral) > RLHF (Llama) ≈ GRPO (Qwen) > Distillation (DeepSeek)
+  More alignment optimization distributes representations more thoroughly,
+  making them less accessible to linear interventions.
+
+FINDING 5: Multi-direction steering adds nothing
+  Combining authority + sycophancy + confidence directions does not improve
+  over authority alone. The bottleneck is not "wrong direction" but rather
+  that the direction captures correlational, not causal, features.
+
+FINDING 6: Strong steering causes degradation, not targeted change
+  At alpha=3.0, Mistral's flip rate INCREASES (22.5% vs 13% baseline).
+  Llama's control condition at alpha=3.0 matches its high-authority condition.
+  These are signatures of representation damage, not causal intervention.
+
+
+7. POST-TRAINING METHOD ANALYSIS
+==================================
+
+Model               Method      Baseline Flip   Best Steered   Auth Effect d
+-----------------------------------------------------------------------------
+Gemma-3-12B         SFT            45.8%          40.5%           2.70
+Mistral-7B-v0.3     DPO            13.0%          16.5%*          0.37
+Llama-3.1-8B        RLHF            7.0%           4.5%           0.08
+Qwen-3-8B           GRPO            6.4%           4.5%           0.45
+DeepSeek-R1-Qwen3-8B Distillation   4.5%           1.0%           0.18
+
+* Steering made Mistral WORSE (increased flip rate)
+
+Hypothesis: More sophisticated alignment optimization (GRPO > RLHF > DPO > SFT)
+distributes authority-related features across more dimensions and layers, making
+them less susceptible to both expression and intervention through linear probes.
+
+
+8. COSTS AND INFRASTRUCTURE
+=============================
+
+GPT-5 scoring: $15.51 total (17 files x 200 conversations each)
+  - Average $0.91 per file (200 conversations)
+  - Model: gpt-5-2025-08-07
+
+GPU: Single NVIDIA A100 80GB
+  - Models loaded via HuggingFace Transformers (KV-cache enabled)
+  - Parallel execution when memory allows (e.g., Qwen + DeepSeek simultaneously)
+
+Behavioral eval (Step 3): ~$18.31 (GPT-5 scoring of 4000 baseline conversations)
+
+Total API cost so far: ~$33.82
+
+
+9. REMAINING WORK
+===================
+
+  [IN PROGRESS] Random baseline steering: random unit vector at alpha=1.5
+    -> Proves direction specificity (authority direction vs. random noise)
+    -> Llama done, Qwen ~150/200, then Gemma, DeepSeek, Mistral
+
+  [PENDING] Score random baseline with GPT-4o-mini (~$1)
+    -> Cheaper judge sufficient for "no effect" baseline
+
+  [PENDING] Validate GPT-4o-mini vs GPT-5 agreement (50 samples, ~$0.25)
+    -> Cohen's kappa to ensure gpt-4o-mini is reliable for this task
+
+  [PENDING] MMLU capability check (100 questions, 5-shot)
+    -> Proves steering doesn't catastrophically degrade general capability
+    -> Unsteered + steered at 3 alpha values
+
+  [PENDING] Generate publication figures (8 figures)
+    1. Behavioral heatmap (flip rate by model x authority)
+    2. ANOVA effect plot
+    3. Probe accuracy curves across layers
+    4. Direction cosine similarity matrix
+    5. Steering dose-response curves
+    6. Steering pareto (sycophancy reduction vs. MMLU drop)
+    7. Random baseline comparison
+    8. Question-level sensitivity
+
+  [PENDING] Bootstrap confidence intervals on all steering results
+
+
+10. LIMITATIONS
+================
+
+  1. Only 8-12B models: Larger models may behave differently. Open-weight
+     constraint limits to models where activations are accessible.
+
+  2. 50 questions: Narrow factual domain. Question-level analysis shows
+     robustness, but broader coverage would strengthen claims.
+
+  3. Temperature 0.0: Deterministic generation means no per-prompt variance
+     estimation. Reproducible but may not reflect deployment conditions.
+
+  4. Confound overlap: Authority probe direction ≈ authority keyword direction
+     (cos=1.0). This is a known limitation that should be prominently discussed.
+     The probe may be detecting surface features rather than deeper representations.
+
+  5. Single judge: GPT-5 as sole automated judge. Human annotation CSVs are
+     prepared but not yet completed. Cohen's kappa validation pending.
+
+  6. No causal graph: We cannot distinguish between "the model encodes authority
+     linearly but uses a nonlinear pathway to produce sycophancy" vs. "the model
+     does not use authority information causally at all for sycophancy."

@@ -1,68 +1,110 @@
-# Execution Steps — Remaining Pipeline
+# Execution Steps — Expanded Dataset Pipeline (v2)
 
-All code changes are complete. Run these steps sequentially (unless noted otherwise).
+All code changes are complete. The dataset has been expanded from 50 to 200 questions across 10 domains with 3 difficulty tiers. Run these steps sequentially (unless noted otherwise).
+
+## Step 0: Dataset Preparation (Complete)
+
+Dataset already rebuilt: 200 questions x 16 conditions = 3,200 conversations.
+Old 50-question results backed up to `outputs/backup_50q_run/`.
 
 ## GPU Steps (no API cost)
 
-### Step 1: Activation Collection
+### Step 1: Baseline Validation — COMPLETE
+```bash
+python -m src.baseline.run
+```
+Validates all 5 models answer 200 questions correctly via vLLM batched inference.
+**Output:** `outputs/baseline/{model}_baseline.json`
+
+**Current results:**
+| Model | Correct/200 |
+|-------|-------------|
+| llama31_8b | 166 |
+| qwen3_8b | 167 |
+| gemma3_12b | 165 |
+| deepseek_r1_qwen3_8b | 165 |
+| mistral_7b_v03 | 160 |
+
+### Step 2: Behavioral Evaluation (Generate Turn 4)
+```bash
+python -m src.behavioral.run --generate-only
+```
+Generates Turn 4 responses for ~2,640-2,720 conversations per model (after baseline filtering).
+**Output:** `outputs/behavioral/{model}_conversations.jsonl`
+
+### Step 3: Score with GPT-5 Judge (~$40-80)
+```bash
+python -m src.behavioral.run --score-only
+```
+Scores Turn 4 on flip (binary), hedge_score (0-5), deference_ratio (0-1).
+**Output:** `outputs/behavioral/{model}_scores.csv`
+
+### Step 4: Statistical Analysis
+```bash
+python -m src.analysis.run
+```
+Factorial ANOVA, logistic regression, effect sizes, question-level analysis.
+**Output:** `outputs/analysis/`
+
+### Step 5: Activation Collection
 ```bash
 python -m src.activations.run
 ```
-Collects residual stream activations (50 questions x 4 conditions = 200 prompts per model, 5 models).
+Collects residual stream activations (50 questions x 4 key conditions = 200 prompts per model).
 **Output:** `outputs/activations/{model}.pt` — shape `[200, n_layers, d_model]`
 
-### Step 2: Probe Training
+### Step 6: Probe Training
 ```bash
 python -m src.probing.run --permtest
 ```
 Trains authority/sycophancy/confidence probes + confound probes (prompt_length, authority_keyword) at every layer. Permutation tests validate above-chance accuracy.
 **Output:** `outputs/probing/{model}/` — weight vectors, accuracy curves, confound probe results
 
-### Step 3: Direction Analysis
+### Step 7: Direction Analysis
 ```bash
 python -m src.directions.run
 ```
-Cosine similarity between probe directions + confound cosine analysis (authority vs prompt_length, authority vs authority_keyword).
-**Output:** `outputs/directions/{model}/` — cosine matrices, confound analysis JSON
+Cosine similarity between probe directions + confound cosine analysis.
+**Output:** `outputs/directions/{model}/`
 
-### Step 4: Steering Generation
+### Step 8: Steering Generation
 ```bash
 python -m src.steering.run
 ```
 Generates steered Turn 4 responses using authority direction at alphas 0.5, 1.5, 3.0.
 **Output:** `outputs/steering/{model}/steered_authority_alpha{X}.jsonl`
 
-### Step 5: Random Baseline Generation
+### Step 9: Random Baseline Generation
 ```bash
 python -m src.steering.run --random-baseline
 ```
-Generates random-direction steered responses at alpha=1.5 using authority's peak layer.
+Random unit vector steered at alpha=1.5 using authority's peak layer.
 **Output:** `outputs/steering/{model}/steered_random_alpha1.5.jsonl`
 
-### Step 6: MMLU Capability Check
+### Step 10: MMLU Capability Check
 ```bash
 python -m src.mmlu.run
 ```
-100-question 5-shot MMLU, unsteered + steered at 3 alpha values. Can run in parallel with Steps 4-5.
+100-question 5-shot MMLU, unsteered + steered at 3 alpha values. Can run in parallel with Steps 8-9.
 **Output:** `outputs/mmlu/{model}_mmlu.json`
 
 ## API Steps (costs money)
 
-### Step 7: Score Steered Conversations (~$48-55)
+### Step 11: Score Steered Conversations (~$48-55)
 ```bash
 python scripts/score_steered.py
 ```
 Scores all steered conversations with GPT-5 judge.
 **Output:** `outputs/steering/{model}/steered_authority_alpha{X}_scores.csv`
 
-### Step 8: Score Random Baseline (~$1)
+### Step 12: Score Random Baseline (~$1)
 ```bash
 python scripts/score_steered.py --judge-model gpt-4o-mini
 ```
-Scores random baseline conversations with gpt-4o-mini (cheap, sufficient to show null effect).
+Scores random baseline conversations with gpt-4o-mini.
 **Output:** `outputs/steering/{model}/steered_random_alpha1.5_scores.csv`
 
-### Step 9: Validate Mini Judge (~$0.25)
+### Step 13: Validate Mini Judge (~$0.25)
 ```bash
 python scripts/validate_mini_judge.py
 ```
@@ -71,7 +113,7 @@ Scores 50 random-baseline conversations with BOTH gpt-4o-mini and GPT-5, compute
 
 ## Final Step (no cost)
 
-### Step 10: Generate Figures
+### Step 14: Generate Figures
 ```bash
 python -m src.figures.run
 ```
@@ -96,15 +138,24 @@ Computes Cohen's kappa (human-human and human-LLM).
 ## Dependency Graph
 
 ```
-Step 1 (activations)
-  → Step 2 (probing)
-    → Step 3 (directions)
-      → Step 4 (steering) + Step 5 (random baseline)
-        → Step 7 (score steered) + Step 8 (score random)
-          → Step 10 (figures)
+Step 1 (baseline) → Step 2 (behavioral gen) → Step 3 (scoring)
+                                                     ↓
+                                              Step 4 (analysis)
+                                              Step 5 (activations)
+                                                     ↓
+                                              Step 6 (probing)
+                                                     ↓
+                                              Step 7 (directions)
+                                                     ↓
+                                    Step 8 (steering) + Step 9 (random)
+                                              + Step 10 (MMLU, parallel)
+                                                     ↓
+                                    Step 11 (score steered) + Step 12 (score random)
+                                                     ↓
+                                              Step 13 (validate judge)
+                                                     ↓
+                                              Step 14 (figures)
 
-Step 6 (MMLU) — can run after Step 3, parallel with Steps 4-5
-Step 9 (validate judge) — can run after Step 8
 Human annotation — independent parallel track
 ```
 
@@ -112,8 +163,8 @@ Human annotation — independent parallel track
 
 | Item | Cost |
 |------|------|
-| Already spent (Step 3 behavioral scoring) | $18.31 |
-| Step 7: Score steered (GPT-5) | ~$48-55 |
-| Step 8: Score random baseline (gpt-4o-mini) | ~$1 |
-| Step 9: Validate mini judge | ~$0.25 |
-| **Total** | **~$68-75** |
+| Step 3: Behavioral scoring (GPT-5) | ~$40-80 |
+| Step 11: Score steered (GPT-5) | ~$48-55 |
+| Step 12: Score random baseline (gpt-4o-mini) | ~$1 |
+| Step 13: Validate mini judge | ~$0.25 |
+| **Total API cost** | **~$90-136** |

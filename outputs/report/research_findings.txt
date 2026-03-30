@@ -1,0 +1,158 @@
+================================================================================
+RESEARCH FINDINGS LOG
+LLM Sycophancy Probing Project - COLM 2026
+================================================================================
+
+
+FINDING 1: RLHF Training Strength Predicts Steering Resistance
+----------------------------------------------------------------
+Date: 2026-03-23
+Status: Empirical observation, needs further validation
+
+OBSERVATION:
+The effectiveness of activation steering (subtracting the authority direction
+from the residual stream) varies dramatically across models, and this variation
+correlates with the intensity of RLHF post-training:
+
+  Model             | RLHF Intensity | Baseline Flip% | Steering Effect
+  ------------------|----------------|----------------|------------------
+  Llama-3.1-8B      | Heavy (PPO+RS) |     7.0%       | NONE (0% change)
+  DeepSeek-R1-Qwen3 | RL (reasoning) |     4.5%       | TBD
+  Qwen-3-8B         | Moderate       |     6.4%       | TBD
+  Mistral-7B-v0.3   | Light (SFT)    |    13.0%       | Noise (no gradient)
+  Gemma-3-12B       | Light (SFT+)   |    45.8%       | STRONG (42% at high auth)
+
+INTERPRETATION:
+1. Models with heavy RLHF (Llama) develop robust, distributed representations
+   that resist single-direction linear steering. The reward optimization
+   creates redundant pathways for factual grounding that can't be disrupted
+   by perturbing one layer.
+
+2. Models with lighter alignment (Gemma) maintain more localized, linearly-
+   separable authority representations. This makes them both more sycophantic
+   at baseline AND more amenable to causal steering interventions.
+
+3. Mistral occupies a middle ground: moderate baseline sycophancy but the
+   steering produces uniform noise rather than authority-specific modulation.
+   This suggests the authority probe captures surface features (keyword
+   detection) rather than a meaningful causal direction in this model.
+
+HYPOTHESIS:
+RLHF doesn't just change model behavior — it changes the GEOMETRY of how
+behaviors are internally represented. Specifically, RLHF "smears" behavioral
+features across dimensions (making them harder to linearly isolate and steer),
+while SFT-only models keep behavioral features more localized in the
+representation space.
+
+EVIDENCE SUPPORTING THIS:
+- Authority probe accuracy = 100% at ALL layers for ALL models, suggesting
+  the probe is picking up surface-level keyword features, not deep behavioral
+  representations. Yet steering only works for Gemma, implying that the
+  causal relationship between these surface features and behavior is
+  model-dependent.
+- The authority direction has cos = 1.0 with the keyword confound direction
+  in all models, confirming the probe is essentially a keyword detector.
+  But keywords causally drive behavior ONLY in lightly-aligned models.
+- Direction analysis shows authority and sycophancy are orthogonal (cos ~ 0)
+  in all models, meaning the "authority representation" and "sycophancy
+  representation" are geometrically separate. In heavily RLHF'd models,
+  this separation means steering the authority direction doesn't reach the
+  sycophancy mechanism. In lightly aligned models, there may be an indirect
+  pathway that our linear probes don't capture but that exists in practice.
+
+IMPLICATIONS FOR THE PAPER:
+- This finding reframes the paper's contribution: beyond just measuring
+  sycophancy, we demonstrate that RLHF fundamentally restructures how
+  authority-related features connect to behavioral outputs.
+- This provides a mechanistic explanation for why some models are more
+  sycophantic: not because they encode authority differently (all models
+  encode it perfectly), but because the causal link from authority encoding
+  to behavioral compliance differs based on training method.
+- Suggests a practical diagnostic: if steering along a probe direction
+  produces authority-graded behavioral change, the model has a vulnerable
+  causal pathway. If not, RLHF has successfully decoupled the representation
+  from the behavior.
+
+RELATED WORK TO CITE:
+- Turpin et al. (2024) - "Language Models Don't Always Say What They Think"
+  (shows internal representations don't always match outputs)
+- Anthropic's representation engineering work (Zou et al., 2023) - shows
+  linear probes can find meaningful directions but causal effects vary
+- Jorgensen et al. (2023) - steering vectors in instruction-tuned models
+- Bai et al. (2022) - RLHF training details and behavioral effects
+- Lee et al. (2023) - RLHF creates more distributed safety representations
+
+FOLLOW-UP EXPERIMENTS:
+1. Compare base models (before RLHF) vs instruct models for the same
+   architecture to directly test whether RLHF changes steering effectiveness
+2. Try steering at multiple layers simultaneously (not just middle layer)
+   to see if RLHF models require multi-layer intervention
+3. Use non-linear probes (MLP) instead of logistic regression to check if
+   the behavioral representations are non-linearly encoded in RLHF models
+4. Compute the effective dimensionality of the authority representation
+   across models — hypothesis: RLHF'd models have higher-dimensional
+   authority representations (more spread out, harder to steer)
+
+
+FINDING 2: Blind Authority Deference (Domain Match Has No Effect)
+------------------------------------------------------------------
+Date: 2026-03-23
+Status: Statistically confirmed (p = 0.754)
+
+OBSERVATION:
+Models defer equally to domain-matched and domain-mismatched authority
+personas. An MIT physics professor is equally persuasive on physics questions
+AND chemistry questions.
+
+  Combined: Matched 20.0% vs Mismatched 20.8%, z = -0.31, p = 0.754
+
+  All 5 individual model p-values > 0.6 (no model shows domain sensitivity).
+
+INTERPRETATION:
+Models respond to authority SIGNALS (titles, institutional affiliations,
+years of experience) rather than evaluating the relevance of expertise to
+the question at hand. This is a form of "blind deference" — the model
+treats "I'm a professor at MIT" as equally authoritative regardless of
+whether the question is in the professor's field.
+
+IMPLICATIONS:
+- This is arguably the most concerning finding for real-world deployment.
+  Users can manipulate model responses simply by claiming credentials,
+  even in unrelated domains.
+- Suggests models lack a "domain relevance check" in their authority
+  processing pipeline.
+- Could be a specific target for safety fine-tuning: teach models to
+  discount authority claims when the claimed expertise doesn't match
+  the topic.
+
+
+FINDING 3: Gemma-3-12B Is an Outlier in Sycophancy
+----------------------------------------------------
+Date: 2026-03-23
+Status: Confirmed across all analyses
+
+OBSERVATION:
+Gemma-3-12B has a dramatically higher baseline sycophancy rate (45.8%) than
+all other models (4.5-13%). It also shows:
+- Largest effect sizes (Cohen's d = 2.697 for extreme comparison)
+- Highest hedge scores (mean 2.06 vs 0.60-1.26)
+- Highest deference ratios (0.816 vs 0.226-0.870)
+- Only model where steering produces authority-specific causal effects
+- Only model with balanced positive/negative sycophancy labels (82/68)
+  suitable for meaningful probe training
+
+INTERPRETATION:
+Gemma-3-12B's instruction tuning may have inadvertently reinforced
+sycophantic patterns. Google's SFT data likely includes many examples
+where the model agrees with or defers to user statements, creating a
+strong agreeable-response bias. The lighter RLHF means this bias was
+not sufficiently corrected during post-training.
+
+This makes Gemma the ideal "case study" for the paper — it has both
+detectable sycophancy in behavior AND steerable representations, providing
+the clearest causal evidence.
+
+
+================================================================================
+END OF FINDINGS LOG — Update as new results come in
+================================================================================

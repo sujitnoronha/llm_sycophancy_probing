@@ -306,6 +306,7 @@ def evaluate_mmlu_steered(
     # Try attribute paths used by common architectures
     for attr_path in [
         f"model.layers.{target_layer}",       # Llama, Mistral, Qwen, DeepSeek
+        f"model.language_model.layers.{target_layer}",  # Gemma 3
         f"model.decoder.layers.{target_layer}",  # OPT-style
         f"transformer.h.{target_layer}",       # GPT2-style
     ]:

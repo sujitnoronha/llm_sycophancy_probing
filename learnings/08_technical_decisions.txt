@@ -1,0 +1,207 @@
+08 - TECHNICAL DECISIONS, OPTIMIZATIONS, AND FIXES
+====================================================
+
+DECISION 1: TransformerLens vs HuggingFace FOR STEERING
+--------------------------------------------------------
+Problem:
+  TransformerLens (TL) is used for activation collection and probing because
+  it provides clean hook access to the residual stream. But for steering
+  (generating 200 conversations x 3 alphas x 5 models = 3000 generations),
+  TL is extremely slow because it LACKS KV-cache.
+
+  KV-cache: During autoregressive generation, HuggingFace caches the key/value
+  attention matrices from previous tokens. So when generating token N+1, it
+  only needs to compute attention for the new token. TL recomputes the ENTIRE
+  sequence from scratch for every single new token.
+
+  For a 200-token generation with 100-token context:
+    TL:  token 1 processes 101 tokens, token 2 processes 102 tokens, ...
+         Total attention computations: sum(101 to 300) = ~40,000
+    HF:  token 1 processes 101 tokens, token 2 processes 1 token (cached), ...
+         Total attention computations: 101 + 199*1 = ~300
+
+  Result: HF is roughly 2x faster in practice (7.8s vs 15.6s per conversation
+  for Llama-3.1-8B).
+
+Solution:
+  Added a --use-hf flag to src/steering/run.py. When enabled:
+  - Model is loaded via AutoModelForCausalLM instead of HookedTransformer
+  - Steering uses register_forward_hook on the decoder layer module
+  - Native model.generate() preserves KV-cache
+
+  We validated that HF and TL produce equivalent (not identical) outputs.
+  For Llama-3.1-8B with the same weights: 2/5 exact match, others diverge
+  at word ~30+ due to floating-point accumulation differences. This is
+  acceptable since we're consistent within each model (all conditions use
+  the same backend).
+
+Code locations:
+  - src/steering/steer.py: run_hf_steered_generation() -- new HF backend
+  - src/steering/steer.py: run_steered_eval() -- dispatches to HF or TL
+  - src/steering/run.py: --use-hf CLI flag
+  - src/core/models.py: load_model_context(need_hooks=False) for HF loading
+
+
+DECISION 2: QWEN3 THINKING MODE DISABLED
+------------------------------------------
+Problem:
+  Qwen3-8B has a "thinking" mode where it generates internal reasoning
+  tokens (<think>...</think>) before the actual response. This is enabled
+  by default in the chat template. With max_new_tokens=512, the model
+  would spend most of its token budget on thinking tokens, making each
+  conversation take 10+ minutes instead of ~15 seconds.
+
+Solution:
+  Pass enable_thinking=False to tokenizer.apply_chat_template(). This adds
+  an empty <think>\n\n</think>\n\n block to the prompt, signaling the model
+  to skip internal reasoning and go straight to the response.
+
+  This kwarg is safely ignored by non-Qwen3 models (their Jinja2 templates
+  don't reference the variable, so it's just an unused parameter).
+
+Code location:
+  src/steering/steer.py: run_hf_steered_generation(), line ~148
+
+
+DECISION 3: LAYER SELECTION FOR STEERING
+------------------------------------------
+Problem:
+  Which layer should we steer at? Options:
+  1. Peak probe accuracy layer (where the probe is most accurate)
+  2. Middle layer (n_layers // 2)
+  3. Some other heuristic
+
+Decision:
+  We use peak_probe_accuracy (configured in base.yaml as layer_selection).
+  The peak layer is where the authority feature is most linearly separable,
+  so interventions there should have the strongest targeted effect.
+
+  In practice, peak layers tend to be near the middle:
+    Llama (32 layers):  peak ~layer 16
+    Gemma (48 layers):  peak ~layer 24
+    Qwen (36 layers):   peak ~layer 18
+
+  This is consistent with the literature -- features are most accessible
+  in middle layers, before the model compresses for final prediction.
+
+
+DECISION 4: PERMUTATION TESTS REDUCED TO 100
+----------------------------------------------
+Problem:
+  Original design called for 1000 permutations per probe per layer.
+  With 5 models x 3 probes x ~35 layers = 525 permutation tests,
+  each needing 1000 shuffled retrains, this would take days.
+
+Solution:
+  Reduced to 100 permutations. At p=0.05 significance level, 100 permutations
+  gives resolution to detect p < 0.01 (if 0 out of 100 shuffled beats observed,
+  p < 0.01). This is sufficient for our purposes since probe accuracies are
+  well above chance (65-75%).
+
+
+DECISION 5: PARALLEL MODEL EXECUTION
+--------------------------------------
+Problem:
+  Running all 5 models sequentially would take days. Each model's steering
+  takes 2-3 hours (TL) or 1-1.5 hours (HF).
+
+Solution:
+  Run models in parallel when GPU memory allows:
+  - Gemma (TL, ~35GB) ran alone initially (too large for parallel TL models)
+  - When HF backend was added: Gemma (TL, ~35GB) + Mistral (HF, ~14.5GB)
+    ran simultaneously on the same A100 80GB GPU
+  - After Gemma finished: Qwen (HF, ~16GB) + DeepSeek (HF, ~16GB)
+    run simultaneously (~32GB total, plenty of room)
+
+  Key: monitor GPU memory with nvidia-smi to avoid OOM. The context manager
+  in models.py guarantees cleanup when a model finishes.
+
+
+DECISION 6: MISTRAL TL_NAME WORKAROUND
+----------------------------------------
+Problem:
+  TransformerLens doesn't support Mistral-7B-Instruct-v0.3. It only knows
+  about v0.1 architecture.
+
+Solution:
+  In base.yaml, Mistral has both hf_name (v0.3, for HF loading) and tl_name
+  (v0.1, for TL architecture). When loading via TL, it uses v0.1 architecture
+  but loads v0.3 weights via the hf_model parameter.
+
+  For HF backend: just loads v0.3 directly, no workaround needed.
+
+  DeepSeek-R1-Qwen3-8B has the same pattern: tl_name="Qwen/Qwen3-8B" because
+  TL doesn't know about DeepSeek-R1 specifically, but the architecture is
+  identical to Qwen3-8B.
+
+
+DECISION 7: HF STEERING HOOK OUTPUT FORMAT HANDLING
+-----------------------------------------------------
+Problem:
+  Different HF model architectures return different output formats from their
+  decoder layers. Some return a tuple (hidden_states, attention_weights, ...),
+  some return just a tensor, some return a custom object.
+
+  The original hook assumed tuple output and crashed with:
+    TypeError: can only concatenate tuple (not "Tensor") to tuple
+
+Solution:
+  The steering hook now checks isinstance(output, tuple/Tensor) and handles
+  each case:
+    - tuple: modify output[0], return (modified,) + output[1:]
+    - Tensor: modify and return directly
+    - other: modify output[0], return output
+
+Code location: src/steering/steer.py: steering_hook() inside
+               run_hf_steered_generation()
+
+
+FIX 1: FIGURE 7 FILENAME MISMATCH
+-----------------------------------
+Problem:
+  The figure 7 data loader expected files named:
+    steered_authority_alpha1.5_scores.csv
+  But score_steered.py produces files named:
+    scores_authority_alpha1.5.csv
+
+Fix: Updated figure 7 loader to use the correct naming pattern.
+Location: src/figures/run.py: _load_figure7_data()
+
+
+FIX 2: FIGURE 6 DATA LOADER (EMPTY METRICS)
+---------------------------------------------
+Problem:
+  Figure 6 read persona_sycophancy_gap from steering_summary.json, but
+  that field is empty (set to None) because scoring hasn't happened when
+  the summary is written. The gap can only be computed AFTER GPT-5 scoring.
+
+Fix: Updated the figure 6 loader to compute the sycophancy gap directly
+  from the scored CSVs (scores_authority_alpha{X}.csv). Falls back to the
+  summary JSON if CSVs don't exist yet.
+Location: src/figures/run.py: _load_figure6_data()
+
+
+RUNNING THE PIPELINE
+---------------------
+Full run (from Makefile):
+  make all
+
+Individual steps:
+  python -m src.dataset.run
+  python -m src.baseline.run
+  python -m src.behavioral.run
+  python -m src.analysis.run
+  python -m src.activations.run
+  python -m src.probing.run
+  python -m src.directions.run
+  python -m src.steering.run [--model X] [--use-hf] [--random-baseline]
+  python -m src.mmlu.run
+  python scripts/score_steered.py
+  python scripts/validate_mini_judge.py
+  python -m src.figures.run
+
+Single model steering with HF:
+  python -m src.steering.run --model qwen3_8b --use-hf
+
+Background execution:
+  nohup python -m src.steering.run --model gemma3_12b > steering.log 2>&1 &

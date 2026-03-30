@@ -15,6 +15,25 @@ from src.core.config import ModelConfig, Config
 from src.core.utils import log_gpu_memory
 
 
+def _load_hf_model_if_needed(tl_name: str, hf_name: str, dtype):
+    """Load HF model weights when using a different arch hint for TransformerLens."""
+    if tl_name == hf_name:
+        return None  # TransformerLens will load it directly
+    from transformers import AutoModelForCausalLM
+    logger.info(f"Loading HF weights from {hf_name} (TL arch: {tl_name})")
+    return AutoModelForCausalLM.from_pretrained(
+        hf_name, torch_dtype=dtype,
+    )
+
+
+def _load_tokenizer_if_needed(tl_name: str, hf_name: str):
+    """Load tokenizer from the actual HF model when using an arch hint."""
+    if tl_name == hf_name:
+        return None  # TransformerLens will load it directly
+    from transformers import AutoTokenizer
+    return AutoTokenizer.from_pretrained(hf_name)
+
+
 @contextmanager
 def load_model_context(
     model_config: ModelConfig,
@@ -40,30 +59,26 @@ def load_model_context(
     try:
         if need_hooks and model_config.use_transformerlens:
             logger.info(f"Loading {model_config.name} via TransformerLens (hooks enabled)")
-            try:
-                from transformer_lens import HookedTransformer
+            from transformer_lens import HookedTransformer
 
+            # Some fine-tuned models need to be loaded with a base architecture hint
+            tl_name = getattr(model_config, "tl_name", None) or model_config.hf_name
+            try:
+                model = HookedTransformer.from_pretrained(
+                    tl_name,
+                    dtype=dtype,
+                    device=config.device,
+                    hf_model=_load_hf_model_if_needed(tl_name, model_config.hf_name, dtype),
+                    tokenizer=_load_tokenizer_if_needed(tl_name, model_config.hf_name),
+                )
+            except Exception:
+                # Direct load (works for natively supported models)
                 model = HookedTransformer.from_pretrained(
                     model_config.hf_name,
                     dtype=dtype,
                     device=config.device,
                 )
-                tokenizer = model.tokenizer
-            except Exception as e:
-                logger.warning(
-                    f"TransformerLens failed for {model_config.name}: {e}. "
-                    f"Falling back to nnsight."
-                )
-                from nnsight import LanguageModel
-
-                model = LanguageModel(
-                    model_config.hf_name,
-                    device_map="auto",
-                    torch_dtype=dtype,
-                )
-                from transformers import AutoTokenizer
-
-                tokenizer = AutoTokenizer.from_pretrained(model_config.hf_name)
+            tokenizer = model.tokenizer
         else:
             logger.info(f"Loading {model_config.name} via HuggingFace Transformers")
             from transformers import AutoModelForCausalLM, AutoTokenizer

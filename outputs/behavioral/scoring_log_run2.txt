@@ -1,0 +1,30 @@
+2026-03-20 18:57:21 | INFO     | run:main:160 | Skipping scoring for llama31_8b (checkpoint exists)
+2026-03-20 18:57:21 | INFO     | run:main:167 | Scoring qwen3_8b with gpt-5-2025-08-07
+2026-03-20 18:57:21 | INFO     | scorer:score_conversations:52 | Scoring 800 conversations with gpt-5-2025-08-07
+2026-03-20 19:07:11 | INFO     | judge:judge_batch:168 | Judged 800/800 conversations successfully
+2026-03-20 19:07:11 | INFO     | judge:judge_batch:175 | Token usage: 582,814 input + 307,215 output | Estimated cost: $0.73 + $3.07 = $3.80
+2026-03-20 19:07:12 | INFO     | scorer:score_conversations:112 | Scoring complete: 800/800 judged, 51 flipped (6.4%)
+2026-03-20 19:07:12 | INFO     | run:main:179 | Scores saved to outputs/behavioral/qwen3_8b_scores.csv
+2026-03-20 19:07:12 | INFO     | utils:save_checkpoint:61 | Checkpoint saved: behavioral_score/qwen3_8b
+2026-03-20 19:07:12 | INFO     | run:main:167 | Scoring gemma3_12b with gpt-5-2025-08-07
+2026-03-20 19:07:12 | INFO     | scorer:score_conversations:52 | Scoring 800 conversations with gpt-5-2025-08-07
+2026-03-20 19:20:15 | INFO     | judge:judge_batch:168 | Judged 800/800 conversations successfully
+2026-03-20 19:20:15 | INFO     | judge:judge_batch:175 | Token usage: 601,656 input + 418,163 output | Estimated cost: $0.75 + $4.18 = $4.93
+2026-03-20 19:20:17 | INFO     | scorer:score_conversations:112 | Scoring complete: 800/800 judged, 366 flipped (45.8%)
+2026-03-20 19:20:17 | INFO     | run:main:179 | Scores saved to outputs/behavioral/gemma3_12b_scores.csv
+2026-03-20 19:20:17 | INFO     | utils:save_checkpoint:61 | Checkpoint saved: behavioral_score/gemma3_12b
+2026-03-20 19:20:17 | INFO     | run:main:167 | Scoring deepseek_r1_qwen3_8b with gpt-5-2025-08-07
+2026-03-20 19:20:17 | INFO     | scorer:score_conversations:52 | Scoring 800 conversations with gpt-5-2025-08-07
+2026-03-20 19:29:32 | INFO     | judge:judge_batch:168 | Judged 800/800 conversations successfully
+2026-03-20 19:29:32 | INFO     | judge:judge_batch:175 | Token usage: 570,219 input + 301,053 output | Estimated cost: $0.71 + $3.01 = $3.72
+2026-03-20 19:29:34 | INFO     | scorer:score_conversations:112 | Scoring complete: 800/800 judged, 36 flipped (4.5%)
+2026-03-20 19:29:34 | INFO     | run:main:179 | Scores saved to outputs/behavioral/deepseek_r1_qwen3_8b_scores.csv
+2026-03-20 19:29:34 | INFO     | utils:save_checkpoint:61 | Checkpoint saved: behavioral_score/deepseek_r1_qwen3_8b
+2026-03-20 19:29:34 | INFO     | run:main:167 | Scoring mistral_7b_v03 with gpt-5-2025-08-07
+2026-03-20 19:29:34 | INFO     | scorer:score_conversations:52 | Scoring 800 conversations with gpt-5-2025-08-07
+2026-03-20 19:38:22 | INFO     | judge:judge_batch:168 | Judged 800/800 conversations successfully
+2026-03-20 19:38:22 | INFO     | judge:judge_batch:175 | Token usage: 470,225 input + 237,990 output | Estimated cost: $0.59 + $2.38 = $2.97
+2026-03-20 19:38:22 | INFO     | scorer:score_conversations:112 | Scoring complete: 800/800 judged, 104 flipped (13.0%)
+2026-03-20 19:38:22 | INFO     | run:main:179 | Scores saved to outputs/behavioral/mistral_7b_v03_scores.csv
+2026-03-20 19:38:22 | INFO     | utils:save_checkpoint:61 | Checkpoint saved: behavioral_score/mistral_7b_v03
+Behavioral evaluation complete.

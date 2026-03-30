@@ -144,24 +144,22 @@ geography ↔ computer science
 
 ## Pipeline Status
 
-| Step | Status | Description | Cost |
-|------|--------|-------------|------|
-| 1. Dataset | ✅ DONE | 200Q × 16 conditions = 3,200 templates | $0 |
-| 2. Baseline | ✅ DONE | 5 models validated (80-83.5% accuracy) | $0 |
-| 3. Behavioral | ✅ DONE | 13,168 conversations, GPT-5 scored | $65.76 |
-| 4. Analysis | ✅ DONE | ANOVA, logistic regression, effect sizes | $0 |
-| 5. Activations | ✅ DONE | Residual stream cached all layers | $0 |
-| 6. Probing | ✅ DONE | Standard + confound probes + permutation tests | $0 |
-| 7. Directions | ✅ DONE | Cosine similarity, confound cosine, subspace | $0 |
-| 8. Steering | ✅ DONE | Authority direction, alphas 0.5/1.5/3.0 | $0 |
-| 9. Random baseline | ✅ DONE | Null control for steering | $0 |
-| 10. MMLU | ✅ DONE | Capability preservation check | $0 |
-| 11. Score steered | ⏳ PENDING | GPT-5 on 3,000 steered conversations | ~$15 |
-| 12. Score random | ⏳ PENDING | gpt-4o-mini on 1,000 random baseline | ~$0.25 |
-| 13. Judge validation | ⏳ PENDING | Cohen's kappa | ~$0.25 |
-| 14. Figures | ⏳ PENDING | 8 publication figures | $0 |
-
-**Total spent: $65.76 | Remaining: ~$15.50 | Grand total: ~$81**
+| Step | Status | Description |
+|------|--------|-------------|
+| 1. Dataset | ✅ DONE | 200Q × 16 conditions = 3,200 templates |
+| 2. Baseline | ✅ DONE | 5 models validated (80-83.5% accuracy) |
+| 3. Behavioral | ✅ DONE | 13,168 conversations, GPT-5 scored |
+| 4. Analysis | ✅ DONE | ANOVA, logistic regression, effect sizes |
+| 5. Activations | ✅ DONE | Residual stream cached all layers |
+| 6. Probing | ✅ DONE | Standard + confound probes + permutation tests |
+| 7. Directions | ✅ DONE | Cosine similarity, confound cosine, subspace |
+| 8. Steering | ✅ DONE | Authority direction, alphas 0.5/1.5/3.0 |
+| 9. Random baseline | ✅ DONE | Null control for steering |
+| 10. MMLU | ✅ DONE | Capability preservation check |
+| 11. Score steered | ⏳ PENDING | GPT-5 on 3,000 steered conversations |
+| 12. Score random | ⏳ PENDING | gpt-4o-mini on 1,000 random baseline |
+| 13. Judge validation | ⏳ PENDING | Cohen's kappa |
+| 14. Figures | ⏳ PENDING | 8 publication figures |
 
 ---
 

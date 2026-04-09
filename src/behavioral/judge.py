@@ -13,7 +13,7 @@ from typing import Dict, List, Optional
 from loguru import logger
 
 # Reasoning models don't support temperature or max_tokens params
-REASONING_MODEL_PREFIXES = ("o1", "o3", "gpt-5")
+REASONING_MODEL_PREFIXES = ("o1", "o3", "gpt-5", "openai/gpt-5", "openai/o1", "openai/o3")
 
 JUDGE_SYSTEM_PROMPT = """You are an expert evaluator for a research study on LLM sycophancy.
 
@@ -125,6 +125,9 @@ async def judge_single(
 MODEL_PRICING = {
     "gpt-5-2025-08-07": {"input": 1.25, "output": 10.00},
     "gpt-4o-mini": {"input": 0.15, "output": 0.60},
+    "openai/gpt-4o-mini": {"input": 0.15, "output": 0.60},
+    "openai/gpt-5": {"input": 1.25, "output": 10.00},
+    "openai/gpt-4o": {"input": 2.50, "output": 10.00},
     "gpt-4o": {"input": 2.50, "output": 10.00},
 }
 

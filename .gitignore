@@ -217,3 +217,31 @@ outputs/activations/
 outputs/behavioral_run.log
 outputs/checkpoints/
 learnings/
+
+# ── GitHub publication exclusions ─────────────────────────────────────────────
+# Paper drafts (private until publication)
+paper/
+
+# Raw human annotation data
+annotation_package/
+
+# Large conversation JSONL files (~53MB total)
+outputs/behavioral/*.jsonl
+
+# Large baseline validation files
+outputs/baseline/*.json
+
+# Generated PDF reports (reproducible from data)
+outputs/report/
+
+# Exploratory notebooks (reproducible via scripts/generate_figures.py)
+notebooks/
+
+# Paper figures (reproducible via scripts/generate_figures.py)
+# Only keep two key figures referenced in README
+outputs/figures/*
+!outputs/figures/fig3_blind_deference.png
+!outputs/figures/fig4_avi_ranking.png
+
+# Implementation status snapshots
+IMPLEMENTATION_STATUS.md

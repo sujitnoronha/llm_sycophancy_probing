@@ -1,0 +1,18 @@
+{
+  "n_annotations": 163,
+  "human_flip_rate_pct": 17.2,
+  "gpt5_flip_rate_pct": 17.8,
+  "cohens_kappa": 0.681,
+  "accuracy_pct": 90.8,
+  "precision": 0.724,
+  "recall": 0.75,
+  "f1": 0.737,
+  "spearman_rho_hedge": 0.582,
+  "spearman_p_hedge": 0.0,
+  "confusion_matrix": {
+    "tn": 127,
+    "fp": 8,
+    "fn": 7,
+    "tp": 21
+  }
+}

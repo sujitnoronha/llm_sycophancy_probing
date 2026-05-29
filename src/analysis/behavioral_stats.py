@@ -361,6 +361,111 @@ def question_level_analysis(
     }
 
 
+def compute_error_confusion_matrix(
+    all_scores: Dict[str, pd.DataFrame],
+) -> Dict:
+    """Compute confusion-style matrix of flip rates by model × domain × authority.
+
+    Addresses reviewer concern R3W2/R1W4 about item-level analysis. Shows which
+    domains are most vulnerable and whether the authority effect is uniform or
+    concentrated in specific domain-authority combinations.
+
+    Args:
+        all_scores: Dict mapping model_name to its scores DataFrame.
+
+    Returns:
+        Dict with per-model confusion matrices, per-domain authority effect sizes,
+        and a cross-model summary.
+    """
+    authority_levels = ["high", "medium", "low", "none"]
+
+    per_model = {}
+    for model_name, df in all_scores.items():
+        df_clean = df.dropna(subset=["flip"]).copy()
+        df_clean["flip"] = pd.to_numeric(df_clean["flip"], errors="coerce")
+
+        # Flip rate by domain × authority
+        pivot = (
+            df_clean
+            .groupby(["domain", "authority_level"])["flip"]
+            .agg(["mean", "count", "sum"])
+            .reset_index()
+        )
+        pivot.columns = ["domain", "authority_level", "flip_rate", "n", "n_flips"]
+
+        domain_auth_matrix = {}
+        for domain in sorted(df_clean["domain"].unique()):
+            domain_auth_matrix[domain] = {}
+            for auth in authority_levels:
+                row = pivot[
+                    (pivot["domain"] == domain) & (pivot["authority_level"] == auth)
+                ]
+                if len(row) > 0:
+                    domain_auth_matrix[domain][auth] = {
+                        "flip_rate": round(float(row.iloc[0]["flip_rate"]), 4),
+                        "n": int(row.iloc[0]["n"]),
+                        "n_flips": int(row.iloc[0]["n_flips"]),
+                    }
+                else:
+                    domain_auth_matrix[domain][auth] = {
+                        "flip_rate": None, "n": 0, "n_flips": 0
+                    }
+
+        # Per-domain authority effect: high_auth - no_auth flip rate
+        domain_effects = {}
+        for domain in sorted(df_clean["domain"].unique()):
+            high_val = domain_auth_matrix[domain].get("high", {}).get("flip_rate")
+            none_val = domain_auth_matrix[domain].get("none", {}).get("flip_rate")
+            if high_val is not None and none_val is not None:
+                domain_effects[domain] = round(high_val - none_val, 4)
+            else:
+                domain_effects[domain] = None
+
+        # Overall authority × domain pivot (just flip rates)
+        pivot_table = {}
+        for domain in sorted(df_clean["domain"].unique()):
+            pivot_table[domain] = {
+                auth: domain_auth_matrix[domain][auth]["flip_rate"]
+                for auth in authority_levels
+            }
+
+        per_model[model_name] = {
+            "domain_authority_matrix": domain_auth_matrix,
+            "domain_authority_effects": domain_effects,
+            "pivot_table": pivot_table,
+            "n_total": len(df_clean),
+            "overall_flip_rate": round(float(df_clean["flip"].mean()), 4),
+        }
+
+    # Cross-model summary: mean flip rate per domain × authority across models
+    all_domains = sorted(set(
+        domain for model_data in per_model.values()
+        for domain in model_data["pivot_table"]
+    ))
+
+    cross_model = {}
+    for domain in all_domains:
+        cross_model[domain] = {}
+        for auth in authority_levels:
+            rates = [
+                per_model[m]["pivot_table"][domain][auth]
+                for m in per_model
+                if domain in per_model[m]["pivot_table"]
+                and per_model[m]["pivot_table"][domain][auth] is not None
+            ]
+            if rates:
+                cross_model[domain][auth] = {
+                    "mean_flip_rate": round(float(np.mean(rates)), 4),
+                    "std_flip_rate": round(float(np.std(rates)), 4),
+                    "n_models": len(rates),
+                }
+
+    return {
+        "per_model": per_model,
+        "cross_model_summary": cross_model,
+    }
+
+
 def compute_steering_bootstrap_cis(
     steered_scores: Dict[str, pd.DataFrame],
     n_boot: int = 10000,

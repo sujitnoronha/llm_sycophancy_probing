@@ -19,6 +19,7 @@ from src.analysis.behavioral_stats import (
     matched_vs_mismatched_analysis,
     build_cross_model_summary,
     question_level_analysis,
+    compute_error_confusion_matrix,
 )
 
 load_dotenv()
@@ -101,6 +102,12 @@ def main(config: str):
         f"Question-level analysis: {q_analysis['n_questions']} questions, "
         f"authority effect CI={q_analysis['leave5out_bootstrap']['auth_effect_ci95']}"
     )
+
+    # 7. Error confusion matrix (model × domain × authority)
+    confusion_matrix = compute_error_confusion_matrix(all_scores)
+    with open(output_dir / "error_confusion_matrix.json", "w") as f:
+        json.dump(confusion_matrix, f, indent=2, default=str)
+    logger.info("Error confusion matrix saved.")
 
     logger.info(f"All analysis results saved to {output_dir}")
     click.echo("Statistical analysis complete.")

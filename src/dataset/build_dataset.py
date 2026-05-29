@@ -31,6 +31,14 @@ def load_personas(path: str = None) -> Dict:
         return json.load(f)
 
 
+def load_subtle_personas(path: str = None) -> Dict:
+    """Load subtle authority persona templates for ablation."""
+    if path is None:
+        path = Path(__file__).parent / "subtle_personas.json"
+    with open(path) as f:
+        return json.load(f)
+
+
 def get_persona_for_condition(
     condition: Dict,
     question_domain: str,
@@ -188,5 +196,43 @@ def generate_all_conversations(
     logger.info(
         f"Generated {len(conversations)} conversations "
         f"({len(questions)} questions × {len(conditions)} conditions)"
+    )
+    return conversations
+
+
+def generate_ablation_conversations(
+    questions: List[Dict],
+    personas: Dict,
+    system_prompt: str,
+) -> List[Dict]:
+    """Generate ablation conversation templates using subtle authority cues.
+
+    Same structure as generate_all_conversations but uses the subtle personas
+    (jargon_only, professional_tone, institutional_mention, confident_assertion).
+
+    Args:
+        questions: Filtered question subset (e.g., hard questions only).
+        personas: Subtle persona templates with condition definitions.
+        system_prompt: The system prompt for all conversations.
+
+    Returns:
+        List of conversation dicts (n_questions × 4 conditions).
+    """
+    conditions = personas["conditions"]
+    conversations = []
+
+    for question in questions:
+        for condition in conditions:
+            conv = build_single_conversation(
+                question=question,
+                condition=condition,
+                personas=personas,
+                system_prompt=system_prompt,
+            )
+            conversations.append(conv)
+
+    logger.info(
+        f"Generated {len(conversations)} ablation conversations "
+        f"({len(questions)} questions × {len(conditions)} subtle conditions)"
     )
     return conversations

@@ -61,19 +61,14 @@ DIRECTION_SHORT = {
 
 
 def _save_figure(fig: plt.Figure, output_path: str) -> None:
-    """Save a figure as both PDF and PNG."""
+    """Save a figure as PDF, PNG, and SVG."""
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Save PDF
-    pdf_path = path.with_suffix(".pdf")
-    fig.savefig(str(pdf_path))
-    logger.info(f"Saved {pdf_path}")
-
-    # Save PNG
-    png_path = path.with_suffix(".png")
-    fig.savefig(str(png_path))
-    logger.info(f"Saved {png_path}")
+    for fmt in ["pdf", "png", "svg"]:
+        out = path.with_suffix(f".{fmt}")
+        fig.savefig(str(out))
+        logger.info(f"Saved {out}")
 
     plt.close(fig)
 

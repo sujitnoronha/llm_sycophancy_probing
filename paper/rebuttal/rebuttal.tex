@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\begin{document}
+
+
+We thank the reviewers for the constructive feedback and for taking the time to look over and evaluate the paper. We group the critiques by the type of work required and assign each concern to one primary category to avoid double-counting.
+
+\section{Dataset and Benchmark Improvement}
+
+\subsection{Rigidness, Technicality, and Unambiguousness}
+
+\noindent
+\textbf{R3W1, R4W2.}
+The benchmark uses factual QA with unambiguous answers, a rigid QA format, fixed authority templates, and mostly academic topics. This limits generalization to open-ended advice, policy, legal reasoning, medical decision support, and non-QA settings.
+
+\noindent
+\textbf{Response.}
+The factual-QA setting is intentional: it establishes a controlled lower bound where the model knows the correct answer and we test whether authority pressure alone can override it. If a model hallucinates or hedges on established ground truth under these most favorable conditions, the effect is likely an emergent property that extends to harder settings (open-ended advice, legal reasoning, medical decision support) where the ground truth is less clear. We make this scope explicit in the limitations and do not claim generalization beyond factual QA. We note, however, that our question bank does include general health and medicine questions (20 questions from the medicine domain), providing some coverage of clinically adjacent factual knowledge. In the revision we have added an ablation on the 63 hard questions---which target common expert-level misconceptions rather than simple factual recall---testing four subtle authority variants (jargon-only, professional tone, institutional mention, confident assertion) beyond the explicit persona declarations in the main experiment. This addresses whether the authority effect requires explicit credential statements or generalizes to subtler cues, even if it does not extend to fully open-ended formats.
+
+\subsection{Scope of Complexity}
+
+\noindent
+\textbf{R3W2, R1W4.}
+The authority prompts are explicit and strong. Subtler authority cues such as jargon, institutional affiliation, confident tone, and professional style are not tested. The benchmark also has only 200 independent questions and lacks item-level analysis.
+
+\noindent
+\textbf{Response.}
+We will distinguish explicit authority pressure from subtler authority signals and avoid implying that both are covered. We will add item-level diagnostics, including flip-rate distributions and uncertainty estimates over base questions, to show whether results are stable across items rather than driven by a small subset.
+
+\subsection{Question-Bank Validation}
+
+\noindent
+\textbf{R2W4.}
+The question-bank verification process is underdocumented. The benchmark needs clearer evidence that questions have unique correct answers, plausible distractors, and consistent labels.
+
+\noindent
+\textbf{Response.}
+We have expanded the dataset construction section (Appendix~B) with explicit validation criteria. The question bank is structured as a multiple-choice test: each question has exactly one correct answer and one plausible distractor, the same structure used in standardized testing. Questions were generated from seed templates authored by domain experts and then expanded synthetically, with each item verified for answer uniqueness (single correct answer checkable against authoritative references), distractor plausibility (wrong answer must be from the same domain and plausibly confusable), and difficulty calibration. Ambiguous items were revised or removed during construction. Before behavioral evaluation, each model is validated on all 200 questions at temperature~0; questions answered incorrectly are excluded per-model, ensuring we measure sycophancy (changing a correct answer) rather than knowledge gaps. The labeling is straightforward---flip/no-flip is binary and analogous to answer correctness in any multiple-choice exam. We acknowledge the current question pool is small (200 questions); we plan to run an extended benchmark as future work.
+
+\section{Metric and Construct Validity}
+
+\subsection{Truthfulness versus Stubbornness}
+
+\noindent
+\textbf{R1W1, R3 Question.}
+AVI only tests correct-to-wrong pressure. A low AVI may reflect truthfulness, but it may also reflect stubbornness. The benchmark does not test whether models can recover when they start with an incorrect answer.
+
+\noindent
+\textbf{Response.}
+We will clarify that AVI measures resistance to incorrect authority pressure after an initially correct answer. It is not a complete measure of truthfulness or epistemic calibration. We will discuss a bidirectional verification extension that tests both resistance to false correction and recovery from initial error.
+
+\subsection{Blind-Deference Inference}
+
+\noindent
+\textbf{R2W2.}
+A non-significant matched--mismatched authority difference does not prove equivalence. The blind-deference claim needs stronger statistical support.
+
+\noindent
+\textbf{Response.}
+We will soften the blind-deference claim and avoid treating non-significance as equivalence. We will add confidence intervals for matched-minus-mismatched differences and, where feasible, equivalence tests or hierarchical regression with a predefined practical margin.
+
+\section{Judge Validation}
+
+\subsection{Automated Judge Reliability}
+
+\noindent
+\textbf{R1W5, R2W3.}
+The automated judge validation is limited. The human audit is small relative to the benchmark scale, insufficiently stratified, and not enough to support fine-grained model rankings.
+
+\noindent
+\textbf{Response.}
+We will strengthen the judge validation analysis and report stratified validation where feasible. We will also soften fine-grained ranking claims if judge uncertainty remains substantial.
+
+\section{Ablation and Robustness}
+
+\subsection{Training-Paradigm Claim}
+
+\noindent
+\textbf{R1W2.}
+The training-paradigm claim is not supported by controlled ablations. Model family, architecture, training data, scale, and alignment method vary together. Llama-3.3-70B is also a counterexample to a simple training-paradigm explanation.
+
+\noindent
+\textbf{Response.}
+We will reframe this result as a correlational observation rather than a causal claim. We will explicitly describe the confounds and discuss Llama-3.3-70B as a limitation to any simple training-paradigm interpretation.
+
+\subsection{Decoding Robustness}
+
+\noindent
+\textbf{R3W3.}
+All experiments use greedy decoding. Robustness under sampling remains untested.
+
+\noindent
+\textbf{Response.}
+We used greedy decoding to reduce stochastic variance and make model comparisons deterministic. We will state this limitation clearly and add a small sampling-based robustness check if feasible.
+
+\section{Mechanistic Analysis}
+
+\noindent
+\textbf{R1W3, R4W1, R4 Question.}
+The mechanistic analysis does not yet explain blind deference directly. Probing covers only five of eight models, large models are excluded, and activation steering is preliminary.
+
+\noindent
+\textbf{Response.}
+We will frame the mechanistic results as exploratory unless expanded. We will clarify model coverage, explain the limits of the activation-steering result, and avoid presenting the mechanistic section as a complete causal explanation.
+
+\section{Paper-Level Revision Tasks}
+
+\subsection{Paper Clarity and Reproducibility}
+
+\noindent
+\textbf{R2W1, R2W5, R3W4, R1 Question.}
+The paper needs cleaner presentation and reporting. The contribution is framed too broadly, some claims use overly strong language, the model-size range is inconsistent, recent references and judge details need verification, and Figure 1 should be clearer and provided in vector format.
+
+\noindent
+\textbf{Response.}
+We will narrow the contribution around the domain-match versus domain-mismatch authority axis, soften overbroad claims, correct the model-size range, audit recent references and judge details for double-blind compliance, and replace Figure 1 with a clearer vector version.
+
+\end{document}
+

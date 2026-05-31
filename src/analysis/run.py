@@ -17,6 +17,8 @@ from src.analysis.behavioral_stats import (
     run_logistic_regression,
     compute_all_effect_sizes,
     matched_vs_mismatched_analysis,
+    equivalence_analysis,
+    fit_mixed_effects_logit,
     build_cross_model_summary,
     question_level_analysis,
 )
@@ -88,6 +90,28 @@ def main(config: str):
 
     with open(output_dir / "matched_vs_mismatched.json", "w") as f:
         json.dump(matched_analysis, f, indent=2)
+
+    # 4b. Equivalence tests (Cluster 5): TOST + Newcombe difference CI + mixed model.
+    #     Replaces the p>0.05 == equivalence inference flagged by reviewers.
+    equiv = {"per_model": {}, "pooled": {}}
+    for model_name, df in all_scores.items():
+        non_control = df[~df["is_control"]].dropna(subset=["flip"])
+        # Pooled across authority (matches the paper's Table 2 / BDI framing).
+        equiv["per_model"][model_name] = equivalence_analysis(
+            non_control, high_authority_only=False
+        )
+    equiv["pooled"]["equivalence"] = equivalence_analysis(
+        factorial_df, high_authority_only=False
+    )
+    equiv["pooled"]["mixed_effects"] = fit_mixed_effects_logit(factorial_df)
+    with open(output_dir / "equivalence_results.json", "w") as f:
+        json.dump(equiv, f, indent=2)
+    logger.info(
+        "Equivalence (pooled): "
+        f"{equiv['pooled']['equivalence'].get('verdict','?')}; "
+        f"mixed-effects domain_match OR available="
+        f"{'domain_match_effect' in equiv['pooled']['mixed_effects']}"
+    )
 
     # 5. Cross-model summary
     summary_df = build_cross_model_summary(all_scores)

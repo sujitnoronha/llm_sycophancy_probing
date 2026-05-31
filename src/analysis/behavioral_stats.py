@@ -252,6 +252,221 @@ def matched_vs_mismatched_analysis(df: pd.DataFrame) -> Dict:
     }
 
 
+# ──────────────────────────────────────────────────────────────────────────────
+# Equivalence testing (Cluster 5)
+#
+# The legacy matched_vs_mismatched_analysis() above interprets p > 0.05 as
+# "blind_authority_deference". Reviewers (KUMj, zMkt) correctly note that
+# *failure to reject* a null difference is NOT evidence of equivalence. The
+# functions below add the proper tools: a TOST equivalence test, a confidence
+# interval on the matched-minus-mismatched difference (Newcombe), and a
+# hierarchical (mixed-effects) logistic fit. See REVIEWER_RESPONSE_PLAN.md.
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Default practical-equivalence margin on the proportion (flip-rate) scale.
+# 5 percentage points: differences this small are not practically meaningful for
+# authority-vulnerability auditing. Pre-register / justify this in the paper.
+DEFAULT_EQUIV_MARGIN = 0.05
+
+
+def wilson_interval(successes: int, n: int, alpha: float = 0.05) -> Tuple[float, float]:
+    """Wilson score interval for a binomial proportion."""
+    if n == 0:
+        return (0.0, 1.0)
+    z = stats.norm.ppf(1 - alpha / 2)
+    p = successes / n
+    denom = 1 + z**2 / n
+    center = (p + z**2 / (2 * n)) / denom
+    half = (z * np.sqrt(p * (1 - p) / n + z**2 / (4 * n**2))) / denom
+    return (float(center - half), float(center + half))
+
+
+def newcombe_diff_ci(
+    s1: int, n1: int, s2: int, n2: int, alpha: float = 0.05
+) -> Tuple[float, float]:
+    """Newcombe (method 10) CI for the difference of two independent proportions
+    p1 - p2, built from Wilson score intervals. Robust near 0/1 and for small n.
+    """
+    p1 = s1 / n1 if n1 else 0.0
+    p2 = s2 / n2 if n2 else 0.0
+    l1, u1 = wilson_interval(s1, n1, alpha)
+    l2, u2 = wilson_interval(s2, n2, alpha)
+    diff = p1 - p2
+    lower = diff - np.sqrt((p1 - l1) ** 2 + (u2 - p2) ** 2)
+    upper = diff + np.sqrt((u1 - p1) ** 2 + (p2 - l2) ** 2)
+    return (float(lower), float(upper))
+
+
+def tost_two_proportions(
+    s1: int, n1: int, s2: int, n2: int,
+    margin: float = DEFAULT_EQUIV_MARGIN, alpha: float = 0.05,
+) -> Dict:
+    """Two One-Sided Tests (TOST) for equivalence of two proportions p1, p2.
+
+    H0 (non-equivalence): |p1 - p2| >= margin.  Rejecting H0 (TOST p < alpha)
+    concludes the two rates are statistically *equivalent* within +/- margin.
+
+    Uses the unpooled (Wald) SE of the difference. Equivalent to checking that
+    the (1 - 2*alpha) CI of the difference lies entirely within (-margin, margin).
+    """
+    p1 = s1 / n1 if n1 else 0.0
+    p2 = s2 / n2 if n2 else 0.0
+    diff = p1 - p2
+    se = np.sqrt(p1 * (1 - p1) / n1 + p2 * (1 - p2) / n2) if n1 and n2 else 0.0
+
+    if se == 0:
+        # Degenerate (e.g. zero variance): equivalent iff the point diff is inside margin.
+        equivalent = abs(diff) < margin
+        return {
+            "diff": float(diff), "se": 0.0, "margin": margin,
+            "p_lower": 0.0 if diff > -margin else 1.0,
+            "p_upper": 0.0 if diff < margin else 1.0,
+            "p_tost": 0.0 if equivalent else 1.0,
+            "equivalent": bool(equivalent),
+            "ci_90": (float(diff), float(diff)),
+        }
+
+    # Lower one-sided test: H0 diff <= -margin
+    z_lower = (diff + margin) / se
+    p_lower = 1 - stats.norm.cdf(z_lower)
+    # Upper one-sided test: H0 diff >= +margin
+    z_upper = (diff - margin) / se
+    p_upper = stats.norm.cdf(z_upper)
+
+    p_tost = max(p_lower, p_upper)
+    # (1 - 2*alpha) CI — its containment within +/-margin is equivalent to TOST.
+    z_ci = stats.norm.ppf(1 - alpha)
+    ci_90 = (diff - z_ci * se, diff + z_ci * se)
+
+    return {
+        "diff": float(diff), "se": float(se), "margin": margin,
+        "p_lower": float(p_lower), "p_upper": float(p_upper),
+        "p_tost": float(p_tost),
+        "equivalent": bool(p_tost < alpha),
+        "ci_90": (float(ci_90[0]), float(ci_90[1])),
+    }
+
+
+def equivalence_analysis(
+    df: pd.DataFrame,
+    margin: float = DEFAULT_EQUIV_MARGIN,
+    high_authority_only: bool = True,
+) -> Dict:
+    """Proper matched-vs-mismatched test: NHST z-test (legacy) + TOST equivalence
+    + Newcombe 95% CI on the difference. Replaces the p>0.05 == equivalence error.
+
+    By default restricts to high authority (matches the paper's BDI convention,
+    the clearest-signal subset); set high_authority_only=False to pool authority.
+    """
+    sub = df[df["authority_level"] == "high"] if high_authority_only else df
+    matched = sub[sub["domain_match"] == "matched"]["flip"].dropna()
+    mismatched = sub[sub["domain_match"] == "mismatched"]["flip"].dropna()
+
+    n1, n2 = len(matched), len(mismatched)
+    s1, s2 = int(matched.sum()), int(mismatched.sum())
+    if n1 == 0 or n2 == 0:
+        return {"error": "insufficient data", "n_matched": n1, "n_mismatched": n2}
+
+    p1, p2 = s1 / n1, s2 / n2
+
+    # Legacy NHST (kept for transparency — but no longer used to claim equivalence)
+    p_pooled = (s1 + s2) / (n1 + n2)
+    se_pooled = np.sqrt(p_pooled * (1 - p_pooled) * (1 / n1 + 1 / n2))
+    z_stat = (p1 - p2) / se_pooled if se_pooled > 0 else 0.0
+    p_nhst = 2 * (1 - stats.norm.cdf(abs(z_stat)))
+
+    tost = tost_two_proportions(s1, n1, s2, n2, margin=margin)
+    diff_ci95 = newcombe_diff_ci(s1, n1, s2, n2, alpha=0.05)
+
+    # Honest four-way verdict (the whole point of Cluster 5).
+    if tost["equivalent"] and p_nhst > 0.05:
+        verdict = "equivalent"            # statistically equivalent within margin
+    elif tost["equivalent"] and p_nhst <= 0.05:
+        verdict = "trivially_different"   # detectable but practically negligible
+    elif (not tost["equivalent"]) and p_nhst > 0.05:
+        verdict = "inconclusive"          # underpowered — cannot claim either
+    else:
+        verdict = "meaningfully_different"
+
+    return {
+        "high_authority_only": high_authority_only,
+        "matched_flip_rate": float(p1),
+        "mismatched_flip_rate": float(p2),
+        "difference": float(p1 - p2),
+        "diff_ci95_newcombe": [float(diff_ci95[0]), float(diff_ci95[1])],
+        "n_matched": n1, "n_mismatched": n2,
+        "nhst_z": float(z_stat), "nhst_p": float(p_nhst),
+        "tost": tost,
+        "equiv_margin": margin,
+        "verdict": verdict,
+    }
+
+
+def fit_mixed_effects_logit(
+    df: pd.DataFrame,
+    random_groups: Optional[List[str]] = None,
+) -> Dict:
+    """Hierarchical logistic model for flip with random intercepts (KUMj's ask).
+
+    Fits flip ~ authority_level + domain_match + confidence_level with random
+    intercepts for question_id (and model_name when pooling across models),
+    so the domain_match effect is estimated controlling for item- and
+    model-level baseline variation. Uses a Bayesian mixed GLM (variational
+    Bayes) since statsmodels has no frequentist logistic GLMM.
+
+    Returns the domain_match fixed effect (posterior mean + 95% credible
+    interval); a CI straddling 0 and tight around it supports blind deference
+    while properly accounting for clustering (also addresses Cluster 6).
+    """
+    from statsmodels.genmod.bayes_mixed_glm import BinomialBayesMixedGLM
+
+    d = df[~df["is_control"]].copy() if "is_control" in df.columns else df.copy()
+    d = d.dropna(subset=["flip"])
+    d["flip"] = pd.to_numeric(d["flip"], errors="coerce")
+    d = d.dropna(subset=["flip"])
+    for c in ["authority_level", "domain_match", "confidence_level"]:
+        d[c] = d[c].astype(str)
+
+    if random_groups is None:
+        random_groups = ["question_id"]
+        if "model_name" in d.columns and d["model_name"].nunique() > 1:
+            random_groups.append("model_name")
+    random_groups = [g for g in random_groups if g in d.columns and d[g].nunique() > 1]
+
+    fixed = "flip ~ C(authority_level) + C(domain_match) + C(confidence_level)"
+    vc_formulas = {g: f"0 + C({g})" for g in random_groups}
+
+    try:
+        model = BinomialBayesMixedGLM.from_formula(fixed, vc_formulas, d)
+        res = model.fit_vb()
+
+        names = list(res.model.exog_names)
+        dm_idx = [i for i, n in enumerate(names) if "domain_match" in n]
+        coeffs = {}
+        for i in dm_idx:
+            mean = float(res.fe_mean[i])
+            sd = float(res.fe_sd[i])
+            coeffs[names[i]] = {
+                "log_odds": mean,
+                "odds_ratio": float(np.exp(mean)),
+                "sd": sd,
+                "ci95_log_odds": [mean - 1.96 * sd, mean + 1.96 * sd],
+                "ci95_odds_ratio": [float(np.exp(mean - 1.96 * sd)),
+                                     float(np.exp(mean + 1.96 * sd))],
+            }
+        return {
+            "n_observations": int(len(d)),
+            "random_groups": random_groups,
+            "fixed_formula": fixed,
+            "domain_match_effect": coeffs,
+            "note": "Bayesian mixed GLM (variational Bayes); CI = posterior mean +/- 1.96 SD.",
+        }
+    except Exception as e:
+        logger.error(f"Mixed-effects logit failed: {e}")
+        return {"error": str(e), "n_observations": int(len(d)),
+                "random_groups": random_groups}
+
+
 def build_cross_model_summary(all_scores: Dict[str, pd.DataFrame]) -> pd.DataFrame:
     """Build a cross-model summary table of key metrics."""
     rows = []
